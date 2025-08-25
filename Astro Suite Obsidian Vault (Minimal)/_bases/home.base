@@ -9,12 +9,14 @@ properties:
     displayName: Title
   note.date:
     displayName: Date
+  note.pubDate:
+    displayName: Date
 views:
   - type: cards
     name: Cards
     order:
       - title
-      - date
+      - pubDate
       - formula.Draft
     sort:
       - property: date

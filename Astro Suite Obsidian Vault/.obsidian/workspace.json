@@ -138,22 +138,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian42-brat:BRAT": false,
-      "homepage:Open homepage": false,
       "switcher:Open quick switcher": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": true
+      "obsidian42-brat:BRAT": true,
+      "bases:Create new base": false,
+      "homepage:Open homepage": false
     }
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "post/images/astro-composer-suite-for-obsidian-1.png",
     "_bases/home.base",
     "post/astro-suite-vault-guide.md",
+    "post/images/astro-composer-suite-for-obsidian-1.png",
     "post/why-astro.md",
     "post/sonner-getting-started.md",
     "post/obsidian-vault-template.md",
