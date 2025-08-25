@@ -11,15 +11,13 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "post/astro-suite-vault-guide.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
+                "file": "_bases/home.base",
+                "viewName": "Cards"
               },
-              "icon": "lucide-file",
-              "title": "astro-suite-vault-guide"
+              "icon": "lucide-layout-grid",
+              "title": "home"
             }
           }
         ]
@@ -152,8 +150,8 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "_bases/home.base",
     "post/astro-suite-vault-guide.md",
+    "_bases/home.base",
     "post/images/astro-composer-suite-for-obsidian-1.png",
     "post/why-astro.md",
     "post/sonner-getting-started.md",
