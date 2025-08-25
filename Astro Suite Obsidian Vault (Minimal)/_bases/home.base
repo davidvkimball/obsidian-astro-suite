@@ -1,0 +1,35 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.folder != "_templates"
+formulas:
+  Draft: file.name.startsWith("_")
+properties:
+  note.title:
+    displayName: Title
+  note.date:
+    displayName: Date
+views:
+  - type: cards
+    name: Cards
+    order:
+      - title
+      - date
+      - formula.Draft
+    sort:
+      - property: date
+        direction: DESC
+    cardSize: 260
+  - type: table
+    name: Table
+    order:
+      - date
+      - title
+      - formula.Draft
+      - file.name
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      note.date: 125
+      note.title: 361

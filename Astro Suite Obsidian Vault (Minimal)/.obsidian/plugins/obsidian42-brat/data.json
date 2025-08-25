@@ -1,0 +1,27 @@
+{
+  "pluginList": [
+    "davidvkimball/obsidian-disable-tabs",
+    "davidvkimball/obsidian-astro-composer"
+  ],
+  "pluginSubListFrozenVersion": [
+    {
+      "repo": "davidvkimball/obsidian-disable-tabs",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-astro-composer",
+      "version": "latest"
+    }
+  ],
+  "themesList": [],
+  "updateAtStartup": true,
+  "updateThemesAtStartup": true,
+  "enableAfterInstall": true,
+  "loggingEnabled": false,
+  "loggingPath": "BRAT-log",
+  "loggingVerboseEnabled": false,
+  "debuggingMode": false,
+  "notificationsEnabled": true,
+  "personalAccessToken": "",
+  "selectLatestPluginVersionByDefault": false
+}

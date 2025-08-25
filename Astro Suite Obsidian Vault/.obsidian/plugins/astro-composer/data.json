@@ -1,0 +1,13 @@
+{
+  "enableUnderscorePrefix": false,
+  "defaultTemplate": "---\ntitle: \"{{title}}\"\ndescription: \"\"\ntags: []\npubDate: {{date}}\ndraft: true\n---",
+  "linkBasePath": "/blog/",
+  "postsFolder": "post",
+  "automatePostCreation": true,
+  "autoInsertProperties": true,
+  "creationMode": "file",
+  "indexFileName": "index",
+  "dateFormat": "YYYY-MM-DD",
+  "excludedDirectories": "",
+  "onlyAutomateInPostsFolder": false
+}

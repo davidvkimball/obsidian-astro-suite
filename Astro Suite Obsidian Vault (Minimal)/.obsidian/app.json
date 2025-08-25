@@ -1,0 +1,12 @@
+{
+  "showInlineTitle": true,
+  "promptDelete": true,
+  "showIndentGuide": false,
+  "attachmentFolderPath": "_assets",
+  "userIgnoreFilters": null,
+  "focusNewTab": false,
+  "mobilePullAction": "file-explorer:new-file",
+  "trashOption": "system",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true
+}

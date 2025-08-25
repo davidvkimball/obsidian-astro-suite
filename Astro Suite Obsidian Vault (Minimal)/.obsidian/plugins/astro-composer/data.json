@@ -1,0 +1,16 @@
+{
+  "enableUnderscorePrefix": true,
+  "defaultTemplate": "---\ntitle: \"{{title}}\"\npubDate: {{date}}\n---\n\n",
+  "linkBasePath": "",
+  "postsFolder": "",
+  "automatePostCreation": true,
+  "autoInsertProperties": true,
+  "creationMode": "file",
+  "indexFileName": "index",
+  "dateFormat": "YYYY-MM-DD",
+  "excludedDirectories": "",
+  "onlyAutomateInPostsFolder": false,
+  "enableAutoRename": true,
+  "enableAutoInsertFrontmatter": true,
+  "draftStyle": "filename"
+}

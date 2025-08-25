@@ -1,0 +1,9 @@
+{
+  "cssTheme": "Minimal",
+  "showViewHeader": false,
+  "showRibbon": false,
+  "enabledCssSnippets": [
+    "hide-add-properties-button",
+    "custom-draggable-top-area-windows"
+  ]
+}
