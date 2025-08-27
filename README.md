@@ -22,13 +22,19 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 - [Homepage](https://obsidian.md/plugins?id=homepage)
 - [Image Inserter](https://obsidian.md/plugins?id=insert-unsplash-image)
 - [Paste image rename](https://obsidian.md/plugins?id=obsidian-paste-image-rename)
+- [Title-Only Tabs](https://obsidian.md/plugins?id=title-only-tab)
 
 #### Minimal adds: 
 
 - [Minimal](https://github.com/kepano/obsidian-minimal) theme
 - [Minimal Theme Settings](https://obsidian.md/plugins?id=obsidian-minimal-settings)
 - [Hider](https://obsidian.md/plugins?id=obsidian-hider)
+- [ProZen](https://obsidian.md/plugins?id=obsidian-prozen)
 - Custom CSS Snippets
+
+### Optional Community Plugins (disabled by default)
+
+- Git
 
 ### Recommended .gitignore
 
@@ -38,4 +44,4 @@ Add the following to your `.gitignore` file:
 **/.obsidian/workspace.json
 **/.obsidian/workspace-mobile.json
 ```
-This prevents constant conflicts between multiple devices.
+This prevents conflicts between multiple devices.
