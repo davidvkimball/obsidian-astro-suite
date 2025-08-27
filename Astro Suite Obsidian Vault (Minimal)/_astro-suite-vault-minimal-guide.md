@@ -71,6 +71,7 @@ Community plugins enabled:
 - Paste image rename
 - ProZen
 - Style Settings
+- Title-Only Tab
 
 ### Astro Composer 
 
@@ -108,6 +109,10 @@ Pull in images from Unsplash or other sources easily with just a few keystrokes.
 ### Disable Tabs
 
 This effectively makes it so opening any new tab replaces the current one only. Especially nice for when you're hiding the tab bar and don't want multiple tabs. When combined with the Homepage and New Default Tab plugins, `CTRL + T` and `CTRL + M` essentially do the same thing.
+
+### Title-Only Tab
+
+Pulls from the `title` property instead of using the filename for any tab. With the tab bar hidden, you won't see this unless you unhide it.
 
 ### ProZen
 

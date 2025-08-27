@@ -11,5 +11,6 @@
   "disable-tabs",
   "astro-composer",
   "obsidian-prozen",
-  "obsidian-style-settings"
+  "obsidian-style-settings",
+  "title-only-tab"
 ]
