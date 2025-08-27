@@ -41,6 +41,7 @@ Because Obsidian's interface has been stripped down to its bare essence, relying
 - Open homepage: `CTRL + M` 
 - Add a new property: `CTRL + ;`
 - Toggle reading view: `CTRL + E`
+- Toggle Zen mode: `CTRL + SHIFT + Z`
 
 If you're on Mac, `CTRL` = `CMD`.
 
@@ -68,6 +69,7 @@ Community plugins enabled:
 - Minimal Theme Settings
 - mdx as md
 - Paste image rename
+- ProZen
 
 ### Astro Composer 
 
@@ -103,6 +105,10 @@ Pull in images from Unsplash or other sources easily with just a few keystrokes.
 ### Disable Tabs
 
 This effectively makes it so opening any new tab replaces the current one only. Especially nice for when you're hiding the tab bar and don't want multiple tabs. When combined with the Homepage and New Default Tab plugins, `CTRL + T` and `CTRL + M` essentially do the same thing.
+
+### ProZen
+
+Zen mode offers another quick option to focus on your writing. Pressing `CTRL + SHIFT + Z` will enter Zen mode: automatic full-screen, all elements removed except for your content. This is a great alternative if you don't prefer to use Hider to remove the UI, and prefer to toggle it all on or off at once as needed.
 
 ### mdx as md
 

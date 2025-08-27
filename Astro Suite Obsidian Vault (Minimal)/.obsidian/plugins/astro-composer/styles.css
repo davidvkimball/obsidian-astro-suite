@@ -1,24 +1,24 @@
 .astro-composer-title-input {
 	width: 100%;
 	margin-bottom: 16px;
+	padding: 8px;
 }
 
 .astro-composer-button-container {
 	display: flex;
 	gap: 8px;
 	justify-content: flex-end;
+	margin-top: 16px;
 }
 
 .astro-composer-cancel-button,
 .astro-composer-create-button {
-	/* Obsidian's default button styles can be extended here */
 	padding: 6px 12px;
 	border-radius: 4px;
 	cursor: pointer;
 }
 
 .astro-composer-create-button.mod-cta {
-	/* Obsidian's CTA button styles */
 	background-color: var(--interactive-accent);
 	color: var(--text-on-accent);
 }
@@ -28,6 +28,19 @@
 }
 
 .astro-composer-template-textarea {
-	height: 200px;
+	height: 300px; /* Adjusted for 5-10 lines of frontmatter */
 	width: 100%;
+	padding: 8px;
+	resize: vertical; /* Allow vertical resizing */
+	margin-bottom: 16px;
+}
+
+.astro-composer-modal {
+	padding: 20px;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.astro-composer-modal h2 {
+	margin-top: 0;
 }
