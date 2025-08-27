@@ -3,6 +3,10 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 
 <img width="1200" height="630" alt="astro-composer-suite-for-obsidian" src="https://github.com/user-attachments/assets/c006e78e-01c7-401d-a2cf-f6f4a653723c" />
 
+## Video Guide
+
+📺 [Astro Suite for Obsidian Video Guide](https://youtu.be/ZhizarvwLnU)
+
 ## Features 
 
 - Easy integration into Astro website projects
