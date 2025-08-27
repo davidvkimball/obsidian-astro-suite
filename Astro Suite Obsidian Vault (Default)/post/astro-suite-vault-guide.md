@@ -38,6 +38,7 @@ Community plugins enabled:
 - Homepage
 - Image Inserter
 - Paste image rename
+- Title-Only Tab
 
 ### Astro Composer 
 
@@ -60,6 +61,10 @@ The Base is nested within a folder called `_bases` because Astro will ignore fil
 ### Paste Image Rename 
 
 Quickly drag and drop image files or paste directly from your clipboard and give them kebab-case, SEO-friendly names. 
+
+### Title-Only Tab
+
+Pulls from the `title` property instead of using the filename for any tab.
 
 ### BRAT (Temporary)
 

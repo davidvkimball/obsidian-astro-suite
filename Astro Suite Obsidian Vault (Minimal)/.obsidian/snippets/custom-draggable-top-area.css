@@ -1,10 +1,10 @@
 /* --- knobs --- */
-:root {
+body:not(.is-mobile) {
   --drag-bump: 8px; /* bump for notes */
 }
 
 /* Draggable strip (leave OS window buttons untouched) */
-.titlebar {
+body:not(.is-mobile) .titlebar {
   display: block !important;
   position: fixed !important;
   top: 0 !important;
@@ -16,7 +16,7 @@
 }
 
 /* Inline title editable */
-.inline-title {
+body:not(.is-mobile) .inline-title {
   -webkit-app-region: no-drag !important;
   z-index: 11 !important;
   position: relative !important;
@@ -24,18 +24,18 @@
 }
 
 /* Note content default reset */
-.workspace-leaf-content[data-type="markdown"] .view-content,
-.workspace-leaf-content[data-type="markdown"] .cm-scroller,
-.workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
+body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .view-content,
+body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .cm-scroller,
+body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
   padding-top: 0 !important; /* reset by default */
 }
 
 /* Only apply bump when tab bar is hidden (body.hider-tabs present) */
-body.hider-tabs .workspace-leaf-content[data-type="markdown"] .inline-title {
+body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .inline-title {
   margin-top: var(--drag-bump) !important;
 }
-body.hider-tabs .workspace-leaf-content[data-type="markdown"] .view-content,
-body.hider-tabs .workspace-leaf-content[data-type="markdown"] .cm-scroller,
-body.hider-tabs .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
+body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .view-content,
+body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .cm-scroller,
+body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
   padding-top: var(--drag-bump) !important;
 }

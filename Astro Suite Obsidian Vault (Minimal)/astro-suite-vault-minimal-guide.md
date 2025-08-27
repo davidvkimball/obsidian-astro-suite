@@ -22,9 +22,11 @@ The [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings
 
 ## CSS Snippets
 
-A custom CSS snippet called `custom-draggable-top-area.css` makes moving your window is easier when the window frame is hidden and there's no tab bar. The default enabled version is `custom-draggable-top-area-windows.css` which is active by default, and helps with some offsets UI including closing/minimizing/maximizing on Windows, and there's a `custom-draggable-top-area-windows.css` which offers similar functionality for Mac. Use the base version for no offsets, all can be configured in Settings > Appearance > CSS Snippets (make sure to disable the Windows version when another is turned on).
+A custom CSS snippet called `custom-draggable-top-area.css` makes moving your window is easier when the window frame is hidden and there's no tab bar. The default enabled version is `custom-draggable-top-area-windows.css` which is active by default, and helps with some offsets UI including closing/minimizing/maximizing on Windows, and there's a `custom-draggable-top-area-windows.css` which offers similar functionality for Mac. Use the base version for no offsets, all can be configured in Settings > Appearance > CSS Snippets (make sure to disable the Windows version when another is turned on). None of these are active in mobile.
 
 `hide-add-properties-button.css` simply removes the button at the end of the list of properties. 
+
+`hide-tabs-icon-mobile.css` removes the tabs icon in the mobile version of Obsidian. If you disable the Disable Tabs plugin, you may want to disable this snippet as well.
 
 ## Important Hotkeys
 
