@@ -24,8 +24,6 @@ The [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings
 
 A custom CSS snippet called `custom-draggable-top-area.css` makes moving your window is easier when the window frame is hidden and there's no tab bar. The default enabled version is `custom-draggable-top-area-windows.css` which is active by default, and helps with some offsets UI including closing/minimizing/maximizing on Windows, and there's a `custom-draggable-top-area-windows.css` which offers similar functionality for Mac. Use the base version for no offsets, all can be configured in Settings > Appearance > CSS Snippets (make sure to disable the Windows version when another is turned on). None of these are active in mobile.
 
-`hide-add-properties-button.css` simply removes the button at the end of the list of properties. 
-
 `hide-tabs-icon-mobile.css` removes the tabs icon in the mobile version of Obsidian. If you disable the Disable Tabs plugin, you may want to disable this snippet as well.
 
 ## Important Hotkeys
@@ -96,6 +94,8 @@ The Base is nested within a folder called `_bases` because Astro will ignore fil
 As mentioned earlier, these plugins keep you focused and distraction-free while allowing for customization of your experience. 
 
 Should you need to reveal any of the main hidden panels, you can use `CTRL + ALT Z` for the left side panel, `CTRL + ALT + X` for the right side panel, or `CTRL + ALT + S` for the tab bar. Pressing it again will hide it. 
+
+In Style Settings, the only options that have been modified are hiding the Properties heading and the "Add Property" button.
 
 ### Paste Image Rename 
 

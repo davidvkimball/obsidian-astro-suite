@@ -3,7 +3,6 @@
   "showViewHeader": false,
   "showRibbon": false,
   "enabledCssSnippets": [
-    "hide-add-properties-button",
     "custom-draggable-top-area-windows",
     "hide-tabs-icon-mobile"
   ]
