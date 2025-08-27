@@ -15,6 +15,8 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 - Default and Minimal theme options
 - Optional instant-publish option via the Git plugin
 
+<img width="1920" height="1080" alt="astro-suite-preview" src="https://github.com/user-attachments/assets/0ee3837b-9ebe-4bd9-92e4-2c7e84efd57c" />
+
 ### Included Community Plugins
 - [Astro Composer](https://github.com/davidvkimball/obsidian-astro-composer)
 - [Custom save](https://obsidian.md/plugins?id=custom-save)
@@ -38,7 +40,7 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 
 ### Recommended .gitignore
 
-Add the following to your `.gitignore` file:
+Add the following to your Astro project's `.gitignore` file:
 ```
 # Obsidian workspace files
 **/.obsidian/workspace.json
