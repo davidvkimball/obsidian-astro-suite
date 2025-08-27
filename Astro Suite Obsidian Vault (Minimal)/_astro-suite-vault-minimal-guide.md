@@ -72,6 +72,7 @@ Community plugins enabled:
 - mdx as md
 - Paste image rename
 - ProZen
+- Style Settings
 
 ### Astro Composer 
 
@@ -90,7 +91,7 @@ Both of these work together so you're default screen is a `.base` file that's a 
 
 The Base is nested within a folder called `_bases` because Astro will ignore files and folders with an underscore prefix, letting you use this for Obsidian without processing it for the live site.
 
-### Minimal Theme Settings, Disable Tabs, and Hider
+### Minimal Theme Settings, Disable Tabs, Hider, and Style Settings
 
 As mentioned earlier, these plugins keep you focused and distraction-free while allowing for customization of your experience. 
 

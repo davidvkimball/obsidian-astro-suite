@@ -32,6 +32,7 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 - [Minimal Theme Settings](https://obsidian.md/plugins?id=obsidian-minimal-settings)
 - [Hider](https://obsidian.md/plugins?id=obsidian-hider)
 - [ProZen](https://obsidian.md/plugins?id=obsidian-prozen)
+- [Style Settings](https://obsidian.md/plugins?id=obsidian-style-settings)
 - Custom CSS Snippets
 
 ### Optional Community Plugins (disabled by default)
