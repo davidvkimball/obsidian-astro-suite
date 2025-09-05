@@ -1,0 +1,3 @@
+.is-phone .view-header-title-container, .minimal-tab-title-visible .view-header-title-container {
+    display:none;
+}
