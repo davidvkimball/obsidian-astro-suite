@@ -29,15 +29,6 @@
       "key": "ArrowRight"
     }
   ],
-  "file-explorer:new-file": [],
-  "file-explorer:new-file-in-current-tab": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "N"
-    }
-  ],
   "homepage:open-homepage": [
     {
       "modifiers": [
@@ -90,15 +81,6 @@
       "key": "'"
     }
   ],
-  "insert-unsplash-image:insert-in-frontmatter": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "'"
-    }
-  ],
   "obsidian-prozen:zenmode": [
     {
       "modifiers": [
@@ -106,6 +88,15 @@
         "Shift"
       ],
       "key": "Z"
+    }
+  ],
+  "obsidian-shellcommands:shell-command-kmfz91tj4d": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "D"
     }
   ]
 }

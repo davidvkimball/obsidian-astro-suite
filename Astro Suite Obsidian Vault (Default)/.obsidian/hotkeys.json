@@ -7,15 +7,6 @@
       "key": "'"
     }
   ],
-  "insert-unsplash-image:insert-in-frontmatter": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "'"
-    }
-  ],
   "obsidian-git:push": [
     {
       "modifiers": [
@@ -41,6 +32,15 @@
         "Mod"
       ],
       "key": "X"
+    }
+  ],
+  "obsidian-shellcommands:shell-command-cgu26nrs0i": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "D"
     }
   ]
 }

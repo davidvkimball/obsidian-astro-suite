@@ -17,7 +17,21 @@ All plugins, key bindings, and the theme can be customized to your liking, but t
 1. Plug-and-play Astro blogging experience.
 2. Maintain vanilla Obsidian look and feel.
 3. Emphasis on clarity and flexibility. 
+## Important Hotkeys
 
+Here's a guide for some important hotkeys set especially for this theme:
+- Toggle left side panel: `CTRL + ALT + Z`
+- Toggle right side panel: `CTRL + ALT + X`
+- Navigate back: `ALT + ←`
+- Navigate forward: `ALT + →`
+- Open homepage: `CTRL + M` 
+- Toggle reading view: `CTRL + E`
+- Toggle Zen mode: `CTRL + SHIFT + Z`
+- Insert image: `CTRL + '`
+- Start Terminal: `CTRL + SHIFT + D`
+- Git: Commit and Sync `CTRL + SHIFT + S` (off by default)
+
+If you're on Mac, `CTRL` = `CMD`.
 ## Plugins 
 
 Disabled default core plugins: 
@@ -33,11 +47,13 @@ Disabled default core plugins:
 
 Community plugins enabled: 
 - Astro Composer
+- Commander
 - Custom save
 - Default New Tab Page
 - Homepage
 - Image Inserter
 - Paste image rename
+- Shell commands
 - Title-Only Tab
 
 ### Astro Composer 
@@ -71,6 +87,12 @@ Pull in images from Unsplash or other sources easily with just a few keystrokes.
 ### Title-Only Tab
 
 Pulls from the `title` property instead of using the filename for any tab.
+
+### Shell commands and Commander
+
+Shell commands helps open terminal quickly with the `Start Terminal` command. It's been modified for Windows, macOS, and Linux to start terminal in the relevant directory so you can easily do standard package manager commands like `npm` or `pnpm`. It can be activated with `CTRL + SHIFT + D`. 
+
+Commander helps us place a button for it on the file explorer UI.
 
 ### BRAT (Temporary)
 

@@ -40,10 +40,16 @@ Because Obsidian's interface has been stripped down to its bare essence, relying
 - Toggle left side panel: `CTRL + ALT + Z`
 - Toggle right side panel: `CTRL + ALT + X`
 - Toggle tab bar: `CTRL + ALT + S`
+- Navigate back: `ALT + ←`
+- Navigate forward: `ALT + →`
 - Open homepage: `CTRL + M` 
 - Add a new property: `CTRL + ;`
 - Toggle reading view: `CTRL + E`
 - Toggle Zen mode: `CTRL + SHIFT + Z`
+- Custom save: `CTRL + S
+- Insert image: `CTRL + '`
+- Start Terminal: `CTRL + SHIFT + D`
+- Git: Commit and Sync `CTRL + SHIFT + S` (off by default)
 
 If you're on Mac, `CTRL` = `CMD`.
 
@@ -72,6 +78,7 @@ Community plugins enabled:
 - mdx as md
 - Paste image rename
 - ProZen
+- Shell commands
 - Style Settings
 - Title-Only Tab
 
@@ -125,6 +132,12 @@ Zen mode offers another quick option to focus on your writing. Pressing `CTRL + 
 ### mdx as md
 
 This is just for any Astro theme that uses `.mdx` in addition to `.md`, such as Chiri. Unfortunately there's not yet a way to have Bases read properties from `.mdx` files so while the files themselves will appear, the file's properties won't appear on the homepage `.base` view. 
+
+### Shell commands and Commander
+
+Shell commands helps open terminal quickly with the `Start Terminal` command. It's been modified for Windows, macOS, and Linux to start terminal in the relevant directory so you can easily do standard package manager commands like `npm` or `pnpm`. It can be activated with `CTRL + SHIFT + D`. 
+
+Commander helps us place a button for it on the file explorer UI, which is hidden by default in this theme anyway. Toggle "Hide file explorer buttons" in the Hider plugin to reveal.
 
 ### BRAT (Temporary)
 

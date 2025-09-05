@@ -12,5 +12,7 @@
   "astro-composer",
   "obsidian-prozen",
   "obsidian-style-settings",
-  "title-only-tab"
+  "title-only-tab",
+  "obsidian-shellcommands",
+  "cmdr"
 ]

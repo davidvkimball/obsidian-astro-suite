@@ -6,5 +6,7 @@
   "homepage",
   "new-tab-default-page",
   "custom-save",
-  "title-only-tab"
+  "title-only-tab",
+  "cmdr",
+  "obsidian-shellcommands"
 ]
