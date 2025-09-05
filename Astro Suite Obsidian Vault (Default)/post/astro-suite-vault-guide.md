@@ -58,9 +58,15 @@ Both of these work together so you're default screen is a `.base` file that's a 
 
 The Base is nested within a folder called `_bases` because Astro will ignore files and folders with an underscore prefix, letting you use this for Obsidian without processing it for the live site.
 
+I call this "Home Base."
+
 ### Paste Image Rename 
 
 Quickly drag and drop image files or paste directly from your clipboard and give them kebab-case, SEO-friendly names. 
+
+### Image Inserter
+
+Pull in images from Unsplash or other sources easily with just a few keystrokes. Just use `CTRL + '` to insert an image - and immediately set a SEO-friendly filename for it via the Paste Image Rename plugin.
 
 ### Title-Only Tab
 
