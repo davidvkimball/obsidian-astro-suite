@@ -26,6 +26,8 @@ A custom CSS snippet called `custom-draggable-top-area.css` makes moving your wi
 
 `hide-tabs-icon-mobile.css` removes the tabs icon in the mobile version of Obsidian. If you disable the Disable Tabs plugin, you may want to disable this snippet as well.
 
+Both `hide-longpress-flair-mobile.css` and `hide-header-title-mobile.css` are also related to making the mobile interface more simple. Disable any of these snippets to bring the elements back.
+
 ## Important Hotkeys
 
 Because Obsidian's interface has been stripped down to its bare essence, relying on hotkeys is imperative. Here's a guide:

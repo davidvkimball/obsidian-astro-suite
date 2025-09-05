@@ -4,6 +4,8 @@
   "showRibbon": false,
   "enabledCssSnippets": [
     "custom-draggable-top-area-windows",
-    "hide-tabs-icon-mobile"
+    "hide-tabs-icon-mobile",
+    "hide-longpress-flair-mobile",
+    "hide-header-title-mobile"
   ]
 }

@@ -33,5 +33,6 @@
     "astro-composer:convert-wikilinks-astro",
     "custom-save:save",
     "editor:configure-toolbar"
-  ]
+  ],
+  "mobileQuickRibbonItem": "command-palette:Open command palette"
 }
