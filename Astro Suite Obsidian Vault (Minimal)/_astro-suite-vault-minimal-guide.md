@@ -16,9 +16,9 @@ All plugins, key bindings, and the theme can be customized to your liking, but t
 
 ## Theme
 
-Fittingly, the [Minimal](https://minimal.guide/home) theme is used. It uses an understated color scheme with high contract options and a focus mode that helps immerse you in your content. 
+Fittingly, the [Minimal](https://minimal.guide/home) theme is used.  It uses an understated color scheme with high contract options. 
 
-The [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings) and [Hider](https://github.com/kepano/obsidian-hider) community plugins are also installed by default, giving you complete control over your experience. 
+The [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings), [Hider](https://github.com/kepano/obsidian-hider), and [Style Settings](https://obsidian.md/plugins?id=obsidian-style-settings) community plugins are also installed by default, giving you complete control over your experience. 
 
 ## CSS Snippets
 
@@ -92,6 +92,8 @@ Both of these work together so you're default screen is a `.base` file that's a 
 
 The Base is nested within a folder called `_bases` because Astro will ignore files and folders with an underscore prefix, letting you use this for Obsidian without processing it for the live site.
 
+I call this "Home Base."
+
 ### Minimal Theme Settings, Disable Tabs, Hider, and Style Settings
 
 As mentioned earlier, these plugins keep you focused and distraction-free while allowing for customization of your experience. 
@@ -106,7 +108,7 @@ Quickly drag and drop image files or paste directly from your clipboard and give
 
 ### Image Inserter
 
-Pull in images from Unsplash or other sources easily with just a few keystrokes. 
+Pull in images from Unsplash or other sources easily with just a few keystrokes. Just use `CTRL + '` to insert an image - and immediately set a SEO-friendly filename for it via the Paste Image Rename plugin.
 
 ### Disable Tabs
 
@@ -118,7 +120,7 @@ Pulls from the `title` property instead of using the filename for any tab. With 
 
 ### ProZen
 
-Zen mode offers another quick option to focus on your writing. Pressing `CTRL + SHIFT + Z` will enter Zen mode: automatic full-screen, all elements removed except for your content. This is a great alternative if you don't prefer to use Hider to remove the UI, and prefer to toggle it all on or off at once as needed.
+Zen mode offers another quick option to focus on your writing. Pressing `CTRL + SHIFT + Z` will enter Zen mode: automatic full-screen, all elements removed except for your content. This is a great alternative if you don't prefer to use Hider to remove the UI, and prefer to toggle it all on or off at once as needed. Alternatively, you can use the Focus Mode included in the Minimal theme.
 
 ### mdx as md
 
