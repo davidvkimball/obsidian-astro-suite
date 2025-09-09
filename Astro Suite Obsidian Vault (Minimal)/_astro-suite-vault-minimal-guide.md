@@ -77,6 +77,7 @@ Community plugins enabled:
 - Minimal Theme Settings
 - mdx as md
 - Paste image rename
+- Property Over Filename
 - ProZen
 - Shell commands
 - Style Settings
@@ -125,6 +126,12 @@ This effectively makes it so opening any new tab replaces the current one only. 
 
 Pulls from the `title` property instead of using the filename for any tab. With the tab bar hidden, you won't see this unless you unhide it.
 
+### Property Over Filename
+
+When linking or searching notes, you can use the `title` property as its primary identifier, which is more helpful semantically for linking between and searching for posts since note filenames are post slugs in kebab case instead of titles. 
+
+When you link to another note, its `title` is automatically set as the hyperlinked text, but you can easily change it to something else after it's been inserted.
+
 ### ProZen
 
 Zen mode offers another quick option to focus on your writing. Pressing `CTRL + SHIFT + Z` will enter Zen mode: automatic full-screen, all elements removed except for your content. This is a great alternative if you don't prefer to use Hider to remove the UI, and prefer to toggle it all on or off at once as needed. Alternatively, you can use the Focus Mode included in the Minimal theme.
@@ -135,9 +142,15 @@ This is just for any Astro theme that uses `.mdx` in addition to `.md`, such as 
 
 ### Shell commands and Commander
 
-Shell commands helps open terminal quickly with the `Start Terminal` command. It's been modified for Windows, macOS, and Linux to start terminal in the relevant directory so you can easily do standard package manager commands like `npm` or `pnpm`. It can be activated with `CTRL + SHIFT + D`. 
+Shell commands helps us open two things quickly: terminal and Astro's `config.ts` file. 
 
-Commander helps us place a button for it on the file explorer UI, which is hidden by default in this theme anyway. Toggle "Hide file explorer buttons" in the Hider plugin to reveal.
+To open terminal quickly, use the `Start Terminal` command. It's been modified for Windows, macOS, and Linux to start terminal in the relevant directory so you can easily do standard package manager commands like `npm` or `pnpm`. It can be activated with `CTRL + SHIFT + D`. 
+
+To open your `config.ts` file quickly, simply use the `Astro Configuration` command. You can also press `CTRL + SHIFT + ,` to open it with your default application. 
+
+Commander helps us place a button for each of these actions on the file explorer UI, which is hidden by default in this theme anyway. Toggle "Hide file explorer buttons" in the Hider plugin to reveal.
+
+**Linux user warning:** on Linux, there isn't a universal method to open the default terminal. Additionally, the widely used Flatpak (via Flathub) employs non-trivial sandboxing, which introduces further challenges. 
 
 ### BRAT (Temporary)
 

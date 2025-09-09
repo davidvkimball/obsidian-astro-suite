@@ -16,6 +16,12 @@
       "icon": "lucide-terminal-square",
       "name": "Shell commands: Execute: Start Terminal",
       "mode": "any"
+    },
+    {
+      "id": "obsidian-shellcommands:shell-command-thj4kxpd52",
+      "icon": "lucide-wrench",
+      "name": "Shell commands: Execute: Astro Configuration",
+      "mode": "any"
     }
   ],
   "hide": {

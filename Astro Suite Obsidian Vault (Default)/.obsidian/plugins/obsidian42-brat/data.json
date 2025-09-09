@@ -1,8 +1,13 @@
 {
   "pluginList": [
+    "davidvkimball/obsidian-property-over-filename",
     "davidvkimball/obsidian-astro-composer"
   ],
   "pluginSubListFrozenVersion": [
+    {
+      "repo": "davidvkimball/obsidian-property-over-filename",
+      "version": "latest"
+    },
     {
       "repo": "davidvkimball/obsidian-astro-composer",
       "version": "latest"

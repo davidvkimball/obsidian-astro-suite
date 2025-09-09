@@ -98,5 +98,14 @@
       ],
       "key": "D"
     }
+  ],
+  "obsidian-shellcommands:shell-command-m2gfoflcpa": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": ","
+    }
   ]
 }

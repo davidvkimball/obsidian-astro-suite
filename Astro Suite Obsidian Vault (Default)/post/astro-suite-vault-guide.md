@@ -42,6 +42,7 @@ Disabled default core plugins:
 - Note composer
 - Outgoing links
 - Page preview
+- Property Over Filename
 - Templates
 - Sync
 
@@ -88,11 +89,23 @@ Pull in images from Unsplash or other sources easily with just a few keystrokes.
 
 Pulls from the `title` property instead of using the filename for any tab.
 
+### Property Over Filename
+
+When linking or searching notes, you can use the `title` property as its primary identifier, which is more helpful semantically for linking between and searching for posts since note filenames are post slugs in kebab case instead of titles. 
+
+When you link to another note, its `title` is automatically set as the hyperlinked text, but you can easily change it to something else after it's been inserted.
+
 ### Shell commands and Commander
 
-Shell commands helps open terminal quickly with the `Start Terminal` command. It's been modified for Windows, macOS, and Linux to start terminal in the relevant directory so you can easily do standard package manager commands like `npm` or `pnpm`. It can be activated with `CTRL + SHIFT + D`. 
+Shell commands helps us open two things quickly: terminal and Astro's `config.ts` file. 
 
-Commander helps us place a button for it on the file explorer UI.
+To open terminal quickly, use the `Start Terminal` command. It's been modified for Windows, macOS, and Linux to start terminal in the relevant directory so you can easily do standard package manager commands like `npm` or `pnpm`. It can be activated with `CTRL + SHIFT + D`. 
+
+To open your `config.ts` file quickly, simply use the `Astro Configuration` command. You can also press `CTRL + SHIFT + ,` to open it with your default application. 
+
+Commander helps us place a button for each of these actions on the file explorer UI.
+
+**Linux user warning:** on Linux, there isn't a universal method to open the default terminal. Additionally, the widely used Flatpak (via Flathub) employs non-trivial sandboxing, which introduces further challenges. 
 
 ### BRAT (Temporary)
 
