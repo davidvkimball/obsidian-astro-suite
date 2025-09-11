@@ -29,9 +29,9 @@
     "editor:toggle-checklist-status",
     "editor:indent-list",
     "editor:unindent-list",
+    "astro-composer:rename-note",
     "astro-composer:standardize-properties",
     "astro-composer:convert-wikilinks-astro",
-    "custom-save:save",
     "editor:configure-toolbar"
   ],
   "mobileQuickRibbonItem": "command-palette:Open command palette"
