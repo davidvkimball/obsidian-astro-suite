@@ -9,5 +9,10 @@
   "indexFileName": "index",
   "dateFormat": "YYYY-MM-DD",
   "excludedDirectories": "",
-  "onlyAutomateInPostsFolder": false
+  "onlyAutomateInPostsFolder": false,
+  "enablePages": false,
+  "pagesFolder": "pages",
+  "pageTemplate": "---\ntitle: \"{{title}}\"\ndescription: \"\"\n---\n",
+  "enableCopyHeadingLink": true,
+  "copyHeadingLinkFormat": "astro"
 }

@@ -90,6 +90,8 @@ Handy for easily creating new notes as Astro blog posts. Just create a new note 
 You can also define and set default properties that can be generated automatically or manually set for any open note as well.
 
 Once you've used wikilinks or markdown links, you can also convert those automatically to internal links for Astro with the "Convert internal links for Astro" command. 
+
+You can also easily grab links to headings by right clicking one and selecting "Copy Heading Link". These will be Astro-ready links by default, but you can use Obsidian wikilnks or markdown links, too.
 ### Custom save
 
 This defines a set of commands to fire once `CTRL + S` is initiated. For convenience, both "Convert internal links for Astro" and "Standardize properties" commands from the Astro Composer plugin are included. You can add or remove any if you'd like - this is designed for posts to be "publish-ready" when manually saved.
