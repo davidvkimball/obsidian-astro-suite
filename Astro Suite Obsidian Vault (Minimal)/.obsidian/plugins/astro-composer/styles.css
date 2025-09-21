@@ -44,3 +44,51 @@
 .astro-composer-modal h2 {
 	margin-top: 0;
 }
+
+/* Custom Content Types Styling */
+.custom-content-types-container {
+	margin-top: 16px;
+}
+
+.custom-content-type-item {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	padding: 16px;
+	margin-bottom: 16px;
+	background-color: var(--background-secondary);
+}
+
+.custom-content-type-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.custom-content-type-header .setting-item {
+	margin-bottom: 0;
+}
+
+.custom-content-type-header .setting-item-name {
+	font-weight: 600;
+	color: var(--text-normal);
+}
+
+.custom-content-type-item .setting-item {
+	margin-bottom: 12px;
+}
+
+.custom-content-type-item .setting-item:last-child {
+	margin-bottom: 0;
+}
+
+.custom-content-type-settings {
+	transition: all 0.2s ease-in-out;
+}
+
+.custom-content-type-settings[style*="none"] {
+	opacity: 0;
+	transform: translateY(-10px);
+}
