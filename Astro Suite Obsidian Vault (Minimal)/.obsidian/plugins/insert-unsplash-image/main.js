@@ -22987,6 +22987,9 @@ var pexels = (settings, vault) => {
         };
       });
     },
+    async randomImage(_) {
+      return [];
+    },
     async downloadImage(url) {
       const res = await (0, import_obsidian3.requestUrl)({ url });
       return res.arrayBuffer;
@@ -23107,6 +23110,9 @@ var pixabay = (settings, vault) => {
         };
       });
     },
+    async randomImage(_) {
+      return [];
+    },
     async downloadImage(url) {
       const res = await (0, import_obsidian4.requestUrl)({ url });
       return res.arrayBuffer;
@@ -23220,6 +23226,24 @@ var unsplash = (settings, vault) => {
         };
       });
     },
+    async randomImage(query) {
+      const url = new URL("/photos/random", proxyServer);
+      url.searchParams.set("query", query);
+      if (orientation != "not_specified") {
+        url.searchParams.set("orientation", orientation);
+      }
+      const res = await (0, import_obsidian5.requestUrl)({ url: url.toString() });
+      const item = res.json;
+      return [{
+        desc: (item.description || item.alt_description || "").replace(new RegExp(/\n/g), " "),
+        thumb: item.urls.thumb,
+        url: item.urls[imageSizeMapping2[imageSize]],
+        downloadLocationUrl: item.links.download_location,
+        pageUrl: item.links.html,
+        username: item.user.name,
+        userUrl: `https://unsplash.com/@${item.user.username}?${UTM2}`
+      }];
+    },
     async touchDownloadLocation(url) {
       await (0, import_obsidian5.requestUrl)({
         url: url.replace("https://api.unsplash.com", proxyServer)
@@ -23308,6 +23332,9 @@ var local = (settings, vault) => {
         };
       });
     },
+    async randomImage(_) {
+      return [];
+    },
     async downloadImage(_) {
       return new ArrayBuffer(0);
     },
@@ -23368,6 +23395,7 @@ var ImagesModal = ({
   fetcher: defaultFetcher,
   onFetcherChange,
   settings,
+  random,
   onSelect
 }) => {
   const [fetcher, setFetcher] = (0, import_react.useState)(defaultFetcher);
@@ -23378,9 +23406,11 @@ var ImagesModal = ({
   const [selectedImage, setSelectedImage] = (0, import_react.useState)(0);
   const [error, setError] = (0, import_react.useState)();
   const [loading, setLoading] = (0, import_react.useState)(false);
+  const filteredImageProviders = random ? ["unsplash" /* unsplash */] : imageProviders;
   const fetchImages = async (query2) => {
     try {
-      const images2 = await fetcher.searchImages(query2);
+      const fetchFunc = random ? fetcher.randomImage : fetcher.searchImages;
+      const images2 = await fetchFunc(query2);
       setImages(images2);
       setSelectedImage(0);
     } catch (e) {
@@ -23444,11 +23474,11 @@ var ImagesModal = ({
     } else if (e.ctrlKey && e.key === "p") {
       setSelectedImage((prev) => prev - 1 < 0 ? images.length - 1 : prev - 1);
     } else if (e.ctrlKey && e.key === "u") {
-      let index = imageProviders.indexOf(fetcher.imageProvider) + 1;
-      if (index >= imageProviders.length) {
+      let index = filteredImageProviders.indexOf(fetcher.imageProvider) + 1;
+      if (index >= filteredImageProviders.length) {
         index = 0;
       }
-      onProviderChange(imageProviders[index]);
+      onProviderChange(filteredImageProviders[index]);
     } else if (e.ctrlKey && e.key === "i") {
       let index = imageSizes.indexOf(fetcher.imageSize) + 1;
       if (index >= imageSizes.length) {
@@ -23497,7 +23527,7 @@ var ImagesModal = ({
     value: fetcher.imageProvider,
     onChange: onProviderSelectorChange,
     className: "selector"
-  }, imageProviders.map((provider) => /* @__PURE__ */ React3.createElement("option", {
+  }, filteredImageProviders.map((provider) => /* @__PURE__ */ React3.createElement("option", {
     key: provider,
     value: provider
   }, providerMapping[provider]))), /* @__PURE__ */ React3.createElement("select", {
@@ -23583,15 +23613,16 @@ var ImagesModal = ({
 
 // ModalWrapper.tsx
 var ModalWrapper = class extends import_obsidian7.Modal {
-  constructor(app, editor, settings, insertPlace = "default" /* default */) {
+  constructor(app, editor, settings, insertPlace = "default" /* default */, random = false) {
     super(app);
     this.editor = editor;
     this.settings = {
       ...settings,
       useMarkdownLinks: app.vault.config.useMarkdownLinks
     };
-    this.fetcher = getFetcher(this.settings, app.vault);
+    this.fetcher = getFetcher({ ...this.settings, imageProvider: random ? "unsplash" /* unsplash */ : this.settings.imageProvider }, app.vault);
     this.insertPlace = insertPlace;
+    this.random = random;
     this.containerEl.addClass("image-inserter-container");
   }
   onFetcherChange(fetcher) {
@@ -23604,6 +23635,7 @@ var ModalWrapper = class extends import_obsidian7.Modal {
       fetcher: this.fetcher,
       onFetcherChange: this.onFetcherChange.bind(this),
       settings: this.settings,
+      random: this.random,
       onSelect: this.onChooseSuggestion.bind(this)
     })));
   }
@@ -23659,6 +23691,20 @@ var InsertUnsplashImage = class extends import_obsidian8.Plugin {
       name: "Insert Image in Frontmatter",
       editorCallback: (editor) => {
         new ModalWrapper(this.app, editor, this.settings, "frontmatter" /* frontmatter */).open();
+      }
+    });
+    this.addCommand({
+      id: "insert-random",
+      name: "Insert random image (only support Unsplash)",
+      editorCallback: (editor) => {
+        new ModalWrapper(this.app, editor, this.settings, "default" /* default */, true).open();
+      }
+    });
+    this.addCommand({
+      id: "insert-random-in-frontmatter",
+      name: "Insert random image in frontmatter (only support Unsplash)",
+      editorCallback: (editor) => {
+        new ModalWrapper(this.app, editor, this.settings, "frontmatter" /* frontmatter */, true).open();
       }
     });
   }
