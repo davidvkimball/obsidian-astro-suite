@@ -49,6 +49,7 @@
   margin-right: 4px;
 }
 
+
 /* Remove duplicate prompt instructions - use the ones below */
 
 /* Quick switcher enhancements - SCOPED to plugin only */
@@ -121,23 +122,23 @@
   background-color: var(--text-error-hover);
 }
 
-/* Mobile-specific adjustments */
+/* Mobile-specific adjustments - SCOPED to plugin only */
 @media (max-width: 768px) {
-  .suggestion-content {
+  .property-over-filename-suggestion .suggestion-content {
     padding: 4px 0;
   }
   
-  .suggestion-title {
+  .property-over-filename-suggestion .suggestion-title {
     font-size: 0.95em;
   }
   
-  .suggestion-note {
+  .property-over-filename-suggestion .suggestion-note {
     font-size: 0.8em;
   }
 }
 
-/* Dark mode adjustments */
-.theme-dark .suggestion-highlight {
+/* Dark mode adjustments - SCOPED to plugin only */
+.theme-dark .property-over-filename-suggestion .suggestion-highlight {
   background-color: rgba(255, 255, 0, 0.3);
   color: var(--text-normal);
 }
@@ -157,13 +158,7 @@
   color: var(--text-muted);
 }
 
-.theme-dark .property-over-filename-modal .prompt-instructions {
-  color: var(--text-normal);
-}
-
-.theme-dark .property-over-filename-modal .prompt-instruction {
-  color: var(--text-normal);
-}
+/* Let Obsidian handle dark theme footer styling */
 
 /* Animation for smooth transitions - SCOPED to plugin only */
 .property-over-filename-suggestion .suggestion-item {
@@ -219,37 +214,7 @@
   height: 16px;
 }
 
-/* Footer using Obsidian's exact structure - SCOPED to plugin only */
-.property-over-filename-modal .prompt-instructions {
-  border-top: 1px solid var(--background-secondary);
-  user-select: none;
-  font-size: var(--font-ui-smaller);
-  color: var(--text-normal);
-  padding: var(--size-4-2);
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--size-4-3);
-}
-
-.property-over-filename-modal .prompt-instruction {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
-  color: var(--text-normal);
-}
-
-.property-over-filename-modal .prompt-instruction-command {
-  background-color: var(--background-modifier-border);
-  color: var(--text-normal);
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: var(--font-monospace);
-  font-size: 0.8em;
-  font-weight: 500;
-}
+/* Let Obsidian handle footer styling - don't override */
 
 /* Remove incorrect modal flex layout */
 
