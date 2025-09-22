@@ -1,4 +1,5 @@
 # Astro Suite for Obsidian
+
 A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 
 <img width="1200" height="630" alt="astro-composer-suite-for-obsidian" src="https://github.com/user-attachments/assets/c006e78e-01c7-401d-a2cf-f6f4a653723c" />
@@ -19,25 +20,30 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 
 ### Included Community Plugins
 - [Astro Composer](https://github.com/davidvkimball/obsidian-astro-composer)
-- [Custom save](https://obsidian.md/plugins?id=custom-save)
-- [Default New Tab Page](https://obsidian.md/plugins?id=new-tab-default-page)
-- [Homepage](https://obsidian.md/plugins?id=homepage)
-- [Image Inserter](https://obsidian.md/plugins?id=insert-unsplash-image)
-- [Paste image rename](https://obsidian.md/plugins?id=obsidian-paste-image-rename)
-- [Title-Only Tabs](https://obsidian.md/plugins?id=title-only-tab)
+- [Commander](https://github.com/phibr0/obsidian-commander)
+- [Custom save](https://github.com/HananoshikaYomaru/obsidian-custom-save)
+- [Default New Tab Page](https://github.com/chrisgrieser/new-tab-default-page)
+- [Homepage](https://github.com/mirnovov/obsidian-homepage)
+- [Image Inserter](https://github.com/cloudy9101/obsidian-image-inserter)
+- [Paste image rename](https://github.com/reorx/obsidian-paste-image-rename)
+- [Property over filename](https://github.com/davidvkimball/obsidian-property-over-filename)
+- [Shell commands](https://github.com/Taitava/obsidian-shellcommands)
+- [Title-Only Tab](https://github.com/tristone13th/obsidian-title-only-tab)
 
 #### Minimal adds: 
 
 - [Minimal](https://github.com/kepano/obsidian-minimal) theme
-- [Minimal Theme Settings](https://obsidian.md/plugins?id=obsidian-minimal-settings)
-- [Hider](https://obsidian.md/plugins?id=obsidian-hider)
-- [ProZen](https://obsidian.md/plugins?id=obsidian-prozen)
-- [Style Settings](https://obsidian.md/plugins?id=obsidian-style-settings)
+- [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings)
+- [Hider](https://github.com/kepano/obsidian-hider)
+- [ProZen](https://github.com/cmoskvitin/obsidian-prozen)
+- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+- [Disable tabs](https://github.com/davidvkimball/obsidian-disable-tabs)
+- [MDX as Markdown](https://github.com/mkozhukharenko/mdx-as-md-obsidian)
 - Custom CSS Snippets
 
 ### Optional Community Plugins (disabled by default)
 
-- Git
+- [Git](https://github.com/denolehov/obsidian-git)
 
 ### Recommended .gitignore
 
