@@ -46,7 +46,7 @@ body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .m
 body:not(.is-mobile) .graph-controls { top: var(--controls-offset) !important; }
 body:not(.is-mobile) .canvas-controls { top: var(--controls-offset) !important; }
 
-/* Push specific base controls to the right of minimize/maximize/close */
-body:not(.is-mobile) .query-toolbar-item.mod-add-note {
+/* Push entire toolbar to the right of minimize/maximize/close */
+body:not(.is-mobile) .bases-toolbar {
   padding-right: var(--toolbar-right-offset) !important;
 }

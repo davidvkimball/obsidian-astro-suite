@@ -84,6 +84,15 @@
 	margin-bottom: 0;
 }
 
+/* Add spacing between settings in custom content types since we removed dividers */
+.custom-content-type-settings > div {
+	margin-bottom: 16px;
+}
+
+.custom-content-type-settings > div:last-child {
+	margin-bottom: 0;
+}
+
 .custom-content-type-settings {
 	transition: all 0.2s ease-in-out;
 }
@@ -91,4 +100,52 @@
 .custom-content-type-settings[style*="none"] {
 	opacity: 0;
 	transform: translateY(-10px);
+}
+
+/* Mobile-specific improvements for Astro Composer modal */
+@media (max-width: 768px) {
+	/* Force mobile positioning for all modals containing our content */
+	.modal:has(.astro-composer-title-input) {
+		position: fixed !important;
+		top: 10% !important;
+		left: 50% !important;
+		transform: translateX(-50%) !important;
+		max-height: 50vh !important;
+		overflow-y: auto !important;
+		width: 90vw !important;
+		max-width: 500px !important;
+	}
+	
+	/* Only target our specific modal content, not all modals */
+	.modal .astro-composer-title-input {
+		font-size: 16px; /* Prevents zoom on iOS */
+		padding: 12px;
+		border: 1px solid var(--background-modifier-border);
+		border-radius: 4px;
+	}
+	
+	/* Ensure our modal content is properly sized on mobile */
+	.modal .astro-composer-button-container {
+		flex-direction: column;
+		gap: 12px;
+	}
+	
+	.modal .astro-composer-cancel-button,
+	.modal .astro-composer-create-button {
+		width: 100%;
+		padding: 12px;
+		font-size: 16px;
+	}
+}
+
+/* Fallback for browsers that don't support :has() */
+.astro-composer-mobile-modal {
+	position: fixed !important;
+	top: 10% !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+	max-height: 50vh !important;
+	overflow-y: auto !important;
+	width: 90vw !important;
+	max-width: 500px !important;
 }
