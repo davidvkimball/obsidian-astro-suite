@@ -3,9 +3,9 @@
   "showViewHeader": false,
   "showRibbon": false,
   "enabledCssSnippets": [
-    "custom-draggable-top-area-windows",
     "hide-tabs-icon-mobile",
     "hide-longpress-flair-mobile",
-    "hide-header-title-mobile"
+    "hide-header-title-mobile",
+    "custom-draggable-top-area-windows"
   ]
 }

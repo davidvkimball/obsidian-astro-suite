@@ -1,0 +1,103 @@
+{
+  "scanDirectories": "post",
+  "keywordProperty": "",
+  "descriptionProperty": "description",
+  "titleProperty": "title",
+  "useFilenameAsTitle": false,
+  "checkContentLength": true,
+  "checkImageNaming": true,
+  "checkDuplicateContent": true,
+  "checkReadingLevel": true,
+  "showNotices": true,
+  "defaultSort": "warnings-desc",
+  "minContentLength": 300,
+  "keywordDensityMin": 1,
+  "keywordDensityMax": 2,
+  "duplicateThreshold": 80,
+  "cachedGlobalResults": [
+    {
+      "file": "post/astro-suite-vault-guide.md",
+      "checks": {
+        "titleLength": [],
+        "metaDescription": [],
+        "keywordInTitle": [],
+        "keywordDensity": [],
+        "headingOrder": [
+          {
+            "passed": true,
+            "message": "Heading structure is correct",
+            "severity": "info"
+          }
+        ],
+        "contentLength": [
+          {
+            "passed": true,
+            "message": "Good content length: 900 words",
+            "severity": "info"
+          }
+        ],
+        "duplicateContent": [
+          {
+            "passed": true,
+            "message": "No other files to compare against",
+            "severity": "info"
+          }
+        ],
+        "altText": [
+          {
+            "passed": true,
+            "message": "All images have alt text",
+            "severity": "info"
+          }
+        ],
+        "imageNaming": [
+          {
+            "passed": true,
+            "message": "All images have good filenames",
+            "severity": "info"
+          }
+        ],
+        "brokenLinks": [
+          {
+            "passed": true,
+            "message": "No broken links found",
+            "severity": "info"
+          }
+        ],
+        "potentiallyBrokenLinks": [
+          {
+            "passed": true,
+            "message": "No potentially broken links found",
+            "severity": "info"
+          }
+        ],
+        "nakedLinks": [
+          {
+            "passed": true,
+            "message": "No naked links found",
+            "severity": "info"
+          }
+        ],
+        "readingLevel": [
+          {
+            "passed": true,
+            "message": "Good reading level: 10.0 (College Prep)",
+            "severity": "info"
+          }
+        ],
+        "notices": [
+          {
+            "passed": false,
+            "message": "Found 1 embedded image(s) that may not work on web",
+            "suggestion": "Ensure images are properly linked and accessible:<br><br>• images/astro-composer-suite-for-obsidian-1.png",
+            "severity": "warning"
+          }
+        ]
+      },
+      "overallScore": 89.5,
+      "issuesCount": 0,
+      "warningsCount": 1
+    }
+  ],
+  "lastScanTimestamp": 1759519821392
+}

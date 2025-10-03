@@ -41,7 +41,7 @@ body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .m
   padding-top: var(--drag-bump) !important;
 }
 
-/* Push entire toolbar to the right of Mac window buttons */
-body:not(.is-mobile) .bases-toolbar {
+/* Push entire toolbar to the right of Mac window buttons (only when left sidebar is closed) */
+body:not(.is-mobile) .workspace:not(.is-left-sidedock-open) .bases-toolbar {
   padding-left: var(--toolbar-left-offset) !important;
 }

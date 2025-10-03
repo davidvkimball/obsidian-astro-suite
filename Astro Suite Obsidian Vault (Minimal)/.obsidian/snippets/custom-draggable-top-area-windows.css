@@ -42,11 +42,15 @@ body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .m
   padding-top: var(--drag-bump) !important;
 }
 
-/* Graph & Canvas controls stay clear of window buttons */
-body:not(.is-mobile) .graph-controls { top: var(--controls-offset) !important; }
-body:not(.is-mobile) .canvas-controls { top: var(--controls-offset) !important; }
+/* Graph & Canvas controls stay clear of window buttons (only when right sidebar is closed) */
+body:not(.is-mobile) .workspace:not(.is-right-sidedock-open) .graph-controls { 
+  top: var(--controls-offset) !important; 
+}
+body:not(.is-mobile) .workspace:not(.is-right-sidedock-open) .canvas-controls { 
+  top: var(--controls-offset) !important; 
+}
 
-/* Push entire toolbar to the right of minimize/maximize/close */
-body:not(.is-mobile) .bases-toolbar {
+/* Push entire toolbar to the right of minimize/maximize/close (only when right sidebar is closed) */
+body:not(.is-mobile) .workspace:not(.is-right-sidedock-open) .bases-toolbar {
   padding-right: var(--toolbar-right-offset) !important;
 }
