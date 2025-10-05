@@ -6,6 +6,7 @@
     "hide-tabs-icon-mobile",
     "hide-longpress-flair-mobile",
     "hide-header-title-mobile",
-    "custom-draggable-top-area-windows"
+    "custom-draggable-top-area-windows",
+    "hide-sync-icon-mobile"
   ]
 }

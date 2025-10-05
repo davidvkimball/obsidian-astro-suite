@@ -1,10 +1,71 @@
 /* SEO Plugin Styles */
 
+/* Loading state styles */
+.seo-loading-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	text-align: center;
+}
+
+.seo-loading-spinner {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	animation: spin 1s linear infinite;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+}
+
+.seo-loading-title {
+	margin: 0 0 0.5rem 0;
+	color: var(--text-normal);
+}
+
+.seo-loading-message {
+	margin: 0;
+	color: var(--text-muted);
+	font-size: 0.9rem;
+}
+
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
 /* Header with flexbox layout */
 .seo-issues-header-container {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+/* Collapsible score section */
+.seo-score-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.seo-score-text {
+	font-size: 0.9rem;
+	color: var(--text-normal);
+	font-weight: normal;
+}
+
+.seo-toggle-icon {
+	color: var(--text-muted);
+	padding: 0.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* Stats container and audit button */
@@ -162,6 +223,12 @@
 	border-color: var(--color-yellow, #eab308);
 }
 
+.seo-check.seo-notice {
+	background: var(--color-blue-bg, rgba(59, 130, 246, 0.1));
+	border-left: 4px solid var(--color-blue, #3b82f6);
+	border-color: var(--color-blue, #3b82f6);
+}
+
 .seo-check.seo-error {
 	background: var(--color-red-bg, rgba(239, 68, 68, 0.1));
 	border-left: 4px solid var(--color-red, #ef4444);
@@ -175,6 +242,10 @@
 
 .seo-check.seo-warning .seo-status svg {
 	color: var(--color-yellow, #eab308);
+}
+
+.seo-check.seo-notice .seo-status svg {
+	color: var(--color-blue, #3b82f6);
 }
 
 .seo-check.seo-error .seo-status svg {
@@ -211,7 +282,6 @@
 
 .seo-result {
 	padding: 0.5rem 0;
-	border-bottom: 1px solid var(--background-modifier-border);
 }
 
 .seo-result:last-child {
@@ -277,7 +347,6 @@
 	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 	gap: 1.5rem;
 	margin-bottom: 0;
-	min-height: 120px;
 }
 
 .seo-stat-item {
@@ -299,6 +368,13 @@
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 500;
+}
+
+.seo-file-count {
+	text-align: center;
+	margin-top: 1rem;
+	color: var(--text-muted);
+	font-size: 0.9rem;
 }
 
 /* Color coding for stats numbers */
@@ -326,6 +402,10 @@
 	color: var(--color-yellow, #eab308) !important;
 }
 
+.seo-notices-count {
+	color: var(--color-blue, #3b82f6) !important;
+}
+
 /* Current note color coding */
 .seo-issues-count-text {
 	color: var(--color-red, #ef4444) !important;
@@ -333,6 +413,10 @@
 
 .seo-warnings-count-text {
 	color: var(--color-yellow, #eab308) !important;
+}
+
+.seo-notices-count-text {
+	color: var(--color-blue, #3b82f6) !important;
 }
 
 .seo-issues-list {
@@ -434,16 +518,16 @@
 }
 
 /* Collapsible header for files with issues */
-.seo-issues-header-container.seo-collapsible-header {
-	cursor: pointer;
-	user-select: none;
+.seo-issues-header-container {
 	padding: 0.5rem;
 	border-radius: 4px;
-	transition: background-color 0.2s ease;
+	cursor: default;
 }
 
-.seo-issues-header-container.seo-collapsible-header:hover {
-	/* Remove hover background */
+/* Only the collapse icon should be clickable */
+.seo-collapse-icon.seo-collapsible-header {
+	cursor: default;
+	user-select: none;
 }
 
 /* Prevent layout shifts */
@@ -452,3 +536,75 @@
 }
 
 /* Ensure consistent spacing - removed problematic overflow hidden */
+
+/* Text overflow handling for long strings */
+.seo-result {
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+
+.seo-suggestion {
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+
+/* Specific handling for long URLs and links */
+.seo-result:has([href*="http"]) {
+	word-break: break-all;
+}
+
+/* Handle long text in check results */
+.seo-check .seo-results {
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.seo-check .seo-result {
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Ensure containers don't overflow */
+.seo-panel {
+	overflow-x: hidden;
+}
+
+.seo-section {
+	overflow-x: hidden;
+}
+
+.seo-check {
+	overflow-x: hidden;
+}
+
+/* Clickable navigation styles */
+.seo-clickable {
+	cursor: pointer !important;
+	text-decoration: underline !important;
+	color: var(--text-accent) !important;
+}
+
+.seo-result-message {
+	display: block;
+	margin-bottom: 0.25rem;
+}
+
+/* Navigation tooltip */
+.seo-clickable[title] {
+	position: relative;
+}
+
+/* Highlight animation for navigation */
+@keyframes seo-highlight {
+	0% { background-color: var(--color-yellow-bg, rgba(234, 179, 8, 0.3)); }
+	100% { background-color: transparent; }
+}
+
+.seo-navigation-highlight {
+	animation: seo-highlight 2s ease-out;
+}
