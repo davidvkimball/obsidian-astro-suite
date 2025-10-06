@@ -608,3 +608,76 @@
 .seo-navigation-highlight {
 	animation: seo-highlight 2s ease-out;
 }
+
+/* Progress indicator styles */
+.seo-progress-container {
+	display: none;
+	margin: 10px 0;
+	padding: 10px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background-color: var(--background-secondary);
+}
+
+.seo-progress-text {
+	margin-bottom: 8px;
+	font-size: 14px;
+	color: var(--text-normal);
+}
+
+.seo-progress-bar-container {
+	width: 100%;
+	height: 8px;
+	background-color: var(--background-modifier-border);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.seo-progress-bar {
+	height: 100%;
+	background-color: var(--interactive-accent);
+	width: 0%;
+	transition: width 0.3s ease;
+}
+
+.seo-progress-cancel {
+	margin-top: 8px;
+	padding: 4px 8px;
+	font-size: 12px;
+	background-color: var(--background-modifier-error);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+/* Dynamic styles for results display */
+.seo-results-list-expanded {
+	display: block;
+}
+
+.seo-results-list-collapsed {
+	display: none;
+}
+
+.seo-clickable-message {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.seo-collapse-icon-rotated {
+	transform: rotate(-90deg);
+}
+
+.seo-collapse-icon-normal {
+	transform: rotate(0deg);
+}
+
+/* Button states */
+.seo-btn-disabled {
+	opacity: 0.7;
+}
+
+.seo-btn-enabled {
+	opacity: 1;
+}

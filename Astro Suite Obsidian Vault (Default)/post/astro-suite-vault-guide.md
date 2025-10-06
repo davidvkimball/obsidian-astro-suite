@@ -116,3 +116,7 @@ Only used temporarily to load Astro Composer, Disable Tabs, and Property Over Fi
 ## Git
 
 The [Git](https://obsidian.md/plugins?id=obsidian-git) plugin is turned off by default, if you turn it on, you can easily publish to your Astro blog without leaving Obsidian using `CTRL + SHIFT + S`. Simply enable the plugin and configure with git to turn it on.
+
+## CSS Snippets
+
+An optional custom CSS snippet is included called `swap-new-tab-icon-with-home-mobile.css` which replaces the new tab button's icon on the mobile view with a home icon. Since opening a new tab using the combination of Default New Tab Page and Homepage plugins opens your "home base" view, the icon better represents what's happening when you tab the button. Disable to bring back the standard plus (`+`) icon. This is off by default, but you can turn it on if you'd like.

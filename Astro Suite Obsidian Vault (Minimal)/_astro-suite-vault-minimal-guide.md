@@ -20,14 +20,6 @@ Fittingly, the [Minimal](https://minimal.guide/home) theme is used.  It uses an 
 
 The [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings), [Hider](https://github.com/kepano/obsidian-hider), and [Style Settings](https://obsidian.md/plugins?id=obsidian-style-settings) community plugins are also installed by default, giving you complete control over your experience. 
 
-## CSS Snippets
-
-A custom CSS snippet called `custom-draggable-top-area.css` makes moving your window is easier when the window frame is hidden and there's no tab bar. The default enabled version is `custom-draggable-top-area-windows.css` which is active by default, and helps with some offsets UI including closing/minimizing/maximizing on Windows, and there's a `custom-draggable-top-area-windows.css` which offers similar functionality for Mac. Use the base version for no offsets, all can be configured in Settings > Appearance > CSS Snippets (make sure to disable the Windows version when another is turned on). None of these are active in mobile.
-
-`hide-tabs-icon-mobile.css` removes the tabs icon in the mobile version of Obsidian. If you disable the Disable Tabs plugin, you may want to disable this snippet as well.
-
-`hide-longpress-flair-mobile.css`, `hide-header-title-mobile.css`, and `hide-sync-icon-mobile.css` are also related to making the mobile interface more simple. Disable any of these snippets to bring the elements back.
-
 ## Important Hotkeys
 
 Because Obsidian's interface has been stripped down to its bare essence, relying on hotkeys is imperative. Here's a guide:
@@ -163,3 +155,13 @@ Only used temporarily to load Astro Composer, Disable Tabs, and Property Over Fi
 ## Git
 
 The [Git](https://obsidian.md/plugins?id=obsidian-git) plugin is turned off by default, if you turn it on, you can easily publish to your Astro blog without leaving Obsidian using `CTRL + SHIFT + S`. Simply enable the plugin and configure with git to turn it on.
+
+## CSS Snippets
+
+A custom CSS snippet called `custom-draggable-top-area.css` makes moving your window is easier when the window frame is hidden and there's no tab bar. The default enabled version is `custom-draggable-top-area-windows.css` which is active by default, and helps with some offsets UI including closing/minimizing/maximizing on Windows, and there's a `custom-draggable-top-area-windows.css` which offers similar functionality for Mac. Use the base version for no offsets, all can be configured in Settings > Appearance > CSS Snippets (make sure to disable the Windows version when another is turned on). None of these are active in mobile.
+
+`hide-tabs-icon-mobile.css` removes the tabs icon in the mobile version of Obsidian. If you disable the Disable Tabs plugin, you may want to disable this snippet as well.
+
+The `swap-new-tab-icon-with-home-mobile.css` snippet does as its file name suggests. Since opening a new tab using the combination of Default New Tab Page and Homepage plugins opens your "home base" view, the icon better represents what's happening when you tab the button. Disable to bring back the standard plus (`+`) icon.
+
+`hide-longpress-flair-mobile.css`, `hide-header-title-mobile.css`, and `hide-sync-icon-mobile.css` are also related to making the mobile interface more simple. Disable any of these snippets to bring the elements back.
