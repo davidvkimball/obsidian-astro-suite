@@ -681,3 +681,15 @@
 .seo-btn-enabled {
 	opacity: 1;
 }
+
+/* File links in suggestions */
+.seo-suggestion a.seo-file-link {
+	color: var(--text-accent);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.seo-suggestion a.seo-file-link:hover {
+	color: var(--text-accent-hover);
+	text-decoration: underline;
+}
