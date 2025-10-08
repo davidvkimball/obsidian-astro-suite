@@ -122,6 +122,11 @@
   background-color: var(--text-error-hover);
 }
 
+/* Hidden modal utility class - SCOPED to plugin only */
+.property-over-filename-modal .modal.hidden {
+  display: none !important;
+}
+
 /* Mobile-specific adjustments - SCOPED to plugin only */
 @media (max-width: 768px) {
   .property-over-filename-suggestion .suggestion-content {
