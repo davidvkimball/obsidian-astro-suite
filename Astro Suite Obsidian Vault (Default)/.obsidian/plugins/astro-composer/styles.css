@@ -28,7 +28,7 @@
 }
 
 .astro-composer-template-textarea {
-	height: 300px; /* Adjusted for 5-10 lines of frontmatter */
+	height: 300px; /* Adjusted for 5-10 lines of properties */
 	width: 100%;
 	padding: 8px;
 	resize: vertical; /* Allow vertical resizing */
@@ -148,4 +148,28 @@
 	overflow-y: auto !important;
 	width: 90vw !important;
 	max-width: 500px !important;
+}
+
+/* Settings UI utility classes */
+.astro-composer-setting-container-visible {
+	display: block;
+}
+
+.astro-composer-setting-container-hidden {
+	display: none;
+}
+
+.astro-composer-custom-type-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 0;
+}
+
+.astro-composer-remove-setting {
+	border-top: none;
+}
+
+.astro-composer-add-button {
+	border-top: none;
 }

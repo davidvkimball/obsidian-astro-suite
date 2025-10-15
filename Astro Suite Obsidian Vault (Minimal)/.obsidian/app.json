@@ -34,5 +34,6 @@
     "astro-composer:convert-wikilinks-astro",
     "editor:configure-toolbar"
   ],
-  "mobileQuickRibbonItem": "command-palette:Open command palette"
+  "mobileQuickRibbonItem": "command-palette:Open command palette",
+  "newLinkFormat": "absolute"
 }

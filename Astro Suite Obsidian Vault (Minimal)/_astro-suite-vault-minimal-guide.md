@@ -2,7 +2,7 @@
 title: Astro Suite Vault (Minimal) Guide
 pubDate: 2025-08-25
 ---
-![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](astro-composer-suite-for-obsidian.png)
+![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](./_assets/astro-composer-suite-for-obsidian.png)
 
 ## Overview
 

@@ -1,5 +1,12 @@
 /* SEO Plugin Styles */
 
+/* Center heading for "Files that pass" section */
+.seo-heading-center {
+	display: flex;
+	justify-content: center;
+	flex: 1;
+}
+
 /* Loading state styles */
 .seo-loading-container {
 	display: flex;
