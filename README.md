@@ -13,10 +13,30 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 - Easy integration into Astro website projects
 - Preconfigured plugins, hotkeys and settings optimized for Astro workflows
 - CMS-like homepage using Obsidian Bases
-- Default and Minimal theme options
+- Default, Minimal, and Docs options optimized for different Astro themes
 - Optional instant-publish option via the Git plugin
 
 <img width="1920" height="1080" alt="astro-suite-preview" src="https://github.com/user-attachments/assets/0ee3837b-9ebe-4bd9-92e4-2c7e84efd57c" />
+
+## Installation Guide
+
+1. Clone or install your Astro theme of choice.
+2. Clone or download a zip of this repo.
+3. Open the folder of the version you want (Default, Minimal, or Docs)
+4. Copy the contents of that folder into the proper directory depending on your theme (see below)
+5. Open Obsidian and select the "Open folder as vault" option, and select the folder with the `.obsidian` folder in it.
+
+### Default
+
+Optimized for [Slate blog](https://github.com/SlateDesign/slate-blog), but the most general-purpose option. Copy folder contents in the `src/content` folder.
+
+####  Minimal 
+
+Optimized for [Chiri](https://github.com/the3ash/astro-chiri), a far more opinionated vault prioritizing visual minimalism. Copy folder contents in the `src/content/posts` folder.
+
+### Docs 
+
+Optimized for [Starlight](https://github.com/withastro/starlight), Astro's starter documentation theme. Copy folder contents in the `src/content` folder.
 
 ### Included Community Plugins
 - [Astro Composer](https://github.com/davidvkimball/obsidian-astro-composer)
