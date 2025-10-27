@@ -18,6 +18,9 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 
 <img width="1920" height="1080" alt="astro-suite-preview" src="https://github.com/user-attachments/assets/0ee3837b-9ebe-4bd9-92e4-2c7e84efd57c" />
 
+> [!NOTE]
+> To see an Astro Suite Obsidian vault combined with a live Astro website, check out my theme [Astro Modular](https://github.com/davidvkimball/astro-modular).
+
 ## Installation Guide
 
 1. Clone or install your Astro theme of choice.
