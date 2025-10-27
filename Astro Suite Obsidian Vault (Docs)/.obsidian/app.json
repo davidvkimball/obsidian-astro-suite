@@ -28,5 +28,6 @@
     "astro-composer:standardize-properties",
     "astro-composer:convert-wikilinks-astro",
     "editor:configure-toolbar"
-  ]
+  ],
+  "newFileLocation": "current"
 }

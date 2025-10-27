@@ -151,7 +151,7 @@ Commander helps us place a button for each of these actions on the file explorer
 
 ### BRAT (Temporary)
 
-Only used temporarily to load Astro Composer, Disable Tabs, and Property Over Filename plugins before they're available in the Obsidian plugin directory. Future versions of this vault will remove BRAT in favor of the official releases.
+Only used temporarily to load Astro Composer, Disable Tabs, SEO, and Property Over Filename plugins before they're available in the Obsidian plugin directory. Future versions of this vault will remove BRAT in favor of the official releases.
 
 ## Git
 

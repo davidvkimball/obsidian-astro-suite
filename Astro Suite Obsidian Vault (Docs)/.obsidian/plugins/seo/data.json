@@ -8,7 +8,7 @@
   "slugProperty": "",
   "useFilenameAsSlug": true,
   "parentFolderSlugFilename": "",
-  "titlePrefixSuffix": "",
+  "titlePrefixSuffix": "| My Docs",
   "checkTitleLength": true,
   "checkHeadingOrder": true,
   "checkAltText": true,
