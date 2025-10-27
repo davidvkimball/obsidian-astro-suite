@@ -1,14 +1,31 @@
 {
   "scanDirectories": "",
+  "ignoreUnderscoreFiles": true,
   "keywordProperty": "",
-  "descriptionProperty": "",
-  "titleProperty": "",
+  "descriptionProperty": "description",
+  "titleProperty": "title",
   "useFilenameAsTitle": false,
-  "checkContentLength": true,
+  "slugProperty": "",
+  "useFilenameAsSlug": true,
+  "parentFolderSlugFilename": "",
+  "titlePrefixSuffix": "· CHIRI",
+  "checkTitleLength": true,
+  "checkHeadingOrder": true,
+  "checkAltText": true,
   "checkImageNaming": true,
-  "checkDuplicateContent": true,
+  "checkBrokenLinks": true,
+  "checkExternalLinks": true,
+  "enableExternalLinkButton": true,
+  "enableExternalLinkVaultCheck": false,
+  "checkNakedLinks": true,
+  "checkContentLength": true,
+  "checkDuplicateContent": false,
   "checkReadingLevel": true,
-  "showNotices": true,
+  "checkPotentiallyBrokenLinks": true,
+  "checkPotentiallyBrokenEmbeds": true,
+  "useNoteTitles": true,
+  "skipH1Check": true,
+  "publishMode": true,
   "defaultSort": "warnings-desc",
   "minContentLength": 300,
   "keywordDensityMin": 1,
@@ -16,11 +33,36 @@
   "duplicateThreshold": 80,
   "cachedGlobalResults": [
     {
-      "file": "_astro-suite-vault-minimal-guide.md",
+      "file": "astro-suite-vault-minimal-guide.md",
+      "displayName": "Astro Suite Vault (Minimal) Guide",
       "checks": {
-        "titleLength": [],
-        "metaDescription": [],
+        "titleLength": [
+          {
+            "passed": true,
+            "message": "Good title length: 41 characters (Astro Suite Vault (Minimal) Guide + \" · CHIRI\")",
+            "severity": "info"
+          }
+        ],
+        "metaDescription": [
+          {
+            "passed": false,
+            "message": "No description found in frontmatter",
+            "suggestion": "Add description to frontmatter",
+            "severity": "warning"
+          }
+        ],
+        "titleH1Uniqueness": [
+          {
+            "passed": true,
+            "message": "Meta title and H1 are unique (prefix/suffix configured)",
+            "severity": "info"
+          }
+        ],
         "keywordInTitle": [],
+        "keywordInDescription": [],
+        "keywordInHeadings": [],
+        "keywordInSlug": [],
+        "slugFormat": [],
         "keywordDensity": [],
         "headingOrder": [
           {
@@ -32,17 +74,13 @@
         "contentLength": [
           {
             "passed": true,
-            "message": "Good content length: 1480 words",
+            "message": "Good content length: 1540 words",
             "severity": "info"
           }
         ],
-        "duplicateContent": [
-          {
-            "passed": true,
-            "message": "No other files to compare against",
-            "severity": "info"
-          }
-        ],
+        "duplicateTitles": [],
+        "duplicateDescriptions": [],
+        "duplicateContent": [],
         "altText": [
           {
             "passed": true,
@@ -50,24 +88,10 @@
             "severity": "info"
           }
         ],
-        "imageNaming": [
+        "imageFileNames": [
           {
             "passed": true,
-            "message": "All images have good filenames",
-            "severity": "info"
-          }
-        ],
-        "brokenLinks": [
-          {
-            "passed": true,
-            "message": "No broken links found",
-            "severity": "info"
-          }
-        ],
-        "potentiallyBrokenLinks": [
-          {
-            "passed": true,
-            "message": "No potentially broken links found",
+            "message": "All images have good file names",
             "severity": "info"
           }
         ],
@@ -78,26 +102,103 @@
             "severity": "info"
           }
         ],
-        "readingLevel": [
+        "brokenLinks": [
           {
             "passed": true,
-            "message": "Good reading level: 10.0 (College Prep)",
+            "message": "No broken internal links found",
             "severity": "info"
           }
         ],
-        "notices": [
+        "potentiallyBrokenLinks": [
           {
-            "passed": false,
-            "message": "Found 1 embedded image(s) that may not work on web",
-            "suggestion": "Ensure images are properly linked and accessible:<br><br>• astro-composer-suite-for-obsidian.png",
-            "severity": "warning"
+            "passed": true,
+            "message": "No potentially broken links found",
+            "severity": "info"
+          }
+        ],
+        "potentiallyBrokenEmbeds": [],
+        "externalBrokenLinks": [
+          {
+            "passed": true,
+            "message": "External link: https://github.com/the3ash/astro-chiri",
+            "suggestion": "To find if any of these are broken, use the 'Check external links for 404s' button to trigger it.",
+            "severity": "notice",
+            "position": {
+              "line": 9,
+              "searchText": "https://github.com/the3ash/astro-chiri",
+              "context": "## Overview\n\nAll plugins, key bindings, and the theme can be customized to your liking, but this is what's on by default. Optimized for use with the [Chiri Astro theme](https://github.com/the3ash/astro-chiri).\n\n## Philosophy "
+            }
+          },
+          {
+            "passed": true,
+            "message": "External link: https://minimal.guide/home",
+            "suggestion": "To find if any of these are broken, use the 'Check external links for 404s' button to trigger it.",
+            "severity": "notice",
+            "position": {
+              "line": 19,
+              "searchText": "https://minimal.guide/home",
+              "context": "## Theme\n\nFittingly, the [Minimal](https://minimal.guide/home) theme is used.  It uses an understated color scheme with high contract options. \n\nThe [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings), [Hider](https://github.com/kepano/obsidian-hider), and [Style Settings](https://obsidian.md/plugins?id=obsidian-style-settings) community plugins are also installed by default, giving you complete control over your experience. "
+            }
+          },
+          {
+            "passed": true,
+            "message": "External link: https://github.com/kepano/obsidian-minimal-settings",
+            "suggestion": "To find if any of these are broken, use the 'Check external links for 404s' button to trigger it.",
+            "severity": "notice",
+            "position": {
+              "line": 21,
+              "searchText": "https://github.com/kepano/obsidian-minimal-settings",
+              "context": "Fittingly, the [Minimal](https://minimal.guide/home) theme is used.  It uses an understated color scheme with high contract options. \n\nThe [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings), [Hider](https://github.com/kepano/obsidian-hider), and [Style Settings](https://obsidian.md/plugins?id=obsidian-style-settings) community plugins are also installed by default, giving you complete control over your experience. \n\n## Important Hotkeys"
+            }
+          },
+          {
+            "passed": true,
+            "message": "External link: https://github.com/kepano/obsidian-hider",
+            "suggestion": "To find if any of these are broken, use the 'Check external links for 404s' button to trigger it.",
+            "severity": "notice",
+            "position": {
+              "line": 21,
+              "searchText": "https://github.com/kepano/obsidian-hider",
+              "context": "Fittingly, the [Minimal](https://minimal.guide/home) theme is used.  It uses an understated color scheme with high contract options. \n\nThe [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings), [Hider](https://github.com/kepano/obsidian-hider), and [Style Settings](https://obsidian.md/plugins?id=obsidian-style-settings) community plugins are also installed by default, giving you complete control over your experience. \n\n## Important Hotkeys"
+            }
+          },
+          {
+            "passed": true,
+            "message": "External link: https://obsidian.md/plugins?id=obsidian-style-settings",
+            "suggestion": "To find if any of these are broken, use the 'Check external links for 404s' button to trigger it.",
+            "severity": "notice",
+            "position": {
+              "line": 21,
+              "searchText": "https://obsidian.md/plugins?id=obsidian-style-settings",
+              "context": "Fittingly, the [Minimal](https://minimal.guide/home) theme is used.  It uses an understated color scheme with high contract options. \n\nThe [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings), [Hider](https://github.com/kepano/obsidian-hider), and [Style Settings](https://obsidian.md/plugins?id=obsidian-style-settings) community plugins are also installed by default, giving you complete control over your experience. \n\n## Important Hotkeys"
+            }
+          },
+          {
+            "passed": true,
+            "message": "External link: https://obsidian.md/plugins?id=obsidian-git",
+            "suggestion": "To find if any of these are broken, use the 'Check external links for 404s' button to trigger it.",
+            "severity": "notice",
+            "position": {
+              "line": 158,
+              "searchText": "https://obsidian.md/plugins?id=obsidian-git",
+              "context": "## Git\n\nThe [Git](https://obsidian.md/plugins?id=obsidian-git) plugin is turned off by default, if you turn it on, you can easily publish to your Astro blog without leaving Obsidian using `CTRL + SHIFT + S`. Simply enable the plugin and configure with git to turn it on.\n\n## CSS Snippets"
+            }
+          }
+        ],
+        "readingLevel": [
+          {
+            "passed": true,
+            "message": "Good reading level: 9.4 (Moderately easy to read)",
+            "severity": "info"
           }
         ]
       },
-      "overallScore": 89.5,
+      "overallScore": 90.4090909090909,
       "issuesCount": 0,
-      "warningsCount": 1
+      "warningsCount": 1,
+      "noticesCount": 6
     }
   ],
-  "lastScanTimestamp": 1759519962432
+  "lastScanTimestamp": 1761542447738,
+  "showNotices": true
 }
