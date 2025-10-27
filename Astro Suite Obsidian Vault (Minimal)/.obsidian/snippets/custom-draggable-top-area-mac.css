@@ -40,6 +40,10 @@ body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .c
 body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
   padding-top: var(--drag-bump) !important;
 }
+body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .document-search-container {
+  margin-top: var(--drag-bump) !important; /* Match note content offset */
+  z-index: 12 !important; /* Above titlebar and inline-title */
+}
 
 /* Push entire toolbar to the right of Mac window buttons (only when left sidebar is closed) */
 body:not(.is-mobile) .workspace:not(.is-left-sidedock-open) .bases-toolbar {

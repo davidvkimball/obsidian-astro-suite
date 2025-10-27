@@ -41,6 +41,7 @@ Because Obsidian's interface has been stripped down to its bare essence, relying
 - Custom save: `CTRL + S
 - Insert image: `CTRL + '`
 - Start Terminal: `CTRL + SHIFT + D`
+- Open Astro config file: `CTRL + SHIFT + ,`
 - Git: Commit and Sync `CTRL + SHIFT + S` (off by default)
 
 If you're on Mac, `CTRL` = `CMD`.
@@ -134,7 +135,7 @@ This plugin is a great alternative if you don't prefer to use Hider to remove th
 
 ### mdx as md
 
-This is just for any Astro theme that uses `.mdx` in addition to `.md`, such as Chiri. Unfortunately there's not yet a way to have Bases read properties from `.mdx` files so while the files themselves will appear, the file's properties won't appear on the homepage `.base` view. 
+This is so you can see and edit the contents of any `.mdx` in addition to `.md`. Unfortunately there's not yet a way to have Bases read properties from `.mdx` files so while the files themselves will appear, the file's properties won't appear on the homepage `.base` view. 
 
 ### Shell commands and Commander
 

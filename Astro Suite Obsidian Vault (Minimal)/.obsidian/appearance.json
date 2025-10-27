@@ -6,8 +6,8 @@
     "hide-tabs-icon-mobile",
     "hide-longpress-flair-mobile",
     "hide-header-title-mobile",
-    "custom-draggable-top-area-windows",
     "hide-sync-icon-mobile",
-    "swap-new-tab-icon-with-home-mobile"
+    "swap-new-tab-icon-with-home-mobile",
+    "custom-draggable-top-area-windows"
   ]
 }

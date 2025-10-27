@@ -1,6 +1,6 @@
 /* --- knobs --- */
 body:not(.is-mobile) {
-  --drag-bump: 8px;           /* bump for notes */
+  --drag-bump: 12px;          /* Increased bump for notes and find/replace */
   --controls-offset: 48px;    /* graph/canvas controls offset */
   --toolbar-right-offset: 130px; /* padding for base controls */
 }
@@ -40,6 +40,10 @@ body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .v
 body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .cm-scroller,
 body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
   padding-top: var(--drag-bump) !important;
+}
+body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .document-search-container {
+  margin-top: var(--drag-bump) !important; /* Match note content offset */
+  z-index: 12 !important; /* Above titlebar and inline-title */
 }
 
 /* Graph & Canvas controls stay clear of window buttons (only when right sidebar is closed) */

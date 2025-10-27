@@ -1,0 +1,14 @@
+{
+	"id": "custom-save",
+	"name": "Custom save",
+	"version": "1.0.9",
+	"minAppVersion": "0.15.0",
+	"description": "Run any commands when you save a file in the editor",
+	"author": "HananoshikaYomaru",
+	"authorUrl": "https://yomaru.dev",
+	"fundingUrl": {
+		"buymeacoffee": "https://www.buymeacoffee.com/yomaru",
+		"Github Sponsor": "https://github.com/sponsors/HananoshikaYomaru"
+	},
+	"isDesktopOnly": false
+}

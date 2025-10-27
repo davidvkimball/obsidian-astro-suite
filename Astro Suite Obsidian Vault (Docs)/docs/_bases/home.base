@@ -1,0 +1,18 @@
+filters:
+  and:
+    - file.ext == "md"
+properties:
+  note.pubDate:
+    displayName: Date
+  note.draft:
+    displayName: Draft
+views:
+  - type: cards
+    name: Cards
+    order:
+      - title
+      - description
+    sort:
+      - property: pubDate
+        direction: DESC
+    cardSize: 240

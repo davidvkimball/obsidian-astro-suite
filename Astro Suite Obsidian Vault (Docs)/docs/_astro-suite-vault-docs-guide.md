@@ -1,20 +1,16 @@
 ---
-title: Astro Suite Vault Guide
-description: Explanation of the Astro Suite Obsidian vault.
-tags:
-  - Meta
-pubDate: 2025-08-23
-draft: true
+title: Astro Suite Vault (Docs) Guide
+description: A guide for this Obsidian Vault.
 ---
-![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](images/astro-composer-suite-for-obsidian.png)
+![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](docs/attachments/astro-composer-suite-for-obsidian.png)
 
 ## Overview
 
-All plugins, key bindings, and the theme can be customized to your liking, but this is what's on by default. Optimized for use with [Slate Astro theme](https://github.com/SlateDesign/slate-blog).
+All plugins, key bindings, and the theme can be customized to your liking, but this is what's on by default. Optimized for use with [Starlight Astro theme](https://github.com/withastro/starlight).
 
 ## Philosophy 
 
-1. Plug-and-play Astro blogging experience.
+1. Plug-and-play Astro documentation experience.
 2. Maintain vanilla Obsidian look and feel.
 3. Emphasis on clarity and flexibility. 
 ## Important Hotkeys
@@ -54,13 +50,14 @@ Community plugins enabled:
 - Default New Tab Page
 - Homepage
 - Image Inserter
+- mdx as md
 - Paste image rename
 - Shell commands
 - Title-Only Tab
 
 ### Astro Composer 
 
-Handy for easily creating new notes as Astro blog posts. Just create a new note with `CTRL + N`, type in a title in Title case or with special characters, and the note or folder name generated is a kebab-case version of the title without special characters. This is ideal for automating post slugs. `CTRL + R` allows you to easily rename blog posts, and note filenames (or parent folders) get updated in kebab-case automatically.
+Handy for easily creating new notes as Astro docs. Just create a new note with `CTRL + N`, type in a title in Title case or with special characters, and the note name generated is a kebab-case version of the title without special characters. This is ideal for automating doc page slugs. `CTRL + R` allows you to easily rename docs, and note filenames get updated in kebab-case automatically.
 
 You can also define and set default properties that can be generated automatically or manually set for any open note as well.
 
@@ -98,13 +95,17 @@ When linking or searching notes, you can use the `title` property as its primary
 
 When you link to another note, its `title` is automatically set as the hyperlinked text, but you can easily change it to something else after it's been inserted.
 
+### mdx as md
+
+This is so you can see and edit the contents of any `.mdx` in addition to `.md`. Unfortunately there's not yet a way to have Bases read properties from `.mdx` files so while the files themselves will appear, the file's properties won't appear on the homepage `.base` view. 
+
 ### Shell commands and Commander
 
 Shell commands helps us open two things quickly: terminal and Astro's `config.ts` file. 
 
 To open terminal quickly, use the `Start Terminal` command. It's been modified for Windows, macOS, and Linux to start terminal in the relevant directory so you can easily do standard package manager commands like `npm` or `pnpm`. It can be activated with `CTRL + SHIFT + D`. 
 
-To open your `config.ts` file quickly, simply use the `Astro Configuration` command. You can also press `CTRL + SHIFT + ,` to open it with your default application. 
+To open your `astro.config.mjs` file quickly, simply use the `Astro Configuration` command. You can also press `CTRL + SHIFT + ,` to open it with your default application. 
 
 Commander helps us place a button for each of these actions on the file explorer UI.
 

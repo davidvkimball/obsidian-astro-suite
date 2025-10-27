@@ -1,0 +1,32 @@
+{
+  "pluginList": [
+    "davidvkimball/obsidian-property-over-file-name",
+    "davidvkimball/obsidian-seo",
+    "davidvkimball/obsidian-astro-composer"
+  ],
+  "pluginSubListFrozenVersion": [
+    {
+      "repo": "davidvkimball/obsidian-property-over-file-name",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-seo",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-astro-composer",
+      "version": "latest"
+    }
+  ],
+  "themesList": [],
+  "updateAtStartup": true,
+  "updateThemesAtStartup": true,
+  "enableAfterInstall": true,
+  "loggingEnabled": false,
+  "loggingPath": "BRAT-log",
+  "loggingVerboseEnabled": false,
+  "debuggingMode": false,
+  "notificationsEnabled": true,
+  "personalAccessToken": "",
+  "selectLatestPluginVersionByDefault": false
+}
