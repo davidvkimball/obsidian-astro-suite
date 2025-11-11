@@ -643,7 +643,7 @@
 .seo-progress-bar {
 	height: 100%;
 	background-color: var(--interactive-accent);
-	width: 0%;
+	width: var(--seo-progress-width, 0%);
 	transition: width 0.3s ease;
 }
 
@@ -699,4 +699,40 @@
 .seo-suggestion a.seo-file-link:hover {
 	color: var(--text-accent-hover);
 	text-decoration: underline;
+}
+
+/* Styles for dynamic elements that were previously set via JavaScript */
+.seo-header-hidden {
+	display: none !important;
+}
+
+.seo-header-visible {
+	display: block !important;
+}
+
+.seo-no-results-message {
+	margin-top: 10px;
+	padding: 8px;
+	background-color: var(--background-secondary);
+	border-radius: 4px;
+	font-size: 12px;
+	color: var(--text-muted);
+}
+
+.seo-progress-container-visible {
+	display: block !important;
+}
+
+.seo-progress-container-hidden {
+	display: none !important;
+}
+
+.seo-progress-bar-dynamic {
+	transition: width 0.3s ease;
+}
+
+.seo-warning-message {
+	color: #ff6b6b;
+	font-weight: bold;
+	margin-top: 4px;
 }
