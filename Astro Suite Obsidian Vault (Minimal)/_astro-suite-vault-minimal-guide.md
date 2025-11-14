@@ -72,6 +72,7 @@ Community plugins enabled:
 - Paste image rename
 - Property Over Filename
 - ProZen
+- Settings Search
 - Shell commands
 - Style Settings
 - Title-Only Tab
@@ -148,6 +149,10 @@ To open your `config.ts` file quickly, simply use the `Astro Configuration` comm
 Commander helps us place a button for each of these actions on the file explorer UI, which is hidden by default in this theme anyway. Toggle "Hide file explorer buttons" in the Hider plugin to reveal.
 
 **Linux user warning:** on Linux, there isn't a universal method to open the default terminal. Additionally, the widely used Flatpak (via Flathub) employs non-trivial sandboxing, which introduces further challenges. 
+
+### Settings Search
+
+Simply provides a global search option for all settings in Obsidian.
 
 ### BRAT (Temporary)
 

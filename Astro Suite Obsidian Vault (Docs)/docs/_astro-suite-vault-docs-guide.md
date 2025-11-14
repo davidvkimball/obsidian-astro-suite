@@ -39,7 +39,6 @@ Disabled default core plugins:
 - Note composer
 - Outgoing links
 - Page preview
-- Property Over Filename
 - Templates
 - Sync
 
@@ -52,6 +51,8 @@ Community plugins enabled:
 - Image Inserter
 - mdx as md
 - Paste image rename
+- Property Over Filename
+- Settings Search
 - Shell commands
 - Title-Only Tab
 
@@ -110,6 +111,10 @@ To open your `astro.config.mjs` file quickly, simply use the `Astro Configuratio
 Commander helps us place a button for each of these actions on the file explorer UI.
 
 **Linux user warning:** on Linux, there isn't a universal method to open the default terminal. Additionally, the widely used Flatpak (via Flathub) employs non-trivial sandboxing, which introduces further challenges. 
+
+### Settings Search
+
+Simply provides a global search option for all settings in Obsidian.
 
 ### BRAT (Temporary)
 

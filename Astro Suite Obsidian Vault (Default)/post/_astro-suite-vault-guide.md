@@ -43,7 +43,6 @@ Disabled default core plugins:
 - Note composer
 - Outgoing links
 - Page preview
-- Property Over Filename
 - Templates
 - Sync
 
@@ -55,7 +54,10 @@ Community plugins enabled:
 - Homepage
 - Image Inserter
 - Paste image rename
+- Property Over Filename
+- Settings Search
 - Shell commands
+- Tag Wrangler
 - Title-Only Tab
 
 ### Astro Composer 
@@ -88,6 +90,10 @@ Quickly drag and drop image files or paste directly from your clipboard and give
 
 Pull in images from Unsplash or other sources easily with just a few keystrokes. Just use `CTRL + '` to insert an image - and immediately set a SEO-friendly filename for it via the Paste Image Rename plugin.
 
+### Tag Wrangler
+
+Makes managing tabs more useful. Can easily bulk-rename tags or search your content by tags.
+
 ### Title-Only Tab
 
 Pulls from the `title` property instead of using the filename for any tab.
@@ -109,6 +115,10 @@ To open your `config.ts` file quickly, simply use the `Astro Configuration` comm
 Commander helps us place a button for each of these actions on the file explorer UI.
 
 **Linux user warning:** on Linux, there isn't a universal method to open the default terminal. Additionally, the widely used Flatpak (via Flathub) employs non-trivial sandboxing, which introduces further challenges. 
+
+### Settings Search
+
+Simply provides a global search option for all settings in Obsidian.
 
 ### BRAT (Temporary)
 

@@ -2,7 +2,7 @@
   "version": 4,
   "homepages": {
     "Main Homepage": {
-      "value": "docs/_bases/home.base",
+      "value": "_bases/home.base",
       "kind": "File",
       "openOnStartup": true,
       "openMode": "Replace all open notes",
