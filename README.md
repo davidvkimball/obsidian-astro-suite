@@ -16,10 +16,11 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 - Default, Minimal, and Docs options optimized for different Astro themes
 - Optional instant-publish option via the Git plugin
 
-<img width="1920" height="1080" alt="astro-suite-preview" src="https://github.com/user-attachments/assets/0ee3837b-9ebe-4bd9-92e4-2c7e84efd57c" />
+<img width="1920" height="1080" alt="astro-suite-preview" src="https://github.com/user-attachments/assets/7bf58b29-f393-4fdf-8e0d-ae1254fab045" />
+
 
 > [!NOTE]
-> To see an Astro Suite Obsidian vault combined with a live Astro website, check out my theme [Astro Modular](https://github.com/davidvkimball/astro-modular).
+> To see an Astro Suite Obsidian vault combined with an Astro site specifically designed with it in mind, check out my theme [Astro Modular](https://github.com/davidvkimball/astro-modular).
 
 ## Installation Guide
 
@@ -28,6 +29,10 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 3. Open the folder of the version you want (Default, Minimal, or Docs)
 4. Copy the contents of that folder into the proper directory depending on your theme (see below)
 5. Open Obsidian and select the "Open folder as vault" option, and select the folder with the `.obsidian` folder in it.
+
+## Vaults
+
+Each vault has preconfigured settings and plugins that match its intended use case / Astro theme.
 
 ### Default
 
@@ -40,33 +45,6 @@ Optimized for [Chiri](https://github.com/the3ash/astro-chiri), a far more opinio
 ### Docs 
 
 Optimized for [Starlight](https://github.com/withastro/starlight), Astro's starter documentation theme. Copy folder contents in the `src/content` folder.
-
-### Included Community Plugins
-- [Astro Composer](https://github.com/davidvkimball/obsidian-astro-composer)
-- [Commander](https://github.com/phibr0/obsidian-commander)
-- [Custom save](https://github.com/HananoshikaYomaru/obsidian-custom-save)
-- [Default New Tab Page](https://github.com/chrisgrieser/new-tab-default-page)
-- [Homepage](https://github.com/mirnovov/obsidian-homepage)
-- [Image Inserter](https://github.com/cloudy9101/obsidian-image-inserter)
-- [Paste image rename](https://github.com/reorx/obsidian-paste-image-rename)
-- [Property over filename](https://github.com/davidvkimball/obsidian-property-over-filename)
-- [Shell commands](https://github.com/Taitava/obsidian-shellcommands)
-- [Title-Only Tab](https://github.com/tristone13th/obsidian-title-only-tab)
-
-#### Minimal adds: 
-
-- [Minimal](https://github.com/kepano/obsidian-minimal) theme
-- [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings)
-- [Hider](https://github.com/kepano/obsidian-hider)
-- [ProZen](https://github.com/cmoskvitin/obsidian-prozen)
-- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
-- [Disable tabs](https://github.com/davidvkimball/obsidian-disable-tabs)
-- [MDX as Markdown](https://github.com/mkozhukharenko/mdx-as-md-obsidian)
-- Custom CSS Snippets
-
-### Optional Community Plugins (disabled by default)
-
-- [Git](https://github.com/denolehov/obsidian-git)
 
 ### Recommended .gitignore
 
