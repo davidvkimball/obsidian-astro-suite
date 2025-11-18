@@ -1,11 +1,16 @@
 {
   "pluginList": [
+    "davidvkimball/obsidian-bases-cms",
     "davidvkimball/obsidian-property-over-file-name",
     "davidvkimball/obsidian-seo",
     "davidvkimball/obsidian-disable-tabs",
     "davidvkimball/obsidian-astro-composer"
   ],
   "pluginSubListFrozenVersion": [
+    {
+      "repo": "davidvkimball/obsidian-bases-cms",
+      "version": "latest"
+    },
     {
       "repo": "davidvkimball/obsidian-property-over-file-name",
       "version": "latest"

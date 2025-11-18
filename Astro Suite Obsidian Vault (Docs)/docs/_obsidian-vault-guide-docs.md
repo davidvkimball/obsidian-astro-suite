@@ -1,5 +1,5 @@
 ---
-title: Astro Suite Vault (Docs) Guide
+title: "Obsidian Vault Guide (Docs)"
 description: A guide for this Obsidian Vault.
 ---
 ![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](docs/attachments/astro-composer-suite-for-obsidian.png)
@@ -24,9 +24,12 @@ Here's a guide for some important hotkeys set especially for this theme:
 - Toggle reading view: `CTRL + E`
 - Toggle Zen mode: `CTRL + SHIFT + Z`
 - Insert image: `CTRL + '`
+- Rename current doc: `CTRL + R` 
 - Start Terminal: `CTRL + SHIFT + D`
 - Open Astro config file: `CTRL + SHIFT + ,`
 - Git: Commit and Sync `CTRL + SHIFT + S` (off by default)
+- Reload Obsidian (without saving): `CTRL + SHIFT + R`
+- Toggle light/dark mode: `CTRL + SHIFT + M`
 
 If you're on Mac, `CTRL` = `CMD`.
 ## Plugins 

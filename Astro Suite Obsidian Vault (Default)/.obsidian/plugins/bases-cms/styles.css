@@ -1,0 +1,779 @@
+/**
+ * Bases CMS Plugin Styles
+ * Based on Dynamic Views card styling
+ */
+
+/* ============================================
+   VIEW ICON STYLING
+   ============================================ */
+
+/* Ensure CMS view icon matches other view icons */
+.bases-view-selector [data-view-type="bases-cms"] svg,
+.bases-view-selector [data-view-type="bases-cms"] .lucide-blocks {
+	opacity: var(--icon-opacity);
+	color: var(--icon-color);
+}
+
+.bases-view-selector [data-view-type="bases-cms"]:hover svg,
+.bases-view-selector [data-view-type="bases-cms"]:hover .lucide-blocks {
+	opacity: var(--icon-opacity-hover);
+}
+
+/* ============================================
+   CONTAINER & GRID LAYOUT
+   ============================================ */
+
+.bases-cms-container {
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.bases-cms-grid {
+	display: grid;
+	grid-template-columns: repeat(var(--grid-columns, 1), 1fr);
+	gap: 8px;
+	align-items: stretch;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	padding: var(--size-4-3);
+}
+
+.bases-cms-group {
+	display: grid;
+	grid-column: 1 / -1;
+	grid-template-columns: subgrid;
+	row-gap: var(--size-4-3);
+	padding: 0 0 var(--size-4-4) 0;
+	border-color: var(--background-modifier-border);
+	border-width: 0 0 1px 0;
+	border-style: solid;
+}
+
+.bases-cms-group:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.bases-cms-group-heading {
+	grid-column: 1 / -1;
+	padding: var(--size-4-1) 0 0;
+}
+
+.bases-cms-group-value {
+	font-size: 0.9em;
+	color: var(--text-muted);
+}
+
+/* ============================================
+   CARD STYLING
+   ============================================ */
+
+.bases-cms-grid .card {
+	margin: 0 !important;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	min-width: 0;
+	overflow: visible;
+}
+
+.bases-cms-grid .card .card-content ~ .card-properties,
+.bases-cms-grid .card .card-title ~ .card-properties {
+	margin-top: auto;
+	padding-top: var(--dynamic-views-element-spacing, 8px);
+}
+
+.card {
+	border: 1px solid var(--dynamic-views-card-border-color, var(--background-modifier-border));
+	border-radius: var(--dynamic-views-card-border-radius, 8px);
+	padding: 12px;
+	margin: var(--dynamic-views-card-spacing, 8px) 0;
+	background-color: var(--background-primary-alt);
+	break-inside: avoid;
+	page-break-inside: avoid;
+	transition: border-color 0.2s;
+	position: relative;
+}
+
+/* Global spacing between card elements */
+.card > * + * {
+	margin-top: var(--dynamic-views-element-spacing, 8px);
+}
+
+/* Exclude absolutely positioned elements from spacing */
+.card > .card-status-badge,
+.card > .bases-cms-select-checkbox {
+	margin-top: 0;
+}
+
+@media (hover: hover) {
+	.card:hover {
+		border-color: var(--dynamic-views-card-border-color-hover, var(--text-faint));
+	}
+}
+
+.card.selected {
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px var(--interactive-accent);
+}
+
+/* Ensure cover image respects card border-radius when selected */
+.card.selected.image-format-cover .card-cover {
+	border-radius: var(--dynamic-views-card-border-radius, 8px) var(--dynamic-views-card-border-radius, 8px) 0 0;
+}
+
+/* Selection checkbox */
+.bases-cms-select-checkbox {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	z-index: 10;
+}
+
+.bases-cms-select-checkbox input[type="checkbox"] {
+	cursor: default;
+	margin: 0;
+	padding: 0;
+	flex-shrink: 0;
+}
+
+/* ============================================
+   CARD TITLE
+   ============================================ */
+
+.card-title {
+	font-weight: calc(var(--font-weight) + var(--bold-modifier));
+	color: var(--dynamic-views-title-color, var(--color-base-100));
+	font-family: var(--dynamic-views-title-font, inherit);
+	font-size: var(--dynamic-views-title-font-size, var(--font-ui-medium));
+	max-width: 100%;
+	word-break: break-word;
+	text-align: left;
+	margin: 0;
+	display: -webkit-box;
+	-webkit-line-clamp: var(--dynamic-views-title-lines, 2);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	line-height: var(--line-height-tight);
+	position: relative;
+	padding-right: 42px; /* 18px (icon position) + ~20px (icon width) + 4px (spacing) */
+}
+
+/* For non-cover views, add more padding to make room for checkbox + icon */
+.card.image-format-none .card-title,
+.card.image-format-thumbnail .card-title {
+	padding-right: 60px; /* 18px (icon position) + ~20px (icon width) + 8px (spacing) + 14px (checkbox area) */
+}
+
+/* Quick edit icon styling */
+.bases-cms-quick-edit-icon {
+	display: inline-flex;
+	align-items: center;
+	cursor: default !important;
+	position: absolute;
+	right: 18px;
+	top: 0;
+	z-index: 10;
+	pointer-events: auto;
+}
+
+/* ============================================
+   CARD CONTENT (Text Preview & Images)
+   ============================================ */
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--dynamic-views-element-spacing, 8px);
+}
+
+/* For thumbnail format, use row layout for thumbnail + text side by side */
+.card.image-format-thumbnail .card-content {
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+.card-text-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--dynamic-views-element-spacing, 8px);
+	flex: 1;
+	min-width: 0;
+	min-height: 0;
+}
+
+.card.image-format-thumbnail .card-text-preview {
+	flex: 0 1 auto;
+	min-width: 0;
+}
+
+.card-text-preview {
+	color: var(--dynamic-views-text-preview-color, var(--text-muted));
+	font-family: var(--dynamic-views-text-preview-font, inherit);
+	font-size: var(--dynamic-views-text-preview-font-size, var(--bases-table-font-size));
+	flex: 1;
+	min-width: 0;
+	display: -webkit-box;
+	-webkit-line-clamp: var(--dynamic-views-text-preview-lines, 5);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	line-height: 1.4;
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+
+/* ============================================
+   THUMBNAIL STYLING
+   ============================================ */
+
+.card-thumbnail {
+	flex-shrink: 0;
+	width: var(--dynamic-views-thumbnail-size, 80px);
+	height: calc(var(--dynamic-views-thumbnail-size, 80px) / var(--dynamic-views-thumbnail-aspect-ratio, 1.00));
+	overflow: hidden;
+	border-radius: var(--dynamic-views-thumbnail-border-radius, 4px);
+	pointer-events: none;
+}
+
+.card-thumbnail-placeholder {
+	flex-shrink: 0;
+	width: var(--dynamic-views-thumbnail-size, 80px);
+	height: calc(var(--dynamic-views-thumbnail-size, 80px) / var(--dynamic-views-thumbnail-aspect-ratio, 1.00));
+	border-radius: var(--dynamic-views-thumbnail-border-radius, 4px);
+	background-color: var(--background-modifier-border);
+}
+
+.card-thumbnail .image-embed {
+	width: 100%;
+	height: 100%;
+}
+
+.card-thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: auto;
+}
+
+/* ============================================
+   COVER IMAGE FORMAT
+   ============================================ */
+
+.card.image-format-cover {
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+}
+
+.card.image-format-cover .card-title,
+.card.image-format-cover .card-content,
+.card.image-format-cover .card-properties {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/* Ensure cover view title has enough padding for the quick edit icon */
+.card.image-format-cover .card-title {
+	padding-right: 42px; /* Override the 12px above to make room for icon */
+}
+
+.card.image-format-cover > .card-title:first-child,
+.card.image-format-cover > .card-content:first-child,
+.card.image-format-cover > .card-properties:first-child {
+	padding-top: 12px;
+}
+
+.card.image-format-cover > .card-title:last-child,
+.card.image-format-cover > .card-content:last-child,
+.card.image-format-cover > .card-properties:last-child {
+	padding-bottom: 12px;
+}
+
+.card.image-format-cover:has(.card-cover) .card-title {
+	margin-top: calc(var(--dynamic-views-image-aspect-ratio, 0.55) * (100% + 26px) - 1px);
+}
+
+/* When placeholder exists, push title down similar to cover image */
+.card.image-format-cover:has(.card-cover-placeholder) .card-title {
+	margin-top: calc(var(--dynamic-views-image-aspect-ratio, 0.55) * (100% + 26px) - 1px);
+}
+
+.card.image-format-cover .card-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 0;
+	padding-top: calc(var(--dynamic-views-image-aspect-ratio, 0.55) * 100%) !important;
+	border-radius: var(--dynamic-views-card-border-radius, 8px) var(--dynamic-views-card-border-radius, 8px) 0 0;
+	margin: 0;
+	overflow: hidden;
+	/* Account for selected card's box-shadow */
+	top: -1px;
+	left: -1px;
+	width: calc(100% + 2px) !important;
+}
+
+.card.image-format-cover .card-cover-placeholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 0;
+	padding-top: calc(var(--dynamic-views-image-aspect-ratio, 0.55) * 100%) !important;
+	border-radius: var(--dynamic-views-card-border-radius, 8px) var(--dynamic-views-card-border-radius, 8px) 0 0;
+	background-color: var(--background-modifier-border);
+	margin: 0;
+	overflow: hidden;
+}
+
+.card.image-format-cover .card-cover .image-embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* Ensure it fills the parent completely */
+}
+
+.card.image-format-cover .card-cover img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* ============================================
+   CARD DATE STYLING
+   ============================================ */
+
+.card-date {
+	font-size: 0.85em;
+	color: var(--text-muted);
+	margin-top: 4px;
+}
+
+/* Only add padding for cover format */
+.card.image-format-cover .card-date {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/* ============================================
+   STATUS BADGE (Draft/Published)
+   ============================================ */
+
+.card-status-badge {
+	padding: 2px 6px;
+	border-radius: 10px;
+	font-size: 0.65em;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: default !important;
+	letter-spacing: 0.2px;
+	line-height: 1.2;
+	height: 18px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	transition: background-color 0.15s ease;
+	margin-bottom: 6px;
+}
+
+.card-status-badge:hover {
+	/* Lighten background on hover - Obsidian native feel */
+	filter: brightness(1.15);
+}
+
+/* For cover images, position absolutely on the cover itself */
+.card.image-format-cover .card-cover .card-status-badge {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	z-index: 11;
+	margin-bottom: 0;
+}
+
+/* For cover placeholders, position badge on the placeholder */
+.card.image-format-cover .card-cover-placeholder .card-status-badge {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	z-index: 11;
+	margin-bottom: 0;
+}
+
+/* For non-cover formats (thumbnail/none), position badge above title */
+.card:not(.image-format-cover) .card-status-badge {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	z-index: 10;
+	margin: 0;
+	margin-bottom: 6px;
+	width: auto;
+}
+
+/* Add top margin to title when badge is present so it appears below the badge */
+.card:not(.image-format-cover):has(.card-status-badge) .card-title {
+	margin-top: 26px;
+}
+
+.card-status-badge.status-draft {
+	background-color: rgba(255, 193, 7, 0.95);
+	color: rgba(0, 0, 0, 0.9);
+}
+
+.card-status-badge.status-published {
+	background-color: rgba(46, 125, 50, 0.95);
+	color: rgba(255, 255, 255, 1);
+}
+
+/* ============================================
+   PROPERTIES STYLING
+   ============================================ */
+
+.card-properties {
+	margin-top: var(--dynamic-views-element-spacing, 8px);
+	flex-shrink: 0;
+}
+
+.properties-4field {
+	display: flex;
+	flex-direction: column;
+	gap: var(--dynamic-views-element-spacing, 8px);
+}
+
+.property-row {
+	display: flex;
+	flex-direction: column;
+	gap: var(--dynamic-views-element-spacing, 8px);
+	align-items: flex-start;
+}
+
+.property-row-side-by-side {
+	flex-direction: row;
+}
+
+.property-field {
+	flex: 1;
+	min-width: 0;
+	overflow: visible;
+}
+
+.property-label {
+	font-size: 0.7em;
+	color: var(--text-muted);
+	margin-bottom: 3px;
+	font-weight: 500;
+	letter-spacing: 0.3px;
+}
+
+/* Only apply uppercase to non-custom labels (fallback to property name) */
+.property-label:not(.property-label-custom) {
+	text-transform: uppercase;
+}
+
+.property-label-inline {
+	font-size: 0.9em;
+	color: var(--text-muted);
+}
+
+.property-content {
+	font-size: var(--dynamic-views-property-master-font-size, 0.9em);
+	color: var(--dynamic-views-property-master-color, var(--text-muted));
+	word-break: break-word;
+	overflow-wrap: break-word;
+	overflow: visible;
+}
+
+.property-content .text-wrapper {
+	overflow: visible;
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+
+/* Tags */
+.tags-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.tags-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.tag {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 4px;
+	background-color: var(--tag-background);
+	color: var(--tag-color);
+	font-size: 0.85em;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.tag:hover {
+	background-color: var(--tag-background-hover);
+}
+
+/* Card tags (pills under text preview) */
+.card-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-top: 6px;
+	line-height: 1.2;
+}
+
+.card-tag {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 10px;
+	background-color: var(--background-modifier-border);
+	color: var(--text-normal);
+	font-size: 0.75em;
+	font-weight: 500;
+	white-space: nowrap;
+	transition: background-color 0.2s ease;
+	line-height: 1.4;
+}
+
+.card-tag:hover {
+	background-color: var(--background-modifier-border);
+}
+
+.card-tag-more {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 10px;
+	background-color: var(--background-modifier-border);
+	color: var(--text-muted);
+	font-size: 0.75em;
+	font-weight: 500;
+	white-space: nowrap;
+	line-height: 1.4;
+	font-style: italic;
+}
+
+/* Path segments */
+.path-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.path-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.path-segment {
+	cursor: pointer;
+	color: var(--text-muted);
+	transition: color 0.2s;
+}
+
+.path-segment:hover {
+	color: var(--text-normal);
+}
+
+.path-separator {
+	color: var(--text-faint);
+	margin: 0 2px;
+}
+
+/* Checkbox properties - Native Obsidian styling */
+.property-content:has(.checkbox-input) {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.property-content .checkbox-input {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	min-width: 16px;
+	min-height: 16px;
+	margin: 0;
+	padding: 0;
+	flex-shrink: 0;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 3px;
+	background-color: var(--background-primary);
+	appearance: none;
+	-webkit-appearance: none;
+	position: relative;
+	vertical-align: middle;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.property-content .checkbox-input:hover {
+	border-color: var(--interactive-accent);
+}
+
+.property-content .checkbox-input:checked {
+	background-color: var(--checkbox-color, var(--interactive-accent));
+	border-color: var(--checkbox-color, var(--interactive-accent));
+}
+
+.property-content .checkbox-input:checked::after {
+	content: '';
+	position: absolute;
+	left: 4px;
+	top: 1px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	box-sizing: border-box;
+}
+
+.property-content .checkbox-label {
+	margin: 0;
+	user-select: none;
+	line-height: 1.5;
+}
+
+/* ============================================
+   BULK TOOLBAR
+   ============================================ */
+
+/* Ensure padding variables are available in the workspace context */
+.workspace-leaf-content[data-type="bases"] .bases-cms-bulk-toolbar {
+	--bases-header-padding-start: var(--size-4-2);
+	--bases-header-padding-end: var(--size-4-2);
+}
+
+.bases-cms-bulk-toolbar {
+	display: none;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	width: 100%;
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: opacity 0.2s ease, transform 0.2s ease;
+	padding-left: var(--bases-header-padding-start, var(--size-4-2));
+	padding-right: var(--bases-header-padding-end, var(--size-4-2));
+	box-sizing: border-box;
+	min-width: 0; /* Allow flex items to shrink */
+	overflow: hidden; /* Prevent overflow */
+}
+
+.bases-cms-bulk-toolbar-left {
+	display: flex;
+	align-items: center;
+	gap: 0;
+	flex: 0 0 auto;
+	min-width: 0; /* Allow shrinking */
+	flex-wrap: nowrap; /* Keep buttons in a row */
+}
+
+.bases-cms-bulk-toolbar-right {
+	display: flex;
+	align-items: center;
+	gap: 0;
+	flex: 0 0 auto;
+	margin-left: auto;
+	min-width: 0; /* Allow shrinking */
+	flex-wrap: nowrap; /* Keep buttons in a row */
+}
+
+/* Selected count styling */
+.bases-cms-selected-count {
+	margin-left: 0.75rem !important;
+}
+
+.bases-cms-selected-count .text-button-label {
+	font-size: var(--font-ui-smaller);
+	cursor: default;
+	pointer-events: none;
+	color: var(--text-muted);
+}
+
+.bases-cms-selected-count:hover {
+	background: transparent !important;
+}
+
+/* Use Bases' existing text-icon-button styles, but ensure cursor is default */
+.bases-cms-bulk-toolbar .text-icon-button {
+	cursor: default;
+	color: var(--text-normal);
+}
+
+.bases-cms-bulk-toolbar .text-icon-button .text-button-icon svg {
+	color: var(--text-normal);
+	stroke: var(--text-normal);
+}
+
+.bases-cms-bulk-toolbar .text-icon-button.destructive {
+	color: var(--text-error);
+}
+
+.bases-cms-bulk-toolbar .text-icon-button.destructive .text-button-icon svg {
+	color: var(--text-error) !important;
+	stroke: var(--text-error) !important;
+}
+
+.bases-cms-bulk-toolbar .text-icon-button.destructive:hover {
+	background: var(--background-modifier-error);
+	color: var(--text-error);
+}
+
+/* Keep delete button icon color consistent on hover */
+.bases-cms-bulk-toolbar .text-icon-button.destructive:hover .text-button-icon svg {
+	color: var(--text-error);
+	stroke: var(--text-error);
+}
+
+/* Responsive: Hide text labels on icon buttons when collapsed, but keep count visible */
+.bases-cms-bulk-toolbar.collapsed .text-icon-button .text-button-label {
+	display: none;
+}
+
+/* Always keep the selected count text visible */
+.bases-cms-bulk-toolbar.collapsed .bases-cms-selected-count .text-button-label {
+	display: block !important;
+}
+
+/* When collapsed, reduce padding on buttons to save space */
+.bases-cms-bulk-toolbar.collapsed .text-icon-button {
+	padding-left: var(--size-4-1);
+	padding-right: var(--size-4-1);
+}
+
+/* ============================================
+   DELETION PREVIEW MODAL
+   ============================================ */
+
+.bases-cms-deletion-warning {
+	color: var(--text-error);
+	font-weight: 600;
+	margin: 1rem 0;
+}
+
+.bases-cms-deletion-list {
+	max-height: 300px;
+	overflow-y: auto;
+	list-style: disc;
+	padding-left: 2rem;
+	margin: 0.5rem 0;
+}
+
+.bases-cms-deletion-list li {
+	margin: 0.25rem 0;
+	word-break: break-all;
+}

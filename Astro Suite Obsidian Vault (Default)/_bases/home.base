@@ -7,15 +7,19 @@ properties:
   note.draft:
     displayName: Draft
 views:
-  - type: cards
-    name: Cards
-    order:
-      - title
-      - description
-      - tags
-      - pubDate
-      - draft
-    sort:
-      - property: pubDate
-        direction: DESC
-    cardSize: 240
+  - type: bases-cms
+    name: Posts
+    filters:
+      and:
+        - file.folder.startsWith("post")
+    imageFormat: cover
+    titleProperty: note.title
+    dateProperty: note.pubDate
+    draftStatusProperty: note.draft
+    descriptionProperty: note.description
+    showTags: true
+    tagsProperty: note.tags
+    showDate: true
+    showDraftStatus: true
+    customizeNewButton: true
+    fallbackToEmbeds: true

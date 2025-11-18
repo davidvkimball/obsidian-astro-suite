@@ -1,38 +1,52 @@
 ---
-title: Astro Suite Vault Guide
-description: Explanation of the Astro Suite Obsidian vault.
-tags:
-  - Meta
-pubDate: 2025-08-23
-draft: true
+title: "Obsidian Vault Guide (Minimal)"
+pubDate: 2025-08-25
 ---
-![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](images/astro-composer-suite-for-obsidian.png)
+![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](./_assets/astro-composer-suite-for-obsidian.png)
 
 ## Overview
 
-All plugins, key bindings, and the theme can be customized to your liking, but this is what's on by default. Optimized for use with [Slate Astro theme](https://github.com/SlateDesign/slate-blog).
+All plugins, key bindings, and the theme can be customized to your liking, but this is what's on by default. Optimized for use with the [Chiri Astro theme](https://github.com/the3ash/astro-chiri).
 
 ## Philosophy 
 
-1. Plug-and-play Astro blogging experience.
-2. Maintain vanilla Obsidian look and feel.
-3. Emphasis on clarity and flexibility. 
+1. Plug-and-play Astro blogging experience. 
+2. Emphasis on focus. 
+3. Reliance on keyboard shortcuts.
+
+## Theme
+
+Fittingly, the [Minimal](https://minimal.guide/home) theme is used.  It uses an understated color scheme with high contract options. 
+
+The [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings), [Hider](https://github.com/kepano/obsidian-hider), and [Style Settings](https://obsidian.md/plugins?id=obsidian-style-settings) community plugins are also installed by default, giving you complete control over your experience. 
+
 ## Important Hotkeys
 
-Here's a guide for some important hotkeys set especially for this theme:
+Because Obsidian's interface has been stripped down to its bare essence, relying on hotkeys is imperative. Here's a guide:
+- New note: `CTRL + N`
+- Open settings: `CTRL + ,`
+- Command palette: `CTRL + P`
+- Search vault: `CTRL + O`
+- Open a new tab: `CTRL + T`
+- Close current tab: `CTRL + W`
 - Toggle left side panel: `CTRL + ALT + Z`
 - Toggle right side panel: `CTRL + ALT + X`
+- Toggle tab bar: `CTRL + ALT + S`
 - Navigate back: `ALT + ←`
 - Navigate forward: `ALT + →`
 - Open homepage: `CTRL + M` 
+- Add a new property: `CTRL + ;`
 - Toggle reading view: `CTRL + E`
 - Toggle Zen mode: `CTRL + SHIFT + Z`
+- Rename current post: `CTRL + R` 
+- Custom save: `CTRL + S
 - Insert image: `CTRL + '`
 - Start Terminal: `CTRL + SHIFT + D`
 - Open Astro config file: `CTRL + SHIFT + ,`
 - Git: Commit and Sync `CTRL + SHIFT + S` (off by default)
 
 If you're on Mac, `CTRL` = `CMD`.
+
 ## Plugins 
 
 Disabled default core plugins: 
@@ -48,16 +62,20 @@ Disabled default core plugins:
 
 Community plugins enabled: 
 - Astro Composer
-- Commander
 - Custom save
 - Default New Tab Page
+- Disable Tabs
+- Hider
 - Homepage
 - Image Inserter
+- Minimal Theme Settings
+- mdx as md
 - Paste image rename
 - Property Over Filename
+- ProZen
 - Settings Search
 - Shell commands
-- Tag Wrangler
+- Style Settings
 - Title-Only Tab
 
 ### Astro Composer 
@@ -69,7 +87,6 @@ You can also define and set default properties that can be generated automatical
 Once you've used wikilinks or markdown links, you can also convert those automatically to internal links for Astro with the "Convert internal links for Astro" command. 
 
 You can also easily grab links to headings by right clicking one and selecting "Copy Heading Link". These will be Astro-ready links by default, but you can use Obsidian wikilnks or markdown links, too.
-
 ### Custom save
 
 This defines a set of commands to fire once `CTRL + S` is initiated. For convenience, both "Convert internal links for Astro" and "Standardize properties" commands from the Astro Composer plugin are included. You can add or remove any if you'd like - this is designed for posts to be "publish-ready" when manually saved.
@@ -82,6 +99,14 @@ The Base is nested within a folder called `_bases` because Astro will ignore fil
 
 I call this "Home Base."
 
+### Minimal Theme Settings, Disable Tabs, Hider, and Style Settings
+
+As mentioned earlier, these plugins keep you focused and distraction-free while allowing for customization of your experience. 
+
+Should you need to reveal any of the main hidden panels, you can use `CTRL + ALT Z` for the left side panel, `CTRL + ALT + X` for the right side panel, or `CTRL + ALT + S` for the tab bar. Pressing it again will hide it. 
+
+In Style Settings, the only options that have been modified are hiding the Properties heading and the "Add Property" button.
+
 ### Paste Image Rename 
 
 Quickly drag and drop image files or paste directly from your clipboard and give them kebab-case, SEO-friendly names. 
@@ -90,19 +115,29 @@ Quickly drag and drop image files or paste directly from your clipboard and give
 
 Pull in images from Unsplash or other sources easily with just a few keystrokes. Just use `CTRL + '` to insert an image - and immediately set a SEO-friendly filename for it via the Paste Image Rename plugin.
 
-### Tag Wrangler
+### Disable Tabs
 
-Makes managing tabs more useful. Can easily bulk-rename tags or search your content by tags.
+This effectively makes it so opening any new tab replaces the current one only. Especially nice for when you're hiding the tab bar and don't want multiple tabs. When combined with the Homepage and New Default Tab plugins, `CTRL + T` and `CTRL + M` essentially do the same thing.
 
 ### Title-Only Tab
 
-Pulls from the `title` property instead of using the filename for any tab.
+Pulls from the `title` property instead of using the filename for any tab. With the tab bar hidden, you won't see this unless you unhide it.
 
 ### Property Over Filename
 
 When linking or searching notes, you can use the `title` property as its primary identifier, which is more helpful semantically for linking between and searching for posts since note filenames are post slugs in kebab case instead of titles. 
 
 When you link to another note, its `title` is automatically set as the hyperlinked text, but you can easily change it to something else after it's been inserted.
+
+### ProZen
+
+Zen mode offers another quick option to focus on your writing. Pressing `CTRL + SHIFT + Z` will enter Zen mode: automatic full-screen, all elements removed except for your content. Then use `ESC` to exit. 
+
+This plugin is a great alternative if you don't prefer to use Hider to remove the UI, and prefer to toggle it all on or off at once as needed. Alternatively, you can use the Focus Mode included in the Minimal theme.
+
+### mdx as md
+
+This is so you can see and edit the contents of any `.mdx` in addition to `.md`. Unfortunately there's not yet a way to have Bases read properties from `.mdx` files so while the files themselves will appear, the file's properties won't appear on the homepage `.base` view. 
 
 ### Shell commands and Commander
 
@@ -112,7 +147,7 @@ To open terminal quickly, use the `Start Terminal` command. It's been modified f
 
 To open your `config.ts` file quickly, simply use the `Astro Configuration` command. You can also press `CTRL + SHIFT + ,` to open it with your default application. 
 
-Commander helps us place a button for each of these actions on the file explorer UI.
+Commander helps us place a button for each of these actions on the file explorer UI, which is hidden by default in this theme anyway. Toggle "Hide file explorer buttons" in the Hider plugin to reveal.
 
 **Linux user warning:** on Linux, there isn't a universal method to open the default terminal. Additionally, the widely used Flatpak (via Flathub) employs non-trivial sandboxing, which introduces further challenges. 
 
@@ -130,4 +165,10 @@ The [Git](https://obsidian.md/plugins?id=obsidian-git) plugin is turned off by d
 
 ## CSS Snippets
 
-An optional custom CSS snippet is included called `swap-new-tab-icon-with-home-mobile.css` which replaces the new tab button's icon on the mobile view with a home icon. Since opening a new tab using the combination of Default New Tab Page and Homepage plugins opens your "home base" view, the icon better represents what's happening when you tab the button. Disable to bring back the standard plus (`+`) icon. This is off by default, but you can turn it on if you'd like.
+A custom CSS snippet called `custom-draggable-top-area.css` makes moving your window is easier when the window frame is hidden and there's no tab bar. The default enabled version is `custom-draggable-top-area-windows.css` which is active by default, and helps with some offsets UI including closing/minimizing/maximizing on Windows, and there's a `custom-draggable-top-area-windows.css` which offers similar functionality for Mac. Use the base version for no offsets, all can be configured in Settings > Appearance > CSS Snippets (make sure to disable the Windows version when another is turned on). None of these are active in mobile.
+
+`hide-tabs-icon-mobile.css` removes the tabs icon in the mobile version of Obsidian. If you disable the Disable Tabs plugin, you may want to disable this snippet as well.
+
+The `swap-new-tab-icon-with-home-mobile.css` snippet does as its file name suggests. Since opening a new tab using the combination of Default New Tab Page and Homepage plugins opens your "home base" view, the icon better represents what's happening when you tab the button. Disable to bring back the standard plus (`+`) icon.
+
+`hide-longpress-flair-mobile.css`, `hide-header-title-mobile.css`, and `hide-sync-icon-mobile.css` are also related to making the mobile interface more simple. Disable any of these snippets to bring the elements back.

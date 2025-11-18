@@ -7,12 +7,15 @@ properties:
   note.draft:
     displayName: Draft
 views:
-  - type: cards
-    name: Cards
-    order:
-      - title
-      - description
-    sort:
-      - property: pubDate
-        direction: DESC
-    cardSize: 240
+  - type: bases-cms
+    name: Docs
+    filters:
+      and:
+        - file.folder.startsWith("docs")
+    imageFormat: cover
+    fallbackToEmbeds: true
+    titleProperty: note.title
+    descriptionProperty: note.description
+    customizeNewButton: true
+    draftStatusUseFilenamePrefix: true
+    showDraftStatus: true

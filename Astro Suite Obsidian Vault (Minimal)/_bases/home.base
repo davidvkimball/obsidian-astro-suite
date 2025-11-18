@@ -11,26 +11,14 @@ properties:
   note.pubDate:
     displayName: Date
 views:
-  - type: cards
-    name: Cards
-    order:
-      - title
-      - pubDate
-      - formula.Draft
-    sort:
-      - property: date
-        direction: DESC
-    cardSize: 260
-  - type: table
-    name: Table
-    order:
-      - date
-      - title
-      - formula.Draft
-      - file.name
-    sort:
-      - property: date
-        direction: ASC
-    columnSize:
-      note.date: 125
-      note.title: 361
+  - type: bases-cms
+    name: Posts
+    titleProperty: note.title
+    showTextPreview: false
+    dateProperty: note.pubDate
+    showDraftStatus: true
+    fallbackToEmbeds: true
+    imageFormat: cover
+    customizeNewButton: true
+    draftStatusUseFilenamePrefix: true
+    showDate: true

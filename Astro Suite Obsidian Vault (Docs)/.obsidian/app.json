@@ -29,5 +29,6 @@
     "astro-composer:convert-wikilinks-astro",
     "editor:configure-toolbar"
   ],
-  "newFileLocation": "current"
+  "newFileLocation": "folder",
+  "newFileFolderPath": "docs"
 }
