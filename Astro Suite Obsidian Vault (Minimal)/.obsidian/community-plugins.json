@@ -10,12 +10,12 @@
   "obsidian42-brat",
   "disable-tabs",
   "astro-composer",
-  "obsidian-prozen",
   "obsidian-style-settings",
   "title-only-tab",
   "obsidian-shellcommands",
   "seo",
   "property-over-file-name",
   "settings-search",
-  "bases-cms"
+  "bases-cms",
+  "zenmode"
 ]

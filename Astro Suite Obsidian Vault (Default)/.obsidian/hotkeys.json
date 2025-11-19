@@ -86,5 +86,14 @@
       ],
       "key": "R"
     }
+  ],
+  "zenmode:toggle-zen-mode": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "Z"
+    }
   ]
 }

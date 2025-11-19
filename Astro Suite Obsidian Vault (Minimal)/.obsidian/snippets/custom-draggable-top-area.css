@@ -23,21 +23,9 @@ body:not(.is-mobile) .inline-title {
   margin-top: 0 !important; /* reset by default */
 }
 
-/* Note content default reset */
-body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .view-content,
-body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .cm-scroller,
-body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
-  padding-top: 0 !important; /* reset by default */
-}
-
 /* Only apply bump when tab bar is hidden (body.hider-tabs present) */
 body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .inline-title {
   margin-top: var(--drag-bump) !important;
-}
-body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .view-content,
-body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .cm-scroller,
-body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
-  padding-top: var(--drag-bump) !important;
 }
 body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .document-search-container {
   margin-top: var(--drag-bump) !important; /* Match note content offset */

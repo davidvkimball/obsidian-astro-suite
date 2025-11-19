@@ -81,15 +81,6 @@
       "key": "'"
     }
   ],
-  "obsidian-prozen:zenmode": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "Z"
-    }
-  ],
   "obsidian-shellcommands:shell-command-kmfz91tj4d": [
     {
       "modifiers": [
@@ -141,6 +132,15 @@
         "Mod"
       ],
       "key": "R"
+    }
+  ],
+  "zenmode:toggle-zen-mode": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "Z"
     }
   ]
 }

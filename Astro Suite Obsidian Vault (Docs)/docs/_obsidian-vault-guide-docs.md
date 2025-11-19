@@ -47,17 +47,18 @@ Disabled default core plugins:
 
 Community plugins enabled: 
 - Astro Composer
+- Bases CRM
 - Commander
 - Custom save
 - Default New Tab Page
 - Homepage
 - Image Inserter
-- mdx as md
 - Paste image rename
 - Property Over Filename
 - Settings Search
 - Shell commands
 - Title-Only Tab
+- Zen Mode
 
 ### Astro Composer 
 
@@ -73,13 +74,15 @@ You can also easily grab links to headings by right clicking one and selecting "
 
 This defines a set of commands to fire once `CTRL + S` is initiated. For convenience, both "Convert internal links for Astro" and "Standardize properties" commands from the Astro Composer plugin are included. You can add or remove any if you'd like - this is designed for posts to be "publish-ready" when manually saved.
 
-### Homepage and Default New Tab Page
+### Homepage, Default New Tab Page, and Bases CRM
 
-Both of these work together so you're default screen is a `.base` file that's a directory of all of your blog posts, listed in reverse-chronological order. You're able to customize the note properties and views to your liking. 
+All three of these plugins work together so you're default screen is a `.base` file that's a directory of all of your blog posts, listed in reverse-chronological order. You're able to configure the CMS view and even add new views to your liking. 
 
 The Base is nested within a folder called `_bases` because Astro will ignore files and folders with an underscore prefix, letting you use this for Obsidian without processing it for the live site.
 
 I call this "Home Base."
+
+Bases CRM lets us treat a grid of content like a content management system. You can select multiple items and do bulk edits, rename content right from that view, or toggle the draft status of an item.
 
 ### Paste Image Rename 
 
@@ -99,9 +102,11 @@ When linking or searching notes, you can use the `title` property as its primary
 
 When you link to another note, its `title` is automatically set as the hyperlinked text, but you can easily change it to something else after it's been inserted.
 
-### mdx as md
+### Zen Mode
 
-This is so you can see and edit the contents of any `.mdx` in addition to `.md`. Unfortunately there's not yet a way to have Bases read properties from `.mdx` files so while the files themselves will appear, the file's properties won't appear on the homepage `.base` view. 
+Zen Mode offers another quick option to focus on your writing. Pressing `CTRL + SHIFT + Z` will enter Zen mode: all elements removed except for your content. You can use `ESC` to exit. 
+
+This plugin is a great alternative if you don't prefer to use Hider to remove the UI, and prefer to toggle it all on or off at once as needed. Alternatively, you can use the Focus Mode included in the Minimal theme.
 
 ### Shell commands and Commander
 
