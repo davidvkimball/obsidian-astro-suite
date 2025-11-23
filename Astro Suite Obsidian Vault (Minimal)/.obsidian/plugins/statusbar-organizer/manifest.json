@@ -1,0 +1,10 @@
+{
+	"id": "statusbar-organizer",
+	"name": "Status Bar Organizer",
+	"version": "2.1.5",
+	"minAppVersion": "0.15.0",
+	"description": "Lets you rearrange and hide specific status bar elements.",
+	"author": "Kacper Darowski",
+	"authorUrl": "https://opisek.net/",
+	"isDesktopOnly": true
+}

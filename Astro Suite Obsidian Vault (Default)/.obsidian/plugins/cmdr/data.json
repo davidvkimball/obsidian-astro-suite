@@ -1,6 +1,6 @@
 {
   "confirmDeletion": true,
-  "showAddCommand": true,
+  "showAddCommand": false,
   "debug": false,
   "editorMenu": [],
   "fileMenu": [],
@@ -10,20 +10,7 @@
   "statusBar": [],
   "pageHeader": [],
   "macros": [],
-  "explorer": [
-    {
-      "id": "obsidian-shellcommands:shell-command-cgu26nrs0i",
-      "icon": "lucide-terminal-square",
-      "name": "Shell commands: Execute: Start Terminal",
-      "mode": "any"
-    },
-    {
-      "id": "obsidian-shellcommands:shell-command-thj4kxpd52",
-      "icon": "lucide-wrench",
-      "name": "Shell commands: Execute: Astro Configuration",
-      "mode": "any"
-    }
-  ],
+  "explorer": [],
   "hide": {
     "statusbar": [],
     "leftRibbon": []

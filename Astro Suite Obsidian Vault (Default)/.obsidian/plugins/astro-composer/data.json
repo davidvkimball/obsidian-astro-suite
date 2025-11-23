@@ -1,8 +1,8 @@
 {
   "enableUnderscorePrefix": false,
   "defaultTemplate": "---\ntitle: \"{{title}}\"\ndescription: \"\"\ntags: []\npubDate: {{date}}\ndraft: true\n---",
-  "linkBasePath": "/blog/",
   "postsFolder": "post",
+  "postsLinkBasePath": "blog/",
   "automatePostCreation": true,
   "autoInsertProperties": true,
   "creationMode": "file",
@@ -12,7 +12,24 @@
   "onlyAutomateInPostsFolder": false,
   "enablePages": false,
   "pagesFolder": "pages",
+  "pagesLinkBasePath": "",
+  "pagesCreationMode": "file",
+  "pagesIndexFileName": "",
   "pageTemplate": "---\ntitle: \"{{title}}\"\ndescription: \"\"\n---\n",
   "enableCopyHeadingLink": true,
-  "copyHeadingLinkFormat": "astro"
+  "copyHeadingLinkFormat": "astro",
+  "addTrailingSlashToLinks": false,
+  "enableOpenTerminalCommand": true,
+  "terminalProjectRootPath": "../..",
+  "enableTerminalRibbonIcon": true,
+  "enableOpenConfigFileCommand": true,
+  "configFilePath": "../../slate.config.ts",
+  "enableConfigRibbonIcon": false,
+  "customContentTypes": [],
+  "helpButtonReplacement": {
+    "enabled": true,
+    "commandId": "astro-composer:edit-astro-config",
+    "iconId": "wrench"
+  },
+  "linkBasePath": "/blog/"
 }

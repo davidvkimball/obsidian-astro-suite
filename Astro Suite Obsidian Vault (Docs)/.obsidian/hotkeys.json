@@ -34,24 +34,6 @@
       "key": "X"
     }
   ],
-  "obsidian-shellcommands:shell-command-cgu26nrs0i": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "D"
-    }
-  ],
-  "obsidian-shellcommands:shell-command-thj4kxpd52": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": ","
-    }
-  ],
   "seo:open-global": [
     {
       "modifiers": [
@@ -94,6 +76,15 @@
         "Shift"
       ],
       "key": "Z"
+    }
+  ],
+  "app:toggle-ribbon": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "A"
     }
   ]
 }

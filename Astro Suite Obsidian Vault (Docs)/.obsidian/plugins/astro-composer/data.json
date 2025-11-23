@@ -19,6 +19,12 @@
   "enableCopyHeadingLink": true,
   "copyHeadingLinkFormat": "astro",
   "addTrailingSlashToLinks": false,
+  "enableOpenTerminalCommand": true,
+  "terminalProjectRootPath": "../..",
+  "enableTerminalRibbonIcon": true,
+  "enableOpenConfigFileCommand": true,
+  "configFilePath": "../../astro.config.mjs",
+  "enableConfigRibbonIcon": false,
   "customContentTypes": [
     {
       "id": "custom-1761538217731",
@@ -31,5 +37,10 @@
       "indexFileName": ""
     }
   ],
+  "helpButtonReplacement": {
+    "enabled": true,
+    "commandId": "astro-composer:edit-astro-config",
+    "iconId": "wrench"
+  },
   "linkBasePath": "/blog/"
 }

@@ -1,10 +1,10 @@
 {
   "zenMode": false,
   "leftSidebar": false,
-  "rightSidebar": false,
+  "rightSidebar": true,
   "fullscreen": false,
   "exitButtonVisibility": "always",
-  "autoHideButtonOnDesktop": true,
+  "autoHideButtonOnDesktop": false,
   "hideProperties": false,
   "hideInlineTitle": false,
   "topPadding": 0,

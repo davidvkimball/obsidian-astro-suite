@@ -309,7 +309,7 @@
 	padding-top: calc(var(--dynamic-views-image-aspect-ratio, 0.55) * 100%) !important;
 	border-radius: var(--dynamic-views-card-border-radius, 8px) var(--dynamic-views-card-border-radius, 8px) 0 0;
 	margin: 0;
-	overflow: hidden;
+	overflow: visible;
 	/* Account for selected card's box-shadow */
 	top: -1px;
 	left: -1px;
@@ -326,7 +326,7 @@
 	border-radius: var(--dynamic-views-card-border-radius, 8px) var(--dynamic-views-card-border-radius, 8px) 0 0;
 	background-color: var(--background-modifier-border);
 	margin: 0;
-	overflow: hidden;
+	overflow: visible;
 }
 
 .card.image-format-cover .card-cover .image-embed {
@@ -397,6 +397,10 @@
 	left: 8px;
 	z-index: 11;
 	margin-bottom: 0;
+	/* Ensure badge is always visible */
+	display: inline-flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
 }
 
 /* For cover placeholders, position badge on the placeholder */
@@ -406,6 +410,10 @@
 	left: 8px;
 	z-index: 11;
 	margin-bottom: 0;
+	/* Ensure badge is always visible */
+	display: inline-flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
 }
 
 /* For non-cover formats (thumbnail/none), position badge above title */
@@ -536,20 +544,21 @@
 }
 
 .card-tag {
-	display: inline-block;
-	padding: 2px 8px;
-	border-radius: 10px;
-	background-color: var(--background-modifier-border);
-	color: var(--text-normal);
-	font-size: 0.75em;
-	font-weight: 500;
+	background-color: var(--tag-background);
+	border: var(--tag-border-width) solid var(--tag-border-color);
+	border-radius: var(--tag-radius);
+	color: var(--tag-color);
+	font-size: var(--tag-size);
+	font-weight: var(--tag-weight);
+	text-decoration: var(--tag-decoration);
+	padding: var(--tag-padding-y) var(--tag-padding-x);
+	line-height: 1;
 	white-space: nowrap;
-	transition: background-color 0.2s ease;
-	line-height: 1.4;
+	display: inline-block;
 }
 
 .card-tag:hover {
-	background-color: var(--background-modifier-border);
+	background-color: var(--tag-background-hover);
 }
 
 .card-tag-more {
@@ -594,57 +603,10 @@
 }
 
 /* Checkbox properties - Native Obsidian styling */
-.property-content:has(.checkbox-input) {
+.property-content:has(input[type="checkbox"]) {
 	display: flex;
 	align-items: center;
 	gap: 6px;
-}
-
-.property-content .checkbox-input {
-	cursor: pointer;
-	width: 16px;
-	height: 16px;
-	min-width: 16px;
-	min-height: 16px;
-	margin: 0;
-	padding: 0;
-	flex-shrink: 0;
-	border: 1px solid var(--background-modifier-border);
-	border-radius: 3px;
-	background-color: var(--background-primary);
-	appearance: none;
-	-webkit-appearance: none;
-	position: relative;
-	vertical-align: middle;
-	transition: background-color 0.15s ease, border-color 0.15s ease;
-}
-
-.property-content .checkbox-input:hover {
-	border-color: var(--interactive-accent);
-}
-
-.property-content .checkbox-input:checked {
-	background-color: var(--checkbox-color, var(--interactive-accent));
-	border-color: var(--checkbox-color, var(--interactive-accent));
-}
-
-.property-content .checkbox-input:checked::after {
-	content: '';
-	position: absolute;
-	left: 4px;
-	top: 1px;
-	width: 5px;
-	height: 10px;
-	border: solid white;
-	border-width: 0 2px 2px 0;
-	transform: rotate(45deg);
-	box-sizing: border-box;
-}
-
-.property-content .checkbox-label {
-	margin: 0;
-	user-select: none;
-	line-height: 1.5;
 }
 
 /* ============================================
@@ -658,7 +620,6 @@
 }
 
 .bases-cms-bulk-toolbar {
-	display: none;
 	align-items: center;
 	justify-content: space-between;
 	gap: 1rem;
@@ -668,6 +629,7 @@
 	transition: opacity 0.2s ease, transform 0.2s ease;
 	padding-left: var(--bases-header-padding-start, var(--size-4-2));
 	padding-right: var(--bases-header-padding-end, var(--size-4-2));
+	margin-top: var(--size-4-2);
 	box-sizing: border-box;
 	min-width: 0; /* Allow flex items to shrink */
 	overflow: hidden; /* Prevent overflow */
@@ -737,6 +699,53 @@
 .bases-cms-bulk-toolbar .text-icon-button.destructive:hover .text-button-icon svg {
 	color: var(--text-error);
 	stroke: var(--text-error);
+}
+
+/* Modal button container */
+.bases-cms-modal-button-container {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: flex-end;
+	margin-top: 1rem;
+}
+
+/* Bulk toolbar visibility states */
+
+.bases-cms-bulk-toolbar-hidden {
+	display: none !important;
+}
+
+.bases-cms-bulk-toolbar-visible {
+	display: flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+}
+
+.bases-cms-bulk-toolbar-animating-in {
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+}
+
+.bases-cms-bulk-toolbar-animating-out {
+	opacity: 0 !important;
+	transform: translateY(-10px) !important;
+}
+
+.bases-cms-properties-hidden {
+	display: none;
+}
+
+.bases-cms-setting-hidden {
+	display: none;
+}
+
+.bases-cms-cursor-default {
+	cursor: default;
+}
+
+.bases-cms-cursor-pointer {
+	cursor: pointer;
 }
 
 /* Responsive: Hide text labels on icon buttons when collapsed, but keep count visible */

@@ -1,0 +1,187 @@
+/*
+  Structure
+*/
+
+div.statusbar-organizer-presets-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+div.statusbar-organizer-rows-container-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+div.statusbar-organizer-rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+/*
+  Presets
+*/
+
+div.statusbar-organizer-preset {
+  background: var(--background-primary-alt);
+  opacity: 0.75;
+  color: var(--text-normal);
+  border-radius: 0.25em;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 0.5em;
+}
+
+div.statusbar-organizer-preset:hover, div.statusbar-organizer-preset-active {
+  opacity: 1;
+}
+
+div.statusbar-organizer-preset:hover > span {
+  display: inherit;
+}
+
+input.statusbar-organizer-preset-name {
+  all: unset;
+  font: inherit;
+  color: inherit;
+  pointer-events: none;
+  text-align: center;
+}
+
+input.statusbar-organizer-preset-name:focus {
+  text-decoration: underline;
+}
+
+span.statusbar-organizer-preset-delete {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+span.statusbar-organizer-preset-rename {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+/*
+  Rows
+*/
+
+div.statusbar-organizer-row {
+  background: var(--background-primary-alt);
+  color: var(--text-normal);
+  border-radius: 0.25em;
+  display: grid;
+  grid-template-columns: 1.5em 1fr 1fr 4em;
+  padding: 0.5em 1em;
+  width: 100%;
+}
+
+/*
+div.statusbar-organizer-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-primary);
+  border-radius: 0.25em;
+  z-index: -1;
+}
+*/
+
+div.statusbar-organizer-row > span {
+  display: inline-block;
+  height: 1.75em;
+  line-height: 0.7;
+  padding: 0.5em 0em;
+}
+
+span.statusbar-organizer-row-handle {
+  padding: 0 !important;
+  cursor: move;
+}
+
+span.statusbar-organizer-row-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+span.statusbar-organizer-row-handle::after {
+  content: '·· ·· ·· ··';
+  display: inline-block;
+  height: 1.75em;
+  line-height: 0.25rem;
+  padding: 0.275em 0em;
+  width: 1em;
+  word-wrap: normal;
+}
+
+span.statusbar-organizer-row-preview {
+  border-radius: 0.25em;
+  margin-top: 0.2em;
+  padding: 0.5em !important;
+  font-size: 0.8rem;
+  background: var(--background-secondary-alt);
+  overflow: hidden;
+}
+
+span.statusbar-organizer-row-visibility {
+  padding-top: 0.3em !important;
+  cursor: pointer;
+  text-align: right;
+}
+
+div.statusbar-organizer-row-drag {
+  position: absolute;
+  background: var(--background-modifier-active-hover)
+}
+
+div.statusbar-organizer-row-drag > span.statusbar-organizer-row-preview {
+  opacity: 0.9;
+}
+
+div.statusbar-organizer-row-clone {
+  background: transparent;
+}
+
+div.statusbar-organizer-row-clone > span {
+  visibility: hidden !important;
+}
+
+div.statusbar-organizer-row-disabled {
+  color: var(--color-red);
+  opacity: 0.5;
+}
+
+div.statusbar-organizer-row-hidden:not(div.statusbar-organizer-row-disabled) {
+  color: var(--text-faint);
+  opacity: 0.75;
+}
+
+div.statusbar-organizer-element-hidden {
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  visibility: hidden;
+  width: 0;
+  display: none;
+}

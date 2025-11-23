@@ -111,16 +111,35 @@ body:not(.is-mobile) .zenmode-button-auto-hide {
 	opacity: 0;
 	transition: opacity 0.3s ease-in-out;
 	/* Keep pointer-events enabled so the button area is still hoverable when invisible */
+	pointer-events: auto;
+	/* Create a larger hover zone by expanding the clickable area */
+	/* Use padding to create hover zone, negative margin to prevent layout shift */
+	padding: 30px;
+	margin: -30px;
+	/* Ensure the container itself is the hover target */
+	cursor: pointer;
 }
 
-/* Reveal button on hover */
-body:not(.is-mobile) .zenmode-button-auto-hide:hover {
+/* Reveal button on hover - works when hovering anywhere in the expanded area */
+/* Use specific selector to override fade-out state when hovering */
+body:not(.is-mobile) .zenmode-button-auto-hide:hover,
+body:not(.is-mobile) .zenmode-button-auto-hide.zenmode-button-fade-out:hover {
+	opacity: 1;
+}
+
+/* Ensure button inside is also visible when container is hovered */
+body:not(.is-mobile) .zenmode-button-auto-hide:hover button,
+body:not(.is-mobile)
+	.zenmode-button-auto-hide.zenmode-button-fade-out:hover
+	button {
 	opacity: 1;
 }
 
 /* Initial highlight animation when entering Zen mode with auto-hide enabled */
-.zenmode-button-initial-highlight {
-	opacity: 1 !important;
+/* Use higher specificity to override auto-hide base state */
+body:not(.is-mobile)
+	.zenmode-button-auto-hide.zenmode-button-initial-highlight {
+	opacity: 1;
 }
 
 .zenmode-button-initial-highlight button {
@@ -129,12 +148,15 @@ body:not(.is-mobile) .zenmode-button-auto-hide:hover {
 
 @keyframes zenmode-button-highlight {
 	0% {
-		box-shadow: 0 2px 8px var(--background-modifier-border);
+		/* Start with a slightly brighter shadow for a subtle pulse effect */
+		box-shadow: 0 2px 12px var(--background-modifier-border);
 	}
 	50% {
+		/* Maintain the standard shadow for the first half of the animation */
 		box-shadow: 0 2px 8px var(--background-modifier-border);
 	}
 	100% {
+		/* Fade out completely */
 		box-shadow: none;
 	}
 }
@@ -147,8 +169,12 @@ body:not(.is-mobile) .zenmode-button-auto-hide:hover {
 }
 
 /* Fade out after initial highlight */
-.zenmode-button-fade-out {
-	opacity: 0 !important;
+/* Use higher specificity to override auto-hide and initial-highlight states */
+body:not(.is-mobile) .zenmode-button-auto-hide.zenmode-button-fade-out {
+	opacity: 0;
 	transition: opacity 0.5s ease-in-out;
-	box-shadow: none !important;
+}
+
+body:not(.is-mobile) .zenmode-button-auto-hide.zenmode-button-fade-out button {
+	box-shadow: none;
 }

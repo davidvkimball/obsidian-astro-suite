@@ -1,7 +1,7 @@
 {
   "zenMode": false,
   "leftSidebar": false,
-  "rightSidebar": false,
+  "rightSidebar": true,
   "fullscreen": false,
   "exitButtonVisibility": "always",
   "autoHideButtonOnDesktop": true,

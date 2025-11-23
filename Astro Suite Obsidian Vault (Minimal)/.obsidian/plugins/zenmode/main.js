@@ -97,6 +97,9 @@ var ZenMode = class extends import_obsidian.Plugin {
     );
     this.registerDomEvent(document, "keydown", (evt) => {
       if (evt.key === "Escape" && this.settings.zenMode) {
+        if (this.isVimModeActive()) {
+          return;
+        }
         const activeModal = document.querySelector(".modal");
         if (!activeModal) {
           this.toggleZenMode();
@@ -123,6 +126,30 @@ var ZenMode = class extends import_obsidian.Plugin {
   }
   async saveSettings() {
     await this.saveData(this.settings);
+  }
+  // Check if vim mode is active in the current editor
+  isVimModeActive() {
+    const activeLeaf = this.app.workspace.activeLeaf;
+    if (!activeLeaf) {
+      return false;
+    }
+    const view = activeLeaf.view;
+    if (!view || !("editor" in view)) {
+      return false;
+    }
+    const editor = view.editor;
+    if (!editor || !editor.cm) {
+      return false;
+    }
+    const cm = editor.cm;
+    if (cm && cm.vim) {
+      return true;
+    }
+    const editorEl = cm.getWrapperElement();
+    if (editorEl && editorEl.classList.contains("cm-vim")) {
+      return true;
+    }
+    return false;
   }
   setSidebarVisibility() {
     const app = this.app;
@@ -337,7 +364,7 @@ var ZenModeSettingTab = class extends import_obsidian.PluginSettingTab {
       })
     );
     new import_obsidian.Setting(containerEl).setName("Show Zen mode exit button").setDesc(
-      "When to show the exit button in Zen mode. You can also exit via the command palette, by pressing ESC, or by assigning a hotkey to the 'Toggle Zen mode' command."
+      "When to show the exit button in Zen mode. You can also exit via the command palette, by pressing ESC (ESC does not work when Vim mode is active), or by assigning a hotkey to the 'Toggle Zen mode' command."
     ).addDropdown(
       (dropdown) => dropdown.addOption("always", "Always show").addOption("mobile-only", "Mobile only").addOption("never", "Never show").setValue(this.plugin.settings.exitButtonVisibility).onChange((value) => {
         this.plugin.settings.exitButtonVisibility = value;

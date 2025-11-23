@@ -56,7 +56,7 @@ Community plugins enabled:
 - Paste image rename
 - Property Over Filename
 - Settings Search
-- Shell commands
+- Status Bar Organizer
 - Title-Only Tab
 - Zen Mode
 
@@ -69,6 +69,10 @@ You can also define and set default properties that can be generated automatical
 Once you've used wikilinks or markdown links, you can also convert those automatically to internal links for Astro with the "Convert internal links for Astro" command. 
 
 You can also easily grab links to headings by right clicking one and selecting "Copy Heading Link". These will be Astro-ready links by default, but you can use Obsidian wikilnks or markdown links, too.
+
+Astro Composer also has several useful commands for development. To open terminal quickly, use the `Open terminal` command. It's been modified for Windows, macOS, and Linux to start terminal in the relevant directory so you can easily do standard package manager commands with `pnpm` or `npm`. It can be activated with `CTRL + SHIFT + D`. 
+
+You can also launch the `Edit Astro config` command, which will open your `config.ts` file. You can also press `CTRL + SHIFT + ,` to edit it, or use the conveniently-placed icon next to the traditional Obsidian settings icon (which can be toggled off in this plugin's settings if you don't want it there). 
 
 ### Custom save
 
@@ -106,19 +110,7 @@ When you link to another note, its `title` is automatically set as the hyperlink
 
 Zen Mode offers another quick option to focus on your writing. Pressing `CTRL + SHIFT + Z` will enter Zen mode: all elements removed except for your content. You can use `ESC` to exit. 
 
-This plugin is a great alternative if you don't prefer to use Hider to remove the UI, and prefer to toggle it all on or off at once as needed. Alternatively, you can use the Focus Mode included in the Minimal theme.
-
-### Shell commands and Commander
-
-Shell commands helps us open two things quickly: terminal and Astro's `config.ts` file. 
-
-To open terminal quickly, use the `Start Terminal` command. It's been modified for Windows, macOS, and Linux to start terminal in the relevant directory so you can easily do standard package manager commands like `npm` or `pnpm`. It can be activated with `CTRL + SHIFT + D`. 
-
-To open your `astro.config.mjs` file quickly, simply use the `Astro Configuration` command. You can also press `CTRL + SHIFT + ,` to open it with your default application. 
-
-Commander helps us place a button for each of these actions on the file explorer UI.
-
-**Linux user warning:** on Linux, there isn't a universal method to open the default terminal. Additionally, the widely used Flatpak (via Flathub) employs non-trivial sandboxing, which introduces further challenges. 
+This plugin is a great alternative if you don't prefer to use Hider to remove the UI, and prefer to toggle it all on or off at once as needed. 
 
 ### Settings Search
 
@@ -126,11 +118,15 @@ Simply provides a global search option for all settings in Obsidian.
 
 ### BRAT (Temporary)
 
-Only used temporarily to load Astro Composer, Disable Tabs, SEO, and Property Over Filename plugins before they're available in the Obsidian plugin directory. Future versions of this vault will remove BRAT in favor of the official releases.
+Only used temporarily to load any beta plugins before they're available in the Obsidian plugin directory. Future versions of this vault will remove BRAT in favor of the official releases.
 
-## Git
+## Git, Commander, and Status Bar Organizer
 
-The [Git](https://obsidian.md/plugins?id=obsidian-git) plugin is turned off by default, if you turn it on, you can easily publish to your Astro blog without leaving Obsidian using `CTRL + SHIFT + S`. Simply enable the plugin and configure with git to turn it on.
+The [Git](https://obsidian.md/plugins?id=obsidian-git) plugin is turned off by default, if you turn it on, you can easily publish to your Astro blog without leaving Obsidian. Simply enable the plugin and configure with git to turn it on. By default, you'll see your current git status and count of files changed (if any) in the status bar on the bottom right.
+
+To publish, you can use `CTRL + SHIFT + S` or click the "commit-and-sync" button on the status bar (added with the Commander plugin). Your changes will be committed and pushed to your remote repository automatically.
+
+Status Bar Organizer ensures the commit-and-sync icon stays on the far right. You can also use it to hide or re-arrange status bar items to your liking.
 
 ## CSS Snippets
 
