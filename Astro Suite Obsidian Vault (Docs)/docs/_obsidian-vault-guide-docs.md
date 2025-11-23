@@ -55,6 +55,7 @@ Community plugins enabled:
 - Image Inserter
 - Paste image rename
 - Property Over Filename
+- SEO
 - Settings Search
 - Status Bar Organizer
 - Title-Only Tab
@@ -115,6 +116,10 @@ This plugin is a great alternative if you don't prefer to use Hider to remove th
 ### Settings Search
 
 Simply provides a global search option for all settings in Obsidian.
+
+### SEO
+
+Get a snappy audit of your content for search engine rankings and AI parsing. You can get a quick snapshot of your whole vault or drill down into specific posts. You can configure the settings to turn off checks you don't care about or tweak the logic in the calculations.
 
 ### BRAT (Temporary)
 

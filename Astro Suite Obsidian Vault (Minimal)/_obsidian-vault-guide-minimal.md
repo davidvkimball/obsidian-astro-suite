@@ -74,6 +74,7 @@ Community plugins enabled:
 - mdx as md
 - Paste image rename
 - Property Over Filename
+- SEO
 - Settings Search
 - Status Bar Organizer
 - Style Settings
@@ -150,6 +151,10 @@ This is so you can see and edit the contents of any `.mdx` in addition to `.md`.
 ### Settings Search
 
 Simply provides a global search option for all settings in Obsidian.
+
+### SEO
+
+Get a snappy audit of your content for search engine rankings and AI parsing. You can get a quick snapshot of your whole vault or drill down into specific posts. You can configure the settings to turn off checks you don't care about or tweak the logic in the calculations.
 
 ### BRAT (Temporary)
 
