@@ -51,7 +51,7 @@ Disabled default core plugins:
 
 Community plugins enabled: 
 - Astro Composer
-- Bases CRM
+- Bases CMS
 - Commander
 - Custom save
 - Default New Tab Page
@@ -83,7 +83,7 @@ You can also launch the `Edit Astro config` command, which will open your `confi
 
 This defines a set of commands to fire once `CTRL + S` is initiated. For convenience, both "Convert internal links for Astro" and "Standardize properties" commands from the Astro Composer plugin are included. You can add or remove any if you'd like - this is designed for posts to be "publish-ready" when manually saved.
 
-### Homepage, Default New Tab Page, and Bases CRM
+### Homepage, Default New Tab Page, and Bases CMS
 
 All three of these plugins work together so you're default screen is a `.base` file that's a directory of all of your blog posts, listed in reverse-chronological order. You're able to configure the CMS view and even add new views to your liking. 
 
@@ -91,7 +91,7 @@ The Base is nested within a folder called `_bases` because Astro will ignore fil
 
 I call this "Home Base."
 
-Bases CRM lets us treat a grid of content like a content management system. You can select multiple items and do bulk edits, rename content right from that view, or toggle the draft status of an item.
+Bases CMS lets us treat a grid of content like a content management system. You can select multiple items and do bulk edits, rename content right from that view, or toggle the draft status of an item.
 
 ### Paste Image Rename 
 
