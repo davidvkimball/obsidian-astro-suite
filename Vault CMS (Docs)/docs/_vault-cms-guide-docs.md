@@ -1,20 +1,16 @@
 ---
-title: Obsidian Vault Guide
-description: A guide for this Obsidian Vault.
-tags:
-  - Meta
-pubDate: 2025-08-23
-draft: true
+title: Vault CMS Guide (Docs)
+description: How to use this Obsidian vault as a content management system.
 ---
-![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](images/astro-obsidian.png)
+![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](attachments/astro-obsidian.png)
 
 ## Overview
 
-All plugins, key bindings, and the theme can be customized to your liking, but this is what's on by default. Optimized for use with [Slate Astro theme](https://github.com/SlateDesign/slate-blog).
+All plugins, key bindings, and the theme can be customized to your liking, but this is what's on by default. Optimized for use with [Starlight Astro theme](https://github.com/withastro/starlight).
 
 ## Philosophy 
 
-1. Plug-and-play Astro blogging experience.
+1. Plug-and-play Astro documentation experience.
 2. Maintain vanilla Obsidian look and feel.
 3. Emphasis on clarity and flexibility. 
 ## Important Hotkeys
@@ -28,10 +24,10 @@ Here's a guide for some important hotkeys set especially for this theme:
 - Toggle reading view: `CTRL + E`
 - Toggle Zen mode: `CTRL + SHIFT + Z`
 - Insert image: `CTRL + '`
-- Rename current post: `CTRL + R` 
+- Rename current doc: `CTRL + R` 
 - Start Terminal: `CTRL + SHIFT + D`
 - Open Astro config file: `CTRL + SHIFT + ,`
-- Git: Commit and Sync: `CTRL + SHIFT + S` (off by default)
+- Git: Commit and Sync `CTRL + SHIFT + S` (off by default)
 - Reload Obsidian (without saving): `CTRL + SHIFT + R`
 - Toggle light/dark mode: `CTRL + SHIFT + M`
 
@@ -62,12 +58,12 @@ Community plugins enabled:
 - SEO
 - Settings Search
 - Status Bar Organizer
-- Tag Wrangler
 - Title-Only Tab
+- Zen Mode
 
 ### Astro Composer 
 
-Handy for easily creating new notes as Astro blog posts. Just create a new note with `CTRL + N`, type in a title in Title case or with special characters, and the note or folder name generated is a kebab-case version of the title without special characters. This is ideal for automating post slugs. `CTRL + R` allows you to easily rename blog posts, and note filenames (or parent folders) get updated in kebab-case automatically.
+Handy for easily creating new notes as Astro docs. Just create a new note with `CTRL + N`, type in a title in Title case or with special characters, and the note name generated is a kebab-case version of the title without special characters. This is ideal for automating doc page slugs. `CTRL + R` allows you to easily rename docs, and note filenames get updated in kebab-case automatically.
 
 You can also define and set default properties that can be generated automatically or manually set for any open note as well.
 
@@ -100,10 +96,6 @@ Quickly drag and drop image files or paste directly from your clipboard and give
 ### Image Inserter
 
 Pull in images from Unsplash or other sources easily with just a few keystrokes. Just use `CTRL + '` to insert an image - and immediately set a SEO-friendly filename for it via the Paste Image Rename plugin.
-
-### Tag Wrangler
-
-Makes managing tabs more useful. Can easily bulk-rename tags or search your content by tags.
 
 ### Title-Only Tab
 
