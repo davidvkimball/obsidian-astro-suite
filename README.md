@@ -1,12 +1,12 @@
-# Obsidian CMS (formerly Obsidian Astro Suite)
+# Vault CMS (formerly Obsidian Astro Suite)
 
-A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
+Use Obsidian as a content management system for your Astro website.
 
 <img width="1200" height="630" alt="astro-composer-suite-for-obsidian" src="https://github.com/user-attachments/assets/c006e78e-01c7-401d-a2cf-f6f4a653723c" />
 
 ## Video Guide
 
-📺 [Astro Suite for Obsidian Video Guide](https://youtu.be/ZhizarvwLnU)
+📺 [Video Guide](https://youtu.be/ZhizarvwLnU)
 
 ## Features 
 
@@ -16,7 +16,7 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 - Default, Minimal, and Docs options optimized for different Astro themes
 - Optional instant-publish option via the Git plugin
 
-<img width="1920" height="1080" alt="astro-suite-preview" src="https://github.com/user-attachments/assets/7bf58b29-f393-4fdf-8e0d-ae1254fab045" />
+<img width="1920" height="1080" alt="vault-cms-preview" src="https://github.com/user-attachments/assets/7bf58b29-f393-4fdf-8e0d-ae1254fab045" />
 
 
 > [!NOTE]
