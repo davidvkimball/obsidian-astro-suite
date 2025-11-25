@@ -1,4 +1,4 @@
-# Astro Suite for Obsidian
+# Obsidian CMS (formerly Obsidian Astro Suite)
 
 A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 
@@ -20,7 +20,7 @@ A set of preconfigured Obsidian vaults to publish Astro blog posts easily.
 
 
 > [!NOTE]
-> To see an Astro Suite Obsidian vault combined with an Astro site specifically designed with it in mind, check out my theme [Astro Modular](https://github.com/davidvkimball/astro-modular).
+> To see Obsidian CMS combined with an Astro site specifically designed with it in mind, check out my theme [Astro Modular](https://github.com/davidvkimball/astro-modular).
 
 ## Installation Guide
 
