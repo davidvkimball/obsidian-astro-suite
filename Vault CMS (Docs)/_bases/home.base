@@ -19,3 +19,4 @@ views:
     customizeNewButton: true
     draftStatusUseFilenamePrefix: true
     showDraftStatus: true
+    newNoteLocation: ""

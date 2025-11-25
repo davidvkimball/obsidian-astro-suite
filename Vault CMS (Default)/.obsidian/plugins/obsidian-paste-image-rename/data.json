@@ -5,6 +5,6 @@
   "dupNumberAlways": false,
   "autoRename": false,
   "handleAllAttachments": true,
-  "excludeExtensionPattern": "canvas|base",
+  "excludeExtensionPattern": "base|canvas",
   "disableRenameNotice": false
 }

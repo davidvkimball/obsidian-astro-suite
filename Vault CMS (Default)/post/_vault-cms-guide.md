@@ -6,7 +6,7 @@ tags:
 pubDate: 2025-08-23
 draft: true
 ---
-![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](images/astro-obsidian.png)
+![Vault CMS logo with Obsidian and Astro logo marks underneath.](images/vault-cms-cover.png)
 
 ## Overview
 
@@ -55,6 +55,7 @@ Community plugins enabled:
 - Commander
 - Custom save
 - Default New Tab Page
+- Editing Toolbar
 - Homepage
 - Image Inserter
 - Paste image rename
@@ -93,6 +94,8 @@ I call this "Home Base."
 
 Bases CMS lets us treat a grid of content like a content management system. You can select multiple items and do bulk edits, rename content right from that view, or toggle the draft status of an item.
 
+To edit a view, select the current view on the top left, revealing the list, and then select the right chevron arrow to open up the "configure view" options. Configure your desired properties here. At the very bottom, you can set where new notes are created when the "new" button is clicked on the top right. 
+
 ### Paste Image Rename 
 
 Quickly drag and drop image files or paste directly from your clipboard and give them kebab-case, SEO-friendly names. 
@@ -129,9 +132,9 @@ Simply provides a global search option for all settings in Obsidian.
 
 Get a snappy audit of your content for search engine rankings and AI parsing. You can get a quick snapshot of your whole vault or drill down into specific posts. You can configure the settings to turn off checks you don't care about or tweak the logic in the calculations.
 
-### BRAT (Temporary)
+### Editing Toolbar
 
-Only used temporarily to load any beta plugins before they're available in the Obsidian plugin directory. Future versions of this vault will remove BRAT in favor of the official releases.
+This adds a Microsoft Word-style toolbar to Obsidian. Click the "toggle editing toolbar" button on the title bar to show or hide it. It's hidden until revealed and completely disabled on mobile by default.
 
 ## Git, Commander, and Status Bar Organizer
 
@@ -140,6 +143,10 @@ The [Git](https://obsidian.md/plugins?id=obsidian-git) plugin is turned off by d
 To publish, you can use `CTRL + SHIFT + S` or click the "commit-and-sync" button on the status bar (added with the Commander plugin). Your changes will be committed and pushed to your remote repository automatically.
 
 Status Bar Organizer ensures the commit-and-sync icon stays on the far right. You can also use it to hide or re-arrange status bar items to your liking.
+
+### BRAT (Temporary)
+
+Only used temporarily to load any beta plugins before they're available in the Obsidian plugin directory. Future versions of this vault will remove BRAT in favor of the official releases.
 
 ## CSS Snippets
 

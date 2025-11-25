@@ -23,3 +23,4 @@ views:
     showDraftStatus: true
     customizeNewButton: true
     fallbackToEmbeds: true
+    newNoteLocation: ""

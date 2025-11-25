@@ -2,7 +2,7 @@
 title: "Vault CMS Guide (Minimal)"
 pubDate: 2025-08-25
 ---
-![Astro and Obsidian logos stacked vertically with a "+" (plus) sign between them.](_assets/astro-obsidian.png)
+![Vault CMS logo with Obsidian and Astro logo marks underneath.](_assets/vault-cms-cover.png)
 
 ## Overview
 
@@ -156,15 +156,15 @@ Simply provides a global search option for all settings in Obsidian.
 
 Get a snappy audit of your content for search engine rankings and AI parsing. You can get a quick snapshot of your whole vault or drill down into specific posts. You can configure the settings to turn off checks you don't care about or tweak the logic in the calculations.
 
-### BRAT (Temporary)
-
-Only used temporarily to load any beta plugins before they're available in the Obsidian plugin directory. Future versions of this vault will remove BRAT in favor of the official releases.
-
 ## Git and Commander
 
 The [Git](https://obsidian.md/plugins?id=obsidian-git) plugin is turned off by default, if you turn it on, you can easily publish to your Astro blog without leaving Obsidian. Simply enable the plugin and configure with git to turn it on. If you unhide the status bar, you'll also see your current git status in the status bar on the bottom right.
 
 To publish, you can use `CTRL + SHIFT + S` or click the "commit-and-sync" button on the status bar (added with the Commander plugin). Your changes will be committed and pushed to your remote repository automatically.
+
+### BRAT (Temporary)
+
+Only used temporarily to load any beta plugins before they're available in the Obsidian plugin directory. Future versions of this vault will remove BRAT in favor of the official releases.
 
 ## CSS Snippets
 
