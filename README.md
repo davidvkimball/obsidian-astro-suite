@@ -2,7 +2,8 @@
 
 Use Obsidian as a content management system for your Astro website.
 
-<img width="1200" height="630" alt="astro-composer-suite-for-obsidian" src="https://github.com/user-attachments/assets/c006e78e-01c7-401d-a2cf-f6f4a653723c" />
+<img width="1200" height="630" alt="Vault CMS cover with Obsidian and Astro logos at the bottom." src="https://github.com/user-attachments/assets/fb5d8368-71dd-4bf8-8851-36ada6d4f530" />
+
 
 ## Video Guide
 
