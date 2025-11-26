@@ -17,6 +17,15 @@ All plugins, key bindings, and the theme can be customized to your liking, but t
 1. Plug-and-play Astro blogging experience.
 2. Maintain vanilla Obsidian look and feel.
 3. Emphasis on clarity and flexibility. 
+
+## Default Settings
+
+1. Markdown links are used in favor of wikilinks.
+2. Default location for new notes is the `post` folder.
+3. Some core plugins are disabled.
+4. Indentation guides have been disabled.
+5. Custom hotkeys have been set.
+6. Community plugins have been enabled.
 ## Important Hotkeys
 
 Here's a guide for some important hotkeys set especially for this theme:

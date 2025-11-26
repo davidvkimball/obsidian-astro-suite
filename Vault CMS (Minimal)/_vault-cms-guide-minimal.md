@@ -14,6 +14,15 @@ All plugins, key bindings, and the theme can be customized to your liking, but t
 2. Emphasis on focus. 
 3. Reliance on keyboard shortcuts.
 
+## Default Settings
+
+1. Markdown links are used in favor of wikilinks.
+2. Default location for new notes is the vault folder.
+3. Some core plugins are disabled.
+4. Indentation guides have been disabled.
+5. Custom hotkeys have been set.
+6. Community plugins have been enabled.
+
 ## Theme
 
 Fittingly, the [Minimal](https://minimal.guide/home) theme is used. It uses an understated color scheme with high contract options. 
