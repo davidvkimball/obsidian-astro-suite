@@ -138,6 +138,38 @@ Status Bar Organizer ensures the commit-and-sync icon stays on the far right. Yo
 
 Only used temporarily to load any beta plugins before they're available in the Obsidian plugin directory. Future versions of this vault will remove BRAT in favor of the official releases.
 
-## CSS Snippets
+## Mobile 
 
-An optional custom CSS snippet is included called `swap-new-tab-icon-with-home-mobile.css` which replaces the new tab button's icon on the mobile view with a home icon. Since opening a new tab using the combination of Default New Tab Page and Homepage plugins opens your "home base" view, the icon better represents what's happening when you tab the button. Disable to bring back the standard plus (`+`) icon. This is off by default, but you can turn it on if you'd like.
+### Disabling the Git Plugin
+
+If you choose to enable the Git plugin, it's recommended to disable it on mobile and use something like [Git Sync](https://github.com/ViscousPot/GitSync) for iOS and Android (or [MGit](https://github.com/maks/MGit) just for Android) instead. The Git plugin is notoriously buggy on mobile so it's better to use something else. 
+
+Here's how to disable it: 
+
+1. On your mobile device, open Obsidian, and open your Astro Modular site's `src/content` folder as a vault. 
+2. Open the left sidebar and open Settings. 
+3. Scroll down to community plugins and tap on Git from the list.
+4. Scroll all the way down and select "Disable on this device".
+5. Restart Obsidian. 
+
+This method is recommended rather than merely disabling the plugin, since if you sync with your desktop it will also get disabled there, too. This way it's disabled per-device.
+
+### Customization 
+
+To tweak the mobile-specific experience, there are two main places to check: Toolbar and Appearance in settings.
+
+#### Toolbar
+
+Under the Toolbar settings, you can set the mobile quick action which is triggered by pulling down from the top of the screen by tapping the "Configure" option. 
+
+Below that you can adjust what options are available to you on the mobile toolbar.
+
+#### Appearance 
+
+Under the Appearance settings, locate "Interface" and the "Ribbon menu configuration" option's "Manage" button. You can set your preferred quick access item from the list, and customize which items appear on the ribbon menu. 
+
+If you keep scrolling down, you can find an optional mobile-specific CSS snippet: `swap-new-tab-icon-with-home-mobile.css`. This CSS snippet replaces the new tab button's icon on the mobile view with a home icon. Since opening a new tab using the combination of Default New Tab Page and Homepage plugins opens your "home base" view, the icon better represents what's happening when you tab the button. Disable to bring back the standard plus (`+`) icon. This is off by default, but you can turn it on if you'd like.
+
+### You're All Set
+
+Assuming you have git working on your phone in another capacity, you now have seamless content sync between your desktop, laptop, tablet, and mobile devices.
