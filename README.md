@@ -17,8 +17,7 @@ Use Obsidian as a content management system for your Astro website.
 - Default, Minimal, and Docs options optimized for different Astro themes
 - Optional instant-publish option via the Git plugin
 
-<img width="1920" height="1080" alt="vault-cms-preview" src="https://github.com/user-attachments/assets/7bf58b29-f393-4fdf-8e0d-ae1254fab045" />
-
+<img width="1920" height="1080" alt="Vault CMS Showcase." src="https://github.com/user-attachments/assets/0d1ea89e-9d6b-40b1-944d-cfe6143e222e" />
 
 > [!NOTE]
 > To see Obsidian CMS combined with an Astro site specifically designed with it in mind, check out my theme [Astro Modular](https://github.com/davidvkimball/astro-modular).
