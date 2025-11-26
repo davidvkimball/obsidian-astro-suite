@@ -8,7 +8,14 @@
   "rightRibbon": [],
   "titleBar": [],
   "statusBar": [],
-  "pageHeader": [],
+  "pageHeader": [
+    {
+      "id": "editing-toolbar:hide-show-menu",
+      "icon": "lucide-chevrons-up-down",
+      "name": "Toggle editing toolbar",
+      "mode": "any"
+    }
+  ],
   "macros": [],
   "explorer": [],
   "hide": {

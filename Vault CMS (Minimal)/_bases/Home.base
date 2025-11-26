@@ -17,8 +17,9 @@ views:
     showTextPreview: false
     dateProperty: note.pubDate
     showDraftStatus: true
-    fallbackToEmbeds: true
-    imageFormat: cover
+    fallbackToEmbeds: false
+    imageFormat: none
     customizeNewButton: true
     draftStatusUseFilenamePrefix: true
     showDate: true
+    cardSize: 230

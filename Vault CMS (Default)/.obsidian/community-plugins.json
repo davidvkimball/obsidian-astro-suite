@@ -15,5 +15,6 @@
   "bases-cms",
   "statusbar-organizer",
   "zenmode",
-  "editing-toolbar"
+  "editing-toolbar",
+  "simple-focus"
 ]

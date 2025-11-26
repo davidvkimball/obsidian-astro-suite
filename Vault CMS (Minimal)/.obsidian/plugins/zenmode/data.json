@@ -1,6 +1,6 @@
 {
   "zenMode": false,
-  "leftSidebar": false,
+  "leftSidebar": true,
   "rightSidebar": true,
   "fullscreen": false,
   "exitButtonVisibility": "always",
