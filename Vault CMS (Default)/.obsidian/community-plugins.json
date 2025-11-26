@@ -7,7 +7,6 @@
   "new-tab-default-page",
   "custom-save",
   "title-only-tab",
-  "cmdr",
   "seo",
   "property-over-file-name",
   "settings-search",
@@ -16,5 +15,6 @@
   "statusbar-organizer",
   "zenmode",
   "editing-toolbar",
-  "simple-focus"
+  "simple-focus",
+  "cmdr"
 ]

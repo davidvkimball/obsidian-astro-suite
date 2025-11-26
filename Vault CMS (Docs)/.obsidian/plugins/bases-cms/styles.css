@@ -248,13 +248,10 @@
 .card-thumbnail .image-embed {
 	width: 100%;
 	height: 100%;
-}
-
-.card-thumbnail img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	pointer-events: auto;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	filter: blur(0.5px);
 }
 
 /* ============================================
@@ -335,16 +332,10 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	/* Ensure it fills the parent completely */
-}
-
-.card.image-format-cover .card-cover img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	filter: blur(0.5px);
 }
 
 /* ============================================
