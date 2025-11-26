@@ -12,7 +12,7 @@
       "id": "obsidian-git:push",
       "icon": "lucide-arrow-up-circle",
       "name": "Git: Commit-and-sync",
-      "mode": "any"
+      "mode": "desktop"
     }
   ],
   "pageHeader": [],

@@ -12,7 +12,7 @@
       "id": "obsidian-git:push",
       "icon": "lucide-arrow-up-circle",
       "name": "Git: Commit-and-sync",
-      "mode": "any"
+      "mode": "desktop"
     }
   ],
   "pageHeader": [
@@ -20,7 +20,7 @@
       "id": "editing-toolbar:hide-show-menu",
       "icon": "lucide-chevrons-up-down",
       "name": "Toggle editing toolbar",
-      "mode": "any"
+      "mode": "desktop"
     }
   ],
   "macros": [],
