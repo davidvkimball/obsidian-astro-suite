@@ -142,6 +142,48 @@
   }
 }
 
+/* Hide tab titles until they're renamed by the plugin to prevent flicker */
+.workspace-tab-header:not([data-pov-processed="true"]) .workspace-tab-header-inner-title {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.workspace-tab-header[data-pov-processed="true"] .workspace-tab-header-inner-title {
+  opacity: 1;
+}
+
+/* Hide backlink elements until they're processed by the plugin to prevent flicker */
+.embedded-backlinks [data-path]:not([data-pov-processed="true"]),
+.backlinks-pane [data-path]:not([data-pov-processed="true"]),
+.backlink-pane [data-path]:not([data-pov-processed="true"]),
+.outgoing-link-pane [data-path]:not([data-pov-processed="true"]),
+.outgoing-links [data-path]:not([data-pov-processed="true"]),
+.backlink-container [data-path]:not([data-pov-processed="true"]),
+.embedded-backlinks .tree-item-inner:not([data-pov-processed="true"]),
+.backlinks-pane .tree-item-inner:not([data-pov-processed="true"]),
+.backlink-pane .tree-item-inner:not([data-pov-processed="true"]),
+.outgoing-link-pane .tree-item-inner:not([data-pov-processed="true"]),
+.outgoing-links .tree-item-inner:not([data-pov-processed="true"]),
+.backlink-container .tree-item-inner:not([data-pov-processed="true"]) {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.embedded-backlinks [data-path][data-pov-processed="true"],
+.backlinks-pane [data-path][data-pov-processed="true"],
+.backlink-pane [data-path][data-pov-processed="true"],
+.outgoing-link-pane [data-path][data-pov-processed="true"],
+.outgoing-links [data-path][data-pov-processed="true"],
+.backlink-container [data-path][data-pov-processed="true"],
+.embedded-backlinks .tree-item-inner[data-pov-processed="true"],
+.backlinks-pane .tree-item-inner[data-pov-processed="true"],
+.backlink-pane .tree-item-inner[data-pov-processed="true"],
+.outgoing-link-pane .tree-item-inner[data-pov-processed="true"],
+.outgoing-links .tree-item-inner[data-pov-processed="true"],
+.backlink-container .tree-item-inner[data-pov-processed="true"] {
+  opacity: 1;
+}
+
 /* Dark mode adjustments - SCOPED to plugin only */
 .theme-dark .property-over-filename-suggestion .suggestion-highlight {
   background-color: rgba(255, 255, 0, 0.3);

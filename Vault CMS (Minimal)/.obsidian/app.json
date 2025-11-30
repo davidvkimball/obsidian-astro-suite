@@ -5,7 +5,7 @@
   "attachmentFolderPath": "_assets",
   "userIgnoreFilters": null,
   "focusNewTab": false,
-  "mobilePullAction": "file-explorer:new-file",
+  "mobilePullAction": "command-palette:open",
   "trashOption": "system",
   "alwaysUpdateLinks": true,
   "useMarkdownLinks": true,

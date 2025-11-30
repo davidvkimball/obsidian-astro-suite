@@ -3,7 +3,7 @@
   "useMarkdownLinks": true,
   "alwaysUpdateLinks": true,
   "newLinkFormat": "relative",
-  "mobilePullAction": "file-explorer:new-file",
+  "mobilePullAction": "command-palette:open",
   "mobileToolbarCommands": [
     "editor:undo",
     "editor:redo",
