@@ -11,20 +11,36 @@
 	margin-top: 16px;
 }
 
+/* Ensure all buttons in the button container use default cursor */
+.astro-composer-button-container button {
+	cursor: default !important;
+}
+
+.astro-composer-button-container button:hover {
+	cursor: default !important;
+}
+
 .astro-composer-cancel-button,
 .astro-composer-create-button {
 	padding: 6px 12px;
 	border-radius: 4px;
-	cursor: default;
+	cursor: default !important;
+}
+
+.astro-composer-cancel-button:hover,
+.astro-composer-create-button:hover {
+	cursor: default !important;
 }
 
 .astro-composer-create-button.mod-cta {
 	background-color: var(--interactive-accent);
 	color: var(--text-on-accent);
+	cursor: default !important;
 }
 
 .astro-composer-create-button.mod-cta:hover {
 	background-color: var(--interactive-accent-hover);
+	cursor: default !important;
 }
 
 .astro-composer-template-textarea {
@@ -135,6 +151,12 @@
 		width: 100%;
 		padding: 12px;
 		font-size: 16px;
+		cursor: default !important;
+	}
+	
+	.modal .astro-composer-cancel-button:hover,
+	.modal .astro-composer-create-button:hover {
+		cursor: default !important;
 	}
 }
 
