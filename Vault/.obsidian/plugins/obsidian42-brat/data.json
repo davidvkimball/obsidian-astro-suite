@@ -1,0 +1,58 @@
+{
+  "pluginList": [
+    "davidvkimball/obsidian-bases-cms",
+    "davidvkimball/obsidian-oxygen-settings",
+    "davidvkimball/obsidian-alias-file-name-history",
+    "davidvkimball/obsidian-seo",
+    "davidvkimball/obsidian-property-over-filename",
+    "davidvkimball/obsidian-disable-tabs",
+    "davidvkimball/obsidian-astro-composer"
+  ],
+  "pluginSubListFrozenVersion": [
+    {
+      "repo": "davidvkimball/obsidian-bases-cms",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-oxygen-settings",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-alias-file-name-history",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-seo",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-property-over-filename",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-disable-tabs",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-astro-composer",
+      "version": "latest"
+    }
+  ],
+  "themesList": [
+    {
+      "repo": "davidvkimball/obsidian-oxygen",
+      "lastUpdate": "23878872"
+    }
+  ],
+  "updateAtStartup": true,
+  "updateThemesAtStartup": true,
+  "enableAfterInstall": true,
+  "loggingEnabled": false,
+  "loggingPath": "BRAT-log",
+  "loggingVerboseEnabled": false,
+  "debuggingMode": false,
+  "notificationsEnabled": true,
+  "personalAccessToken": "",
+  "selectLatestPluginVersionByDefault": false,
+  "allowIncompatiblePlugins": false
+}

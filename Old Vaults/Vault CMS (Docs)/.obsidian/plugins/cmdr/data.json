@@ -1,0 +1,43 @@
+{
+  "confirmDeletion": true,
+  "showAddCommand": false,
+  "debug": false,
+  "editorMenu": [],
+  "fileMenu": [],
+  "leftRibbon": [],
+  "rightRibbon": [],
+  "titleBar": [],
+  "statusBar": [
+    {
+      "id": "obsidian-git:push",
+      "icon": "lucide-arrow-up-circle",
+      "name": "Git: Commit-and-sync",
+      "mode": "desktop"
+    }
+  ],
+  "pageHeader": [
+    {
+      "id": "editing-toolbar:hide-show-menu",
+      "icon": "lucide-chevrons-up-down",
+      "name": "Toggle editing toolbar",
+      "mode": "desktop"
+    }
+  ],
+  "macros": [],
+  "explorer": [],
+  "hide": {
+    "statusbar": [],
+    "leftRibbon": []
+  },
+  "spacing": 8,
+  "advancedToolbar": {
+    "rowHeight": 48,
+    "rowCount": 1,
+    "spacing": 0,
+    "buttonWidth": 48,
+    "columnLayout": false,
+    "mappedIcons": [],
+    "tooltips": false,
+    "heightOffset": 0
+  }
+}

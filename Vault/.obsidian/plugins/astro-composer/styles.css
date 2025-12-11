@@ -1,0 +1,278 @@
+.astro-composer-title-input {
+	width: 100%;
+	margin-bottom: 16px;
+	padding: 8px;
+}
+
+.astro-composer-button-container {
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+	margin-top: 16px;
+}
+
+/* Ensure all buttons in the button container use default cursor */
+.astro-composer-button-container button {
+	cursor: default !important;
+}
+
+.astro-composer-button-container button:hover {
+	cursor: default !important;
+}
+
+.astro-composer-cancel-button,
+.astro-composer-create-button {
+	padding: 6px 12px;
+	border-radius: 4px;
+	cursor: default !important;
+}
+
+.astro-composer-cancel-button:hover,
+.astro-composer-create-button:hover {
+	cursor: default !important;
+}
+
+.astro-composer-create-button.mod-cta {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	cursor: default !important;
+}
+
+.astro-composer-create-button.mod-cta:hover {
+	background-color: var(--interactive-accent-hover);
+	cursor: default !important;
+}
+
+.astro-composer-template-textarea {
+	height: 300px; /* Adjusted for 5-10 lines of properties */
+	width: 100%;
+	padding: 8px;
+	resize: vertical; /* Allow vertical resizing */
+	margin-bottom: 16px;
+}
+
+.astro-composer-modal {
+	padding: 20px;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.astro-composer-modal h2 {
+	margin-top: 0;
+}
+
+/* Custom Content Types Styling */
+.custom-content-types-container {
+	margin-top: 16px;
+}
+
+.custom-content-type-item {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	padding: 16px;
+	margin-bottom: 16px;
+	background-color: var(--background-secondary);
+}
+
+.custom-content-type-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.custom-content-type-header .setting-item {
+	margin-bottom: 0;
+}
+
+.custom-content-type-header .setting-item-name {
+	font-weight: 600;
+	color: var(--text-normal);
+}
+
+.custom-content-type-item .setting-item {
+	margin-bottom: 12px;
+}
+
+.custom-content-type-item .setting-item:last-child {
+	margin-bottom: 0;
+}
+
+/* Add spacing between settings in custom content types since we removed dividers */
+.custom-content-type-settings > div {
+	margin-bottom: 16px;
+}
+
+.custom-content-type-settings > div:last-child {
+	margin-bottom: 0;
+}
+
+.custom-content-type-settings {
+	transition: all 0.2s ease-in-out;
+}
+
+.custom-content-type-settings[style*="none"] {
+	opacity: 0;
+	transform: translateY(-10px);
+}
+
+/* Mobile-specific improvements for Astro Composer modal */
+@media (max-width: 768px) {
+	/* Force mobile positioning for all modals containing our content */
+	.modal:has(.astro-composer-title-input) {
+		position: fixed !important;
+		top: 10% !important;
+		left: 50% !important;
+		transform: translateX(-50%) !important;
+		max-height: 50vh !important;
+		overflow-y: auto !important;
+		width: 90vw !important;
+		max-width: 500px !important;
+	}
+	
+	/* Only target our specific modal content, not all modals */
+	.modal .astro-composer-title-input {
+		font-size: 16px; /* Prevents zoom on iOS */
+		padding: 12px;
+		border: 1px solid var(--background-modifier-border);
+		border-radius: 4px;
+	}
+	
+	/* Ensure our modal content is properly sized on mobile */
+	.modal .astro-composer-button-container {
+		flex-direction: column;
+		gap: 12px;
+	}
+	
+	.modal .astro-composer-cancel-button,
+	.modal .astro-composer-create-button {
+		width: 100%;
+		padding: 12px;
+		font-size: 16px;
+		cursor: default !important;
+	}
+	
+	.modal .astro-composer-cancel-button:hover,
+	.modal .astro-composer-create-button:hover {
+		cursor: default !important;
+	}
+}
+
+/* Fallback for browsers that don't support :has() */
+.astro-composer-mobile-modal {
+	position: fixed !important;
+	top: 10% !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+	max-height: 50vh !important;
+	overflow-y: auto !important;
+	width: 90vw !important;
+	max-width: 500px !important;
+}
+
+/* Settings UI utility classes */
+.astro-composer-setting-container-visible {
+	display: block;
+}
+
+.astro-composer-setting-container-hidden {
+	display: none;
+}
+
+.astro-composer-custom-type-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+}
+
+.astro-composer-header-name {
+	flex: 1;
+	min-width: 0;
+}
+
+/* Collapse button */
+.astro-composer-collapse-button {
+	background: transparent !important;
+	border: none !important;
+	padding: 4px;
+	margin-right: 4px;
+	cursor: default;
+	color: var(--text-muted);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	transition: background-color 0.2s ease, color 0.2s ease;
+	box-shadow: none !important;
+}
+
+.astro-composer-collapse-button:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.astro-composer-collapse-button:active {
+	background-color: var(--background-modifier-active);
+}
+
+.astro-composer-collapse-button svg {
+	transition: transform 0.2s ease;
+}
+
+.astro-composer-collapse-button.is-collapsed svg {
+	transform: rotate(-90deg);
+}
+
+/* Reorder buttons container */
+.astro-composer-reorder-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
+	margin-right: 8px;
+	align-items: center;
+}
+
+/* Reorder buttons - minimal icon-only style */
+.astro-composer-reorder-button {
+	background: transparent !important;
+	border: none !important;
+	padding: 4px;
+	cursor: default;
+	color: var(--text-muted);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	transition: background-color 0.2s ease, color 0.2s ease;
+	line-height: 1;
+	opacity: 0.6;
+	box-shadow: none !important;
+}
+
+.astro-composer-reorder-button:hover:not(:disabled) {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+	opacity: 1;
+}
+
+.astro-composer-reorder-button:active:not(:disabled) {
+	background-color: var(--background-modifier-active);
+}
+
+.astro-composer-reorder-button:disabled {
+	opacity: 0.2;
+	cursor: default;
+}
+
+.astro-composer-reorder-button svg {
+	width: 16px;
+	height: 16px;
+}
+
+.astro-composer-remove-setting {
+	border-top: none;
+}
+
+.astro-composer-add-button {
+	border-top: none;
+}

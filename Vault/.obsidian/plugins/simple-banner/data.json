@@ -1,0 +1,128 @@
+{
+  "desktop": {
+    "bannerEnabled": true,
+    "height": 240,
+    "viewOffset": 0,
+    "noteOffset": -32,
+    "bannerRadius": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "bannerPadding": 8,
+    "bannerFade": true,
+    "iconEnabled": false,
+    "iconSize": 96,
+    "iconRadius": 8,
+    "iconBackground": true,
+    "iconBorder": 2,
+    "iconAlignment": [
+      "flex-start",
+      "flex-end"
+    ],
+    "iconOffset": [
+      0,
+      -24
+    ],
+    "datetimeEnabled": false,
+    "datetimeOnPropOnly": false,
+    "datetimeAlignment": [
+      "flex-end",
+      "flex-start"
+    ],
+    "datetimeOffset": [
+      0,
+      0
+    ],
+    "datetimeTimeFormat": "HH:mm",
+    "datetimeDateFormat": "dddd, MMMM Do YYYY",
+    "interop": {}
+  },
+  "tablet": {
+    "bannerEnabled": true,
+    "height": 190,
+    "viewOffset": 0,
+    "noteOffset": -32,
+    "bannerRadius": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "bannerPadding": 8,
+    "bannerFade": true,
+    "iconEnabled": false,
+    "iconSize": 96,
+    "iconRadius": 8,
+    "iconBackground": true,
+    "iconBorder": 2,
+    "iconAlignment": [
+      "flex-start",
+      "flex-end"
+    ],
+    "iconOffset": [
+      0,
+      -24
+    ],
+    "datetimeEnabled": false,
+    "datetimeOnPropOnly": false,
+    "datetimeAlignment": [
+      "flex-end",
+      "flex-start"
+    ],
+    "datetimeOffset": [
+      0,
+      0
+    ],
+    "datetimeTimeFormat": "HH:mm",
+    "datetimeDateFormat": "dddd, MMMM Do YYYY",
+    "interop": {}
+  },
+  "phone": {
+    "bannerEnabled": true,
+    "height": 160,
+    "viewOffset": 0,
+    "noteOffset": -32,
+    "bannerRadius": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "bannerPadding": 8,
+    "bannerFade": true,
+    "iconEnabled": false,
+    "iconSize": 56,
+    "iconRadius": 8,
+    "iconBackground": true,
+    "iconBorder": 2,
+    "iconAlignment": [
+      "flex-start",
+      "flex-end"
+    ],
+    "iconOffset": [
+      0,
+      -24
+    ],
+    "datetimeEnabled": false,
+    "datetimeOnPropOnly": false,
+    "datetimeAlignment": [
+      "flex-end",
+      "flex-start"
+    ],
+    "datetimeOffset": [
+      0,
+      0
+    ],
+    "datetimeTimeFormat": "HH:mm",
+    "datetimeDateFormat": "dddd, MMMM Do YYYY",
+    "interop": {}
+  },
+  "properties": {
+    "autohide": false,
+    "image": "image",
+    "icon": "icon",
+    "datetime": "date"
+  }
+}

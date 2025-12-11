@@ -1,0 +1,180 @@
+/* Hide tabs */
+.zenmode-active .mod-root .workspace-tabs .workspace-tab-header-container,
+/* Hide navbar */
+.zenmode-active .mobile-navbar,
+.zenmode-active .pdf-toolbar,
+/* Mobile view header */
+.zenmode-active div.app-container>div.horizontal-main-container>div>div.workspace-split.mod-vertical.mod-root.mod-visible>div>div.workspace-tab-container>div>div>div.view-header,
+/* Desktop view header */
+.zenmode-active .view-header-nav-buttons,
+.zenmode-active div.workspace-ribbon.side-dock-ribbon.mod-left,
+.zenmode-active div.workspace-tab-container>div>div>div.view-header,
+/* Hide tooltips */
+.zenmode-active .tooltip,
+/* Hide status */
+.zenmode-active .status-bar,
+/* Hide sidebar buttons */
+.zenmode-active .sidebar-toggle-button.mod-right,
+.zenmode-active .sidebar-toggle-button.mod-left,
+/* Hide search count flair */
+.zenmode-active .tree-item-flair:not(.tag-pane-tag-count),
+/* Hide file nav header */
+.zenmode-active .workspace-leaf-content[data-type=file-explorer] .nav-header,
+/* Hide maximize minimize buttons */
+.zenmode-active div.titlebar>div>div.titlebar-button-container.mod-right,
+/* Hide instructions */
+.zenmode-active .prompt-instructions {
+	display: none;
+}
+
+/* Hides vault name */
+.zenmode-active .workspace-sidedock-vault-profile,
+body.hider-vault:not(.is-mobile)
+	.workspace-split.mod-left-split
+	.workspace-sidedock-vault-profile {
+	display: none;
+}
+
+.zenmode-active .mod-top-left-space .view-header {
+	padding-left: var(--frame-left-space);
+}
+
+/* Hide properties - conditional based on hideProperties setting (exactly like Hider plugin) */
+.zenmode-hide-properties .markdown-reading-view .metadata-container {
+	display: none;
+}
+
+/* Hide properties in editing/source view by setting CSS variable */
+.zenmode-hide-properties {
+	--metadata-display-editing: none;
+}
+
+/* Hide inline title - conditional based on hideInlineTitle setting */
+.zenmode-active[data-zen-hide-inline-title="true"] .inline-title {
+	display: none;
+}
+
+/* Apply padding to markdown content */
+.zenmode-active .markdown-preview-view,
+.zenmode-active .markdown-source-view {
+	padding-top: var(--zen-mode-top-padding, 0px);
+	padding-bottom: var(--zen-mode-bottom-padding, 0px);
+}
+
+/* Focused file mode - handled by JavaScript, but add CSS as backup */
+.zenmode-active[data-zen-focused-file="true"] .workspace-leaf:not(.mod-active) {
+	display: none !important;
+}
+
+/* Hide scrollbars */
+.hider-scroll ::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide search suggestions */
+.hider-search-suggestions .suggestion-container.mod-search-suggestion {
+	display: none;
+}
+
+/* Draggable strip (leave OS window buttons untouched) */
+body:not(.is-mobile).zenmode-active .titlebar {
+	display: block !important;
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	z-index: 10 !important;
+	background: transparent !important;
+	-webkit-app-region: drag !important;
+}
+
+/* Make interactive elements inside titlebar not draggable */
+body:not(.is-mobile).zenmode-active .titlebar * {
+	-webkit-app-region: no-drag !important;
+}
+
+.zenmode-button {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	z-index: 1000;
+	overflow: visible;
+}
+
+/* Account for mobile navigation bar and safe areas */
+.is-mobile .zenmode-button {
+	bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Auto-hide button on desktop - hidden by default, shown on hover */
+body:not(.is-mobile) .zenmode-button-auto-hide {
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	/* Keep pointer-events enabled so the button area is still hoverable when invisible */
+	pointer-events: auto;
+	/* Create a larger hover zone by expanding the clickable area */
+	/* Use padding to create hover zone, negative margin to prevent layout shift */
+	padding: 30px;
+	margin: -30px;
+	/* Ensure the container itself is the hover target */
+	cursor: pointer;
+}
+
+/* Reveal button on hover - works when hovering anywhere in the expanded area */
+/* Use specific selector to override fade-out state when hovering */
+body:not(.is-mobile) .zenmode-button-auto-hide:hover,
+body:not(.is-mobile) .zenmode-button-auto-hide.zenmode-button-fade-out:hover {
+	opacity: 1;
+}
+
+/* Ensure button inside is also visible when container is hovered */
+body:not(.is-mobile) .zenmode-button-auto-hide:hover button,
+body:not(.is-mobile)
+	.zenmode-button-auto-hide.zenmode-button-fade-out:hover
+	button {
+	opacity: 1;
+}
+
+/* Initial highlight animation when entering Zen mode with auto-hide enabled */
+/* Use higher specificity to override auto-hide base state */
+body:not(.is-mobile)
+	.zenmode-button-auto-hide.zenmode-button-initial-highlight {
+	opacity: 1;
+}
+
+.zenmode-button-initial-highlight button {
+	animation: zenmode-button-highlight 1.5s ease-out;
+}
+
+@keyframes zenmode-button-highlight {
+	0% {
+		/* Start with a slightly brighter shadow for a subtle pulse effect */
+		box-shadow: 0 2px 12px var(--background-modifier-border);
+	}
+	50% {
+		/* Maintain the standard shadow for the first half of the animation */
+		box-shadow: 0 2px 8px var(--background-modifier-border);
+	}
+	100% {
+		/* Fade out completely */
+		box-shadow: none;
+	}
+}
+
+/* Smooth transition back to normal after animation */
+.zenmode-button button {
+	transition:
+		background-color 0.6s ease-in-out,
+		opacity 0.5s ease-in-out;
+}
+
+/* Fade out after initial highlight */
+/* Use higher specificity to override auto-hide and initial-highlight states */
+body:not(.is-mobile) .zenmode-button-auto-hide.zenmode-button-fade-out {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+body:not(.is-mobile) .zenmode-button-auto-hide.zenmode-button-fade-out button {
+	box-shadow: none;
+}

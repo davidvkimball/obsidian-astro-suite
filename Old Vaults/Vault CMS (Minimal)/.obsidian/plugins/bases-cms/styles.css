@@ -1,0 +1,1518 @@
+/* @settings
+
+name: Bases CMS
+id: bases-cms
+settings:
+    -
+        id: layout-heading
+        title: Card layout
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: bases-cms-min-grid-columns
+        title: Minimum grid columns
+        description: Minimum number of columns in grid view
+        type: variable-select
+        default: '1'
+        options:
+            -
+                label: One
+                value: '1'
+            -
+                label: Two
+                value: '2'
+    -
+        id: bases-cms-card-spacing
+        title: Card spacing
+        description: Spacing between cards
+        type: variable-number-slider
+        default: 8
+        min: 0
+        max: 32
+        step: 1
+        format: px
+    -
+        id: bases-cms-card-padding-container
+        title: Card padding
+        description: Padding between cards and container borders
+        type: variable-number-slider
+        default: 12
+        min: 0
+        max: 32
+        step: 1
+        format: px
+    -
+        id: bases-cms-view-background
+        title: View background
+        description: Background color for card views
+        type: variable-themed-color
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: cards-heading
+        title: Cards
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: bases-cms-element-spacing
+        title: Card element spacing
+        description: Spacing between elements within cards
+        type: variable-number-slider
+        default: 8
+        min: 0
+        max: 24
+        step: 1
+        format: px
+    -
+        id: bases-cms-card-padding
+        title: Card padding
+        description: Padding from card edges to content
+        type: variable-number-slider
+        default: 12
+        min: 0
+        max: 24
+        step: 1
+        format: px
+    -
+        id: bases-cms-card-border-radius
+        title: Card border radius
+        description: Corner roundness of cards
+        type: variable-number-slider
+        default: 8
+        min: 0
+        max: 32
+        step: 1
+        format: px
+    -
+        id: bases-cms-card-border
+        title: Card border
+        description: Show border around cards
+        type: variable-boolean
+        default: true
+    -
+        id: bases-cms-card-border-color
+        title: Card border color
+        description: Color of card borders
+        type: variable-themed-color
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: bases-cms-card-border-color-hover
+        title: Card border color on hover
+        description: Color of card borders when hovering
+        type: variable-themed-color
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: bases-cms-card-background
+        title: Card background
+        description: Card background appearance
+        type: class-select
+        allowEmpty: false
+        default: bases-cms-card-background-tinted
+        options:
+            -
+                label: Tinted
+                value: bases-cms-card-background-tinted
+            -
+                label: Transparent
+                value: bases-cms-card-background-transparent
+            -
+                label: Custom color
+                value: bases-cms-card-background-custom
+    -
+        id: bases-cms-card-background-custom-color
+        title: Custom card background
+        description: Custom color for card backgrounds (only used when Card background is set to Custom color)
+        type: variable-themed-color
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+    -
+        id: covers-heading
+        title: Covers
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: bases-cms-cover-crop
+        title: Cover crop alignment
+        description: How to crop cover images when aspect ratios don't match
+        type: class-select
+        allowEmpty: false
+        default: bases-cms-cover-crop-center
+        options:
+            -
+                label: Top
+                value: bases-cms-cover-crop-top
+            -
+                label: Center
+                value: bases-cms-cover-crop-center
+            -
+                label: Bottom
+                value: bases-cms-cover-crop-bottom
+    -
+        id: bases-cms-show-cover-placeholder
+        title: Show placeholder for cards with no image
+        description: If covers are enabled but a file doesn't have an image, show an empty cover. If disabled, card content will fill all available space.
+        type: class-toggle
+        default: true
+    -
+        id: properties-heading
+        title: Properties
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: bases-cms-list-separator
+        title: List item separator
+        description: Separator between items in list-type properties. Whitespace preserved.
+        type: variable-text
+        default: ", "
+        quotes: true
+    -
+        id: bases-cms-fade-list-separator
+        title: Fade list separator
+        description: Dim the separator color
+        type: class-toggle
+        default: true
+    -
+        id: bases-cms-empty-value-marker
+        title: Empty value marker
+        description: What to show for empty property values. Whitespace preserved.
+        type: variable-text
+        default: "—"
+        quotes: true
+    -
+        id: bases-cms-fade-empty-marker
+        title: Fade empty marker
+        description: Dim the empty value marker color
+        type: class-toggle
+        default: true
+    -
+        id: bases-cms-property-label-spacing
+        title: Property label spacing
+        description: Spacing between property labels and content above them
+        type: variable-number-slider
+        default: 6
+        min: 0
+        max: 24
+        step: 1
+        format: px
+    -
+    -
+        id: bases-cms-property-master-font
+        title: Property font
+        description: Font name as it appears on your system. Can be overridden by individual item options below.
+        type: variable-text
+        default: ''
+    -
+        id: bases-cms-property-master-font-size
+        title: Property font size
+        description: Font size for all properties (e.g., 0.8em, 13px, 0.8125rem)
+        type: variable-text
+        default: ''
+    -
+        id: bases-cms-property-color
+        title: Text color
+        description: Theme color preset for property text
+        type: class-select
+        allowEmpty: false
+        default: bases-cms-property-color-muted
+        options:
+            -
+                label: Faint
+                value: bases-cms-property-color-faint
+            -
+                label: Muted
+                value: bases-cms-property-color-muted
+            -
+                label: Normal
+                value: bases-cms-property-color-normal
+            -
+                label: Accent
+                value: bases-cms-property-color-accent
+            -
+                label: Red
+                value: bases-cms-property-color-red
+            -
+                label: Orange
+                value: bases-cms-property-color-orange
+            -
+                label: Yellow
+                value: bases-cms-property-color-yellow
+            -
+                label: Green
+                value: bases-cms-property-color-green
+            -
+                label: Cyan
+                value: bases-cms-property-color-cyan
+            -
+                label: Blue
+                value: bases-cms-property-color-blue
+            -
+                label: Purple
+                value: bases-cms-property-color-purple
+            -
+                label: Pink
+                value: bases-cms-property-color-pink
+            -
+                label: Custom
+                value: bases-cms-property-color-custom
+    -
+        id: bases-cms-property-color-custom
+        title: Custom text color
+        description: Custom color for property text (when Text color is set to Custom)
+        type: variable-themed-color
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: bases-cms-hide-missing-properties
+        title: Hide missing properties
+        description: Do not display a property if a file does not have it.
+        type: class-toggle
+        default: false
+    -
+        id: bases-cms-hide-empty-properties
+        title: Hide empty properties
+        description: Do not display a property if its value is empty.
+        type: class-toggle
+        default: false
+    -
+        id: bases-cms-badge-heading
+        title: Draft/Published Badge
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: bases-cms-badge-style
+        title: Badge style
+        description: Visual style for draft/published status badges
+        type: class-select
+        allowEmpty: false
+        default: bases-cms-badge-style-default
+        options:
+            -
+                label: Default
+                value: bases-cms-badge-style-default
+            -
+                label: Minimal
+                value: bases-cms-badge-style-minimal
+            -
+                label: Custom colors
+                value: bases-cms-badge-style-custom
+    -
+        id: bases-cms-badge-draft-color
+        title: Draft badge color
+        description: Custom color for draft status badge (only used when Badge style is set to Custom colors)
+        type: variable-themed-color
+        format: hex
+        default-light: '#FFC107'
+        default-dark: '#FFC107'
+    -
+        id: bases-cms-badge-published-color
+        title: Published badge color
+        description: Custom color for published status badge (only used when Badge style is set to Custom colors)
+        type: variable-themed-color
+        format: hex
+        default-light: '#2E7D32'
+        default-dark: '#2E7D32'
+    -
+        id: bases-cms-badge-font-size
+        title: Badge font size
+        description: Font size for status badges (e.g., 0.65em, 11px, 0.6875rem)
+        type: variable-text
+        default: ''
+    -
+        id: bases-cms-badge-padding
+        title: Badge padding
+        description: Padding inside status badges
+        type: variable-number-slider
+        default: 6
+        min: 2
+        max: 16
+        step: 1
+        format: px
+    -
+        id: bases-cms-badge-border-radius
+        title: Badge border radius
+        description: Corner roundness of status badges
+        type: variable-number-slider
+        default: 10
+        min: 0
+        max: 20
+        step: 1
+        format: px
+    -
+        id: bases-cms-date-heading
+        title: Date Property
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: bases-cms-date-font
+        title: Date font
+        description: Font name as it appears on your system
+        type: variable-text
+        default: ''
+    -
+        id: bases-cms-date-font-size
+        title: Date font size
+        description: Font size for date property (e.g., 0.85em, 13px, 0.8125rem)
+        type: variable-text
+        default: ''
+    -
+        id: bases-cms-date-color
+        title: Date color
+        description: Theme color preset for date text
+        type: class-select
+        allowEmpty: false
+        default: bases-cms-date-color-muted
+        options:
+            -
+                label: Faint
+                value: bases-cms-date-color-faint
+            -
+                label: Muted
+                value: bases-cms-date-color-muted
+            -
+                label: Normal
+                value: bases-cms-date-color-normal
+            -
+                label: Accent
+                value: bases-cms-date-color-accent
+            -
+                label: Custom
+                value: bases-cms-date-color-custom
+    -
+        id: bases-cms-date-color-custom
+        title: Custom date color
+        description: Custom color for date text (when Date color is set to Custom)
+        type: variable-themed-color
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: bases-cms-checkbox-heading
+        title: Selection Checkboxes
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: bases-cms-checkbox-click-radius
+        title: Click radius
+        description: Size of the clickable area around checkboxes (larger = easier to click)
+        type: variable-number-slider
+        default: 14
+        min: 8
+        max: 32
+        step: 1
+        format: px
+    -
+        id: bases-cms-hide-checkboxes
+        title: Hide checkboxes
+        description: When enabled, checkboxes are hidden and selection is only possible via right-click context menu
+        type: class-toggle
+        default: false
+*/
+
+/**
+ * Bases CMS Plugin Styles
+ * Based on Dynamic Views card styling
+ */
+
+/* ============================================
+   VIEW ICON STYLING
+   ============================================ */
+
+/* Ensure CMS view icon matches other view icons */
+.bases-view-selector [data-view-type="bases-cms"] svg,
+.bases-view-selector [data-view-type="bases-cms"] .lucide-blocks {
+	opacity: var(--icon-opacity);
+	color: var(--icon-color);
+}
+
+.bases-view-selector [data-view-type="bases-cms"]:hover svg,
+.bases-view-selector [data-view-type="bases-cms"]:hover .lucide-blocks {
+	opacity: var(--icon-opacity-hover);
+}
+
+/* ============================================
+   CONTAINER & GRID LAYOUT
+   ============================================ */
+
+.bases-cms-container {
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: var(--bases-cms-view-background, transparent);
+}
+
+.bases-cms-grid {
+	display: grid;
+	gap: var(--bases-cms-card-spacing, var(--dynamic-views-card-spacing, 8px));
+	align-items: stretch;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	padding: var(--bases-cms-card-padding-container, var(--dynamic-views-card-padding-container, var(--size-4-3)));
+	grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width, 300px), 1fr));
+}
+
+/* Minimum grid columns - when set to 2, ensure at least 2 columns by constraining card width */
+body[style*="--bases-cms-min-grid-columns: 2"] .bases-cms-grid,
+body[style*="--bases-cms-min-grid-columns: '2'"] .bases-cms-grid {
+	--max-card-width: calc((100% - var(--bases-cms-card-spacing, 8px)) / 2);
+	grid-template-columns: repeat(auto-fill, minmax(min(var(--card-min-width, 300px), var(--max-card-width)), 1fr));
+}
+
+.bases-cms-group {
+	display: grid;
+	grid-column: 1 / -1;
+	grid-template-columns: subgrid;
+	row-gap: var(--size-4-3);
+	padding: 0 0 var(--size-4-4) 0;
+	border-color: var(--background-modifier-border);
+	border-width: 0 0 1px 0;
+	border-style: solid;
+}
+
+.bases-cms-group:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.bases-cms-group-heading {
+	grid-column: 1 / -1;
+	padding: var(--size-4-1) 0 0;
+}
+
+.bases-cms-group-value {
+	font-size: 0.9em;
+	color: var(--text-muted);
+}
+
+/* ============================================
+   CARD STYLING
+   ============================================ */
+
+.bases-cms-grid .card {
+	margin: 0 !important;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	min-width: 0;
+	overflow: visible;
+}
+
+.bases-cms-grid .card .card-content ~ .card-properties,
+.bases-cms-grid .card .card-title ~ .card-properties {
+	margin-top: auto;
+	padding-top: var(--bases-cms-element-spacing, var(--dynamic-views-element-spacing, 8px));
+}
+
+.card {
+	border: 1px solid var(--bases-cms-card-border-color, var(--dynamic-views-card-border-color, var(--background-modifier-border)));
+	border-radius: var(--bases-cms-card-border-radius, var(--dynamic-views-card-border-radius, 8px));
+	padding: var(--bases-cms-card-padding, var(--dynamic-views-card-padding, 12px)) !important;
+	margin: var(--bases-cms-card-spacing, var(--dynamic-views-card-spacing, 8px)) 0;
+	background-color: var(--background-primary-alt);
+	break-inside: avoid;
+	page-break-inside: avoid;
+	transition: border-color 0.2s;
+	position: relative;
+}
+
+/* Card background styles */
+body.bases-cms-card-background-transparent .bases-cms .card {
+	background-color: transparent !important;
+}
+
+body.bases-cms-card-background-custom .bases-cms .card {
+	background-color: var(--bases-cms-card-background-custom-color, var(--background-primary-alt)) !important;
+}
+
+
+/* Global spacing between card elements */
+.card > * + * {
+	margin-top: var(--bases-cms-element-spacing, var(--dynamic-views-element-spacing, 8px));
+}
+
+/* Exclude absolutely positioned elements from spacing */
+.card > .card-status-badge,
+.card > .bases-cms-select-checkbox {
+	margin-top: 0;
+}
+
+@media (hover: hover) {
+	.card:hover {
+		--hover-color: var(--bases-cms-card-border-color-hover);
+		border-color: var(--hover-color, var(--text-faint)) !important;
+	}
+}
+
+.card.selected {
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px var(--interactive-accent);
+}
+
+/* Ensure cover image respects card border-radius when selected */
+.card.selected.image-format-cover .card-cover {
+	border-radius: var(--bases-cms-card-border-radius, var(--dynamic-views-card-border-radius, 8px)) var(--bases-cms-card-border-radius, var(--dynamic-views-card-border-radius, 8px)) 0 0;
+}
+
+/* Selection checkbox */
+.bases-cms-select-checkbox {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	z-index: 10;
+}
+
+/* Hide checkboxes when Style Settings option is enabled */
+body.bases-cms-hide-checkboxes .bases-cms .bases-cms-select-checkbox {
+	display: none !important;
+}
+
+.bases-cms-select-checkbox input[type="checkbox"] {
+	cursor: default;
+	margin: 0 auto;
+	padding: 0;
+	flex-shrink: 0;
+}
+
+/* Click radius - expand clickable area */
+.bases-cms-select-checkbox {
+	--checkbox-click-radius: var(--bases-cms-checkbox-click-radius, 14px);
+	padding: calc((var(--checkbox-click-radius) - 14px) / 2);
+	margin: calc((var(--checkbox-click-radius) - 14px) / -2);
+}
+
+/* For cover images, add subtle drop shadow for visibility on light images */
+.card.image-format-cover .bases-cms-select-checkbox input[type="checkbox"] {
+	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* ============================================
+   CARD TITLE
+   ============================================ */
+
+.card-title {
+	font-weight: calc(var(--font-weight) + var(--bold-modifier));
+	color: var(--dynamic-views-title-color, var(--color-base-100));
+	font-family: var(--dynamic-views-title-font, inherit);
+	font-size: var(--dynamic-views-title-font-size, var(--font-ui-medium));
+	max-width: 100%;
+	word-break: break-word;
+	text-align: left;
+	margin: 0;
+	display: -webkit-box;
+	-webkit-line-clamp: var(--dynamic-views-title-lines, 2);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	line-height: var(--line-height-tight);
+	position: relative;
+	padding-right: 42px; /* 18px (icon position) + ~20px (icon width) + 4px (spacing) */
+}
+
+
+/* For non-cover views, add more padding to make room for checkbox + icon */
+.card.image-format-none .card-title,
+.card.image-format-thumbnail .card-title {
+	padding-right: 60px; /* 18px (icon position) + ~20px (icon width) + 8px (spacing) + 14px (checkbox area) */
+}
+
+/* Quick edit icon styling */
+.bases-cms-quick-edit-icon {
+	display: inline-flex;
+	align-items: center;
+	cursor: default !important;
+	position: absolute;
+	right: 18px;
+	top: 0;
+	z-index: 10;
+	pointer-events: auto;
+}
+
+/* Quick edit icon when title is hidden */
+
+
+/* ============================================
+   CARD CONTENT (Text Preview & Images)
+   ============================================ */
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--bases-cms-element-spacing, var(--dynamic-views-element-spacing, 8px));
+}
+
+/* For thumbnail format, use row layout for thumbnail + text side by side */
+.card.image-format-thumbnail .card-content {
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+/* Thumbnail positioning */
+.card.image-format-thumbnail.thumbnail-left .card-content {
+	flex-direction: row;
+}
+
+.card.image-format-thumbnail.thumbnail-right .card-content {
+	flex-direction: row-reverse;
+}
+
+.card.image-format-thumbnail.thumbnail-top .card-content {
+	flex-direction: column;
+}
+
+.card.image-format-thumbnail.thumbnail-bottom .card-content {
+	flex-direction: column-reverse;
+}
+
+/* For top/bottom thumbnail positions, thumbnail should be full width */
+.card.image-format-thumbnail.thumbnail-top .card-thumbnail,
+.card.image-format-thumbnail.thumbnail-bottom .card-thumbnail {
+	width: 100%;
+	height: calc(100% / var(--dynamic-views-thumbnail-aspect-ratio, 1.00));
+}
+
+.card-text-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--bases-cms-element-spacing, var(--dynamic-views-element-spacing, 8px));
+	flex: 1;
+	min-width: 0;
+	min-height: 0;
+}
+
+.card.image-format-thumbnail .card-text-preview {
+	flex: 0 1 auto;
+	min-width: 0;
+}
+
+.card-text-preview {
+	color: var(--dynamic-views-text-preview-color, var(--text-muted));
+	font-family: var(--dynamic-views-text-preview-font, inherit);
+	font-size: var(--dynamic-views-text-preview-font-size, var(--bases-table-font-size));
+	flex: 1;
+	min-width: 0;
+	display: -webkit-box;
+	-webkit-line-clamp: var(--dynamic-views-text-preview-lines, 5);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	line-height: 1.4;
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+
+
+/* ============================================
+   THUMBNAIL STYLING
+   ============================================ */
+
+.card-thumbnail {
+	flex-shrink: 0;
+	width: var(--dynamic-views-thumbnail-size, 80px);
+	height: calc(var(--dynamic-views-thumbnail-size, 80px) / var(--dynamic-views-thumbnail-aspect-ratio, 1.00));
+	overflow: hidden;
+	border-radius: var(--dynamic-views-thumbnail-border-radius, 4px);
+	pointer-events: none;
+}
+
+.card-thumbnail-placeholder {
+	flex-shrink: 0;
+	width: var(--dynamic-views-thumbnail-size, 80px);
+	height: calc(var(--dynamic-views-thumbnail-size, 80px) / var(--dynamic-views-thumbnail-aspect-ratio, 1.00));
+	border-radius: var(--dynamic-views-thumbnail-border-radius, 4px);
+	background-color: var(--background-modifier-border);
+}
+
+.card-thumbnail .image-embed {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	filter: blur(0.5px);
+}
+
+/* ============================================
+   COVER IMAGE FORMAT
+   ============================================ */
+
+.card.image-format-cover {
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+}
+
+.card.image-format-cover .card-title,
+.card.image-format-cover .card-content,
+.card.image-format-cover .card-properties {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/* Ensure cover view title has enough padding for the quick edit icon */
+.card.image-format-cover .card-title {
+	padding-right: 42px; /* Override the 12px above to make room for icon */
+}
+
+.card.image-format-cover > .card-title:first-child,
+.card.image-format-cover > .card-content:first-child,
+.card.image-format-cover > .card-properties:first-child,
+.card.image-format-cover > .card-date:first-child {
+	padding-top: 12px;
+}
+
+.card.image-format-cover > .card-title:last-child,
+.card.image-format-cover > .card-content:last-child,
+.card.image-format-cover > .card-properties:last-child {
+	padding-bottom: 12px;
+}
+
+.card.image-format-cover:has(.card-cover) .card-title {
+	margin-top: calc(var(--dynamic-views-image-aspect-ratio, 0.55) * (100% + 26px) - 1px);
+}
+
+/* When placeholder exists, push title down similar to cover image */
+.card.image-format-cover:has(.card-cover-placeholder) .card-title {
+	margin-top: calc(var(--dynamic-views-image-aspect-ratio, 0.55) * (100% + 26px) - 1px);
+}
+
+/* Title is always shown - no special handling needed for missing titles */
+
+.card.image-format-cover .card-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 0;
+	padding-top: calc(var(--dynamic-views-image-aspect-ratio, 0.55) * 100%) !important;
+	border-radius: var(--dynamic-views-card-border-radius, 8px) var(--dynamic-views-card-border-radius, 8px) 0 0;
+	margin: 0;
+	overflow: visible;
+	/* Account for selected card's box-shadow */
+	top: -1px;
+	left: -1px;
+	width: calc(100% + 2px) !important;
+}
+
+.card.image-format-cover .card-cover-placeholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 0;
+	padding-top: calc(var(--dynamic-views-image-aspect-ratio, 0.55) * 100%) !important;
+	border-radius: var(--dynamic-views-card-border-radius, 8px) var(--dynamic-views-card-border-radius, 8px) 0 0;
+	background-color: var(--background-modifier-border);
+	margin: 0;
+	overflow: visible;
+}
+
+
+.card.image-format-cover .card-cover .image-embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	filter: blur(0.5px);
+}
+
+/* Cover background styles apply to the cover container, visible when image doesn't fill (contain mode) */
+/* For cover mode, background is only visible if image has transparency or doesn't fill the area */
+.card.image-format-cover .card-cover {
+	background-color: var(--background-modifier-border);
+}
+
+/* Cover crop alignment */
+body.bases-cms-cover-crop-top .bases-cms .card.image-format-cover .card-cover .image-embed {
+	background-position: center top !important;
+}
+
+body.bases-cms-cover-crop-bottom .bases-cms .card.image-format-cover .card-cover .image-embed {
+	background-position: center bottom !important;
+}
+
+body.bases-cms-cover-crop-center .bases-cms .card.image-format-cover .card-cover .image-embed,
+body:not(.bases-cms-cover-crop-top):not(.bases-cms-cover-crop-bottom) .bases-cms .card.image-format-cover .card-cover .image-embed {
+	background-position: center center !important;
+}
+
+/* Cover background */
+.bases-cms .card.image-format-cover .card-cover {
+	background-color: var(--background-modifier-border);
+}
+
+/* ============================================
+   CARD DATE STYLING
+   ============================================ */
+
+.card-date {
+	font-family: var(--bases-cms-date-font, inherit);
+	font-size: var(--bases-cms-date-font-size, 0.85em);
+	color: var(--bases-cms-date-color, var(--text-muted));
+	margin-top: 4px;
+}
+
+/* Date color presets */
+body.bases-cms-date-color-faint .bases-cms .card-date {
+	color: var(--text-faint) !important;
+}
+
+body.bases-cms-date-color-muted .bases-cms .card-date {
+	color: var(--text-muted) !important;
+}
+
+body.bases-cms-date-color-normal .bases-cms .card-date {
+	color: var(--text-normal) !important;
+}
+
+body.bases-cms-date-color-accent .bases-cms .card-date {
+	color: var(--text-accent) !important;
+}
+
+body.bases-cms-date-color-custom .bases-cms .card-date {
+	color: var(--bases-cms-date-color-custom, var(--text-muted)) !important;
+}
+
+/* Only add padding for cover format */
+.card.image-format-cover .card-date {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/* ============================================
+   STATUS BADGE (Draft/Published)
+   ============================================ */
+
+.card-status-badge {
+	padding: 2px 6px;
+	border-radius: 10px;
+	font-size: 0.65em;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: default !important;
+	letter-spacing: 0.2px;
+	line-height: 1.2;
+	height: 18px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	transition: background-color 0.15s ease;
+	margin-bottom: 6px;
+}
+
+.card-status-badge:hover {
+	/* Lighten background on hover - Obsidian native feel */
+	filter: brightness(1.15);
+}
+
+/* For cover images, position absolutely on the cover itself */
+.card.image-format-cover .card-cover .card-status-badge {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	z-index: 11;
+	margin-bottom: 0;
+	/* Ensure badge is always visible */
+	display: inline-flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+/* For cover placeholders, position badge on the placeholder */
+.card.image-format-cover .card-cover-placeholder .card-status-badge {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	z-index: 11;
+	margin-bottom: 0;
+	/* Ensure badge is always visible */
+	display: inline-flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+/* For non-cover formats (thumbnail/none), position badge above title */
+.card:not(.image-format-cover) .card-status-badge {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	z-index: 10;
+	margin: 0;
+	margin-bottom: 6px;
+	width: auto;
+}
+
+/* Add top margin to title when badge is present so it appears below the badge */
+.card:not(.image-format-cover):has(.card-status-badge) .card-title {
+	margin-top: 26px;
+}
+
+/* Badge styling with Style Settings support */
+.card-status-badge {
+	font-size: var(--bases-cms-badge-font-size, 0.65em);
+	padding: var(--bases-cms-badge-padding, 6px);
+	border-radius: var(--bases-cms-badge-border-radius, 10px);
+}
+
+/* Badge style presets */
+/* Default style - uses the standard green/yellow colors */
+body.bases-cms-badge-style-default .bases-cms .card-status-badge.status-draft,
+body:not(.bases-cms-badge-style-minimal):not(.bases-cms-badge-style-custom) .bases-cms .card-status-badge.status-draft {
+	background-color: rgba(255, 193, 7, 0.95) !important;
+	color: rgba(0, 0, 0, 0.9);
+}
+
+body.bases-cms-badge-style-default .bases-cms .card-status-badge.status-published,
+body:not(.bases-cms-badge-style-minimal):not(.bases-cms-badge-style-custom) .bases-cms .card-status-badge.status-published {
+	background-color: rgba(46, 125, 50, 0.95) !important;
+	color: rgba(255, 255, 255, 1);
+}
+
+/* Minimal style */
+body.bases-cms-badge-style-minimal .bases-cms .card-status-badge {
+	background-color: transparent !important;
+	border: 1px solid var(--text-muted) !important;
+	color: var(--text-muted) !important;
+	box-shadow: none !important;
+}
+
+/* Custom colors style */
+body.bases-cms-badge-style-custom .bases-cms .card-status-badge.status-draft {
+	background-color: var(--bases-cms-badge-draft-color, rgba(255, 193, 7, 0.95)) !important;
+	color: rgba(0, 0, 0, 0.9);
+}
+
+body.bases-cms-badge-style-custom .bases-cms .card-status-badge.status-published {
+	background-color: var(--bases-cms-badge-published-color, rgba(46, 125, 50, 0.95)) !important;
+	color: rgba(255, 255, 255, 1);
+}
+
+/* ============================================
+   PROPERTIES STYLING
+   ============================================ */
+
+.card-properties {
+	margin-top: var(--bases-cms-element-spacing, var(--dynamic-views-element-spacing, 8px));
+	flex-shrink: 0;
+}
+
+/* Top property groups appear before content */
+.card-properties.properties-top {
+	margin-top: 0;
+	margin-bottom: var(--bases-cms-element-spacing, var(--dynamic-views-element-spacing, 8px));
+}
+
+/* Bottom property groups appear after content */
+.card-properties.properties-bottom {
+	margin-top: var(--bases-cms-element-spacing, var(--dynamic-views-element-spacing, 8px));
+	margin-bottom: 0;
+}
+
+.properties-4field {
+	display: flex;
+	flex-direction: column;
+	gap: var(--bases-cms-element-spacing, var(--dynamic-views-element-spacing, 8px));
+}
+
+.property-row {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--bases-cms-property-label-spacing, 6px) * 1.5);
+	align-items: flex-start;
+}
+
+.property-row-side-by-side {
+	flex-direction: row;
+	gap: var(--bases-cms-element-spacing, var(--dynamic-views-element-spacing, 8px));
+}
+
+.property-field {
+	flex: 1;
+	min-width: 0;
+	overflow: visible;
+}
+
+.property-field:last-child {
+	margin-bottom: 0;
+}
+
+.property-label {
+	font-size: 0.7em;
+	color: var(--text-muted);
+	margin-top: var(--bases-cms-property-label-spacing, 6px);
+	margin-bottom: 3px;
+	font-weight: 500;
+	letter-spacing: 0.3px;
+}
+
+/* Only apply uppercase to non-custom labels (fallback to property name) */
+.property-label:not(.property-label-custom) {
+	text-transform: uppercase;
+}
+
+.property-label-inline {
+	font-size: 0.9em;
+	color: var(--text-muted);
+}
+
+.property-content {
+	font-family: var(--bases-cms-property-master-font, inherit) !important;
+	font-size: var(--bases-cms-property-master-font-size, var(--dynamic-views-property-master-font-size, 0.9em)) !important;
+	color: var(--dynamic-views-property-master-color, var(--text-muted));
+	word-break: break-word;
+	overflow-wrap: break-word;
+	overflow: visible;
+}
+
+/* Property color presets */
+body.bases-cms-property-color-faint .bases-cms .property-content {
+	color: var(--text-faint) !important;
+}
+
+body.bases-cms-property-color-muted .bases-cms .property-content {
+	color: var(--text-muted) !important;
+}
+
+body.bases-cms-property-color-normal .bases-cms .property-content {
+	color: var(--text-normal) !important;
+}
+
+body.bases-cms-property-color-accent .bases-cms .property-content {
+	color: var(--text-accent) !important;
+}
+
+body.bases-cms-property-color-red .bases-cms .property-content {
+	color: var(--text-error) !important;
+}
+
+body.bases-cms-property-color-orange .bases-cms .property-content {
+	color: var(--color-orange, #ff9800) !important;
+}
+
+body.bases-cms-property-color-yellow .bases-cms .property-content {
+	color: var(--color-yellow, #fdd835) !important;
+}
+
+body.bases-cms-property-color-green .bases-cms .property-content {
+	color: var(--color-green, #4caf50) !important;
+}
+
+body.bases-cms-property-color-cyan .bases-cms .property-content {
+	color: var(--color-cyan, #00bcd4) !important;
+}
+
+body.bases-cms-property-color-blue .bases-cms .property-content {
+	color: var(--color-blue, #2196f3) !important;
+}
+
+body.bases-cms-property-color-purple .bases-cms .property-content {
+	color: var(--color-purple, #9c27b0) !important;
+}
+
+body.bases-cms-property-color-pink .bases-cms .property-content {
+	color: var(--color-pink, #e91e63) !important;
+}
+
+body.bases-cms-property-color-custom .bases-cms .property-content {
+	color: var(--bases-cms-property-color-custom, var(--text-muted)) !important;
+}
+
+/* Fade empty marker - dimmed by default (works without Style Settings) */
+.bases-cms .property-empty-marker {
+	opacity: 0.5;
+}
+
+/* When inline labels are enabled, make content flow inline */
+.property-content-inline {
+	display: inline;
+}
+
+.property-content-inline .text-wrapper {
+	display: inline;
+}
+
+.property-content .text-wrapper {
+	overflow: visible;
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+
+/* Tags */
+.tags-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.tags-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.tag {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 4px;
+	background-color: var(--tag-background);
+	color: var(--tag-color);
+	font-size: 0.85em;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.tag:hover {
+	background-color: var(--tag-background-hover);
+}
+
+/* Card tags (pills under text preview) */
+.card-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-top: 6px;
+	line-height: 1.2;
+}
+
+.card-tag {
+	background-color: var(--tag-background);
+	border: var(--tag-border-width) solid var(--tag-border-color);
+	border-radius: var(--tag-radius);
+	color: var(--tag-color);
+	font-size: var(--tag-size);
+	font-weight: var(--tag-weight);
+	text-decoration: var(--tag-decoration);
+	padding: var(--tag-padding-y) var(--tag-padding-x);
+	line-height: 1;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.card-tag:hover {
+	background-color: var(--tag-background-hover);
+}
+
+.card-tag-more {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 10px;
+	background-color: var(--background-modifier-border);
+	color: var(--text-muted);
+	font-size: 0.75em;
+	font-weight: 500;
+	white-space: nowrap;
+	line-height: 1.4;
+	font-style: italic;
+}
+
+/* Path segments */
+.path-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.path-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.path-segment {
+	cursor: pointer;
+	color: var(--text-muted);
+	transition: color 0.2s;
+}
+
+.path-segment:hover {
+	color: var(--text-normal);
+}
+
+.path-separator {
+	color: var(--text-faint);
+	margin: 0 2px;
+}
+
+/* Checkbox properties - Native Obsidian styling */
+.property-content:has(input[type="checkbox"]) {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+/* ============================================
+   BULK TOOLBAR
+   ============================================ */
+
+/* Ensure padding variables are available in the workspace context */
+.workspace-leaf-content[data-type="bases"] .bases-cms-bulk-toolbar {
+	--bases-header-padding-start: var(--size-4-2);
+	--bases-header-padding-end: var(--size-4-2);
+}
+
+.bases-cms-bulk-toolbar {
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	width: 100%;
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: opacity 0.2s ease, transform 0.2s ease;
+	padding-left: var(--bases-header-padding-start, var(--size-4-2));
+	padding-right: var(--bases-header-padding-end, var(--size-4-2));
+	margin-top: var(--size-4-1);
+	margin-bottom: var(--size-4-1);
+	box-sizing: border-box;
+	min-width: 0; /* Allow flex items to shrink */
+	overflow: hidden; /* Prevent overflow */
+}
+
+.bases-cms-bulk-toolbar-left {
+	display: flex;
+	align-items: center;
+	gap: 0;
+	flex: 0 0 auto;
+	min-width: 0; /* Allow shrinking */
+	flex-wrap: nowrap; /* Keep buttons in a row */
+}
+
+.bases-cms-bulk-toolbar-right {
+	display: flex;
+	align-items: center;
+	gap: 0;
+	flex: 0 0 auto;
+	margin-left: auto;
+	min-width: 0; /* Allow shrinking */
+	flex-wrap: nowrap; /* Keep buttons in a row */
+}
+
+/* Mobile-specific toolbar improvements */
+@media (hover: none) and (pointer: coarse),
+       (max-width: 768px) {
+	.bases-cms-bulk-toolbar-left,
+	.bases-cms-bulk-toolbar-right {
+		gap: var(--size-4-1);
+	}
+	
+	.bases-cms-bulk-toolbar .text-icon-button {
+		padding: var(--size-4-2) var(--size-4-2);
+		min-height: 40px;
+	}
+	
+	.bases-cms-bulk-toolbar .text-icon-button .text-button-icon {
+		width: 20px;
+		height: 20px;
+	}
+	
+	.bases-cms-bulk-toolbar .text-icon-button .text-button-icon svg {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+/* Selected count styling */
+.bases-cms-selected-count {
+	margin-left: 0.75rem !important;
+}
+
+.bases-cms-selected-count .text-button-label {
+	font-size: var(--font-ui-smaller);
+	cursor: default;
+	pointer-events: none;
+	color: var(--text-muted);
+}
+
+.bases-cms-selected-count:hover {
+	background: transparent !important;
+}
+
+/* Use Bases' existing text-icon-button styles, but ensure cursor is default */
+.bases-cms-bulk-toolbar .text-icon-button {
+	cursor: default;
+	color: var(--text-normal);
+}
+
+.bases-cms-bulk-toolbar .text-icon-button .text-button-icon svg {
+	color: var(--text-normal);
+	stroke: var(--text-normal);
+}
+
+.bases-cms-bulk-toolbar .text-icon-button.destructive {
+	color: var(--text-error);
+}
+
+.bases-cms-bulk-toolbar .text-icon-button.destructive .text-button-icon svg {
+	color: var(--text-error) !important;
+	stroke: var(--text-error) !important;
+}
+
+.bases-cms-bulk-toolbar .text-icon-button.destructive:hover {
+	background: var(--background-modifier-error);
+	color: var(--text-error);
+}
+
+/* Keep delete button icon color consistent on hover */
+.bases-cms-bulk-toolbar .text-icon-button.destructive:hover .text-button-icon svg {
+	color: var(--text-error);
+	stroke: var(--text-error);
+}
+
+/* Modal button container */
+.bases-cms-modal-button-container {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: flex-end;
+	margin-top: 1rem;
+}
+
+/* Bulk toolbar visibility states */
+
+.bases-cms-bulk-toolbar-hidden {
+	display: none !important;
+}
+
+.bases-cms-bulk-toolbar-visible {
+	display: flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+}
+
+.bases-cms-bulk-toolbar-animating-in {
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+}
+
+.bases-cms-bulk-toolbar-animating-out {
+	opacity: 0 !important;
+	transform: translateY(-10px) !important;
+}
+
+.bases-cms-properties-hidden {
+	display: none;
+}
+
+.bases-cms-setting-hidden {
+	display: none;
+}
+
+.bases-cms-cursor-default {
+	cursor: default;
+}
+
+.bases-cms-cursor-pointer {
+	cursor: pointer;
+}
+
+/* Responsive: Hide text labels on icon buttons when collapsed, but keep count visible */
+.bases-cms-bulk-toolbar.collapsed .text-icon-button .text-button-label {
+	display: none;
+}
+
+/* Always keep the selected count text visible */
+.bases-cms-bulk-toolbar.collapsed .bases-cms-selected-count .text-button-label {
+	display: block !important;
+}
+
+/* When collapsed, reduce padding on buttons to save space */
+.bases-cms-bulk-toolbar.collapsed .text-icon-button {
+	padding-left: var(--size-4-1);
+	padding-right: var(--size-4-1);
+}
+
+/* ============================================
+   DELETION PREVIEW MODAL
+   ============================================ */
+
+.bases-cms-deletion-warning {
+	color: var(--text-error);
+	font-weight: 600;
+	margin: 1rem 0;
+}
+
+.bases-cms-deletion-list {
+	max-height: 300px;
+	overflow-y: auto;
+	list-style: disc;
+	padding-left: 2rem;
+	margin: 0.5rem 0;
+}
+
+.bases-cms-deletion-list li {
+	margin: 0.25rem 0;
+	word-break: break-all;
+}
+
+/* ============================================
+   PROPERTIES INFO MODAL
+   ============================================ */
+
+.properties-info-explanation {
+	margin: 1rem 0;
+}
+
+.properties-info-explanation p {
+	margin: 0.5rem 0;
+	line-height: 1.6;
+}
+
+.properties-info-special,
+.properties-info-configured,
+.properties-info-howto,
+.properties-info-note {
+	margin: 1.5rem 0;
+}
+
+.properties-info-special h3,
+.properties-info-configured h3,
+.properties-info-howto h3 {
+	margin-top: 0;
+	margin-bottom: 0.75rem;
+	font-size: 1.1em;
+	font-weight: 600;
+}
+
+.properties-info-special ul,
+.properties-info-configured ul,
+.properties-info-howto ol {
+	margin: 0.5rem 0;
+	padding-left: 1.5rem;
+}
+
+.properties-info-special li,
+.properties-info-configured li,
+.properties-info-howto li {
+	margin: 0.5rem 0;
+	line-height: 1.5;
+}
+
+.properties-info-none {
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+.properties-info-tip {
+	background-color: var(--background-modifier-border);
+	padding: 0.75rem 1rem;
+	border-radius: 4px;
+	margin: 1rem 0;
+	border-left: 3px solid var(--interactive-accent);
+}
+

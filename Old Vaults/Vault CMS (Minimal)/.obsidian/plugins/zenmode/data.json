@@ -1,0 +1,13 @@
+{
+  "zenMode": false,
+  "leftSidebar": true,
+  "rightSidebar": true,
+  "fullscreen": false,
+  "exitButtonVisibility": "always",
+  "autoHideButtonOnDesktop": true,
+  "hideProperties": false,
+  "hideInlineTitle": false,
+  "topPadding": 0,
+  "bottomPadding": 0,
+  "focusedFileMode": true
+}

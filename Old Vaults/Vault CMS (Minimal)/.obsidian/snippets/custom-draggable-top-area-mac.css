@@ -1,0 +1,39 @@
+/* --- knobs --- */
+body:not(.is-mobile) {
+  --drag-bump: 8px;           /* bump for notes */
+  --toolbar-left-offset: 100px; /* padding for base controls on left */
+}
+
+/* Draggable strip (leave OS window buttons untouched) */
+body:not(.is-mobile) .titlebar {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 10 !important;
+  background: transparent !important;
+  -webkit-app-region: drag !important;
+}
+
+/* Inline title editable */
+body:not(.is-mobile) .inline-title {
+  -webkit-app-region: no-drag !important;
+  z-index: 11 !important;
+  position: relative !important;
+  margin-top: 0 !important; /* reset by default */
+}
+
+/* Only apply bump when tab bar is hidden (body.hider-tabs present) */
+body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .inline-title {
+  margin-top: var(--drag-bump) !important;
+}
+body:not(.is-mobile).hider-tabs .workspace-leaf-content[data-type="markdown"] .document-search-container {
+  margin-top: var(--drag-bump) !important; /* Match note content offset */
+  z-index: 12 !important; /* Above titlebar and inline-title */
+}
+
+/* Push entire toolbar to the right of Mac window buttons (only when left sidebar is closed) */
+body:not(.is-mobile) .workspace:not(.is-left-sidedock-open) .bases-toolbar {
+  padding-left: var(--toolbar-left-offset) !important;
+}

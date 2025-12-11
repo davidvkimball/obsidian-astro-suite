@@ -1,0 +1,10 @@
+{
+  "cssTheme": "Oxygen",
+  "showViewHeader": true,
+  "showRibbon": false,
+  "enabledCssSnippets": [
+    "astro-modular-styling"
+  ],
+  "theme": "system",
+  "accentColor": ""
+}

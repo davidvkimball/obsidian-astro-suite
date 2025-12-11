@@ -1,0 +1,1860 @@
+/* ========================================
+   Oxygen Settings Plugin Styles
+   ======================================== */
+
+/* ========================================
+   Preset Editor Modal Styles
+   ======================================== */
+
+.preset-editor-modal .modal-content {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.modal-section {
+  margin-bottom: 1.5rem;
+}
+
+.mode-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.mode-section:last-of-type {
+  border-bottom: none;
+}
+
+.mode-section h3 {
+  color: var(--text-normal);
+  margin-bottom: 1rem;
+}
+
+.color-section {
+  margin-bottom: 1.5rem;
+}
+
+.preset-editor-modal .color-section h3 {
+  color: var(--text-normal) !important;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.color-group {
+  margin-bottom: 1rem;
+}
+
+.color-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.collapsible-item {
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.color-override {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.override-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.color-input-wrapper {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  position: relative;
+}
+
+.color-preview-swatch {
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.color-preview-swatch:hover {
+  border-color: var(--text-muted) !important;
+}
+
+/* Dim the color preview when the input is disabled */
+.color-input-wrapper:has(input:disabled) .color-preview-swatch {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.mode-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--background-modifier-border);
+  margin-bottom: 1rem;
+}
+
+.mode-tab {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.mode-tab:hover {
+  color: var(--text-normal);
+}
+
+.mode-tab.active {
+  color: var(--text-normal);
+  border-bottom-color: var(--text-accent);
+  font-weight: 500;
+}
+
+.mode-content {
+  display: none;
+}
+
+.mode-content.active {
+  display: block;
+}
+
+.color-section {
+  margin-bottom: 1.5rem;
+}
+
+.color-group {
+  margin-bottom: 1rem;
+}
+
+.color-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.hsl-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hsl-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hsl-control label {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.hsl-control input[type="range"] {
+  width: 100%;
+}
+
+.hsl-control span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  min-width: 2rem;
+  text-align: center;
+}
+
+.preset-editor-modal .color-preview {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 3px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.color-preview-section {
+  margin-bottom: 1.5rem;
+}
+
+.color-preview-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.color-details-section {
+  margin-top: 1rem;
+}
+
+.color-details-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.collapsible-header h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-normal);
+}
+
+.collapse-toggle {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--text-muted);
+  cursor: default;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 20px !important;
+  height: 20px !important;
+  outline: none !important;
+  font-family: inherit;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0;
+}
+
+.collapse-toggle:hover {
+  color: var(--text-normal);
+  box-shadow: none !important;
+  background: none !important;
+  border: none !important;
+}
+
+.collapse-toggle:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  border: none !important;
+}
+
+.collapse-toggle:active {
+  box-shadow: none !important;
+  background: none !important;
+  border: none !important;
+}
+
+.collapse-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+.collapsible-content {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.collapsible-content:not(.collapsed) {
+  max-height: 400px;
+}
+
+.override-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.preview-swatch {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 1rem;
+  background: var(--background-primary);
+}
+
+.preview-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.preview-row:last-child {
+  margin-bottom: 0;
+}
+
+.preview-label {
+  font-weight: 500;
+  min-width: 5rem;
+}
+
+.preview-colors {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.preview-color {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 3px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.modal-footer button {
+  min-width: 80px;
+}
+
+/* ========================================
+   Preset Import Modal Styles
+   ======================================== */
+
+.preset-import-modal .modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.preset-json-input {
+  height: 200px !important;
+  font-family: monospace !important;
+  font-size: 0.9rem !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.preview-container {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 1rem;
+  background: var(--background-primary);
+  min-height: 200px;
+}
+
+.preview-placeholder,
+.preview-error {
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.preview-error {
+  color: var(--text-error);
+}
+
+.error-section {
+  background: var(--background-modifier-error);
+  border: 1px solid var(--text-error);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  color: var(--text-error);
+  font-weight: 500;
+}
+
+.preset-info {
+  margin-bottom: 1rem;
+}
+
+.info-row {
+  margin-bottom: 0.5rem;
+}
+
+.preset-id {
+  font-family: monospace;
+  background: var(--background-secondary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.mode-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.mode-btn:hover {
+  color: var(--text-normal);
+}
+
+.mode-btn.active {
+  color: var(--text-normal);
+  border-bottom-color: var(--text-accent);
+  font-weight: 500;
+}
+
+.swatch-container {
+  margin-top: 0.5rem;
+}
+
+.mode-swatches {
+  display: none;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.mode-swatches.active {
+  display: flex;
+}
+
+.color-swatch {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.color-swatch:hover {
+  transform: scale(1.05);
+}
+
+
+.mode-details {
+  margin-bottom: 1rem;
+}
+
+.mode-details h5 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-normal);
+}
+
+.color-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.detail-swatch {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 3px;
+  border: 1px solid var(--background-modifier-border);
+  flex-shrink: 0;
+}
+
+.color-detail span:first-of-type {
+  color: var(--text-muted);
+  min-width: 3rem;
+}
+
+.overrides-info {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: var(--background-secondary);
+  border-radius: 3px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   Settings Tab Styles
+   ======================================== */
+
+.custom-preset-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  transition: background-color 0.2s ease;
+}
+
+.custom-preset-item:hover {
+  background: var(--background-secondary);
+}
+
+.preset-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.preset-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.preset-name {
+  font-weight: 500;
+  color: var(--text-normal);
+  font-size: 0.9rem;
+}
+
+.preset-author {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.custom-preset-item .setting-item {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.custom-preset-item .setting-item-info {
+  display: none;
+}
+
+.custom-preset-item .setting-item-control {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.custom-preset-item .clickable-icon {
+  padding: 0.25rem;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+.custom-preset-item .clickable-icon:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* ========================================
+   Title Bar Visibility
+   ======================================== */
+
+/* Default behavior: Hide title bar, show on hover (when hideTitleBarOnHover is true) */
+body.minimal-theme:not(.always-show-title-bar) .view-header-title-container {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+body.minimal-theme:not(.always-show-title-bar) .view-header:hover .view-header-title-container,
+body.minimal-theme:not(.always-show-title-bar) .view-header-title-container:hover {
+  opacity: 1;
+}
+
+/* Always show title bar when hideTitleBarOnHover is disabled */
+body.minimal-theme.always-show-title-bar .view-header-title-container {
+  opacity: 1 !important;
+  transition: opacity 0.1s ease-in-out;
+}
+
+/* Ensure hover states don't interfere when always show is enabled */
+body.minimal-theme.always-show-title-bar .view-header:hover .view-header-title-container,
+body.minimal-theme.always-show-title-bar .view-header-title-container:hover {
+  opacity: 1 !important;
+}
+
+/* ========================================
+   Sidebar Indentation Guides
+   ======================================== */
+
+/* The theme already handles indentation guides using --nav-indentation-guide-width and --nav-indentation-guide-color */
+/* We only need to override when "None" (0px) is selected - make it invisible but keep it for indentation */
+body.minimal-theme[style*="--nav-indentation-guide-width: 0px"] .nav-folder-children::before,
+body.minimal-theme[style*="--nav-indentation-guide-width:0px"] .nav-folder-children::before {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* ========================================
+   Workspace Borders Enhancements
+   ======================================== */
+
+.borders-none {
+	--divider-width:0px;
+	--tab-outline-width: 0px;
+}
+body.minimal-theme:is(.borders-none) .mod-root .workspace-tab-header-container:is(div, :hover){
+	--tab-outline-width: 0px;
+}
+
+/* ========================================
+   Enhanced Workspace Borders (Default)
+   ======================================== */
+
+/* Enhanced workspace borders - minimal rounded corners on main content area only */
+/* This is now the DEFAULT behavior - applies when borders-on is NOT present */
+/* Based on Baseline's approach: use container-inner with margin-bottom: -1px */
+
+/* CRITICAL: Disable default Obsidian borders by setting CSS variables to 0 */
+/* This is how borders-none works - it sets these variables which Obsidian uses for borders */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none) {
+	--divider-width: 0px;
+	--tab-outline-width: 0px;
+}
+
+body.minimal-theme:not(.borders-on):not(.borders-none) .mod-root .workspace-tab-header-container:is(div, :hover) {
+	--tab-outline-width: 0px;
+}
+
+/* CRITICAL: Disable default borders on workspace-tab-container BEFORE applying enhanced border */
+/* This prevents the double border effect */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-container {
+	border: none !important;
+	border-top: none !important;
+	border-bottom: none !important;
+	border-left: none !important;
+	border-right: none !important;
+	border-radius: 0 !important;
+}
+
+/* Now apply the enhanced border styling */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-container {
+	border: 1px solid var(--background-modifier-border) !important;
+	border-top: 1px solid var(--background-modifier-border) !important;
+	border-left: 1px solid var(--background-modifier-border) !important;
+	border-right: 1px solid var(--background-modifier-border) !important;
+	border-bottom: none !important;
+	border-radius: var(--radius-m) var(--radius-m) var(--radius-m) var(--radius-m) !important; /* All corners rounded */
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+}
+
+/* Match the left sidebar background color behind the tabs */
+/* Set a CSS variable at workspace level to capture --background-secondary before any overrides */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace {
+	--enhanced-border-sidebar-bg: var(--background-secondary);
+}
+
+/* Apply the background to main content tab header container (always, not just when right sidebar is open) */
+/* Don't apply when colorful-frame is active - let the theme handle it */
+/* Add border-radius to match the active tab's rounded corners for seamless appearance */
+/* Override the theme's --tab-container-background variable chain (which goes to --titlebar-background -> --bg1) */
+/* We want it to use --background-secondary (bg2) instead, matching the sidebar */
+/* Apply to both main content and right sidebar */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none):not(.colorful-frame) .workspace .mod-root .workspace-tabs.mod-top,
+body.minimal-theme:not(.borders-on):not(.borders-none):not(.colorful-frame) .workspace .mod-sidedock.mod-right-split .workspace-tabs.mod-top {
+	--tab-container-background: var(--enhanced-border-sidebar-bg) !important;
+}
+
+body.minimal-theme:not(.borders-on):not(.borders-none):not(.colorful-frame) .workspace .mod-root .workspace-tab-header-container,
+body.minimal-theme:not(.borders-on):not(.borders-none):not(.colorful-frame) .workspace .mod-sidedock.mod-right-split .workspace-tab-header-container {
+	background-color: var(--enhanced-border-sidebar-bg) !important;
+}
+
+body.minimal-theme:not(.borders-on):not(.borders-none):not(.colorful-frame) .workspace .mod-root .workspace-tab-header-container {
+	border-top-left-radius: var(--radius-m);
+	border-top-right-radius: var(--radius-m);
+}
+
+/* Override the workspace-split.mod-root background to match sidebar color */
+/* The theme sets it to --background-primary, but we want --background-secondary for seamless appearance */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none):not(.colorful-frame) .workspace .workspace-split.mod-root {
+	background-color: var(--enhanced-border-sidebar-bg) !important;
+}
+
+/* Override the theme rule that makes right sidebar use --background-primary */
+/* When enhanced borders are active, make right sidebar match left sidebar color */
+/* The theme rule is: body:not(.sidebar-color) .mod-right-split { --background-secondary: var(--background-primary); } */
+/* Capture the original --background-secondary at workspace level before the override applies */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none):not(.sidebar-color) .workspace {
+	--enhanced-border-right-sidebar-bg: var(--background-secondary);
+}
+
+/* Override the theme's override to restore the original --background-secondary value */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none):not(.sidebar-color) .mod-right-split {
+	--background-secondary: var(--enhanced-border-right-sidebar-bg) !important;
+}
+
+/* Use container-inner to overlap the container's top border */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+/* The margin-bottom: -1px moves the container up to overlap the border */
+/* Add top: -1px to move the entire tab container up by 1px to compensate for border visual effect */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-header-container-inner {
+	margin-bottom: -1px;
+	position: relative;
+	z-index: 1;
+}
+
+/* Compensate for margin-bottom: -1px by adjusting padding-top */
+/* Must have higher specificity than tabs-modern rule to override its padding */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .tabs-modern .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
+	padding-top: 3px !important; /* Override tabs-modern's 2px padding-top */
+}
+
+/* Adjust tab height to match Minimal - reduce by 1px if tabs appear taller */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .tabs-modern .mod-root .workspace-tabs:not(.mod-stacked) {
+	--tab-height: calc(var(--header-height) - 15px); /* Reduced from 14px to 15px to make tabs 1px shorter */
+}
+
+/* TAB BORDERS ONLY - Isolated to just tab treatment */
+/* Set --tab-curve on all tabs to control bottom corner curvature */
+/* Only apply when borders-on is NOT present AND borders-none is NOT present (Enhanced mode only) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-header {
+	--tab-curve: 8px !important; /* Increase curve amount for more pronounced bottom corners */
+}
+
+/* Active tab: visible border on left/right, extend down to cover container's top border */
+/* Set tab outline variables ONLY for active tabs (for curved corners) */
+/* Only apply when borders-on is NOT present AND borders-none is NOT present (Enhanced mode only) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-header.is-active {
+	border-left-color: var(--background-modifier-border);
+	border-right-color: var(--background-modifier-border);
+	margin-bottom: -1px;
+	position: relative;
+	--tab-outline-width: 1px;
+	--tab-outline-color: var(--background-modifier-border);
+}
+
+/* Enhance ::before/::after to extend the border down to cover container's top border */
+/* Obsidian's box-shadow already includes the border on the curve via --tab-outline-width */
+/* We just need to extend it down to cover the container border */
+/* Only apply when borders-on is NOT present AND borders-none is NOT present (Enhanced mode only) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-header.is-active::before,
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-header.is-active::after {
+	/* Preserve Obsidian's existing box-shadow (includes border via --tab-outline-width) */
+	/* Then add extended border layers that continue down to cover container */
+	box-shadow: inset 0 0 0 var(--tab-outline-width) var(--tab-outline-color), 
+	            0 0 0 calc(var(--tab-curve) * 4) var(--tab-background-active),
+	            0 calc(var(--tab-curve) * 2) 0 var(--tab-outline-width) var(--tab-outline-color),
+	            0 calc(var(--tab-curve) * 2 + 1px) 0 var(--tab-outline-width) var(--tab-outline-color),
+	            0 calc(var(--tab-curve) * 2 + 2px) 0 var(--tab-outline-width) var(--tab-outline-color);
+}
+
+/* Extend the active tab's background down to cover the container's top border */
+/* Use the inner element since tab's ::after is used by Obsidian for right curve */
+/* Only apply when borders-on is NOT present AND borders-none is NOT present (Enhanced mode only) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner {
+	position: relative;
+}
+
+/* Create extension to cover container border - use inner's ::after */
+/* Hide Obsidian's divider first, then add our extension */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: -1px;
+	right: -1px;
+	height: 2px;
+	background-color: var(--tab-background-active);
+	z-index: 1;
+	/* This extends below the curved corners to cover the container border */
+	/* Note: This replaces Obsidian's divider line on the active tab */
+}
+
+/* Make sure the tab header container doesn't interfere and allows proper positioning */
+/* Note: background-color is set above to match left sidebar, so we only set margin here */
+/* Only apply to Enhanced mode (not borders-on and not borders-none) */
+body.minimal-theme:not(.borders-on):not(.borders-none) .workspace .mod-root .workspace-tab-header-container {
+	margin-bottom: 0;
+}
+
+/* ========================================
+   Meridian-style: Make titlebar draggable (preserve OS buttons)
+   ======================================== */
+/* Draggable strip (leave OS window buttons untouched) - based on provided reference */
+body.minimal-theme:not(.borders-on):not(.borders-none):not(.is-mobile) .titlebar {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 10 !important;
+  background: transparent !important;
+  -webkit-app-region: drag !important;
+}
+
+/* Make sure interactive elements inside view-header are not draggable */
+body.minimal-theme:not(.borders-on):not(.borders-none) .view-header-title-container div,
+body.minimal-theme:not(.borders-on):not(.borders-none) .view-header .view-actions,
+body.minimal-theme:not(.borders-on):not(.borders-none) .view-header-nav-buttons {
+  -webkit-app-region: no-drag;
+}
+
+/* Hide view-header-left (contains nav-buttons) ONLY when:
+   - tab bar is collapsed (single tab) AND
+   - left sidebar is NOT expanded (is collapsed) */
+/* Use JavaScript-added class instead of :has() for better compatibility */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.minimal-theme:not(.borders-on):not(.borders-none)
+  .mod-root.has-single-tab.has-single-tab-left-collapsed
+  .workspace-tab-container
+  .view-header-left {
+  display: none !important;
+}
+
+/* Hide view-actions (right side buttons) ONLY when:
+   - tab bar is collapsed (single tab) AND
+   - right sidebar is NOT expanded (is collapsed) */
+/* Use JavaScript-added class instead of :has() for better compatibility */
+/* Match the structure of the left sidebar rule exactly for consistency */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.minimal-theme:not(.borders-on):not(.borders-none)
+  .mod-root.has-single-tab.has-single-tab-right-collapsed
+  .workspace-tab-container
+  .view-header
+  .view-actions,
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.minimal-theme:not(.borders-on):not(.borders-none)
+  .mod-root.has-single-tab.has-single-tab-right-collapsed
+  .view-header
+  .view-actions {
+  display: none !important;
+}
+
+
+/* When borders-on is present (Default mode) - Obsidian's default borders */
+/* Do NOT interfere with Obsidian's default tab curves - let it handle everything */
+body.minimal-theme.borders-on .workspace .mod-root .workspace-tab-header.is-active {
+	position: relative !important;
+	z-index: 1 !important;
+}
+
+/* When borders-none is active (None mode) - remove all borders, backgrounds match Default (Obsidian defaults) */
+/* CSS variables are set above to remove borders */
+/* Remove all enhanced styling and reset backgrounds to match Default (Obsidian defaults) */
+body.minimal-theme.borders-none .workspace .mod-root .workspace-tab-container {
+	border: none !important;
+	border-radius: 0 !important;
+}
+
+body.minimal-theme.borders-none .workspace .mod-root .workspace-tab-header-container-inner {
+	padding-top: unset !important;
+	position: unset !important; /* Override theme's position: relative */
+	z-index: unset !important; /* Override theme's z-index: 1 */
+}
+
+body.minimal-theme.borders-none .workspace .mod-root .workspace-tab-header {
+	--tab-curve: 0 !important;
+}
+
+body.minimal-theme.borders-none .workspace .mod-root .workspace-tab-header.is-active {
+	border-left-color: transparent !important;
+	border-right-color: transparent !important;
+	margin-bottom: 0 !important;
+	--tab-outline-width: 0 !important;
+}
+
+body.minimal-theme.borders-none .workspace .mod-root .workspace-tab-header.is-active::before,
+body.minimal-theme.borders-none .workspace .mod-root .workspace-tab-header.is-active::after {
+	box-shadow: none !important;
+}
+
+body.minimal-theme.borders-none .workspace .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner::after {
+	content: none !important;
+}
+
+/* Reset ALL backgrounds to match Default (Obsidian defaults) - NOT Enhanced */
+/* Remove Enhanced CSS variables */
+body.minimal-theme.borders-none .workspace {
+	--enhanced-border-sidebar-bg: unset !important;
+	--enhanced-border-right-sidebar-bg: unset !important;
+}
+
+body.minimal-theme.borders-none .workspace .mod-root .workspace-tabs.mod-top,
+body.minimal-theme.borders-none .workspace .mod-sidedock.mod-right-split .workspace-tabs.mod-top {
+	--tab-container-background: unset !important;
+}
+
+body.minimal-theme.borders-none .workspace .mod-root .workspace-tab-header-container,
+body.minimal-theme.borders-none .workspace .mod-sidedock.mod-right-split .workspace-tab-header-container {
+	background-color: unset !important;
+	border-top-left-radius: unset !important;
+	border-top-right-radius: unset !important;
+}
+
+body.minimal-theme.borders-none .workspace .workspace-split.mod-root {
+	background-color: unset !important;
+}
+
+/* Reset right sidebar to match Default (Obsidian defaults) */
+/* The theme sets --background-secondary: var(--background-primary) for .mod-right-split by default */
+body.minimal-theme.borders-none .mod-right-split {
+	--background-secondary: unset !important;
+}
+
+/* Also reset the actual background color of the right sidebar container */
+body.minimal-theme.borders-none .workspace .mod-sidedock.mod-right-split {
+	background-color: unset !important;
+}
+
+body.minimal-theme.borders-none .tabs-modern .mod-root .workspace-tabs:not(.mod-stacked) {
+	--tab-height: unset !important;
+}
+
+
+/* ========================================
+   Inline Style Replacements
+   ======================================== */
+
+/* Preset Editor Modal - Form Input Styles */
+.frame-label {
+  font-size: 0.9em;
+}
+
+.frame-description {
+  font-size: 0.85em;
+  margin-bottom: 8px;
+}
+
+.frame-input {
+  width: 80px;
+}
+
+/* Collapsible Sections */
+.collapsible-content-item {
+  display: none !important;
+}
+
+.collapsible-content-item.expanded {
+  display: flex !important;
+}
+
+/* Preview Color Swatches - use CSS custom properties for dynamic colors */
+.preview-color {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 3px;
+  border: 1px solid var(--background-modifier-border);
+  background-color: var(--preview-color);
+}
+
+/* Color Preview Wrapper */
+.color-preview-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.color-preview {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 3px;
+  border: 1px solid var(--background-modifier-border);
+  cursor: pointer;
+  background-color: var(--preview-color);
+}
+
+/* HSL Color Input Overlay */
+.hsl-color-input-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Color Input Wrapper */
+.color-input-wrapper {
+  position: relative;
+}
+
+.color-preview-swatch {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--background-modifier-border);
+  cursor: pointer;
+  background-color: var(--preview-color);
+}
+
+/* Custom Preset ID Display */
+.preset-id-display {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+/* Confirmation Modal Button Container */
+.modal-button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.modal-button-container .mod-cta.confirm-button {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+/* Color Swatch with Dynamic Background */
+.color-swatch {
+  background-color: hsl(var(--swatch-hsl));
+}
+
+/* Detail Swatch */
+.detail-swatch {
+  background-color: hsl(var(--detail-hsl));
+}
+
+/* Custom Preset Swatch */
+.custom-preset-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid var(--background-modifier-border);
+  margin-right: 8px;
+  vertical-align: middle;
+  background: linear-gradient(45deg, 
+    var(--swatch-gradient-start) 0%, 
+    var(--swatch-gradient-mid) 50%, 
+    var(--swatch-gradient-end) 100%);
+}
+
+/* ========================================
+   Hider Plugin Styles
+   ======================================== */
+
+/* Hides vault name with gradient fade background */
+/* Hide the vault switcher content (vault name) but keep the container for the help button */
+body.hider-vault:not(.is-mobile) .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher,
+body.hider-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+	display: none;
+}
+
+/* Add gradient fade background that transitions from transparent to opaque before help button */
+body.hider-vault:not(.is-mobile) .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile,
+body.hider-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+	position: relative;
+	background-color: transparent !important;
+	background: transparent !important;
+}
+
+/* Pseudo-element with gradient mask for the fade effect */
+body.hider-vault:not(.is-mobile) .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile::before,
+body.hider-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	pointer-events: none;
+	background-color: var(--background-secondary);
+	/* Gradient mask: transparent at top, fully opaque at bottom (where help button is) */
+	mask: linear-gradient(to bottom, 
+		transparent 0%, 
+		transparent 30%,
+		hsla(0, 0%, 0%, 0.1) 50%,
+		hsla(0, 0%, 0%, 0.3) 60%,
+		hsla(0, 0%, 0%, 0.5) 70%,
+		hsla(0, 0%, 0%, 0.7) 80%,
+		hsla(0, 0%, 0%, 0.85) 85%,
+		hsla(0, 0%, 0%, 0.95) 90%,
+		black 95%,
+		black 100%);
+	-webkit-mask: linear-gradient(to bottom, 
+		transparent 0%, 
+		transparent 30%,
+		hsla(0, 0%, 0%, 0.1) 50%,
+		hsla(0, 0%, 0%, 0.3) 60%,
+		hsla(0, 0%, 0%, 0.5) 70%,
+		hsla(0, 0%, 0%, 0.7) 80%,
+		hsla(0, 0%, 0%, 0.85) 85%,
+		hsla(0, 0%, 0%, 0.95) 90%,
+		black 95%,
+		black 100%);
+}
+
+/* Ensure help button area has fully opaque background */
+body.hider-vault:not(.is-mobile) .mod-sidedock.mod-left-split .workspace-drawer-vault-actions,
+body.hider-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-drawer-vault-actions {
+	position: relative;
+	z-index: 1;
+	background-color: var(--background-secondary) !important;
+}
+
+/* Hide tabs */
+.hider-tabs .mod-root .workspace-tabs .workspace-tab-header-container {
+	display: none;
+}
+
+.hider-tabs .mod-top-left-space .view-header {
+	padding-left: var(--frame-left-space);
+}
+
+/* Auto-hide tab bar when single tab (Meridian Theme style - exact implementation) */
+/* Base transition properties - apply to all tab bars when feature is enabled */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-container {
+  max-height: 3em;
+  opacity: 1;
+  transition:
+    opacity 0.3s ease,
+    max-height 0.3s ease;
+}
+
+/* Only apply overflow: hidden when there's actually a single tab (to avoid clipping divider line) */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .mod-root
+  .workspace-tabs:not(.mod-stacked):not(
+    :has(.workspace-tab-header:nth-of-type(2))
+  )
+  .workspace-tab-header-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* Hide sidebar buttons */
+.hider-sidebar-buttons .sidebar-toggle-button.mod-right,
+.hider-sidebar-buttons .sidebar-toggle-button.mod-left {
+	display: none;
+}
+
+/* Hide left sidebar button */
+.hider-left-sidebar-button .sidebar-toggle-button.mod-left {
+	display: none;
+}
+
+/* Hide right sidebar button */
+.hider-right-sidebar-button .sidebar-toggle-button.mod-right {
+	display: none;
+}
+
+.hider-sidebar-buttons.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+	padding-right: 4px;
+}
+
+.hider-sidebar-buttons.mod-macos,
+.hider-left-sidebar-button.mod-macos {
+	--frame-left-space: 60px;
+}
+
+/* Hide meta */
+.hider-meta .markdown-reading-view .metadata-container {
+	display: none;
+}
+
+/* Hide scrollbars */
+.hider-scroll ::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide status */
+.hider-status .status-bar {
+	display: none;
+}
+
+/* Hide tooltips */
+.hider-tooltips .tooltip {
+	display: none;
+}
+
+/* Hide search suggestions */
+.hider-search-suggestions .suggestion-container.mod-search-suggestion {
+	display: none;
+}
+
+/* Hide search count flair */
+.hider-search-counts .tree-item-flair:not(.tag-pane-tag-count) {
+	display: none;
+}
+
+/* Hide instructions */
+.hider-instructions .prompt-instructions {
+	display: none;
+}
+
+/* Hide file nav header */
+.hider-file-nav-header .workspace-leaf-content[data-type=file-explorer] .nav-header {
+	display: none;
+}
+
+/* Hide properties heading */
+.metadata-heading-off .metadata-properties-heading {
+	display: none;
+}
+
+.metadata-heading-off .hover-popover .metadata-container {
+	display: none;
+}
+
+/* Hide "Add property" button */
+.metadata-add-property-off .metadata-add-button {
+	display: none;
+}
+
+/* Deemphasize properties (Meridian style) */
+body:not(.is-mobile).deemphasize-properties .metadata-container {
+	filter: grayscale(1);
+	opacity: 0.3;
+	transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+body:not(.is-mobile).deemphasize-properties .metadata-container:hover,
+body:not(.is-mobile).deemphasize-properties .metadata-container:focus-within {
+	filter: grayscale(0);
+	opacity: 1;
+}
+
+/* Auto-hide vault switcher (adapted from Baseline theme) */
+/* Only works when hide-vault is not enabled */
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile {
+	background-color: transparent;
+	border-top: none;
+	position: absolute;
+	inset: auto 0 0;
+	z-index: 1;
+	align-items: unset;
+	width: auto;
+}
+
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile::before {
+	transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	pointer-events: none;
+	mask: var(--auto-hide-vault-switcher-mask, linear-gradient(to top, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%));
+	background-color: var(--background-secondary);
+}
+
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher.has-active-menu {
+	background-color: var(--interactive-normal);
+}
+
+/* Make the whole vault profile area hoverable - remove pointer-events: none so entire area can be hovered */
+/* Hide vault switcher content when not hovered */
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile:not(:hover) .workspace-drawer-vault-switcher:not(.has-active-menu) {
+	opacity: 0;
+	filter: blur(4px);
+	pointer-events: none;
+	transform: scale(0.95);
+}
+
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile:not(:hover)::before {
+	opacity: var(--auto-hide-vault-switcher-bg-transparency, 0);
+}
+
+/* Reveal vault switcher content on hover anywhere over the profile area */
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile:hover .workspace-drawer-vault-switcher:not(.has-active-menu) {
+	opacity: 1;
+	filter: blur(0);
+	pointer-events: auto;
+	transform: scale(1);
+}
+
+/* Reveal background on hover - fully opaque */
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile:hover::before {
+	opacity: 1;
+	mask: none;
+}
+
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-drawer-vault-switcher,
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-drawer-vault-actions .clickable-icon {
+	transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+}
+
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-leaf-content > .node-insert-event,
+body:not(.is-mobile):not(.hider-vault).auto-hide-vault-switcher .mod-sidedock.mod-left-split .workspace-leaf-content > .view-content {
+	padding-bottom: 64px;
+}
+
+/* Auto-hide settings button (Meridian style - completely hidden until hover) */
+body:not(.is-mobile):not(.hider-vault).auto-hide-settings-button .workspace-split.mod-left-split .workspace-drawer-vault-actions .clickable-icon:last-child {
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+body:not(.is-mobile):not(.hider-vault).auto-hide-settings-button .workspace-split.mod-left-split .workspace-sidedock-vault-profile:hover .workspace-drawer-vault-actions .clickable-icon:last-child {
+	opacity: 1;
+}
+
+/* Hide help button */
+body:not(.is-mobile).hider-help-button .workspace-split.mod-left-split .workspace-drawer-vault-actions .clickable-icon:first-child {
+	display: none;
+}
+
+/* Ensure cmdr buttons are treated the same as nav-action-button */
+/* This makes cmdr buttons first-class citizens alongside regular nav-action-button elements */
+body .mod-sidedock .workspace-leaf-content > .nav-header .cmdr.clickable-icon,
+body .mod-sidedock .workspace-leaf-content > .view-content > .nav-header .cmdr.clickable-icon {
+	/* Inherit nav-action-button styling */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Ensure cmdr buttons in view-actions are treated the same as regular view-action buttons */
+/* This makes cmdr buttons in view headers match the normal color of other view-action buttons */
+/* Override inline styles and ensure they use the same color/opacity as default view-action buttons */
+body .view-header .view-actions .cmdr.clickable-icon.view-action,
+body .view-header .view-actions .cmdr-page-header.clickable-icon.view-action {
+	opacity: var(--icon-opacity) !important;
+	color: var(--icon-color) !important;
+}
+
+/* Also target the SVG inside cmdr buttons to ensure stroke color matches */
+body .view-header .view-actions .cmdr.clickable-icon.view-action svg,
+body .view-header .view-actions .cmdr-page-header.clickable-icon.view-action svg {
+	color: var(--icon-color) !important;
+	stroke: currentColor !important;
+}
+
+/* Auto-hide file explorer nav header (Meridian style - completely hidden until hover) */
+body:not(.is-mobile).auto-hide-file-explorer-nav-header .workspace-leaf-content[data-type=file-explorer] .nav-header {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	background-color: transparent;
+	transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+body:not(.is-mobile).auto-hide-file-explorer-nav-header .workspace-leaf-content[data-type=file-explorer] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-file-explorer-nav-header .workspace-leaf-content[data-type=file-explorer] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-file-explorer-nav-header .workspace-leaf-content[data-type=file-explorer] .nav-header svg {
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+body:not(.is-mobile).auto-hide-file-explorer-nav-header .workspace-leaf-content[data-type=file-explorer]:hover .nav-header {
+	max-height: 2.5em;
+	opacity: 1;
+}
+
+body:not(.is-mobile).auto-hide-file-explorer-nav-header .workspace-leaf-content[data-type=file-explorer]:hover .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-file-explorer-nav-header .workspace-leaf-content[data-type=file-explorer]:hover .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-file-explorer-nav-header .workspace-leaf-content[data-type=file-explorer]:hover .nav-header svg {
+	opacity: 1;
+}
+
+/* Auto-hide other nav headers (tag, backlinks, outgoing links, outline, bookmarks) - Meridian style */
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=tag] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=outgoing-link] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=backlink] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=outline] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=bookmarks] .nav-header {
+	padding: 0;
+	opacity: 0;
+	height: 0;
+	overflow: hidden;
+	background-color: transparent;
+	transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
+}
+
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=tag] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=tag] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=tag] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=outgoing-link] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=backlink] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=backlink] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=backlink] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=outline] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=outline] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=outline] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split .workspace-leaf-content[data-type=bookmarks] .nav-header svg {
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=tag] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=outgoing-link] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=backlink] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=outline] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=bookmarks] .nav-header {
+	opacity: 1;
+	height: 1.75em;
+}
+
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=tag] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=tag] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=tag] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=outgoing-link] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=backlink] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=backlink] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=backlink] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=outline] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=outline] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=outline] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers .workspace-split:hover .workspace-leaf-content[data-type=bookmarks] .nav-header svg {
+	opacity: 1;
+}
+
+/* Auto-hide left tab headers (Meridian style - completely hidden until hover) */
+body:not(.is-mobile).auto-hide-left-tab-headers .mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+	opacity: 0;
+	transition: opacity 0.25s ease;
+}
+
+body:not(.is-mobile).auto-hide-left-tab-headers .mod-left-split .mod-top-left-space .workspace-tab-header-container-inner:hover {
+	opacity: 1;
+}
+
+/* Auto-hide right tab headers (Meridian style - completely hidden until hover) */
+body:not(.is-mobile).auto-hide-right-tab-headers .mod-right-split .mod-top-right-space .workspace-tab-header-container-inner {
+	opacity: 0;
+	transition: opacity 0.25s ease;
+}
+
+body:not(.is-mobile).auto-hide-right-tab-headers .mod-right-split .mod-top-right-space .workspace-tab-header-container-inner:hover {
+	opacity: 1;
+}
+
+/* Auto-collapse ribbon (Adrenaline style - collapses to thin strip until hover) */
+body:not(.is-mobile).auto-collapse-ribbon .workspace-ribbon.side-dock-ribbon.mod-left {
+	flex-basis: 20px;
+	transition: flex-basis 0.5s ease;
+	background: var(--background-secondary) !important;
+}
+
+body:not(.is-mobile).auto-collapse-ribbon .workspace-ribbon.side-dock-ribbon.mod-left:hover {
+	flex-basis: 44px;
+	transition: flex-basis 0.1s ease;
+	background: var(--background-secondary) !important;
+}
+
+/* Collapse the :before pseudo-element to match ribbon width */
+body:not(.is-mobile).auto-collapse-ribbon .workspace-ribbon.mod-left:before {
+	width: 20px !important;
+	transition: width 0.5s ease;
+	background-color: var(--background-secondary) !important;
+}
+
+body:not(.is-mobile).auto-collapse-ribbon .workspace-ribbon.mod-left:hover:before {
+	width: 44px !important;
+	transition: width 0.1s ease;
+	background-color: var(--background-secondary) !important;
+}
+
+body:not(.is-mobile).auto-collapse-ribbon .workspace-ribbon.side-dock-ribbon.mod-left .side-dock-ribbon-action {
+	width: 0px;
+	height: 27.3px;
+	padding: 3px;
+	transition: width 0.5s ease, background 0.2s ease, color 0.01s ease;
+}
+
+body:not(.is-mobile).auto-collapse-ribbon .workspace-ribbon.side-dock-ribbon.mod-left:hover .side-dock-ribbon-action {
+	width: 33.333px;
+	transition: width 0.1s ease, background 0.2s ease, color 0.1s ease;
+}
+
+/* Sidebar toggle button matches ribbon collapse state */
+body:not(.is-mobile):not(.mod-macos).auto-collapse-ribbon .workspace-ribbon.side-dock-ribbon.mod-left .sidebar-toggle-button.mod-left {
+	width: 20px;
+	transition: width 0.5s ease;
+	padding-top: 6px !important;
+	padding-bottom: 6px !important;
+}
+
+body:not(.is-mobile):not(.mod-macos).auto-collapse-ribbon .workspace-ribbon.side-dock-ribbon.mod-left:hover .sidebar-toggle-button.mod-left {
+	width: 44px !important;
+	transition: width 0.1s ease;
+}
+
+body:not(.is-mobile):not(.mod-macos).auto-collapse-ribbon .workspace-ribbon.side-dock-ribbon.mod-left .sidebar-toggle-button.mod-left > .clickable-icon {
+	width: 0px;
+	padding: 3px;
+	transition: width 0.5s ease;
+}
+
+body:not(.is-mobile):not(.mod-macos).auto-collapse-ribbon .workspace-ribbon.side-dock-ribbon.mod-left:hover .sidebar-toggle-button.mod-left > .clickable-icon {
+	width: 33.333px;
+	transition: width 0.1s ease;
+}
+
+/* Collapse other nav headers (excluding file explorer) - adapted from Baseline theme */
+/* Treats cmdr buttons the same as nav-action-button */
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header {
+	transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast);
+}
+
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header .nav-buttons-container,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header .nav-buttons-container,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header .nav-action-button,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header .nav-action-button,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header .nav-action-button::after,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header .nav-action-button::after,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header svg,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header svg {
+	transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast);
+}
+
+/* Collapse buttons when not hovering (no bar indicator - completely hidden) */
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header:not(:hover) .nav-buttons-container,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header:not(:hover) .nav-buttons-container {
+	gap: 4px !important;
+	padding: 0 !important;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header:not(:hover) .nav-action-button,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header:not(:hover) .nav-action-button,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header:not(:hover) .cmdr.clickable-icon,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header:not(:hover) .cmdr.clickable-icon {
+	padding: 2px !important;
+	width: 0 !important;
+	flex: 0;
+	background-color: transparent;
+	box-shadow: none !important;
+	min-width: 0;
+	opacity: 0;
+}
+
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header:not(:hover) .nav-action-button::after,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header:not(:hover) .nav-action-button::after {
+	font-size: 0;
+}
+
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header:not(:hover) .nav-action-button.is-active,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header:not(:hover) .nav-action-button.is-active {
+	background-color: var(--background-modifier-hover) !important;
+}
+
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header:not(:hover) .nav-action-button.clickable-icon[aria-disabled="true"],
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header:not(:hover) .nav-action-button.clickable-icon[aria-disabled="true"],
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header:not(:hover) .cmdr.clickable-icon[aria-disabled="true"],
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header:not(:hover) .cmdr.clickable-icon[aria-disabled="true"] {
+	opacity: var(--icon-opacity);
+}
+
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .nav-header:not(:hover) svg,
+body.collapse-other-nav-headers .mod-sidedock .workspace-leaf-content:not([data-type="file-explorer"]) > .view-content > .nav-header:not(:hover) svg {
+	width: 0px;
+	height: 0px;
+}
+
+/* ========================================
+   Tab Icons
+   ======================================== */
+
+.hide-tab-list-icon .workspace-tab-header-tab-list {
+	display: none;
+}
+
+.hide-new-tab-icon .workspace-tab-header-new-tab {
+	display: none;
+}
+
+.hide-tab-close-button .workspace-tab-header-inner-close-button {
+	display: none;
+}
+
+/* ========================================
+   Desktop Hide Buttons
+   ======================================== */
+
+.hide-button-new-note .clickable-icon.nav-action-button:has(.svg-icon.lucide-edit) {
+	display: none;
+}
+
+.hide-button-new-folder .clickable-icon.nav-action-button:has(.svg-icon.lucide-folder-plus) {
+	display: none;
+}
+
+.hide-button-sort-order .clickable-icon.nav-action-button:has(.svg-icon.lucide-sort-asc) {
+	display: none;
+}
+
+.hide-button-auto-reveal .clickable-icon.nav-action-button:has(.svg-icon.lucide-gallery-vertical) {
+	display: none;
+}
+
+.hide-button-collapse-all .clickable-icon.nav-action-button:has(.svg-icon.lucide-chevrons-up-down),
+.hide-button-collapse-all .clickable-icon.nav-action-button:has(.svg-icon.lucide-chevrons-down-up) {
+	display: none;
+}
+
+.hide-button-reading-mode .view-header .clickable-icon.view-action:has(.svg-icon.lucide-book-open),
+.hide-button-reading-mode .view-header .clickable-icon.view-action:has(.svg-icon.lucide-edit-3) {
+	display: none;
+}
+
+.hide-button-search-settings .search-row .clickable-icon:has(.svg-icon.lucide-sliders-horizontal) {
+	display: none;
+}
+
+/* ========================================
+   Mobile Hide Icons
+   ======================================== */
+
+.hide-icon-mobile-chevrons .mobile-navbar .navbar-action-flair:has(.svg-icon.lucide-chevrons-up-down) {
+	display: none;
+}
+
+/* ========================================
+   Mobile Hide Buttons
+   ======================================== */
+
+.hide-button-mobile-navbar-action-back .mobile-navbar-action.mobile-navbar-action-back {
+	display: none;
+}
+
+.hide-button-mobile-navbar-action-forward .mobile-navbar-action.mobile-navbar-action-forward {
+	display: none;
+}
+
+.hide-button-mobile-navbar-action-quick-switcher .mobile-navbar-action.mobile-navbar-action-quick-switcher {
+	display: none;
+}
+
+.hide-button-mobile-navbar-action-new-tab .mobile-navbar-action.mobile-navbar-action-new-tab {
+	display: none;
+}
+
+.hide-button-mobile-navbar-action-tabs .mobile-navbar-action.mobile-navbar-action-tabs {
+	display: none;
+}
+
+.hide-button-mobile-navbar-action-menu .mobile-navbar-action.mobile-navbar-action-menu {
+	display: none;
+}
+
+/* ========================================
+   Mobile Swap New Tab Icon
+   ======================================== */
+
+.swap-mobile-new-tab-icon .mobile-navbar-action-new-tab .clickable-icon svg {
+	display: none;
+}
+
+.swap-mobile-new-tab-icon .mobile-navbar-action-new-tab .clickable-icon::before {
+	content: '';
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-color: currentColor;
+	-webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.025 21H6v-7H3v-1.5L12 3l9 9.5V14h-3v7h-4v-7h-3.975v7Z'/%3E%3C/svg%3E") no-repeat center / contain;
+	mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.025 21H6v-7H3v-1.5L12 3l9 9.5V14h-3v7h-4v-7h-3.975v7Z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* ========================================
+   Mobile Navigation Menu Ordering
+   ======================================== */
+
+/* Button 1 (Navigate back) */
+.order-navbar-button-nth-child-1-1 .mobile-navbar-action:nth-child(1) {
+	order: 1;
+}
+
+.order-navbar-button-nth-child-1-2 .mobile-navbar-action:nth-child(1) {
+	order: 2;
+}
+
+.order-navbar-button-nth-child-1-3 .mobile-navbar-action:nth-child(1) {
+	order: 3;
+}
+
+.order-navbar-button-nth-child-1-4 .mobile-navbar-action:nth-child(1) {
+	order: 4;
+}
+
+.order-navbar-button-nth-child-1-5 .mobile-navbar-action:nth-child(1) {
+	order: 5;
+}
+
+.order-navbar-button-nth-child-1-6 .mobile-navbar-action:nth-child(1) {
+	order: 6;
+}
+
+/* Button 2 (Navigate forward) */
+.order-navbar-button-nth-child-2-1 .mobile-navbar-action:nth-child(2) {
+	order: 1;
+}
+
+.order-navbar-button-nth-child-2-2 .mobile-navbar-action:nth-child(2) {
+	order: 2;
+}
+
+.order-navbar-button-nth-child-2-3 .mobile-navbar-action:nth-child(2) {
+	order: 3;
+}
+
+.order-navbar-button-nth-child-2-4 .mobile-navbar-action:nth-child(2) {
+	order: 4;
+}
+
+.order-navbar-button-nth-child-2-5 .mobile-navbar-action:nth-child(2) {
+	order: 5;
+}
+
+.order-navbar-button-nth-child-2-6 .mobile-navbar-action:nth-child(2) {
+	order: 6;
+}
+
+/* Button 3 (Quick switcher) */
+.order-navbar-button-nth-child-3-1 .mobile-navbar-action:nth-child(3) {
+	order: 1;
+}
+
+.order-navbar-button-nth-child-3-2 .mobile-navbar-action:nth-child(3) {
+	order: 2;
+}
+
+.order-navbar-button-nth-child-3-3 .mobile-navbar-action:nth-child(3) {
+	order: 3;
+}
+
+.order-navbar-button-nth-child-3-4 .mobile-navbar-action:nth-child(3) {
+	order: 4;
+}
+
+.order-navbar-button-nth-child-3-5 .mobile-navbar-action:nth-child(3) {
+	order: 5;
+}
+
+.order-navbar-button-nth-child-3-6 .mobile-navbar-action:nth-child(3) {
+	order: 6;
+}
+
+/* Button 4 (New tab) */
+.order-navbar-button-nth-child-4-1 .mobile-navbar-action:nth-child(4) {
+	order: 1;
+}
+
+.order-navbar-button-nth-child-4-2 .mobile-navbar-action:nth-child(4) {
+	order: 2;
+}
+
+.order-navbar-button-nth-child-4-3 .mobile-navbar-action:nth-child(4) {
+	order: 3;
+}
+
+.order-navbar-button-nth-child-4-4 .mobile-navbar-action:nth-child(4) {
+	order: 4;
+}
+
+.order-navbar-button-nth-child-4-5 .mobile-navbar-action:nth-child(4) {
+	order: 5;
+}
+
+.order-navbar-button-nth-child-4-6 .mobile-navbar-action:nth-child(4) {
+	order: 6;
+}
+
+/* Button 5 (Open tabs) */
+.order-navbar-button-nth-child-5-1 .mobile-navbar-action:nth-child(5) {
+	order: 1;
+}
+
+.order-navbar-button-nth-child-5-2 .mobile-navbar-action:nth-child(5) {
+	order: 2;
+}
+
+.order-navbar-button-nth-child-5-3 .mobile-navbar-action:nth-child(5) {
+	order: 3;
+}
+
+.order-navbar-button-nth-child-5-4 .mobile-navbar-action:nth-child(5) {
+	order: 4;
+}
+
+.order-navbar-button-nth-child-5-5 .mobile-navbar-action:nth-child(5) {
+	order: 5;
+}
+
+.order-navbar-button-nth-child-5-6 .mobile-navbar-action:nth-child(5) {
+	order: 6;
+}
+
+/* Button 6 (Ribbon menu) */
+.order-navbar-button-nth-child-6-1 .mobile-navbar-action:nth-child(6) {
+	order: 1;
+}
+
+.order-navbar-button-nth-child-6-2 .mobile-navbar-action:nth-child(6) {
+	order: 2;
+}
+
+.order-navbar-button-nth-child-6-3 .mobile-navbar-action:nth-child(6) {
+	order: 3;
+}
+
+.order-navbar-button-nth-child-6-4 .mobile-navbar-action:nth-child(6) {
+	order: 4;
+}
+
+.order-navbar-button-nth-child-6-5 .mobile-navbar-action:nth-child(6) {
+	order: 5;
+}
+
+.order-navbar-button-nth-child-6-6 .mobile-navbar-action:nth-child(6) {
+	order: 6;
+}
+
+/* ========================================
+   Background Blur Effect
+   ======================================== */
+
+/* Base modal-bg styling (matches Maple theme) */
+body.minimal-theme:not(.is-mobile) .modal-bg {
+	opacity: 1 !important;
+	background-color: hsla(var(--background-secondary-hsl, 220 13% 18%), 0.6) !important;
+}
+
+/* Apply blur effect to menus, modals, popups, and graph control panels */
+/* Only applies on desktop (not mobile) and when Oxygen theme is active */
+body.minimal-theme:not(.is-mobile).enable-blur :is(.menu, .suggestion-container, .graph-control-section) {
+	background-color: hsla(var(--background-secondary-hsl, 220 13% 18%), 0.7) !important;
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	will-change: backdrop-filter;
+}
+
+body.minimal-theme:not(.is-mobile).enable-blur .modal-bg {
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	transform: translateZ(0);
+}
+

@@ -1,0 +1,10 @@
+{
+  "imageNamePattern": "{{fileName}}",
+  "dupNumberAtStart": false,
+  "dupNumberDelimiter": "-",
+  "dupNumberAlways": false,
+  "autoRename": false,
+  "handleAllAttachments": true,
+  "excludeExtensionPattern": "base|canvas",
+  "disableRenameNotice": false
+}

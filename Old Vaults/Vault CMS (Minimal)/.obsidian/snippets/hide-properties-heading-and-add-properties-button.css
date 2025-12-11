@@ -1,0 +1,7 @@
+.metadata-container .metadata-show-source-button, .metadata-container .metadata-add-button {
+    display: none !Important;
+}
+
+.metadata-properties-heading {
+    display: none !Important;
+}

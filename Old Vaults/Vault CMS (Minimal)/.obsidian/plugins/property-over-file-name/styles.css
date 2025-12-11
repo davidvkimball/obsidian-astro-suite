@@ -1,0 +1,296 @@
+/* Property Over Filename Plugin Styles */
+
+/* Enhanced suggestion styling - SCOPED to plugin only */
+.property-over-filename-suggestion .suggestion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.property-over-filename-suggestion .suggestion-title {
+  font-weight: 500;
+  color: var(--text-normal);
+}
+
+.property-over-filename-suggestion .suggestion-note {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* Highlight matching text in suggestions - SCOPED to plugin only */
+.property-over-filename-suggestion .suggestion-highlight {
+  background-color: var(--text-highlight-bg);
+  color: var(--text-highlight-bg-active);
+  font-weight: 600;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* Property-based display indicator - SCOPED to plugin only */
+.property-over-filename-suggestion .suggestion-content .suggestion-title[data-custom-display="true"] {
+  color: var(--interactive-accent);
+  font-weight: 600;
+}
+
+/* Recent files styling - SCOPED to plugin only */
+.property-over-filename-suggestion .suggestion-content[data-recent="true"] .suggestion-title {
+  color: var(--text-accent);
+}
+
+/* New note creation styling - SCOPED to plugin only */
+.property-over-filename-suggestion .suggestion-content[data-new-note="true"] .suggestion-title {
+  color: var(--interactive-accent);
+  font-style: italic;
+}
+
+.property-over-filename-suggestion .suggestion-content[data-new-note="true"] .suggestion-title::before {
+  content: "📝 ";
+  margin-right: 4px;
+}
+
+
+/* Remove duplicate prompt instructions - use the ones below */
+
+/* Quick switcher enhancements - SCOPED to plugin only */
+.property-over-filename-modal .suggestion-item {
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.1s ease;
+}
+
+.property-over-filename-modal .suggestion-item:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.property-over-filename-modal .suggestion-item.is-selected {
+  background-color: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+/* Ensure selected item text has proper contrast */
+.property-over-filename-modal .suggestion-item.is-selected .suggestion-title {
+  color: var(--text-normal);
+  font-weight: 500;
+}
+
+.property-over-filename-modal .suggestion-item.is-selected .suggestion-note {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* Ensure selected item icons have proper contrast */
+.property-over-filename-modal .suggestion-item.is-selected .suggestion-flair {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Settings tab enhancements - SCOPED to plugin only */
+.property-over-filename-settings .setting-item-description {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.property-over-filename-settings .setting-item-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Button styling for settings - SCOPED to plugin only */
+.property-over-filename-settings .setting-item .setting-button {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.property-over-filename-settings .setting-item .setting-button:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+.property-over-filename-settings .setting-item .setting-button.setting-button-warning {
+  background-color: var(--text-error);
+}
+
+.property-over-filename-settings .setting-item .setting-button.setting-button-warning:hover {
+  background-color: var(--text-error-hover);
+}
+
+/* Hidden modal utility class - SCOPED to plugin only */
+.property-over-filename-modal .modal.hidden {
+  display: none !important;
+}
+
+/* Mobile-specific adjustments - SCOPED to plugin only */
+@media (max-width: 768px) {
+  .property-over-filename-suggestion .suggestion-content {
+    padding: 4px 0;
+  }
+  
+  .property-over-filename-suggestion .suggestion-title {
+    font-size: 0.95em;
+  }
+  
+  .property-over-filename-suggestion .suggestion-note {
+    font-size: 0.8em;
+  }
+}
+
+/* Hide tab titles until they're renamed by the plugin to prevent flicker */
+.workspace-tab-header:not([data-pov-processed="true"]) .workspace-tab-header-inner-title {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.workspace-tab-header[data-pov-processed="true"] .workspace-tab-header-inner-title {
+  opacity: 1;
+}
+
+/* Hide backlink elements until they're processed by the plugin to prevent flicker */
+.embedded-backlinks [data-path]:not([data-pov-processed="true"]),
+.backlinks-pane [data-path]:not([data-pov-processed="true"]),
+.backlink-pane [data-path]:not([data-pov-processed="true"]),
+.outgoing-link-pane [data-path]:not([data-pov-processed="true"]),
+.outgoing-links [data-path]:not([data-pov-processed="true"]),
+.backlink-container [data-path]:not([data-pov-processed="true"]),
+.embedded-backlinks .tree-item-inner:not([data-pov-processed="true"]),
+.backlinks-pane .tree-item-inner:not([data-pov-processed="true"]),
+.backlink-pane .tree-item-inner:not([data-pov-processed="true"]),
+.outgoing-link-pane .tree-item-inner:not([data-pov-processed="true"]),
+.outgoing-links .tree-item-inner:not([data-pov-processed="true"]),
+.backlink-container .tree-item-inner:not([data-pov-processed="true"]) {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.embedded-backlinks [data-path][data-pov-processed="true"],
+.backlinks-pane [data-path][data-pov-processed="true"],
+.backlink-pane [data-path][data-pov-processed="true"],
+.outgoing-link-pane [data-path][data-pov-processed="true"],
+.outgoing-links [data-path][data-pov-processed="true"],
+.backlink-container [data-path][data-pov-processed="true"],
+.embedded-backlinks .tree-item-inner[data-pov-processed="true"],
+.backlinks-pane .tree-item-inner[data-pov-processed="true"],
+.backlink-pane .tree-item-inner[data-pov-processed="true"],
+.outgoing-link-pane .tree-item-inner[data-pov-processed="true"],
+.outgoing-links .tree-item-inner[data-pov-processed="true"],
+.backlink-container .tree-item-inner[data-pov-processed="true"] {
+  opacity: 1;
+}
+
+/* Dark mode adjustments - SCOPED to plugin only */
+.theme-dark .property-over-filename-suggestion .suggestion-highlight {
+  background-color: rgba(255, 255, 0, 0.3);
+  color: var(--text-normal);
+}
+
+/* Dark mode contrast improvements */
+.theme-dark .property-over-filename-modal .suggestion-item.is-selected {
+  background-color: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.theme-dark .property-over-filename-modal .suggestion-item.is-selected .suggestion-title,
+.theme-dark .property-over-filename-modal .suggestion-item.is-selected .suggestion-note {
+  color: var(--text-normal);
+}
+
+.theme-dark .property-over-filename-modal .suggestion-item.is-selected .suggestion-flair {
+  color: var(--text-muted);
+}
+
+/* Let Obsidian handle dark theme footer styling */
+
+/* Animation for smooth transitions - SCOPED to plugin only */
+.property-over-filename-suggestion .suggestion-item {
+  transition: all 0.15s ease;
+}
+
+/* Focus states for accessibility - SCOPED to plugin only */
+.property-over-filename-suggestion .suggestion-item:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
+}
+
+/* Quick Switcher specific styles to match Obsidian's exact structure */
+
+/* Suggestion items with mod-complex class - SCOPED to plugin only */
+.property-over-filename-suggestion .suggestion-item.mod-complex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.1s ease;
+  min-height: 40px;
+}
+
+.property-over-filename-suggestion .suggestion-item.mod-complex .suggestion-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.property-over-filename-suggestion .suggestion-item.mod-complex .suggestion-aux {
+  flex-shrink: 0;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.property-over-filename-suggestion .suggestion-item.mod-complex .suggestion-flair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.property-over-filename-suggestion .suggestion-item.mod-complex .suggestion-flair svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Let Obsidian handle footer styling - don't override */
+
+/* Remove incorrect modal flex layout */
+
+/* Override any conflicting styles - SCOPED to plugin only */
+.property-over-filename-modal .suggestion-item .suggestion-title {
+  font-weight: 500;
+  color: var(--text-normal);
+  font-size: 0.95em;
+}
+
+.property-over-filename-modal .suggestion-item .suggestion-note {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  opacity: 0.9;
+}
+
+/* Improve contrast for unselected items */
+.property-over-filename-modal .suggestion-item:not(.is-selected) .suggestion-title {
+  color: var(--text-normal);
+  font-weight: 500;
+}
+
+.property-over-filename-modal .suggestion-item:not(.is-selected) .suggestion-note {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* Improve contrast for unselected item icons */
+.property-over-filename-modal .suggestion-item:not(.is-selected) .suggestion-flair {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
