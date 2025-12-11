@@ -1,4 +1,4 @@
-# Vault CMS (formerly Obsidian Astro Suite)
+# Vault CMS
 
 Use [Obsidian](https://obsidian.md) as a content management system for your [Astro](https://astro.build) website.
 
@@ -7,7 +7,7 @@ Use [Obsidian](https://obsidian.md) as a content management system for your [Ast
 
 ## Video Guide
 
-📺 [Video Guide](https://youtu.be/ZhizarvwLnU)
+📺 [Video Guide](https://youtu.be/dSm8aLPdVz0)
 
 ## Features 
 
