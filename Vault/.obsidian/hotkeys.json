@@ -226,5 +226,14 @@
       ],
       "key": "E"
     }
+  ],
+  "astro-composer:edit-astro-config": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": ","
+    }
   ]
 }

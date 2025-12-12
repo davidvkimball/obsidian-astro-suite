@@ -1,5 +1,6 @@
 {
   "pluginList": [
+    "davidvkimball/obsidian-vault-cms",
     "davidvkimball/obsidian-bases-cms",
     "davidvkimball/obsidian-oxygen-settings",
     "davidvkimball/obsidian-alias-file-name-history",
@@ -9,6 +10,10 @@
     "davidvkimball/obsidian-astro-composer"
   ],
   "pluginSubListFrozenVersion": [
+    {
+      "repo": "davidvkimball/obsidian-vault-cms",
+      "version": "latest"
+    },
     {
       "repo": "davidvkimball/obsidian-bases-cms",
       "version": "latest"
