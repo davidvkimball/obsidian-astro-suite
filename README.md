@@ -27,9 +27,28 @@ Use [Obsidian](https://obsidian.md) as a content management system for your [Ast
 
 1. Clone or install your Astro theme of choice.
 2. Clone or download a zip of this repo.
-3. Copy the contents of the `Vault` folder into your Astro project. **Recommended location:** `src/content` folder, but it can be placed at the level of `src/content` or higher (like the project root).
+3. Copy the contents of the `Starter Vault` folder into your Astro project. **Recommended location:** `src/content` folder, but it can be placed at the level of `src/content` or higher (like the project root).
 4. Open Obsidian and select the "Open folder as vault" option, and select the folder containing the `.obsidian` directory.
 5. The Vault CMS plugin will automatically detect your Astro project structure and guide you through setup via a wizard.
+
+### Starter Vault vs Theme Examples
+
+- **`Starter Vault`**: This is the adaptive vault that works with any Astro theme. It automatically detects your theme's structure and configures itself accordingly. This is what you should copy into your project.
+
+- **`Theme Examples`**: This folder contains preconfigured vault examples for specific Astro themes (Slate, Chiri, Starlight). These serve as reference examples showing how Vault CMS can be configured for particular themes. You don't need to use these unless you want to see theme-specific configurations.
+
+### Using Theme Examples
+
+If you're using one of the supported themes (Slate, Chiri, or Starlight) and want to use a preconfigured vault example instead of the adaptive Starter Vault:
+
+1. Navigate to the `Theme Examples` folder and find your theme's folder (e.g., `Slate`, `Chiri`, or `Starlight`).
+2. **Copy the CONTENTS** of that theme folder (not the folder itself) into your Astro project's `src/content` folder.
+   - ⚠️ **Important**: Copy the files and folders inside the theme folder, not the theme folder itself. For example, if using Slate, copy the contents of `Theme Examples/Slate/` (like `_bases/`, `post/`, etc.) into `src/content/`, not the `Slate` folder.
+3. Open Obsidian and select "Open folder as vault", then select your `src/content` folder (or the folder containing the `.obsidian` directory).
+4. The vault should already be preconfigured for your theme.
+
+> [!TIP]
+> If you're unsure which to use, start with the **Starter Vault** - it will automatically adapt to your theme. Use the Theme Examples only if you want to see a preconfigured setup for a specific theme.
 
 ## How Auto-Detection Works
 
