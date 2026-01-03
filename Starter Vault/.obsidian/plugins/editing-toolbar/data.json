@@ -1,5 +1,5 @@
 {
-  "lastVersion": "3.1.18",
+  "lastVersion": "3.2.0",
   "aestheticStyle": "glass",
   "positionStyle": "top",
   "menuCommands": [
@@ -257,6 +257,9 @@
   "fixedCommands": [],
   "mobileCommands": [],
   "enableMultipleConfig": false,
+  "enableTopToolbar": true,
+  "enableFollowingToolbar": false,
+  "enableFixedToolbar": false,
   "appendMethod": "workspace",
   "shouldShowMenuOnSelect": false,
   "cMenuVisibility": false,
@@ -306,7 +309,34 @@
   "viewTypeSettings": {
     "bases": false
   },
+  "appearanceByStyle": {
+    "top": {
+      "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
+      "toolbarIconColor": "var(--text-normal)",
+      "toolbarIconSize": 18,
+      "aestheticStyle": "glass"
+    },
+    "following": {
+      "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
+      "toolbarIconColor": "var(--text-normal)",
+      "toolbarIconSize": 18,
+      "aestheticStyle": "default"
+    },
+    "fixed": {
+      "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
+      "toolbarIconColor": "var(--text-normal)",
+      "toolbarIconSize": 18,
+      "aestheticStyle": "default"
+    },
+    "mobile": {
+      "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
+      "toolbarIconColor": "var(--text-normal)",
+      "toolbarIconSize": 18,
+      "aestheticStyle": "default"
+    }
+  },
   "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
   "toolbarIconColor": "var(--text-normal)",
-  "toolbarIconSize": 18
+  "toolbarIconSize": 18,
+  "useCurrentLineForRegex": false
 }

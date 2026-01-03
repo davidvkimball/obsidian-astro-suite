@@ -36,8 +36,8 @@
     "seo:seo-run-current",
     "editor:configure-toolbar"
   ],
-  "newFileLocation": "folder",
-  "newFileFolderPath": "posts",
+  "newFileLocation": "root",
+  "newFileFolderPath": "",
   "newLinkFormat": "relative",
   "mobileQuickRibbonItem": "",
   "vimMode": false,

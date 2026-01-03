@@ -58,7 +58,7 @@ views:
     propertyLayout12SideBySide: false
     propertyLayout34SideBySide: false
     showTags: false
-    customizeNewButton: true
+    customizeNewButton: false
     newNoteLocation: ""
     cardSize: 250
     imageAspectRatio: 0.55

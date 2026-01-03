@@ -1,8 +1,8 @@
 {
-  "lightStyle": "minimal-light",
-  "darkStyle": "minimal-dark",
-  "lightScheme": "minimal-oxygen-light",
-  "darkScheme": "minimal-oxygen-dark",
+  "lightStyle": "oxygen-light",
+  "darkStyle": "oxygen-dark",
+  "lightScheme": "oxygen-oxygen-light",
+  "darkScheme": "oxygen-oxygen-dark",
   "editorFont": "",
   "lineHeight": 1.5,
   "lineWidth": 40,
@@ -22,7 +22,6 @@
   "trimNames": true,
   "labeledNav": false,
   "fullWidthMedia": true,
-  "hideTitleBarOnHover": false,
   "workspaceBorders": "enhanced",
   "minimalStatus": true,
   "focusMode": false,
@@ -78,6 +77,12 @@
   "enableCustomPresets": true,
   "navIndentationGuideWidth": "0px",
   "navIndentationGuideColor": "rgba(var(--mono-rgb-100), 0.12)",
+  "deemphasizeProperties": false,
+  "autoHideTabBarWhenSingleTab": false,
+  "animationPersonality": "default",
+  "animationSpeed": 0.7,
+  "enableBlur": false,
+  "hideTitleBarOnHover": false,
   "hideTabs": false,
   "hideStatus": false,
   "hideScroll": false,
@@ -93,7 +98,6 @@
   "hideVault": false,
   "hidePropertiesHeading": true,
   "hideAddPropertyButton": true,
-  "deemphasizeProperties": false,
   "autoHideVaultSwitcher": true,
   "autoHideVaultSwitcherBgTransparency": 1,
   "hideHelpButton": false,
@@ -105,7 +109,6 @@
   "autoHideRightTabHeaders": false,
   "collapseOtherNavHeaders": false,
   "autoCollapseRibbon": false,
-  "autoHideTabBarWhenSingleTab": false,
   "hideButtonNewNote": false,
   "hideButtonNewFolder": false,
   "hideButtonSortOrder": false,
@@ -130,9 +133,6 @@
   "orderNavbarButton4": "order-navbar-button-nth-child-4-4",
   "orderNavbarButton5": "order-navbar-button-nth-child-5-5",
   "orderNavbarButton6": "order-navbar-button-nth-child-6-6",
-  "animationPersonality": "default",
-  "animationSpeed": 0.7,
-  "enableBlur": false,
   "helpButtonReplacement": {
     "enabled": false,
     "commandId": "oxygen-settings:oxygen-settings:open-settings",
@@ -545,5 +545,8 @@
   "lineNumberColorDark": "",
   "lineNumberColorActiveLight": "",
   "lineNumberColorActiveDark": "",
-  "dashedUnderlineInternal": false
+  "dashedUnderlineInternal": false,
+  "_migrationVersions": [
+    "minimal-to-oxygen-prefix-v1"
+  ]
 }

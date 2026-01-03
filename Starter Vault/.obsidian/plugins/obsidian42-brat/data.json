@@ -1,5 +1,8 @@
 {
   "pluginList": [
+    "davidvkimball/obsidian-ui-tweaker",
+    "davidvkimball/obsidian-home-base",
+    "davidvkimball/obsidian-image-manager",
     "davidvkimball/obsidian-vault-cms",
     "davidvkimball/obsidian-bases-cms",
     "davidvkimball/obsidian-oxygen-settings",
@@ -10,6 +13,18 @@
     "davidvkimball/obsidian-astro-composer"
   ],
   "pluginSubListFrozenVersion": [
+    {
+      "repo": "davidvkimball/obsidian-ui-tweaker",
+      "version": "latest"
+    },
+    {
+      "repo": "davidvkimball/obsidian-home-base",
+      "version": ""
+    },
+    {
+      "repo": "davidvkimball/obsidian-image-manager",
+      "version": ""
+    },
     {
       "repo": "davidvkimball/obsidian-vault-cms",
       "version": "latest"
@@ -43,12 +58,7 @@
       "version": "latest"
     }
   ],
-  "themesList": [
-    {
-      "repo": "davidvkimball/obsidian-oxygen",
-      "lastUpdate": "23878872"
-    }
-  ],
+  "themesList": [],
   "updateAtStartup": true,
   "updateThemesAtStartup": true,
   "enableAfterInstall": true,

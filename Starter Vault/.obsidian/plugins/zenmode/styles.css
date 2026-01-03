@@ -178,3 +178,19 @@ body:not(.is-mobile) .zenmode-button-auto-hide.zenmode-button-fade-out {
 body:not(.is-mobile) .zenmode-button-auto-hide.zenmode-button-fade-out button {
 	box-shadow: none;
 }
+
+/* Button visibility */
+.zenmode-button-visible {
+	display: block !important;
+}
+
+/* Focused file mode tab container styles */
+.zenmode-tab-hidden {
+	display: none !important;
+}
+
+.zenmode-tab-active {
+	display: block !important;
+	width: 100% !important;
+	flex: 1 1 100% !important;
+}

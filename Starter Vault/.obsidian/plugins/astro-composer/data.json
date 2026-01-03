@@ -18,6 +18,7 @@
     "commandId": "astro-composer:edit-astro-config",
     "iconId": "wrench"
   },
+  "showMdxFilesInExplorer": false,
   "linkBasePath": "/posts/",
   "enableAutoRename": true,
   "enableAutoInsertFrontmatter": true,

@@ -1,0 +1,5 @@
+/* Hide mobile new tab icon when the plugin setting is enabled */
+body.disable-tabs-hide-mobile-icon .mobile-navbar-action-tabs {
+  display: none;
+}
+
