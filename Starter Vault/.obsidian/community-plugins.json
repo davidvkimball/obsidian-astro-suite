@@ -3,7 +3,6 @@
   "seo",
   "property-over-file-name",
   "oxygen-settings",
-  "zenmode",
   "vault-cms",
   "tag-wrangler",
   "statusbar-organizer",
@@ -15,5 +14,7 @@
   "ui-tweaker",
   "image-manager",
   "bases-cms",
-  "home-base"
+  "home-base",
+  "obsidian-git",
+  "zenmode"
 ]

@@ -61,7 +61,7 @@
 	display: none;
 }
 
-/* Search Modal - Based on Image Inserter */
+/* Remote search modal styles */
 .image-inserter-container .modal-close-button {
 	display: none;
 }
@@ -204,24 +204,14 @@
 }
 
 /* Group settings compatibility styling for older Obsidian builds (< 1.11.0) */
-/* Base styling for setting-group-heading - drop default border */
-.setting-group-heading h3 {
-	margin: 1.5rem 0 0.75rem;
+/* Scoped to only this plugin's settings container to avoid affecting other plugins */
+.image-manager-settings-compat .setting-group-heading h3 {
+	margin: 0 0 0.75rem;
 	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
 	font-size: 1rem;
 	font-weight: 600;
 	border-bottom: none !important;
-}
-
-.setting-group-heading:first-child h3 {
-	margin-top: 0;
-}
-
-/* Only reintroduce border-bottom if heading is NOT immediately followed by a setting-item */
-/* This prevents double divider lines in older Obsidian builds where the first .setting-item */
-/* already has a border-top, creating a double line with the heading's border-bottom */
-.setting-group-heading:not(:has(+ .setting-item)) h3 {
-	border-bottom: 1px solid var(--background-modifier-border) !important;
 }
 
 /* File Picker Modal (hidden) */
@@ -260,7 +250,7 @@
 body {
 	/* Banner Variables */
 	--im-banner-padding: 8px;
-	--im-banner-radius: 8px 8px 8px 8px;
+	--im-banner-radius: 0px 0px 0px 0px;
 	--im-banner-height: 240px;
 	--im-banner-url: none;
 	--im-banner-repeat: no-repeat;
@@ -308,7 +298,7 @@ div.image-manager-banner > video {
 	height: 100%;
 	object-fit: cover;
 	z-index: 2;
-	animation: im-banner-fade-in 0.7s linear forwards, im-banner-anim 0.8s ease-out;
+	animation: im-banner-fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards, im-banner-video-anim 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 	object-position: calc(50% + var(--im-banner-img-x)) calc(50% + var(--im-banner-img-y));
 	border-radius: var(--im-banner-radius);
 	transition: object-position 0.5s ease-in-out;
@@ -330,9 +320,9 @@ div.image-manager-banner::before {
 	background-size: var(--im-banner-size);
 	background-position-x: calc(50% + var(--im-banner-img-x));
 	background-position-y: calc(50% + var(--im-banner-img-y));
-	animation: im-banner-fade-in 0.7s linear forwards, im-banner-anim 0.8s ease-out;
-	transition: background-position-x 0.5s ease-in-out, background-position-y 0.5s ease-in-out;
-	will-change: transform, background-position-x, background-position-y;
+	animation: im-banner-fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards, im-banner-anim 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	transition: background-position-x 0.5s ease-in-out;
+	will-change: background-position-x, background-position-y;
 	transform-style: preserve-3d;
 	backface-visibility: hidden;
 	transform: translate3d(0, 0, 0);
@@ -357,7 +347,20 @@ div.image-manager-banner.static::after {
 }
 
 div.image-manager-banner.static::before {
-	animation: none;
+	animation: none !important;
+	opacity: 1 !important;
+	transition: background-position-x 0.5s ease-in-out, background-position-y 0.5s ease-in-out;
+}
+
+/* Static video */
+div.image-manager-banner.static > video {
+	animation: none !important;
+	opacity: 1 !important;
+}
+
+/* During animation, disable transition to prevent conflicts */
+div.image-manager-banner:not(.static)::before {
+	transition: background-position-x 0.5s ease-in-out;
 }
 
 /* Content after banner */
@@ -378,10 +381,19 @@ div.image-manager-banner + div {
 
 @keyframes im-banner-anim {
 	from {
-		transform: translate3d(0, -10px, 0);
+		background-position-y: calc(50% + (var(--im-banner-img-y, 0px) - 10px));
 	}
 	to {
-		transform: translate3d(0, 0, 0);
+		background-position-y: calc(50% + var(--im-banner-img-y, 0px));
+	}
+}
+
+@keyframes im-banner-video-anim {
+	from {
+		object-position: calc(50% + var(--im-banner-img-x, 0px)) calc(50% + (var(--im-banner-img-y, 0px) - 10px));
+	}
+	to {
+		object-position: calc(50% + var(--im-banner-img-x, 0px)) calc(50% + var(--im-banner-img-y, 0px));
 	}
 }
 

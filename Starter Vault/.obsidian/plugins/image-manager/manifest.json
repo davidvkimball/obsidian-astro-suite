@@ -1,11 +1,1 @@
-{
-	"id": "image-manager",
-	"name": "Image Manager",
-	"version": "0.1.2",
-	"minAppVersion": "0.15.0",
-	"description": "Insert, rename, and sort external images by transforming them into local files within your notes.",
-	"author": "David V. Kimball",
-	"authorUrl": "https://davidvkimball.com",
-	"fundingUrl": "https://patreon.com/davidvkimball",
-	"isDesktopOnly": false
-}
+{"id":"image-manager","name":"Image Manager","version":"0.1.8","minAppVersion":"0.15.0","description":"Insert, rename, and sort images within your notes.","author":"David V. Kimball","authorUrl":"https://davidvkimball.com","fundingUrl":"https://patreon.com/davidvkimball","isDesktopOnly":false}

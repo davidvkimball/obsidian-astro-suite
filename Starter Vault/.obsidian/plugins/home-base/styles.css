@@ -41,57 +41,33 @@
    Sticky Home Icon (Desktop)
    ======================================== */
 
-/* Sticky home icon - positioned absolutely relative to tab bar, aligned with tabs */
-.workspace-tabs > .home-base-sticky-icon {
-	display: flex;
+/* Sticky home icon - part of tab bar structure, flows inline with tabs */
+.workspace-tab-header-container-inner > .home-base-sticky-icon {
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	padding: 0;
 	margin: 0;
+	margin-left: 8px;
+	margin-right: 8px;
 	cursor: default;
 	color: var(--text-muted);
-	transition: color 150ms ease, left 150ms ease;
+	transition: color 150ms ease;
 	background: none;
 	height: var(--tab-height, 32px);
 	width: 24px;
 	min-width: 24px;
 	max-width: 24px;
-	/* Position absolutely relative to workspace-tabs container */
-	position: absolute;
-	left: 4px; /* Position from left edge, accounting for container padding */
-	top: 5px; /* Align with tab bar with proper spacing */
-	z-index: 10; /* Above tabs but not too high */
-	/* Prevent any layout shifts or animations */
-	will-change: auto;
-	transform: translateZ(0); /* Force hardware acceleration for stability */
-	pointer-events: auto; /* Ensure it's clickable */
-	/* Isolate from any parent transforms or animations */
-	isolation: isolate;
-	/* Prevent any visual changes during tab operations */
-	opacity: 1 !important;
-	visibility: visible !important;
-	/* Prevent any transitions that might cause flickering */
-	transition: color 150ms ease, left 150ms ease, opacity 0s, visibility 0s;
+	flex-shrink: 0;
+	pointer-events: auto;
+	align-self: center;
+	margin-top: -8px;
 }
 
-/* When left sidebar is collapsed, move icon to the right to fill the gap */
-.workspace-tabs > .home-base-sticky-icon.home-base-sticky-icon-sidebar-collapsed {
-	left: 42px; /* Move to fill the gap when sidebar is collapsed */
-}
-
-/* Ensure workspace-tabs has relative positioning for absolute child */
-.workspace-tabs {
-	position: relative;
-}
-
-/* Add padding to tab container inner to make space for the icon - ONLY when sticky icon is enabled */
-.workspace-split.mod-vertical.mod-root.home-base-sticky-icon-enabled .workspace-tab-header-container-inner {
-	padding-left: 32px; /* Space for icon (24px) + margin (8px) */
-}
-
-/* When sidebar is collapsed, adjust padding to match icon position */
-.workspace-split.mod-vertical.mod-root.home-base-sticky-icon-enabled.home-base-sidebar-collapsed .workspace-tab-header-container-inner {
-	padding-left: 44px; /* More space when sidebar is collapsed to align with icon at 36px */
+/* Reduce left padding since icon is now inside the container */
+/* Only apply to splits that actually have the sticky icon (not the other side of a split view) */
+.workspace-split.mod-vertical.mod-root.home-base-sticky-icon-enabled .workspace-tab-header-container-inner:has(.home-base-sticky-icon) {
+	padding-left: 0; /* Icon is inside, so no extra left padding needed */
 }
 
 .home-base-sticky-icon:hover {
@@ -107,7 +83,7 @@
 	color: var(--text-accent-hover);
 }
 
-.workspace-tabs > .home-base-sticky-icon svg {
+.workspace-tab-header-container-inner > .home-base-sticky-icon svg {
 	width: 18px;
 	height: 18px;
 	min-width: 18px;
@@ -121,9 +97,72 @@
 }
 
 /* Hide home base tab header when sticky icon is enabled */
-.workspace-tab-header.is-home-base-tab {
+/* Completely remove from DOM flow to prevent tab counting */
+.workspace-tab-header.is-home-base-tab,
+.workspace-tab-header[data-home-base-ghost="true"] {
+	display: none !important;
+	/* Remove from accessibility tree */
+	visibility: hidden !important;
+	/* Remove from layout completely */
+	position: fixed !important;
+	left: -9999px !important;
+	top: -9999px !important;
+	width: 0 !important;
+	height: 0 !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+	/* Ensure it doesn't count for tab counting logic */
+	pointer-events: none !important;
+	/* Remove from tab order */
+	tab-index: -1 !important;
+	/* Make it not count for :nth-child selectors */
+	order: -9999 !important;
+}
+
+/* Hide sticky icon when tab bar is hidden - general purpose rules */
+/* These work automatically because the icon is inside the tab container */
+
+/* Zen Mode */
+body.zenmode-active .home-base-sticky-icon {
 	display: none !important;
 }
+
+/* UI Tweaker */
+body.hider-tabs .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* When tab header container is hidden via display:none, icon should also be hidden */
+.workspace-tab-header-container[style*="display: none"] .home-base-sticky-icon,
+.workspace-tab-header-container[style*="display:none"] .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* When tab container inner is hidden via display:none */
+.workspace-tab-header-container-inner[style*="display: none"] .home-base-sticky-icon,
+.workspace-tab-header-container-inner[style*="display:none"] .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* Oxygen theme auto-hide: When tab container has opacity 0 and pointer-events none, hide icon */
+/* Only hide when opacity is 0 AND it's clearly meant to be hidden (not just a transition) */
+.workspace-tab-header-container[style*="opacity: 0"][style*="pointer-events: none"] .home-base-sticky-icon,
+.workspace-tab-header-container[style*="opacity:0"][style*="pointer-events:none"] .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* Focus mode: REMOVED - was incorrectly hiding icon when window is focused */
+/* Focus mode should be handled by the tab bar hiding, not by this rule */
+
+/* Additional safety: Hide icon when parent workspace-tabs is hidden via display */
+.workspace-tabs[style*="display: none"] .home-base-sticky-icon,
+.workspace-tabs[style*="display:none"] .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* JavaScript-controlled hiding removed - CSS handles all visibility automatically */
 
 /* ========================================
    Mobile New Tab Button Replacement
@@ -178,22 +217,12 @@
 }
 
 /* Group settings compatibility styling for older Obsidian builds (< 1.11.0) */
-/* Base styling for setting-group-heading - drop default border */
-.setting-group-heading h3 {
-	margin: 1.5rem 0 0.75rem;
+/* Scoped to only this plugin's settings container to avoid affecting other plugins */
+.home-base-settings-compat .setting-group-heading h3 {
+	margin: 0 0 0.75rem;
 	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
 	font-size: 1rem;
 	font-weight: 600;
 	border-bottom: none !important;
-}
-
-.setting-group-heading:first-child h3 {
-	margin-top: 0;
-}
-
-/* Only reintroduce border-bottom if heading is NOT immediately followed by a setting-item */
-/* This prevents double divider lines in older Obsidian builds where the first .setting-item */
-/* already has a border-top, creating a double line with the heading's border-bottom */
-.setting-group-heading:not(:has(+ .setting-item)) h3 {
-	border-bottom: 1px solid var(--background-modifier-border) !important;
 }
