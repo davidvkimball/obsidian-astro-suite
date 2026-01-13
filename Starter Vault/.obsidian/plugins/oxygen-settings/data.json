@@ -82,6 +82,7 @@
   "animationPersonality": "default",
   "animationSpeed": 0.7,
   "enableBlur": false,
+  "useDefaultFolderIcon": false,
   "hideTitleBarOnHover": false,
   "hideTabs": false,
   "hideStatus": false,
