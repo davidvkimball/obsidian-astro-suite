@@ -17,6 +17,7 @@
   "showStatusBar": true,
   "updateSubmodules": false,
   "syncMethod": "merge",
+  "mergeStrategy": "none",
   "customMessageOnAutoBackup": false,
   "autoBackupAfterFileChange": false,
   "treeStructure": false,
@@ -26,7 +27,7 @@
   "changedFilesInStatusBar": true,
   "showedMobileNotice": true,
   "refreshSourceControlTimer": 7000,
-  "showBranchStatusBar": false,
+  "showBranchStatusBar": true,
   "setLastSaveToLastCommit": false,
   "submoduleRecurseCheckout": false,
   "gitDir": "",
@@ -34,6 +35,11 @@
   "authorInHistoryView": "hide",
   "dateInHistoryView": false,
   "diffStyle": "split",
+  "hunks": {
+    "showSigns": false,
+    "hunkCommands": false,
+    "statusBar": "disabled"
+  },
   "lineAuthor": {
     "show": false,
     "followMovement": "inactive",

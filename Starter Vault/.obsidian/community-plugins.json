@@ -4,10 +4,7 @@
   "property-over-file-name",
   "oxygen-settings",
   "vault-cms",
-  "tag-wrangler",
-  "statusbar-organizer",
   "astro-composer",
-  "cmdr",
   "iconic",
   "settings-search",
   "editing-toolbar",
@@ -16,5 +13,6 @@
   "bases-cms",
   "home-base",
   "obsidian-git",
-  "zenmode"
+  "zenmode",
+  "tag-wrangler"
 ]

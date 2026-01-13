@@ -1611,7 +1611,7 @@ settings:
 		type: variable-text
 		default: none
 	-
-		id: maximize-tables-off
+		id: table-maximize-width
 		title: Maximize table width 
 		description: Determines how wide tables should behave when they become wider than the line width
 		type: class-select
@@ -1727,8 +1727,8 @@ settings:
 				label: Square
 				value: tabs-plain-square
 			-
-		label: Underline
-		value: tabs-underline
+				label: Underline
+				value: tabs-underline
 	-
 		id: oxygen-tab-text-color
 		title: Tab text color
@@ -2129,8 +2129,8 @@ settings:
 		min: 100
 		max: 900
 		step: 100
-*/
 
+*/
 /* @settings
 name: Oxygen Cards
 id: oxygen-cards-style
@@ -2174,8 +2174,8 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	- 
-		id: cards-background-hover (hover)
-		title: Card background color
+		id: cards-background-hover
+		title: Card background color (hover)
 		type: variable-themed-color
 		format: hex
 		default-light: '#'

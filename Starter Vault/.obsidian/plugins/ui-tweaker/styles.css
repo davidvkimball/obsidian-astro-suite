@@ -46,19 +46,22 @@ body:not(.is-mobile).auto-hide-file-explorer-nav-header-reveal .workspace-leaf-c
 	opacity: 0;
 	overflow: hidden;
 	background-color: transparent;
-	transition: opacity 0.3s ease, max-height 0.3s ease;
+	transition: opacity 0.2s ease-in-out, max-height 0.2s ease-in-out;
+	pointer-events: none;
 }
 
 body:not(.is-mobile).auto-hide-file-explorer-nav-header-reveal .workspace-leaf-content[data-type=file-explorer] .nav-header .nav-buttons-container,
 body:not(.is-mobile).auto-hide-file-explorer-nav-header-reveal .workspace-leaf-content[data-type=file-explorer] .nav-header .nav-action-button,
 body:not(.is-mobile).auto-hide-file-explorer-nav-header-reveal .workspace-leaf-content[data-type=file-explorer] .nav-header svg {
 	opacity: 0;
-	transition: opacity 0.3s ease;
+	transition: opacity 0.2s ease-in-out;
 }
 
 body:not(.is-mobile).auto-hide-file-explorer-nav-header-reveal .workspace-leaf-content[data-type=file-explorer]:hover .nav-header {
-	max-height: 2.5em;
+	max-height: 40px;
 	opacity: 1;
+	overflow: visible;
+	pointer-events: auto;
 }
 
 body:not(.is-mobile).auto-hide-file-explorer-nav-header-reveal .workspace-leaf-content[data-type=file-explorer]:hover .nav-header .nav-buttons-container,
@@ -77,71 +80,73 @@ body.auto-hide-file-explorer-nav-header-hide .workspace-leaf-content[data-type=f
    ======================================== */
 
 /* Auto-hide other nav headers (tag, backlinks, outgoing links, outline, bookmarks) - Meridian style */
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=tag] .nav-header,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=outgoing-link] .nav-header,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=backlink] .nav-header,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=outline] .nav-header,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=bookmarks] .nav-header {
-	padding: 0;
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=tag] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outgoing-link] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=backlink] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outline] .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=bookmarks] .nav-header {
 	opacity: 0;
-	height: 0;
+	max-height: 0;
 	overflow: hidden;
 	background-color: transparent;
-	transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
+	transition: opacity 0.2s ease-in-out, max-height 0.2s ease-in-out;
+	pointer-events: none;
 }
 
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=tag] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=tag] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=tag] .nav-header svg,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=outgoing-link] .nav-header svg,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=backlink] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=backlink] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=backlink] .nav-header svg,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=outline] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=outline] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=outline] .nav-header svg,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split .workspace-leaf-content[data-type=bookmarks] .nav-header svg {
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=tag] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=tag] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=tag] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outgoing-link] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=backlink] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=backlink] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=backlink] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outline] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outline] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outline] .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=bookmarks] .nav-header svg {
 	opacity: 0;
-	transition: opacity 0.3s ease;
+	transition: opacity 0.2s ease-in-out;
 }
 
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=tag] .nav-header,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=outgoing-link] .nav-header,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=backlink] .nav-header,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=outline] .nav-header,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=bookmarks] .nav-header {
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=tag]:hover .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outgoing-link]:hover .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=backlink]:hover .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outline]:hover .nav-header,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=bookmarks]:hover .nav-header {
 	opacity: 1;
-	height: 1.75em;
+	max-height: 40px;
+	overflow: visible;
+	pointer-events: auto;
 }
 
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=tag] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=tag] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=tag] .nav-header svg,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=outgoing-link] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=outgoing-link] .nav-header svg,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=backlink] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=backlink] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=backlink] .nav-header svg,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=outline] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=outline] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=outline] .nav-header svg,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-buttons-container,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=bookmarks] .nav-header .nav-action-button,
-body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-split:hover .workspace-leaf-content[data-type=bookmarks] .nav-header svg {
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=tag]:hover .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=tag]:hover .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=tag]:hover .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outgoing-link]:hover .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outgoing-link]:hover .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outgoing-link]:hover .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=backlink]:hover .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=backlink]:hover .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=backlink]:hover .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outline]:hover .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outline]:hover .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=outline]:hover .nav-header svg,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=bookmarks]:hover .nav-header .nav-buttons-container,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=bookmarks]:hover .nav-header .nav-action-button,
+body:not(.is-mobile).auto-hide-other-nav-headers-reveal .workspace-leaf-content[data-type=bookmarks]:hover .nav-header svg {
 	opacity: 1;
 }
 
 /* Hide other nav headers */
-body.auto-hide-other-nav-headers-hide .workspace-split .workspace-leaf-content[data-type=tag] .nav-header,
-body.auto-hide-other-nav-headers-hide .workspace-split .workspace-leaf-content[data-type=outgoing-link] .nav-header,
-body.auto-hide-other-nav-headers-hide .workspace-split .workspace-leaf-content[data-type=backlink] .nav-header,
-body.auto-hide-other-nav-headers-hide .workspace-split .workspace-leaf-content[data-type=outline] .nav-header,
-body.auto-hide-other-nav-headers-hide .workspace-split .workspace-leaf-content[data-type=bookmarks] .nav-header {
+body.auto-hide-other-nav-headers-hide .workspace-leaf-content[data-type=tag] .nav-header,
+body.auto-hide-other-nav-headers-hide .workspace-leaf-content[data-type=outgoing-link] .nav-header,
+body.auto-hide-other-nav-headers-hide .workspace-leaf-content[data-type=backlink] .nav-header,
+body.auto-hide-other-nav-headers-hide .workspace-leaf-content[data-type=outline] .nav-header,
+body.auto-hide-other-nav-headers-hide .workspace-leaf-content[data-type=bookmarks] .nav-header {
 	display: none;
 }
 
@@ -450,7 +455,7 @@ body:not(.is-mobile).hider-right-sidebar-button-reveal .sidebar-toggle-button.mo
    ======================================== */
 
 .hider-status .status-bar {
-	display: none;
+	display: none !important;
 }
 
 /* ========================================
@@ -629,6 +634,20 @@ body:not(.is-mobile).hide-tab-close-button-reveal .workspace-tab-header-inner-cl
 .hide-button-collapse-all .clickable-icon.nav-action-button:has(.svg-icon.lucide-chevrons-down-up) {
 	display: none;
 }
+
+/* ========================================
+   Native explorer button colors
+   ======================================== */
+
+/* Colors are applied via inline styles in uiManager.ts when custom colors are set */
+/* No CSS rules here to avoid interfering with default icon styling */
+
+/* ========================================
+   Plugin-created explorer button colors
+   ======================================== */
+
+/* Colors are applied via inline styles in ExplorerManager.ts when custom colors are set */
+/* No CSS rules here to avoid interfering with default icon styling */
 
 .hide-button-reading-mode .view-header .clickable-icon.view-action:has(.svg-icon.lucide-book-open),
 .hide-button-reading-mode .view-header .clickable-icon.view-action:has(.svg-icon.lucide-edit-3) {
@@ -925,19 +944,15 @@ body.ui-tweaker-hide-sync-button .is-mobile .status-bar > .plugin-sync:not(.ui-t
    Custom Button Display
    ======================================== */
 
-/* Ensure custom replacement buttons are visible */
+/* Ensure custom replacement buttons are visible and properly aligned */
 .ui-tweaker-help-replacement,
-.ui-tweaker-sync-replacement {
-	display: block !important;
-}
-
-/* Center icon within custom sync replacement button */
 .ui-tweaker-sync-replacement {
 	display: flex !important;
 	align-items: center !important;
 	justify-content: center !important;
 }
 
+.ui-tweaker-help-replacement svg,
 .ui-tweaker-sync-replacement svg {
 	margin: 0 !important;
 }
@@ -951,4 +966,610 @@ body.ui-tweaker-hide-sync-button .is-mobile .status-bar > .plugin-sync:not(.ui-t
 	font-size: 1rem;
 	font-weight: 600;
 	border-bottom: none !important;
+}
+
+/* ========================================
+   Tab Navigation - Matching Astro Modular Settings
+   ======================================== */
+
+/* Override parent padding to get full width, then apply padding to children */
+.vertical-tab-content:has(.ui-tweaker-settings),
+.vertical-tab-container:has(.ui-tweaker-settings) {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.ui-tweaker-settings {
+	font-family: var(--font-family);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+/* Vertical Tab Content (Shell Commands style) - SCOPED to this plugin only */
+.ui-tweaker-settings .vertical-tab-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.ui-tweaker-settings .tab-container {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	min-height: 0;
+	height: 100%;
+}
+
+.ui-tweaker-settings .tab-nav {
+	position: sticky;
+	top: 0;
+	z-index: 0;
+	display: flex;
+	border-bottom: 1px solid var(--background-modifier-border);
+	margin: 0;
+	padding: var(--size-4-8) var(--size-4-12) 0 var(--size-4-12);
+	gap: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-width: thin;
+	scrollbar-color: var(--background-modifier-border) transparent;
+	-webkit-overflow-scrolling: touch;
+	pointer-events: none;
+}
+
+.ui-tweaker-settings .tab-nav .tab-button {
+	pointer-events: auto;
+}
+
+.ui-tweaker-settings .tab-nav::-webkit-scrollbar {
+	height: 6px;
+}
+
+.ui-tweaker-settings .tab-nav::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.ui-tweaker-settings .tab-nav::-webkit-scrollbar-thumb {
+	background: var(--background-modifier-border);
+	border-radius: 3px;
+}
+
+.ui-tweaker-settings .tab-nav::-webkit-scrollbar-thumb:hover {
+	background: var(--background-modifier-border-hover);
+}
+
+.ui-tweaker-settings .tab-button {
+	padding: 8px 12px;
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid transparent;
+	color: var(--text-muted);
+	cursor: default;
+	font-size: 14px;
+	margin: 0;
+	border-radius: 0;
+	white-space: nowrap;
+	flex-shrink: 0;
+	text-align: left;
+	box-shadow: none;
+	position: relative;
+	transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ui-tweaker-settings .tab-button:hover {
+	color: var(--text-normal);
+}
+
+.ui-tweaker-settings .tab-button.active {
+	color: var(--text-normal);
+	background: var(--background-primary);
+	border-bottom: 2px solid var(--interactive-accent);
+}
+
+.ui-tweaker-settings .tab-content {
+	flex: 1;
+	padding: var(--size-4-12) var(--size-4-12) var(--size-4-16) var(--size-4-12);
+	margin: 0;
+	overflow-y: auto;
+	min-height: 0;
+	height: 100%;
+}
+
+/* ========================================
+   Mobile-Specific Settings UI Improvements
+   ======================================== */
+
+/* Note: On mobile, we skip tab navigation entirely and just show the Mobile tab directly */
+/* We don't add the .ui-tweaker-settings class on mobile, so native Obsidian styling is used */
+
+/* ========================================
+   Tab Bar Commands List
+   ======================================== */
+
+.ui-tweaker-commands-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 16px 0;
+}
+
+.ui-tweaker-command-item {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 12px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	background: var(--background-secondary);
+}
+
+.ui-tweaker-command-info {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.ui-tweaker-icon-preview {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+}
+
+.ui-tweaker-command-text {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.ui-tweaker-command-name {
+	font-weight: 500;
+	color: var(--text-normal);
+}
+
+.ui-tweaker-command-id {
+	font-size: 12px;
+	color: var(--text-muted);
+	font-family: var(--font-monospace);
+}
+
+.ui-tweaker-command-controls {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.ui-tweaker-command-move,
+.ui-tweaker-command-edit,
+.ui-tweaker-command-delete {
+	padding: 4px 8px;
+	font-size: 12px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.ui-tweaker-command-move:hover,
+.ui-tweaker-command-edit:hover {
+	background: var(--background-modifier-hover);
+	border-color: var(--interactive-accent);
+}
+
+.ui-tweaker-command-delete {
+	color: var(--text-error);
+	border-color: var(--text-error);
+}
+
+.ui-tweaker-command-delete:hover {
+	background: var(--text-error);
+	color: var(--text-on-accent);
+}
+
+.ui-tweaker-command-toggle {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.ui-tweaker-command-toggle label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+	font-size: 12px;
+	color: var(--text-normal);
+}
+
+.ui-tweaker-command-toggle input[type="checkbox"] {
+	margin: 0;
+	cursor: pointer;
+}
+
+/* Icon picker - remove background box from icons */
+.suggestion-flair.ui-tweaker-icon-no-bg {
+	background: none !important;
+	background-color: transparent !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: none !important;
+}
+
+/* Status bar hidden items */
+.ui-tweaker-status-bar-hidden {
+	display: none !important;
+}
+
+/* Explorer button hidden items */
+.ui-tweaker-explorer-button-hidden {
+	display: none !important;
+}
+
+/* Disabled buttons (grayed out) */
+.ui-tweaker-disabled-button {
+	opacity: 0.3 !important;
+	cursor: not-allowed !important;
+}
+
+/* Name input full width */
+.ui-tweaker-name-input {
+	width: 100% !important;
+}
+
+/* Status bar hidden items */
+.ui-tweaker-status-bar-hidden {
+	display: none !important;
+}
+
+/* Status bar container - use flexbox for ordering */
+.status-bar {
+	display: flex !important;
+	flex-direction: row;
+	align-items: center;
+}
+
+.status-bar > * {
+	order: 0; /* Default order */
+}
+
+/* Collapse icon for status bar items and tab bar items */
+.ui-tweaker-collapse-icon {
+	cursor: default !important;
+	background: transparent !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	opacity: 0.6;
+	transition: opacity 0.2s, transform 0.2s;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	vertical-align: middle;
+	line-height: 1;
+}
+
+.ui-tweaker-collapse-icon:hover {
+	opacity: 1;
+}
+
+.ui-tweaker-collapse-icon svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+}
+
+/* Editable name styling (like Vault CMS) */
+.ui-tweaker-editable-name {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.ui-tweaker-editable-name input.mod-text-input {
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	padding: 0;
+	margin: 0;
+	font-size: inherit;
+	font-family: inherit;
+	color: inherit;
+	width: auto;
+	min-width: 200px;
+}
+
+.ui-tweaker-editable-name input.mod-text-input:focus {
+	border: none;
+	box-shadow: none;
+	outline: none;
+	background: transparent;
+}
+
+.ui-tweaker-edit-icon {
+	opacity: 0.6;
+	cursor: default;
+	transition: opacity 0.2s;
+}
+
+.ui-tweaker-edit-icon:hover {
+	opacity: 1;
+}
+
+/* Status bar preview (like Status Bar Organizer) */
+.ui-tweaker-status-bar-preview {
+	display: block;
+	border-radius: 0.25em;
+	margin-top: 0.5em;
+	padding: 0.5em !important;
+	font-size: 0.8rem;
+	background: var(--background-secondary-alt);
+	overflow: hidden;
+}
+
+.ui-tweaker-status-bar-preview .status-bar-item {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Shift description text to the right for status bar items (to align with title and give chevron space) */
+/* Only apply to status bar items that have the specific class */
+.setting-item-description.ui-tweaker-status-bar-item-desc {
+	padding-left: 1.5rem !important; /* Space for chevron icon (1em icon + 0.5rem gap) */
+}
+
+/* Status Bar Tab - EXACTLY matches Status Bar Organizer design 1:1 */
+div.ui-tweaker-status-bar-rows-wrapper {
+	width: 100%;
+	position: relative;
+}
+
+div.ui-tweaker-status-bar-rows-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	padding: 1em;
+	width: 100%;
+}
+
+div.ui-tweaker-status-bar-row {
+	background: var(--background-primary-alt);
+	color: var(--text-normal);
+	border-radius: 0.25em;
+	display: grid;
+	grid-template-columns: 1.25em 1fr 0.7fr 2.5em 2em 2em 2em 2em;
+	padding: 0.5em 1em;
+	width: 100%;
+	align-items: center;
+}
+
+span.ui-tweaker-status-bar-row-handle {
+	cursor: move;
+}
+
+span.ui-tweaker-status-bar-row-handle::after {
+	content: '·· ·· ·· ··';
+	display: inline-block;
+	line-height: 0.25rem;
+	padding: 0.275em 0em;
+	width: 1em;
+	word-wrap: normal;
+}
+
+span.ui-tweaker-status-bar-row-title {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+
+span.ui-tweaker-status-bar-row-preview {
+	border-radius: 0.25em;
+	padding: 0.5em !important;
+	font-size: 0.8rem;
+	background: var(--background-secondary-alt);
+	overflow: visible;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 2.5em;
+	height: auto;
+}
+
+/* Ensure cloned status bar items and their children are visible */
+span.ui-tweaker-status-bar-row-preview > * {
+	display: flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+span.ui-tweaker-status-bar-row-preview > * > * {
+	display: inline-flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+/* For custom items, left-align the icon */
+div.ui-tweaker-status-bar-row[data-ui-tweaker-id^="custom-"] span.ui-tweaker-status-bar-row-preview {
+	justify-content: flex-start;
+}
+
+span.ui-tweaker-status-bar-row-reset-color {
+	cursor: default;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+span.ui-tweaker-status-bar-row-reset-color button {
+	opacity: 0.6;
+	transition: opacity 0.2s;
+	background: transparent !important;
+}
+
+span.ui-tweaker-status-bar-row-reset-color button:hover {
+	opacity: 1;
+	background: transparent !important;
+}
+
+span.ui-tweaker-status-bar-row-color-picker {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+span.ui-tweaker-status-bar-row-color-picker > div {
+	display: flex;
+	align-items: center;
+}
+
+/* Fix color picker on mobile - make it square/circular instead of long tube */
+body.is-mobile span.ui-tweaker-status-bar-row-color-picker input[type="color"],
+body.is-mobile .ui-tweaker-settings .setting-item-control input[type="color"] {
+	width: 44px !important;
+	height: 44px !important;
+	min-width: 44px !important;
+	min-height: 44px !important;
+	max-width: 44px !important;
+	max-height: 44px !important;
+	border-radius: 6px;
+	padding: 0;
+	border: 1px solid var(--background-modifier-border);
+	cursor: pointer;
+}
+
+span.ui-tweaker-status-bar-row-device-mode,
+span.ui-tweaker-status-bar-row-md-only {
+	cursor: default;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.6;
+	transition: opacity 0.2s;
+}
+
+span.ui-tweaker-status-bar-row-device-mode:hover,
+span.ui-tweaker-status-bar-row-md-only:hover {
+	opacity: 1;
+}
+
+span.ui-tweaker-status-bar-row-device-mode.ui-tweaker-active,
+span.ui-tweaker-status-bar-row-md-only.ui-tweaker-active {
+	opacity: 1;
+	color: var(--interactive-accent);
+}
+
+span.ui-tweaker-status-bar-row-lock {
+	cursor: default;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	opacity: 0.6;
+	transition: opacity 0.2s;
+	padding-right: 0.5em;
+}
+
+span.ui-tweaker-status-bar-row-lock:hover {
+	opacity: 1;
+}
+
+span.ui-tweaker-status-bar-row-lock.ui-tweaker-locked {
+	opacity: 1;
+	color: var(--interactive-accent);
+}
+
+span.ui-tweaker-status-bar-row-visibility {
+	cursor: default;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	opacity: 0.6;
+	transition: opacity 0.2s;
+	padding-right: 0.5em;
+}
+
+span.ui-tweaker-status-bar-row-visibility:hover {
+	opacity: 1;
+}
+
+div.ui-tweaker-status-bar-row-drag {
+	position: absolute;
+	background: var(--background-modifier-active-hover);
+	z-index: 1000;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+div.ui-tweaker-status-bar-row-drag > span.ui-tweaker-status-bar-row-preview {
+	opacity: 0.9;
+}
+
+div.ui-tweaker-status-bar-row-drag.ui-tweaker-status-bar-row-disabled {
+	color: var(--text-normal);
+	opacity: 0.5;
+}
+
+div.ui-tweaker-status-bar-row-drag.ui-tweaker-status-bar-row-disabled * {
+	color: var(--text-normal) !important;
+}
+
+div.ui-tweaker-status-bar-row-clone {
+	background: transparent;
+}
+
+div.ui-tweaker-status-bar-row-clone > span {
+	visibility: hidden !important;
+}
+
+div.ui-tweaker-status-bar-row-disabled {
+	color: var(--text-faint);
+	opacity: 0.5;
+}
+
+div.ui-tweaker-status-bar-row-disabled span.ui-tweaker-status-bar-row-preview {
+	opacity: 0.3;
+}
+
+div.ui-tweaker-status-bar-row-hidden:not(div.ui-tweaker-status-bar-row-disabled) {
+	color: var(--text-faint);
+	opacity: 0.75;
+}
+
+div.ui-tweaker-status-bar-row-hidden:not(div.ui-tweaker-status-bar-row-disabled) span.ui-tweaker-status-bar-row-preview {
+	opacity: 0.5;
+}
+
+/* Drag-and-drop styles for status bar items */
+.ui-tweaker-draggable-item {
+	cursor: grab;
+	transition: opacity 0.2s, transform 0.2s;
+}
+
+.ui-tweaker-draggable-item:active {
+	cursor: grabbing;
+}
+
+.ui-tweaker-dragging {
+	opacity: 0.5;
+	transform: scale(0.98);
+}
+
+.ui-tweaker-drag-above {
+	border-top: 2px solid var(--interactive-accent);
+	margin-top: -2px;
+}
+
+.ui-tweaker-drag-below {
+	border-bottom: 2px solid var(--interactive-accent);
+	margin-bottom: -2px;
 }
