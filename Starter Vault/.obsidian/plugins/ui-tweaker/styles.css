@@ -393,6 +393,147 @@ body.hider-tabs .mod-root .workspace-tabs .workspace-tab-header-container {
 	display: none !important;
 }
 
+/* ========================================
+   Auto-hide tab bar when single tab
+   ======================================== */
+
+/* Base transition properties */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-container {
+  max-height: 3em;
+  opacity: 1;
+  transition:
+    opacity 0.3s ease,
+    max-height 0.3s ease;
+}
+
+/* Only apply overflow: hidden when there's actually a single tab */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .mod-root
+  .workspace-tabs:not(.mod-stacked):not(
+    :has(.workspace-tab-header:nth-of-type(2))
+  )
+  .workspace-tab-header-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* OS-specific offsets for view-actions and view-header-left */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-windows {
+	--view-actions-right-offset: 130px; 
+}
+
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-macos {
+	--view-header-left-offset: 100px;
+}
+
+/* Base transition for view header elements to match sidebar animation */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab .view-header .view-actions,
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab .view-header .view-header-left {
+	transition: padding-right 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Windows: Offset view-actions when right sidebar is collapsed and it's a single tab pane */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-windows.is-right-sidebar-collapsed
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header
+  .view-actions {
+  padding-right: var(--view-actions-right-offset) !important;
+}
+
+/* macOS: Offset view-header-left when left sidebar is collapsed and it's a single tab pane */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-macos.is-left-sidebar-collapsed
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header
+  .view-header-left {
+  padding-left: var(--view-header-left-offset) !important;
+}
+
+/* Make view-header draggable when tab bar is hidden (single tab) */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header {
+  position: relative;
+  -webkit-app-region: drag !important;
+}
+
+/* Windows: Exclude right side from dragging when right sidebar is collapsed */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-windows.is-right-sidebar-collapsed
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header {
+  -webkit-app-region: no-drag !important;
+}
+
+/* Create draggable pseudo-element for Windows */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-windows.is-right-sidebar-collapsed
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: var(--view-actions-right-offset);
+  height: 100%;
+  -webkit-app-region: drag !important;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+/* macOS: Exclude left side from dragging when left sidebar is collapsed */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-macos.is-left-sidebar-collapsed
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header {
+  -webkit-app-region: no-drag !important;
+}
+
+/* Create draggable pseudo-element for macOS */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-macos.is-left-sidebar-collapsed
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--view-header-left-offset);
+  right: 0;
+  height: 100%;
+  -webkit-app-region: drag !important;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+/* Make interactive elements in view-header non-draggable and above pseudo-element */
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header
+  .view-action,
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header
+  .view-header-title,
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header
+  button,
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header
+  .clickable-icon,
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header
+  .view-header-left,
+body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
+  .workspace-tabs:not(.mod-stacked):not(:has(.workspace-tab-header:nth-of-type(2)))
+  .view-header
+  .view-actions {
+  position: relative;
+  z-index: 1;
+  -webkit-app-region: no-drag !important;
+}
+
 /* Hide view-header when tabs are hidden (matches original Hider plugin behavior) */
 .hider-tabs .mod-root .view-header,
 body.hider-tabs .mod-root .view-header {
@@ -538,6 +679,19 @@ body.theme-dark.hider-scroll-reveal .ui-tweaker-scrollbar-hover ::-webkit-scroll
 
 .hider-meta .markdown-reading-view .metadata-container {
 	display: none;
+}
+
+/* Deemphasize properties (Meridian style) */
+body:not(.is-mobile).ui-tweaker-deemphasize-properties .metadata-container {
+	filter: grayscale(1);
+	opacity: 0.3;
+	transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+body:not(.is-mobile).ui-tweaker-deemphasize-properties .metadata-container:hover,
+body:not(.is-mobile).ui-tweaker-deemphasize-properties .metadata-container:focus-within {
+	filter: grayscale(0);
+	opacity: 1;
 }
 
 /* ========================================
@@ -785,8 +939,8 @@ body.hide-mobile-title .minimal-tab-title-visible .view-header-title-container {
    Window Dragging (Windows)
    ======================================== */
 
-/* Only apply when tab bar is hidden and window dragging is enabled */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-windows {
+/* Only apply when tab bar is hidden */
+body:not(.is-mobile).hider-tabs-windows {
 	--drag-bump: 12px;          /* Increased bump for notes and find/replace */
 	--controls-offset: 48px;    /* graph/canvas controls offset */
 	--toolbar-right-offset: 130px; /* padding for base controls */
@@ -805,32 +959,32 @@ body:not(.is-mobile).hider-tabs.enable-window-dragging-windows .titlebar {
 }
 
 /* Inline title editable */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-windows .inline-title {
+body:not(.is-mobile).hider-tabs-windows .inline-title {
 	-webkit-app-region: no-drag !important;
 	z-index: 11 !important;
 	position: relative !important;
 	margin-top: 0 !important; /* reset by default */
 }
 
-/* Only apply bump when tab bar is hidden (body.hider-tabs present) */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-windows .workspace-leaf-content[data-type="markdown"] .inline-title {
+/* Only apply bump when tab bar is hidden */
+body:not(.is-mobile).hider-tabs-windows .workspace-leaf-content[data-type="markdown"] .inline-title {
 	margin-top: var(--drag-bump) !important;
 }
-body:not(.is-mobile).hider-tabs.enable-window-dragging-windows .workspace-leaf-content[data-type="markdown"] .document-search-container {
+body:not(.is-mobile).hider-tabs-windows .workspace-leaf-content[data-type="markdown"] .document-search-container {
 	margin-top: var(--drag-bump) !important; /* Match note content offset */
 	z-index: 12 !important; /* Above titlebar and inline-title */
 }
 
 /* Graph & Canvas controls stay clear of window buttons (only when right sidebar is closed) */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-windows .workspace:not(.is-right-sidedock-open) .graph-controls { 
+body:not(.is-mobile).hider-tabs-windows .workspace:not(.is-right-sidedock-open) .graph-controls { 
 	top: var(--controls-offset) !important; 
 }
-body:not(.is-mobile).hider-tabs.enable-window-dragging-windows .workspace:not(.is-right-sidedock-open) .canvas-controls { 
+body:not(.is-mobile).hider-tabs-windows .workspace:not(.is-right-sidedock-open) .canvas-controls { 
 	top: var(--controls-offset) !important; 
 }
 
 /* Push entire toolbar to the right of minimize/maximize/close (only when right sidebar is closed) */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-windows .workspace:not(.is-right-sidedock-open) .bases-toolbar {
+body:not(.is-mobile).hider-tabs-windows .workspace:not(.is-right-sidedock-open) .bases-toolbar {
 	padding-right: var(--toolbar-right-offset) !important;
 }
 
@@ -838,8 +992,8 @@ body:not(.is-mobile).hider-tabs.enable-window-dragging-windows .workspace:not(.i
    Window Dragging (macOS)
    ======================================== */
 
-/* Only apply when tab bar is hidden and window dragging is enabled */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-macos {
+/* Only apply when tab bar is hidden */
+body:not(.is-mobile).hider-tabs-macos {
 	--drag-bump: 8px;           /* bump for notes */
 	--toolbar-left-offset: 100px; /* padding for base controls on left */
 }
@@ -857,24 +1011,24 @@ body:not(.is-mobile).hider-tabs.enable-window-dragging-macos .titlebar {
 }
 
 /* Inline title editable */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-macos .inline-title {
+body:not(.is-mobile).hider-tabs-macos .inline-title {
 	-webkit-app-region: no-drag !important;
 	z-index: 11 !important;
 	position: relative !important;
 	margin-top: 0 !important; /* reset by default */
 }
 
-/* Only apply bump when tab bar is hidden (body.hider-tabs present) */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-macos .workspace-leaf-content[data-type="markdown"] .inline-title {
+/* Only apply bump when tab bar is hidden */
+body:not(.is-mobile).hider-tabs-macos .workspace-leaf-content[data-type="markdown"] .inline-title {
 	margin-top: var(--drag-bump) !important;
 }
-body:not(.is-mobile).hider-tabs.enable-window-dragging-macos .workspace-leaf-content[data-type="markdown"] .document-search-container {
+body:not(.is-mobile).hider-tabs-macos .workspace-leaf-content[data-type="markdown"] .document-search-container {
 	margin-top: var(--drag-bump) !important; /* Match note content offset */
 	z-index: 12 !important; /* Above titlebar and inline-title */
 }
 
 /* Push entire toolbar to the right of Mac window buttons (only when left sidebar is closed) */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-macos .workspace:not(.is-left-sidedock-open) .bases-toolbar {
+body:not(.is-mobile).hider-tabs-macos .workspace:not(.is-left-sidedock-open) .bases-toolbar {
 	padding-left: var(--toolbar-left-offset) !important;
 }
 
@@ -882,8 +1036,8 @@ body:not(.is-mobile).hider-tabs.enable-window-dragging-macos .workspace:not(.is-
    Window Dragging (Neutral/Linux)
    ======================================== */
 
-/* Only apply when tab bar is hidden and window dragging is enabled */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-neutral {
+/* Only apply when tab bar is hidden */
+body:not(.is-mobile).hider-tabs-neutral {
 	--drag-bump: 8px; /* bump for notes */
 }
 
@@ -900,18 +1054,18 @@ body:not(.is-mobile).hider-tabs.enable-window-dragging-neutral .titlebar {
 }
 
 /* Inline title editable */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-neutral .inline-title {
+body:not(.is-mobile).hider-tabs-neutral .inline-title {
 	-webkit-app-region: no-drag !important;
 	z-index: 11 !important;
 	position: relative !important;
 	margin-top: 0 !important; /* reset by default */
 }
 
-/* Only apply bump when tab bar is hidden (body.hider-tabs present) */
-body:not(.is-mobile).hider-tabs.enable-window-dragging-neutral .workspace-leaf-content[data-type="markdown"] .inline-title {
+/* Only apply bump when tab bar is hidden */
+body:not(.is-mobile).hider-tabs-neutral .workspace-leaf-content[data-type="markdown"] .inline-title {
 	margin-top: var(--drag-bump) !important;
 }
-body:not(.is-mobile).hider-tabs.enable-window-dragging-neutral .workspace-leaf-content[data-type="markdown"] .document-search-container {
+body:not(.is-mobile).hider-tabs-neutral .workspace-leaf-content[data-type="markdown"] .document-search-container {
 	margin-top: var(--drag-bump) !important; /* Match note content offset */
 	z-index: 12 !important; /* Above titlebar and inline-title */
 }

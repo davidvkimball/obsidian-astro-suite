@@ -36,19 +36,20 @@ properties:
     displayName: Draft
   file.name:
     displayName: File Name
+  file.fullname:
+    displayName: Full File Name
 views:
   - type: bases-cms
     name: Guide
     filters:
       and:
         - file.folder == "/"
-    order:
-      - file.name
+    order: []
     sort:
       - property: file.ctime
         direction: DESC
     fallbackToEmbeds: never
-    propertyDisplay1: file.name
+    propertyDisplay1: file.fullname
     showTextPreview: true
     imageFormat: none
     showDate: false
