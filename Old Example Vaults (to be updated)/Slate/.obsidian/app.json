@@ -1,9 +1,16 @@
 {
-  "attachmentFolderPath": "post/images",
-  "useMarkdownLinks": true,
-  "alwaysUpdateLinks": true,
-  "newLinkFormat": "relative",
+  "showInlineTitle": false,
+  "promptDelete": true,
+  "showIndentGuide": false,
+  "attachmentFolderPath": "./attachments",
+  "userIgnoreFilters": [
+    "bases/"
+  ],
+  "focusNewTab": false,
   "mobilePullAction": "command-palette:open",
+  "trashOption": "system",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
   "mobileToolbarCommands": [
     "editor:undo",
     "editor:redo",
@@ -24,11 +31,16 @@
     "editor:toggle-checklist-status",
     "editor:indent-list",
     "editor:unindent-list",
-    "astro-composer:rename-note",
     "astro-composer:standardize-properties",
     "astro-composer:convert-wikilinks-astro",
+    "seo:seo-run-current",
     "editor:configure-toolbar"
   ],
   "newFileLocation": "folder",
-  "newFileFolderPath": "post"
+  "newFileFolderPath": "post",
+  "newLinkFormat": "relative",
+  "mobileQuickRibbonItem": "",
+  "vimMode": false,
+  "readableLineLength": true,
+  "defaultViewMode": "source"
 }

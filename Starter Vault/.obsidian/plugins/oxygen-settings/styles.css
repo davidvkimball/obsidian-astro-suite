@@ -697,157 +697,6 @@ body.oxygen-theme[style*="--nav-indentation-guide-width:0px"] .nav-folder-childr
     var(--swatch-gradient-end) 100%);
 }
 
-/* ========================================
-   Focus Plugin Styles
-   ======================================== */
-
-/* Auto-hide tab bar when single tab (Meridian Theme style - exact implementation) */
-/* Base transition properties - apply to all tab bars when feature is enabled */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
-  .mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-container {
-  max-height: 3em;
-  opacity: 1;
-  transition:
-    opacity 0.3s ease,
-    max-height 0.3s ease;
-}
-
-/* Only apply overflow: hidden when there's actually a single tab (to avoid clipping divider line) */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
-  .mod-root
-  .workspace-tabs:not(.mod-stacked):not(
-    :has(.workspace-tab-header:nth-of-type(2))
-  )
-  .workspace-tab-header-container {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-}
-
-/* OS-specific offsets for view-actions and view-header-left */
-/* Define offset variables matching UI Tweaker spacing */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-windows {
-	--view-actions-right-offset: 130px; /* Match UI Tweaker toolbar-right-offset */
-}
-
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-macos {
-	--view-header-left-offset: 100px; /* Match UI Tweaker toolbar-left-offset */
-}
-
-/* Windows: Offset view-actions when right sidebar is collapsed (to avoid OS window buttons) */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-windows
-  .mod-root.has-single-tab-right-collapsed
-  .view-header
-  .view-actions {
-  padding-right: var(--view-actions-right-offset) !important;
-}
-
-/* macOS: Offset view-header-left when left sidebar is collapsed (to avoid OS window buttons) */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-macos
-  .mod-root.has-single-tab-left-collapsed
-  .view-header
-  .view-header-left {
-  padding-left: var(--view-header-left-offset) !important;
-}
-
-/* Make view-header draggable when tab bar is hidden (single tab) */
-/* Only make draggable when sidebars are open (OS buttons not covered) or use selective dragging */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
-  .mod-root.has-single-tab
-  .view-header {
-  position: relative;
-  -webkit-app-region: drag !important;
-}
-
-/* Windows: Exclude right side from dragging when right sidebar is collapsed (OS buttons area) */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-windows
-  .mod-root.has-single-tab-right-collapsed
-  .view-header {
-  -webkit-app-region: no-drag !important;
-}
-
-/* Create draggable pseudo-element for Windows (excludes OS button area on right) */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-windows
-  .mod-root.has-single-tab-right-collapsed
-  .view-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: var(--view-actions-right-offset);
-  height: 100%;
-  -webkit-app-region: drag !important;
-  z-index: 0;
-  pointer-events: auto;
-}
-
-/* macOS: Exclude left side from dragging when left sidebar is collapsed (OS buttons area) */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-macos
-  .mod-root.has-single-tab-left-collapsed
-  .view-header {
-  -webkit-app-region: no-drag !important;
-}
-
-/* Create draggable pseudo-element for macOS (excludes OS button area on left) */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab.auto-hide-tab-bar-macos
-  .mod-root.has-single-tab-left-collapsed
-  .view-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: var(--view-header-left-offset);
-  right: 0;
-  height: 100%;
-  -webkit-app-region: drag !important;
-  z-index: 0;
-  pointer-events: auto;
-}
-
-/* Make interactive elements in view-header non-draggable and above pseudo-element */
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
-  .mod-root.has-single-tab
-  .view-header
-  .view-action,
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
-  .mod-root.has-single-tab
-  .view-header
-  .view-header-title,
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
-  .mod-root.has-single-tab
-  .view-header
-  button,
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
-  .mod-root.has-single-tab
-  .view-header
-  .clickable-icon,
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
-  .mod-root.has-single-tab
-  .view-header
-  .view-header-left,
-body:not(.is-mobile).auto-hide-tab-bar-when-single-tab
-  .mod-root.has-single-tab
-  .view-header
-  .view-actions {
-  position: relative;
-  z-index: 1;
-  -webkit-app-region: no-drag !important;
-}
-
-/* Deemphasize properties (Meridian style) */
-body:not(.is-mobile).deemphasize-properties .metadata-container {
-	filter: grayscale(1);
-	opacity: 0.3;
-	transition: filter 0.3s ease, opacity 0.3s ease;
-}
-
-body:not(.is-mobile).deemphasize-properties .metadata-container:hover,
-body:not(.is-mobile).deemphasize-properties .metadata-container:focus-within {
-	filter: grayscale(0);
-	opacity: 1;
-}
-
 /* Ensure cmdr buttons are treated the same as nav-action-button */
 /* This makes cmdr buttons first-class citizens alongside regular nav-action-button elements */
 body .mod-sidedock .workspace-leaf-content > .nav-header .cmdr.clickable-icon,
@@ -900,5 +749,24 @@ body.oxygen-theme:not(.is-mobile).enable-blur .modal-bg {
 	font-size: 1rem;
 	font-weight: 600;
 	border-bottom: none !important;
+}
+
+/* ========================================
+   Colorful Frame Fixes
+   ======================================== */
+
+.colorful-frame .titlebar {
+  background-color: var(--frame-background) !important;
+}
+
+/* Ensure background applies even without border classes (Enhanced) */
+body.colorful-frame:not(.borders-on):not(.borders-none) .titlebar {
+  background-color: var(--frame-background) !important;
+}
+
+/* Fix for "None" borders (removes weird line) */
+body.colorful-frame.borders-none .workspace-tab-header-container {
+  border: none !important;
+  box-shadow: none !important;
 }
 

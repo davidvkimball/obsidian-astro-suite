@@ -1,14 +1,15 @@
 {
   "scanDirectories": "post",
-  "ignoreUnderscoreFiles": true,
+  "ignoreUnderscoreFiles": false,
+  "enableMDXSupport": false,
   "keywordProperty": "",
   "descriptionProperty": "description",
   "titleProperty": "title",
   "useFilenameAsTitle": false,
   "slugProperty": "",
   "useFilenameAsSlug": true,
-  "parentFolderSlugFilename": "",
-  "titlePrefixSuffix": "| Slate Blog",
+  "parentFolderSlugFilename": "index",
+  "titlePrefixSuffix": "",
   "checkTitleLength": true,
   "checkHeadingOrder": true,
   "checkAltText": true,
@@ -26,27 +27,29 @@
   "useNoteTitles": true,
   "skipH1Check": true,
   "publishMode": true,
-  "defaultSort": "warnings-desc",
+  "defaultSort": "issues-desc",
+  "showRibbonIcon": true,
   "minContentLength": 300,
   "keywordDensityMin": 1,
   "keywordDensityMax": 2,
   "duplicateThreshold": 80,
   "cachedGlobalResults": [
     {
-      "file": "post/astro-suite-vault-guide.md",
-      "displayName": "Astro Suite Vault Guide",
+      "file": "_vault-cms-guide.md",
+      "displayName": "Vault CMS Guide",
       "checks": {
         "titleLength": [
           {
-            "passed": true,
-            "message": "Good title length: 36 characters (Astro Suite Vault Guide + \" | Slate Blog\")",
-            "severity": "info"
+            "passed": false,
+            "message": "Title too short: 15 characters",
+            "suggestion": "Aim for 30-60 characters",
+            "severity": "warning"
           }
         ],
         "metaDescription": [
           {
             "passed": false,
-            "message": "Description too short: 46 characters",
+            "message": "Description too short: 62 characters",
             "suggestion": "Aim for 120-160 characters",
             "severity": "warning"
           }
@@ -54,8 +57,8 @@
         "titleH1Uniqueness": [
           {
             "passed": false,
-            "message": "No H1 heading found to compare with meta title",
-            "suggestion": "Add an H1 heading to your content, or enable 'Title property is H1' if your static site generator creates H1s from the title",
+            "message": "Meta title and H1 are identical",
+            "suggestion": "Modify one to be unique, or specify a suffix/prefix in plugin settings",
             "severity": "warning"
           }
         ],
@@ -67,44 +70,25 @@
         "keywordDensity": [],
         "headingOrder": [
           {
-            "passed": false,
-            "message": "No H1 heading found",
-            "suggestion": "Add an H1 heading at the beginning of your content",
-            "severity": "warning"
+            "passed": true,
+            "message": "Heading structure is correct",
+            "severity": "info"
           }
         ],
         "contentLength": [
           {
             "passed": true,
-            "message": "Good content length: 992 words",
+            "message": "Good content length: 2436 words",
             "severity": "info"
           }
         ],
-        "duplicateTitles": [
-          {
-            "passed": true,
-            "message": "Unique title: \"Astro Suite Vault Guide\"",
-            "severity": "info"
-          }
-        ],
-        "duplicateDescriptions": [
-          {
-            "passed": true,
-            "message": "Unique description: \"Explanation of the Astro Suite Obsidian vault.\"",
-            "severity": "info"
-          }
-        ],
-        "duplicateContent": [
-          {
-            "passed": true,
-            "message": "No duplicate content detected",
-            "severity": "info"
-          }
-        ],
+        "duplicateTitles": [],
+        "duplicateDescriptions": [],
+        "duplicateContent": [],
         "altText": [
           {
             "passed": true,
-            "message": "All images have alt text",
+            "message": "No media elements in this post",
             "severity": "info"
           }
         ],
@@ -129,46 +113,35 @@
             "severity": "info"
           }
         ],
-        "potentiallyBrokenLinks": [],
+        "potentiallyBrokenLinks": [
+          {
+            "passed": true,
+            "message": "No potentially broken links found",
+            "severity": "info"
+          }
+        ],
         "potentiallyBrokenEmbeds": [],
         "externalBrokenLinks": [
           {
             "passed": true,
-            "message": "External link: https://github.com/SlateDesign/slate-blog",
-            "suggestion": "To find if any of these are broken, use the 'Check external links for 404s' button to trigger it.",
-            "severity": "notice",
-            "position": {
-              "line": 13,
-              "searchText": "https://github.com/SlateDesign/slate-blog",
-              "context": "## Overview\n\nAll plugins, key bindings, and the theme can be customized to your liking, but this is what's on by default. Optimized for use with [Slate Astro theme](https://github.com/SlateDesign/slate-blog).\n\n## Philosophy "
-            }
-          },
-          {
-            "passed": true,
-            "message": "External link: https://obsidian.md/plugins?id=obsidian-git",
-            "suggestion": "To find if any of these are broken, use the 'Check external links for 404s' button to trigger it.",
-            "severity": "notice",
-            "position": {
-              "line": 119,
-              "searchText": "https://obsidian.md/plugins?id=obsidian-git",
-              "context": "## Git\n\nThe [Git](https://obsidian.md/plugins?id=obsidian-git) plugin is turned off by default, if you turn it on, you can easily publish to your Astro blog without leaving Obsidian using `CTRL + SHIFT + S`. Simply enable the plugin and configure with git to turn it on.\n\n## CSS Snippets"
-            }
+            "message": "Found 9 external link(s), all appear to resolve and are working",
+            "severity": "info"
           }
         ],
         "readingLevel": [
           {
             "passed": true,
-            "message": "Good reading level: 9.9 (Moderately easy to read)",
+            "message": "Good reading level: 8.9 (Easy to read)",
             "severity": "info"
           }
         ]
       },
-      "overallScore": 75.42307692307692,
+      "overallScore": 73.5,
       "issuesCount": 0,
       "warningsCount": 3,
-      "noticesCount": 2
+      "noticesCount": 0
     }
   ],
-  "lastScanTimestamp": 1761542260631,
+  "lastScanTimestamp": 1767334975072,
   "showNotices": true
 }

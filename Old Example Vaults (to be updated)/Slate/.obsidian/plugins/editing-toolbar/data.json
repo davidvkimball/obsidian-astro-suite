@@ -1,5 +1,5 @@
 {
-  "lastVersion": "3.1.18",
+  "lastVersion": "3.2.1",
   "aestheticStyle": "glass",
   "positionStyle": "top",
   "menuCommands": [
@@ -106,6 +106,11 @@
       "icon": "quote"
     },
     {
+      "id": "editing-toolbar:insert-callout",
+      "name": "Insert Callout ",
+      "icon": "alert-triangle"
+    },
+    {
       "id": "SubmenuCommands-list",
       "name": "submenu-list",
       "icon": "bullet-list-glyph",
@@ -137,7 +142,7 @@
         },
         {
           "id": "editing-toolbar:renumber-ordered-list",
-          "name": "Renumber ordered list",
+          "name": "Reorder numbered list",
           "icon": "list-restart"
         }
       ]
@@ -156,6 +161,16 @@
           "id": "editing-toolbar:codeblock",
           "name": "Code block",
           "icon": "codeblock-glyph"
+        },
+        {
+          "id": "editing-toolbar:editor:insert-wikilink",
+          "name": "Insert wikilink [[]]",
+          "icon": "<svg width=\"15\" height=\"15\" focusable=\"false\" fill=\"currentColor\"  viewBox=\"0 0 1024 1024\"><g transform=\"scale(1, -1) translate(0, -896) scale(0.9, 0.9) \"><path class=\"path\" d=\"M306 134 l91 0 q1 0 1 -8 l0 -80 q0 -8 -1 -8 l-91 0 q-1 0 -1 7 q0 -8 -5 -8 l-45 0 q-5 0 -5 8 l0 784 q0 8 5 8 l45 0 q5 0 5 -8 q0 8 1 8 l91 0 q1 0 1 -8 l0 -80 q0 -8 -1 -8 l-91 0 q-1 0 -1 8 l0 -623 q0 8 1 8 ZM139 134 l91 0 q1 0 1 -8 l0 -80 q0 -8 -1 -8 l-91 0 q-1 0 -1 7 q0 -8 -5 -8 l-45 0 q-5 0 -5 8 l0 784 q0 8 5 8 l45 0 q5 0 5 -8 q0 8 1 8 l91 0 q1 0 1 -8 l0 -80 q0 -8 -1 -8 l-91 0 q-1 0 -1 8 l0 -623 q0 8 1 8 ZM711 134 q1 0 1 -8 l0 623 q0 -8 -1 -8 l-91 0 q-1 0 -1 8 l0 80 q0 8 1 8 l91 0 q1 0 1 -8 q0 8 4 8 l46 0 q4 0 4 -8 l0 -784 q0 -8 -4 -8 l-46 0 q-4 0 -4 8 q0 -7 -1 -7 l-91 0 q-1 0 -1 8 l0 80 q0 8 1 8 l91 0 ZM878 134 q1 0 1 -8 l0 623 q0 -8 -1 -8 l-91 0 q-1 0 -1 8 l0 80 q0 8 1 8 l91 0 q1 0 1 -8 q0 8 5 8 l45 0 q4 0 4 -8 l0 -784 q0 -8 -4 -8 l-45 0 q-5 0 -5 8 q0 -7 -1 -7 l-91 0 q-1 0 -1 8 l0 80 q0 8 1 8 l91 0 Z\"></path></g></svg>"
+        },
+        {
+          "id": "editing-toolbar:editor:insert-embed",
+          "name": "Insert embed ![[]]",
+          "icon": "note-glyph"
         },
         {
           "id": "editing-toolbar:insert-link",
@@ -242,13 +257,16 @@
   "fixedCommands": [],
   "mobileCommands": [],
   "enableMultipleConfig": false,
+  "enableTopToolbar": true,
+  "enableFollowingToolbar": false,
+  "enableFixedToolbar": false,
   "appendMethod": "workspace",
   "shouldShowMenuOnSelect": false,
   "cMenuVisibility": false,
   "cMenuBottomValue": 4.25,
   "cMenuNumRows": 12,
   "cMenuWidth": 610,
-  "cMenuFontColor": "#953734",
+  "cMenuFontColor": "#2DC26B",
   "cMenuBackgroundColor": "#d3f8b6",
   "autohide": false,
   "Iscentered": false,
@@ -291,7 +309,34 @@
   "viewTypeSettings": {
     "bases": false
   },
+  "appearanceByStyle": {
+    "top": {
+      "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
+      "toolbarIconColor": "var(--text-normal)",
+      "toolbarIconSize": 18,
+      "aestheticStyle": "glass"
+    },
+    "following": {
+      "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
+      "toolbarIconColor": "var(--text-normal)",
+      "toolbarIconSize": 18,
+      "aestheticStyle": "default"
+    },
+    "fixed": {
+      "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
+      "toolbarIconColor": "var(--text-normal)",
+      "toolbarIconSize": 18,
+      "aestheticStyle": "default"
+    },
+    "mobile": {
+      "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
+      "toolbarIconColor": "var(--text-normal)",
+      "toolbarIconSize": 18,
+      "aestheticStyle": "default"
+    }
+  },
   "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
   "toolbarIconColor": "var(--text-normal)",
-  "toolbarIconSize": 18
+  "toolbarIconSize": 18,
+  "useCurrentLineForRegex": false
 }

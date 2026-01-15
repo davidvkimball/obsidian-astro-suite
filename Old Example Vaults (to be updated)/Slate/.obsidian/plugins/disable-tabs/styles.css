@@ -1,0 +1,16 @@
+/* Hide mobile new tab icon when the plugin setting is enabled */
+body.disable-tabs-hide-mobile-icon .mobile-navbar-action-tabs {
+  display: none;
+}
+
+/* Group settings compatibility styling for older Obsidian builds (< 1.11.0) */
+/* Scoped to only this plugin's settings container to avoid affecting other plugins */
+.disable-tabs-settings-compat .setting-group-heading h3 {
+	margin: 0 0 0.75rem;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border-bottom: none !important;
+}
+

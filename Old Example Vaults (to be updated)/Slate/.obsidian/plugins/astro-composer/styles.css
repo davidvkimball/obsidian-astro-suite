@@ -63,7 +63,7 @@
 
 /* Custom Content Types Styling */
 .custom-content-types-container {
-	margin-top: 16px;
+	margin-top: 0;
 }
 
 .custom-content-type-item {
@@ -78,9 +78,6 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 16px;
-	padding-bottom: 8px;
-	border-bottom: 1px solid var(--background-modifier-border);
 }
 
 .custom-content-type-header .setting-item {
@@ -111,6 +108,7 @@
 
 .custom-content-type-settings {
 	transition: all 0.2s ease-in-out;
+	padding-top: 12px;
 }
 
 .custom-content-type-settings[style*="none"] {
@@ -185,12 +183,194 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 8px 0;
+	gap: 8px;
 }
+
+.astro-composer-header-name {
+	flex: 1;
+	min-width: 0;
+}
+
+/* Collapse button */
+.astro-composer-collapse-button {
+	background: transparent !important;
+	border: none !important;
+	padding: 4px;
+	margin-right: 4px;
+	cursor: default;
+	color: var(--text-muted);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	transition: background-color 0.2s ease, color 0.2s ease;
+	box-shadow: none !important;
+}
+
+.astro-composer-collapse-button:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.astro-composer-collapse-button:active {
+	background-color: var(--background-modifier-active);
+}
+
+.astro-composer-collapse-button svg {
+	transition: transform 0.2s ease;
+}
+
+.astro-composer-collapse-button.is-collapsed svg {
+	transform: rotate(-90deg);
+}
+
+/* Reorder buttons container */
+.astro-composer-reorder-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
+	margin-right: 8px;
+	align-items: center;
+}
+
+/* Reorder buttons - minimal icon-only style */
+.astro-composer-reorder-button {
+	background: transparent !important;
+	border: none !important;
+	padding: 4px;
+	cursor: default;
+	color: var(--text-muted);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	transition: background-color 0.2s ease, color 0.2s ease;
+	line-height: 1;
+	opacity: 0.6;
+	box-shadow: none !important;
+}
+
+.astro-composer-reorder-button:hover:not(:disabled) {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+	opacity: 1;
+}
+
+.astro-composer-reorder-button:active:not(:disabled) {
+	background-color: var(--background-modifier-active);
+}
+
+.astro-composer-reorder-button:disabled {
+	opacity: 0.2;
+	cursor: default;
+}
+
+.astro-composer-reorder-button svg {
+	width: 16px;
+	height: 16px;
+}
+
 .astro-composer-remove-setting {
 	border-top: none;
 }
 
 .astro-composer-add-button {
 	border-top: none;
+}
+
+/* Floating button container - no settings background, right-aligned */
+.astro-composer-add-button-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 16px;
+	margin-bottom: 0;
+	padding: 0;
+	background: transparent;
+	border: none;
+}
+
+.astro-composer-add-button-container button {
+	margin: 0;
+}
+
+/* Settings tab - hidden setting elements */
+/* Only hide the setting item info elements, not nested ones inside content types */
+.astro-composer-setting-hidden-elements > .setting-item-info > .setting-item-name,
+.astro-composer-setting-hidden-elements > .setting-item-info > .setting-item-description,
+.astro-composer-setting-hidden-elements > .setting-item-control {
+	display: none;
+}
+
+.astro-composer-setting-hidden-elements {
+	border-top: none;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.astro-composer-setting-container-full-width {
+	display: block;
+	width: 100%;
+}
+
+.astro-composer-custom-types-container-visible {
+	display: block !important;
+	width: 100% !important;
+	visibility: visible !important;
+}
+
+/* Ensure custom content types container is always visible even when parent has hidden elements */
+.astro-composer-setting-hidden-elements .custom-content-types-container {
+	display: block !important;
+	visibility: visible !important;
+}
+
+/* Ensure content type items inside the container are visible */
+.custom-content-types-container .custom-content-type-item {
+	display: block !important;
+	visibility: visible !important;
+}
+
+/* Conflict warning styles */
+.astro-composer-conflict-warning {
+	color: var(--text-warning);
+	font-size: 0.9em;
+	margin-top: 0.5em;
+}
+
+.astro-composer-conflict-warning.hidden {
+	display: none;
+}
+
+/* Help button replacement */
+/* No special display needed - inherits from parent flex container */
+
+/* Ribbon context menu hiding - these will be applied via classes */
+.astro-composer-hide-terminal-icon .menu-item:has(svg[data-lucide="terminal-square"]),
+.astro-composer-hide-terminal-icon .menu-item:has(.lucide-terminal-square),
+.astro-composer-hide-terminal-icon .menu-item .menu-item-icon:has(svg[data-lucide="terminal-square"]),
+.astro-composer-hide-terminal-icon .menu-item .menu-item-icon:has(.lucide-terminal-square) {
+	display: none !important;
+}
+
+.astro-composer-hide-config-icon .menu-item:has(svg[data-lucide="wrench"]),
+.astro-composer-hide-config-icon .menu-item:has(.lucide-wrench),
+.astro-composer-hide-config-icon .menu-item .menu-item-icon:has(svg[data-lucide="wrench"]),
+.astro-composer-hide-config-icon .menu-item .menu-item-icon:has(.lucide-wrench) {
+	display: none !important;
+}
+
+/* Help button hiding */
+.astro-composer-hide-help-button .workspace-drawer-vault-actions .clickable-icon:has(svg.help) {
+	display: none !important;
+}
+
+/* Group settings compatibility styling for older Obsidian builds (< 1.11.0) */
+/* Scoped to only this plugin's settings container to avoid affecting other plugins */
+.astro-composer-settings-compat .setting-group-heading h3 {
+	margin: 0 0 0.75rem;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border-bottom: none !important;
 }

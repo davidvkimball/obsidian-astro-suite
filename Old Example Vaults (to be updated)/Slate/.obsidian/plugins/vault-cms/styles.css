@@ -1,0 +1,103 @@
+/* Group settings compatibility styling for older Obsidian builds (< 1.11.0) */
+/* Scoped to only this plugin's settings container to avoid affecting other plugins */
+.vault-cms-settings-compat .setting-group-heading h3 {
+	margin: 0 0 0.75rem;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border-bottom: none !important;
+}
+
+/* Wizard progress bar styling */
+.vault-cms-wizard .wizard-progress {
+	margin-bottom: 1.5rem;
+}
+
+.vault-cms-wizard .progress-bar {
+	width: 100%;
+	height: 8px;
+	background-color: var(--background-modifier-border);
+	border-radius: 4px;
+	overflow: hidden;
+	margin-bottom: 0.5rem;
+}
+
+.vault-cms-wizard .progress-fill {
+	height: 100%;
+	background-color: var(--interactive-accent);
+	border-radius: 4px;
+	transition: width 0.3s ease;
+}
+
+.vault-cms-wizard .progress-text {
+	text-align: center;
+	font-size: 0.875rem;
+	color: var(--text-muted);
+}
+
+.vault-cms-wizard .wizard-footer {
+	margin-top: 2rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--background-modifier-border);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.vault-cms-wizard .wizard-buttons {
+	display: flex;
+	gap: 0.625rem;
+	justify-content: flex-end;
+}
+
+.vault-cms-wizard .wizard-content {
+	margin-bottom: 1rem;
+}
+
+.vault-cms-wizard .wizard-skip-button {
+	opacity: 0.6;
+}
+
+.vault-cms-wizard .wizard-checkbox-label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+.vault-cms-wizard .wizard-checkbox-label input[type="checkbox"] {
+	cursor: pointer;
+}
+
+/* Editable name input styling - match native Obsidian input */
+.vault-cms-editable-name input.mod-text-input {
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	padding: 0;
+	margin: 0;
+	font-size: inherit;
+	font-family: inherit;
+	color: inherit;
+	width: auto;
+	min-width: 200px;
+}
+
+.vault-cms-editable-name input.mod-text-input:focus {
+	border: none;
+	box-shadow: none;
+	outline: none;
+	background: transparent;
+}
+
+/*
+
+This CSS file will be included with your plugin, and
+available in the app when your plugin is enabled.
+
+If your plugin does not need CSS, delete this file.
+
+*/

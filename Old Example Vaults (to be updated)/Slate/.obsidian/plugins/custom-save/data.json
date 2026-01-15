@@ -1,6 +1,0 @@
-{
-  "commandIds": [
-    "astro-composer:standardize-properties",
-    "astro-composer:convert-wikilinks-astro"
-  ]
-}

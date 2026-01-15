@@ -1,0 +1,228 @@
+/**
+ * Home Base Plugin Styles
+ */
+
+/* ========================================
+   Icon Picker (matching iconic plugin)
+   ======================================== */
+
+.iconic-icon-picker .iconic-search-results {
+	overflow-x: scroll;
+}
+
+.iconic-icon-picker .iconic-search-results > .setting-item-info {
+	display: none;
+}
+
+.iconic-icon-picker .iconic-search-results > .setting-item-control {
+	justify-content: center;
+}
+
+.iconic-icon-picker .iconic-search-results:focus-visible {
+	box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+}
+
+/* Search result icons */
+.iconic-icon-picker .iconic-search-result > * {
+	height: var(--icon-size);
+	--icon-size: calc(var(--icon-l) * 1.25);
+	--icon-stroke: calc(var(--icon-l-stroke-width) * 6/7);
+}
+
+.iconic-icon-picker .iconic-search-result.is-selected {
+	background-color: var(--background-modifier-hover);
+}
+
+.iconic-icon-picker .iconic-invisible {
+	visibility: hidden;
+}
+
+/* ========================================
+   Sticky Home Icon (Desktop)
+   ======================================== */
+
+/* Sticky home icon - part of tab bar structure, flows inline with tabs */
+.workspace-tab-header-container-inner > .home-base-sticky-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	margin-left: 8px;
+	margin-right: 8px;
+	cursor: default;
+	color: var(--text-muted);
+	transition: color 150ms ease;
+	background: none;
+	height: var(--tab-height, 32px);
+	width: 24px;
+	min-width: 24px;
+	max-width: 24px;
+	flex-shrink: 0;
+	pointer-events: auto;
+	align-self: center;
+	margin-top: -8px;
+}
+
+/* Reduce left padding since icon is now inside the container */
+/* Only apply to splits that actually have the sticky icon (not the other side of a split view) */
+.workspace-split.mod-vertical.mod-root.home-base-sticky-icon-enabled .workspace-tab-header-container-inner:has(.home-base-sticky-icon) {
+	padding-left: 0; /* Icon is inside, so no extra left padding needed */
+}
+
+.home-base-sticky-icon:hover {
+	background: none;
+	color: var(--text-normal);
+}
+
+.home-base-sticky-icon-active {
+	color: var(--text-accent);
+}
+
+.home-base-sticky-icon-active:hover {
+	color: var(--text-accent-hover);
+}
+
+.workspace-tab-header-container-inner > .home-base-sticky-icon svg {
+	width: 18px;
+	height: 18px;
+	min-width: 18px;
+	min-height: 18px;
+	max-width: 18px;
+	max-height: 18px;
+	flex-shrink: 0;
+	display: block;
+	/* Prevent any size changes */
+	box-sizing: border-box;
+}
+
+/* Hide home base tab header when sticky icon is enabled */
+/* Completely remove from DOM flow to prevent tab counting */
+.workspace-tab-header.is-home-base-tab,
+.workspace-tab-header[data-home-base-ghost="true"] {
+	display: none !important;
+	/* Remove from accessibility tree */
+	visibility: hidden !important;
+	/* Remove from layout completely */
+	position: fixed !important;
+	left: -9999px !important;
+	top: -9999px !important;
+	width: 0 !important;
+	height: 0 !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+	/* Ensure it doesn't count for tab counting logic */
+	pointer-events: none !important;
+	/* Remove from tab order */
+	tab-index: -1 !important;
+	/* Make it not count for :nth-child selectors */
+	order: -9999 !important;
+}
+
+/* Hide sticky icon when tab bar is hidden - general purpose rules */
+/* These work automatically because the icon is inside the tab container */
+
+/* Zen Mode */
+body.zenmode-active .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* UI Tweaker */
+body.hider-tabs .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* When tab header container is hidden via display:none, icon should also be hidden */
+.workspace-tab-header-container[style*="display: none"] .home-base-sticky-icon,
+.workspace-tab-header-container[style*="display:none"] .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* When tab container inner is hidden via display:none */
+.workspace-tab-header-container-inner[style*="display: none"] .home-base-sticky-icon,
+.workspace-tab-header-container-inner[style*="display:none"] .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* Oxygen theme auto-hide: When tab container has opacity 0 and pointer-events none, hide icon */
+/* Only hide when opacity is 0 AND it's clearly meant to be hidden (not just a transition) */
+.workspace-tab-header-container[style*="opacity: 0"][style*="pointer-events: none"] .home-base-sticky-icon,
+.workspace-tab-header-container[style*="opacity:0"][style*="pointer-events:none"] .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* Focus mode: REMOVED - was incorrectly hiding icon when window is focused */
+/* Focus mode should be handled by the tab bar hiding, not by this rule */
+
+/* Additional safety: Hide icon when parent workspace-tabs is hidden via display */
+.workspace-tabs[style*="display: none"] .home-base-sticky-icon,
+.workspace-tabs[style*="display:none"] .home-base-sticky-icon {
+	display: none !important;
+}
+
+/* JavaScript-controlled hiding removed - CSS handles all visibility automatically */
+
+/* ========================================
+   Mobile New Tab Button Replacement
+   ======================================== */
+
+/* Hide the default SVG when mobile home is enabled */
+.home-base-mobile-enabled .mobile-navbar-action-new-tab .clickable-icon svg {
+	display: none;
+}
+
+/* Add Lucide house icon as replacement */
+.home-base-mobile-enabled .mobile-navbar-action-new-tab .clickable-icon::before {
+	content: '';
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-color: currentColor;
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8'/%3E%3Cpath d='M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3C/svg%3E") no-repeat center / contain;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8'/%3E%3Cpath d='M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* ========================================
+   Settings Tab Styles
+   ======================================== */
+
+/* File suggester styling */
+.suggestion-title {
+	font-weight: 500;
+}
+
+.suggestion-path {
+	color: var(--text-muted);
+	margin-left: 4px;
+}
+
+.suggestion-note {
+	color: var(--text-faint);
+	font-family: var(--font-monospace);
+	font-size: var(--font-smaller);
+}
+
+.suggestion-flair {
+	display: inline-block;
+	padding: 1px 4px;
+	margin-left: 8px;
+	border-radius: var(--radius-s);
+	background-color: var(--background-modifier-border);
+	color: var(--text-muted);
+	font-size: var(--font-smallest);
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+/* Group settings compatibility styling for older Obsidian builds (< 1.11.0) */
+/* Scoped to only this plugin's settings container to avoid affecting other plugins */
+.home-base-settings-compat .setting-group-heading h3 {
+	margin: 0 0 0.75rem;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border-bottom: none !important;
+}

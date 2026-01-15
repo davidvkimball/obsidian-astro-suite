@@ -1,0 +1,522 @@
+/* Image Manager Plugin Styles */
+
+/* Rename Modal uses Obsidian's default modal sizing */
+
+.image-manager-rename-modal .modal-content {
+	padding: 1rem;
+}
+
+.image-manager-preview {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	background: var(--background-secondary);
+	border-radius: 8px;
+}
+
+.image-manager-preview img,
+.image-manager-preview-img {
+	max-width: 100%;
+	max-height: 200px;
+	object-fit: contain;
+	border-radius: 4px;
+}
+
+.image-manager-info {
+	margin-bottom: 1rem;
+}
+
+.image-manager-info ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.image-manager-info li {
+	padding: 0.25rem 0;
+	font-size: 0.875rem;
+	color: var(--text-muted);
+}
+
+.image-manager-info li strong {
+	color: var(--text-normal);
+}
+
+.image-manager-error {
+	color: var(--text-error);
+	margin-top: 0.5rem;
+	font-size: 0.875rem;
+}
+
+.image-manager-error-hidden {
+	display: none;
+}
+
+.image-manager-error-visible {
+	display: block;
+}
+
+.image-manager-hidden {
+	display: none;
+}
+
+/* Remote search modal styles */
+.image-inserter-container .modal-close-button {
+	display: none;
+}
+
+.image-inserter-container .modal-content {
+	overflow-y: hidden;
+}
+
+.image-inserter-container .container {
+	z-index: 1;
+	position: relative;
+	max-width: 100%;
+}
+
+.image-inserter-container .container .input-group {
+	display: flex;
+}
+
+.image-inserter-container .container .query-input {
+	flex-grow: 1;
+}
+
+.image-inserter-container .container .selector {
+	margin-left: 8px;
+}
+
+.image-inserter-container .container .scroll-area {
+	overflow-x: hidden;
+	margin-top: 6px;
+	width: 100%;
+	max-height: 70vh;
+}
+
+.image-inserter-container .container .scroll-area.loading {
+	display: none;
+}
+
+.image-inserter-container .container .scroll-area .images-list {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+}
+
+@media only screen and (min-width: 600px) {
+	.image-inserter-container .container {
+		padding: 10px;
+	}
+
+	.image-inserter-container .container {
+		max-width: 80vw;
+	}
+
+	.image-inserter-container .container .scroll-area .images-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.image-inserter-container .container .scroll-area .images-list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.image-inserter-container .container .scroll-area .images-list {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.image-inserter-container .container .scroll-area .images-list .query-result {
+	padding: 5px 10px;
+	cursor: pointer;
+	border-radius: 6px;
+}
+
+.image-inserter-container .container .scroll-area .images-list .query-result img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	box-shadow: none;
+	background-color: inherit;
+}
+
+.image-inserter-container .container .scroll-area .images-list .query-result.is-selected {
+	background-color: var(--background-tertiary);
+	box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+
+.image-inserter-container .container .scroll-area .pagination {
+	width: 100%;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.image-inserter-container .container .scroll-area .pagination .btn {
+	cursor: pointer;
+}
+
+/* Loading Animation */
+.image-inserter-container .loading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+.image-inserter-container .loading-container .loader-icon {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	color: var(--text-normal);
+	animation: loader-spin 1s linear infinite;
+	transform-origin: center;
+}
+
+.image-inserter-container .loading-container .loader-icon svg {
+	width: 24px;
+	height: 24px;
+	display: block;
+}
+
+@keyframes loader-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.image-inserter-container .container .scroll-area .no-result-container {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.image-inserter-container .container .scroll-area .no-result-container.error-text {
+	color: var(--text-error);
+}
+
+/* Group settings compatibility styling for older Obsidian builds (< 1.11.0) */
+/* Scoped to only this plugin's settings container to avoid affecting other plugins */
+.image-manager-settings-compat .setting-group-heading h3 {
+	margin: 0 0 0.75rem;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border-bottom: none !important;
+}
+
+/* File Picker Modal (hidden) */
+.image-manager-file-picker input[type="file"] {
+	display: none;
+}
+
+/* Confirmation Modal */
+.image-manager-confirm-message {
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+}
+
+.image-manager-confirm-message p {
+	margin: 0.5rem 0;
+	white-space: pre-line;
+}
+
+.image-manager-confirm-buttons {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: flex-end;
+	margin-top: 1rem;
+}
+
+.image-manager-confirm-buttons button {
+	min-width: 100px;
+}
+
+
+/* ==========================================
+   Banner Image Styles
+   ========================================== */
+
+/* Default CSS Variables for Banner */
+body {
+	/* Banner Variables */
+	--im-banner-padding: 8px;
+	--im-banner-radius: 0px 0px 0px 0px;
+	--im-banner-height: 240px;
+	--im-banner-url: none;
+	--im-banner-repeat: no-repeat;
+	--im-banner-size: cover;
+	--im-banner-img-x: 0px;
+	--im-banner-img-y: 0px;
+	--im-banner-note-offset: -32px;
+	--im-banner-view-offset: 0px;
+	--im-banner-mask: linear-gradient(180deg, transparent 25%, var(--background-primary));
+	--im-banner-mask-webkit: -webkit-linear-gradient(270deg, transparent 25%, var(--background-primary));
+
+	/* Icon Variables */
+	--im-banner-icon-align-h: flex-start;
+	--im-banner-icon-align-v: flex-end;
+	--im-banner-icon-size-w: 96px;
+	--im-banner-icon-size-h: 96px;
+	--im-banner-icon-offset-x: 0px;
+	--im-banner-icon-offset-y: -24px;
+	--im-banner-icon-radius: 8px;
+	--im-banner-icon-value: '';
+	--im-banner-icon-fontsize: inherit;
+	--im-banner-icon-background: rgb(from var(--background-primary) r g b / 80%);
+	--im-banner-icon-border: 2px;
+}
+
+/* Banner Container */
+div.image-manager-banner {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	width: calc(100% - (var(--im-banner-padding) * 2));
+	height: 100%;
+	margin-left: var(--im-banner-padding);
+	max-height: var(--im-banner-height);
+	padding: var(--size-4-3) var(--size-4-3) 0 var(--size-4-3);
+	transform: translate3d(0, 0, 0);
+	user-select: none;
+}
+
+/* Banner video element */
+div.image-manager-banner > video {
+	inset: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 2;
+	animation: im-banner-fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards, im-banner-video-anim 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	object-position: calc(50% + var(--im-banner-img-x)) calc(50% + var(--im-banner-img-y));
+	border-radius: var(--im-banner-radius);
+	transition: object-position 0.5s ease-in-out;
+	will-change: object-position;
+	transform: translate3d(0, 0, 0);
+}
+
+/* Banner image background (::before pseudo-element) */
+div.image-manager-banner::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	box-shadow: inset 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+	border-radius: var(--im-banner-radius);
+	background-color: rgba(0, 0, 0, 0.2);
+	background-image: var(--im-banner-url);
+	background-repeat: var(--im-banner-repeat);
+	background-size: var(--im-banner-size);
+	background-position-x: calc(50% + var(--im-banner-img-x));
+	background-position-y: calc(50% + var(--im-banner-img-y));
+	animation: im-banner-fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards, im-banner-anim 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	transition: background-position-x 0.5s ease-in-out;
+	will-change: background-position-x, background-position-y;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	transform: translate3d(0, 0, 0);
+}
+
+/* Banner fade overlay (::after pseudo-element) */
+div.image-manager-banner::after {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	content: '';
+	border-radius: var(--im-banner-radius);
+	background: var(--im-banner-mask);
+	background: var(--im-banner-mask-webkit);
+	transform: translate3d(0, 0, 0);
+	overflow: hidden;
+}
+
+/* Static state (no animation) */
+div.image-manager-banner.static::after {
+	animation: none;
+}
+
+div.image-manager-banner.static::before {
+	animation: none !important;
+	opacity: 1 !important;
+	transition: background-position-x 0.5s ease-in-out, background-position-y 0.5s ease-in-out;
+}
+
+/* Static video */
+div.image-manager-banner.static > video {
+	animation: none !important;
+	opacity: 1 !important;
+}
+
+/* During animation, disable transition to prevent conflicts */
+div.image-manager-banner:not(.static)::before {
+	transition: background-position-x 0.5s ease-in-out;
+}
+
+/* Content after banner */
+div.image-manager-banner + div {
+	position: relative;
+	z-index: 4;
+}
+
+/* Banner animations */
+@keyframes im-banner-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes im-banner-anim {
+	from {
+		background-position-y: calc(50% + (var(--im-banner-img-y, 0px) - 10px));
+	}
+	to {
+		background-position-y: calc(50% + var(--im-banner-img-y, 0px));
+	}
+}
+
+@keyframes im-banner-video-anim {
+	from {
+		object-position: calc(50% + var(--im-banner-img-x, 0px)) calc(50% + (var(--im-banner-img-y, 0px) - 10px));
+	}
+	to {
+		object-position: calc(50% + var(--im-banner-img-x, 0px)) calc(50% + var(--im-banner-img-y, 0px));
+	}
+}
+
+@keyframes im-banner-icon-anim {
+	from {
+		transform: translate(var(--im-banner-icon-offset-x), calc(var(--im-banner-icon-offset-y) - 10px));
+		opacity: 0;
+	}
+	to {
+		transform: translate(var(--im-banner-icon-offset-x), var(--im-banner-icon-offset-y));
+		opacity: 1;
+	}
+}
+
+/* Icon Container */
+div.image-manager-banner > div.banner-icon {
+	position: relative;
+	display: flex;
+	justify-content: var(--im-banner-icon-align-h);
+	align-items: var(--im-banner-icon-align-v);
+	width: inherit;
+	height: inherit;
+	z-index: 4;
+	margin: 0 auto;
+	max-width: var(--file-line-width);
+	transform: translate(0, 0);
+	animation: im-banner-fade-in 0.7s linear forwards, im-banner-icon-anim 0.8s ease-out;
+	will-change: transform, opacity;
+}
+
+div.image-manager-banner > div.banner-icon > div {
+	display: block;
+	position: relative;
+	width: var(--im-banner-icon-size-w);
+	height: var(--im-banner-icon-size-h);
+	background-color: var(--im-banner-icon-background);
+	transform: translate(var(--im-banner-icon-offset-x), var(--im-banner-icon-offset-y));
+	border-radius: var(--im-banner-icon-radius);
+	border: var(--im-banner-icon-border) solid var(--background-primary);
+	z-index: 2;
+	overflow: hidden;
+}
+
+/* Text icon */
+div.image-manager-banner > div.banner-icon > div[data-type="text"]::after {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	text-transform: uppercase;
+	content: var(--im-banner-icon-value);
+	color: var(--text-normal);
+	line-height: 0;
+	font-size: var(--im-banner-icon-fontsize, inherit);
+	user-select: none;
+}
+
+/* Link/image icon */
+div.image-manager-banner > div.banner-icon > div[data-type="link"]::after {
+	position: absolute;
+	text-transform: uppercase;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transform: translate(0, 0);
+	content: '';
+	background-image: var(--im-banner-icon-value);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+/* Static icon (no animation) */
+div.image-manager-banner.static > div.banner-icon {
+	animation: none;
+}
+
+/* Mobile adjustments */
+body.is-tablet div.image-manager-banner {
+	width: calc(100% - (var(--im-banner-padding) * 2));
+}
+
+body.is-phone div.image-manager-banner {
+	width: calc(100% - (var(--im-banner-padding) * 2));
+}
+
+body.is-tablet div.image-manager-banner > div.banner-icon {
+	left: calc(var(--size-4-2) * -1);
+}
+
+body.is-phone div.image-manager-banner > div.banner-icon {
+	left: auto;
+}
+
+/* Frontmatter Overrides for views with banner */
+.workspace-leaf-content[data-im-banner] .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller,
+.workspace-leaf-content[data-im-banner] .view-content .markdown-preview-view {
+	padding-top: var(--im-banner-height, 240px);
+}
+
+.workspace-leaf-content[data-im-banner] .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller .inline-embed .el-pre.mod-frontmatter.mod-ui,
+.workspace-leaf-content[data-im-banner] .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller .inline-embed .markdown-preview-view,
+.workspace-leaf-content[data-im-banner] .view-content .markdown-preview-view .inline-embed .el-pre.mod-frontmatter.mod-ui,
+.workspace-leaf-content[data-im-banner] .view-content .markdown-preview-view .inline-embed .markdown-preview-view {
+	padding-top: initial;
+}
+
+.workspace-leaf-content[data-im-banner] .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller .cm-sizer {
+	position: relative;
+	z-index: 1;
+	margin-top: var(--im-banner-note-offset, 0);
+}
+
+.workspace-leaf-content[data-im-banner][data-mode="source"] .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller .cm-sizer {
+	margin-top: 0;
+}
+
+.workspace-leaf-content[data-im-banner] .view-content {
+	margin-top: var(--im-banner-view-offset, 0);
+}

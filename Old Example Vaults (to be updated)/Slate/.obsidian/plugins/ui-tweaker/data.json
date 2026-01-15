@@ -1,0 +1,173 @@
+{
+  "titleBar": "show",
+  "fileExplorerNavHeader": "show",
+  "otherNavHeaders": "show",
+  "leftTabHeaders": "show",
+  "rightTabHeaders": "show",
+  "ribbonRevealOnHover": false,
+  "vaultSwitcher": "show",
+  "helpButton": "show",
+  "settingsButton": "show",
+  "tabBar": false,
+  "tabBarHideWhenSingle": false,
+  "enableWindowDragging": false,
+  "newNoteButton": false,
+  "newFolderButton": false,
+  "sortOrderButton": false,
+  "autoRevealButton": false,
+  "collapseAllButton": false,
+  "readingModeButton": false,
+  "searchSettingsButton": false,
+  "tabListIcon": "show",
+  "newTabIcon": "show",
+  "tabCloseButton": "show",
+  "statusBar": false,
+  "scrollBars": "show",
+  "leftSidebarToggleButton": "show",
+  "rightSidebarToggleButton": "show",
+  "tooltips": false,
+  "searchSuggestions": false,
+  "searchTermCounts": false,
+  "propertiesInReadingView": false,
+  "propertiesInHeading": false,
+  "addPropertyButton": false,
+  "deemphasizeProperties": false,
+  "instructions": false,
+  "mobileChevronsIcon": false,
+  "navigateBackButton": false,
+  "navigateForwardButton": false,
+  "quickSwitcherButton": false,
+  "mobileNewTabButton": false,
+  "openTabButton": false,
+  "ribbonMenuButton": false,
+  "swapMobileNewTabIcon": false,
+  "hideMobileTitle": false,
+  "hideMobileSyncIcon": false,
+  "navigateButtonPosition": "1",
+  "navigationButtonPosition": "2",
+  "quickSwitcherPosition": "3",
+  "newTabPosition": "4",
+  "openTabsPosition": "5",
+  "ribbonMenuPosition": "6",
+  "vaultSwitcherBackgroundTransparency": 0.98,
+  "helpButtonReplacement": {
+    "enabled": false,
+    "commandId": "",
+    "iconId": "wrench"
+  },
+  "syncButtonReplacement": {
+    "enabled": false,
+    "commandId": "",
+    "iconId": "wrench"
+  },
+  "tabBarCommands": [
+    {
+      "id": "editing-toolbar:hide-show-menu",
+      "icon": "lucide-chevron-down",
+      "name": "Toggle editing toolbar",
+      "displayName": "Editing Toolbar: Hide/Show ",
+      "mode": "any",
+      "toggleIcon": "lucide-chevron-up",
+      "showOnFileTypes": "md"
+    }
+  ],
+  "statusBarItems": [
+    {
+      "id": "plugin-editor-status;1",
+      "name": "plugin-editor-status",
+      "type": "existing",
+      "hidden": false,
+      "mdOnly": false,
+      "sticky": "left"
+    },
+    {
+      "id": "plugin-word-count;1",
+      "name": "0 words0 characters",
+      "type": "existing",
+      "hidden": false,
+      "mdOnly": false
+    },
+    {
+      "id": "plugin-editing-toolbar-editingToolbar-statusbar-button;1",
+      "name": "plugin-editing-toolbar-editingToolbar-statusbar-bu",
+      "type": "existing",
+      "hidden": true,
+      "mdOnly": false
+    },
+    {
+      "id": "plugin-obsidian-git-branch;1",
+      "name": "master",
+      "type": "existing",
+      "hidden": false,
+      "mdOnly": false,
+      "sticky": "right"
+    },
+    {
+      "id": "plugin-obsidian-git;1",
+      "name": "Git is ready",
+      "type": "existing",
+      "hidden": false,
+      "mdOnly": false,
+      "sticky": "right"
+    },
+    {
+      "id": "custom-obsidian-git:push",
+      "name": "Git: Commit-and-sync",
+      "displayName": "Git: Commit-and-sync",
+      "icon": "lucide-arrow-up-circle",
+      "type": "custom",
+      "hidden": false,
+      "mdOnly": false,
+      "commandId": "obsidian-git:push",
+      "mode": "any",
+      "sticky": "right"
+    }
+  ],
+  "explorerCommands": [],
+  "explorerButtonItems": [
+    {
+      "id": "native-newNote",
+      "name": "New note",
+      "ariaLabel": "New note",
+      "type": "native",
+      "hidden": false
+    },
+    {
+      "id": "native-newFolder",
+      "name": "New folder",
+      "ariaLabel": "New folder",
+      "type": "native",
+      "hidden": false
+    },
+    {
+      "id": "native-sortOrder",
+      "name": "Change sort order",
+      "ariaLabel": "Change sort order",
+      "type": "native",
+      "hidden": false
+    },
+    {
+      "id": "native-autoReveal",
+      "name": "Auto-reveal current file",
+      "ariaLabel": "Auto-reveal current file",
+      "type": "native",
+      "hidden": false
+    },
+    {
+      "id": "native-collapseAll",
+      "name": "Collapse all",
+      "ariaLabel": "Collapse all",
+      "type": "native",
+      "hidden": false
+    },
+    {
+      "id": "external-toggle-focus",
+      "name": "Toggle focus",
+      "ariaLabel": "Toggle focus",
+      "type": "external",
+      "hidden": false
+    }
+  ],
+  "nativeExplorerButtonColors": {},
+  "nativeExplorerButtonIcons": {}
+}

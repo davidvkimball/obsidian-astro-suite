@@ -1,6 +1,6 @@
 {
   "commitMessage": "Blog update {{date}}: {{numFiles}} file(s) changed.",
-  "autoCommitMessage": "Blog update {{date}}: {{numFiles}} file(s)  changed.",
+  "autoCommitMessage": "Blog update {{date}}: {{numFiles}} file(s) changed.",
   "commitMessageScript": "",
   "commitDateFormat": "M/D/YYYY h:ma",
   "autoSaveInterval": 0,
@@ -17,6 +17,7 @@
   "showStatusBar": true,
   "updateSubmodules": false,
   "syncMethod": "merge",
+  "mergeStrategy": "none",
   "customMessageOnAutoBackup": false,
   "autoBackupAfterFileChange": false,
   "treeStructure": false,
@@ -30,10 +31,15 @@
   "setLastSaveToLastCommit": false,
   "submoduleRecurseCheckout": false,
   "gitDir": "",
-  "showFileMenu": true,
+  "showFileMenu": false,
   "authorInHistoryView": "hide",
   "dateInHistoryView": false,
   "diffStyle": "split",
+  "hunks": {
+    "showSigns": false,
+    "hunkCommands": false,
+    "statusBar": "disabled"
+  },
   "lineAuthor": {
     "show": false,
     "followMovement": "inactive",
