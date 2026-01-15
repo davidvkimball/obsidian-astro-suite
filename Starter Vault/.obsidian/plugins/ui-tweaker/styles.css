@@ -1243,6 +1243,11 @@ body.ui-tweaker-hide-sync-button .is-mobile .status-bar > .plugin-sync:not(.ui-t
 	order: 0; /* Default order */
 }
 
+/* Ensure custom status bar items inherit color from status bar for proper theme support */
+.status-bar .status-bar-item.ui-tweaker-status-bar-item {
+	color: inherit;
+}
+
 /* Collapse icon for status bar items and tab bar items */
 .ui-tweaker-collapse-icon {
 	cursor: default !important;

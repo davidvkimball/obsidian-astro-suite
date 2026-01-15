@@ -1,5 +1,4 @@
 [
-  "obsidian42-brat",
   "seo",
   "property-over-file-name",
   "oxygen-settings",
@@ -8,11 +7,14 @@
   "iconic",
   "settings-search",
   "editing-toolbar",
-  "ui-tweaker",
   "image-manager",
   "bases-cms",
   "home-base",
   "obsidian-git",
   "zenmode",
-  "tag-wrangler"
+  "tag-wrangler",
+  "explorer-focus",
+  "ui-tweaker",
+  "alias-file-name-history",
+  "obsidian42-brat"
 ]

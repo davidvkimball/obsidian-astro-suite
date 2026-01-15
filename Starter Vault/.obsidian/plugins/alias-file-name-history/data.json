@@ -7,17 +7,13 @@
   "timeoutSeconds": 5,
   "caseSensitive": false,
   "autoCreateFrontmatter": true,
-  "includeFolders": [
-    "posts",
-    "pages",
-    "projects",
-    "docs"
-  ],
+  "includeFolders": [],
   "excludeFolders": [],
   "fileExtensions": [
     "md"
   ],
   "trackFolderRenames": "index",
+  "excludePropertyName": "",
   "propertyName": "",
   "propertyValue": true,
   "propertyExcludes": false

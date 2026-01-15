@@ -235,5 +235,31 @@
       ],
       "key": ","
     }
+  ],
+  "image-manager:search-image": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "'"
+    }
+  ],
+  "image-manager:insert-remote-image-to-property": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "'"
+    }
+  ],
+  "ui-tweaker:toggle-tab-bar": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "S"
+    }
   ]
 }

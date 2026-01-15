@@ -40,6 +40,9 @@
 	margin-top: 2rem;
 	padding-top: 1rem;
 	border-top: 1px solid var(--background-modifier-border);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .vault-cms-wizard .wizard-buttons {
@@ -54,6 +57,19 @@
 
 .vault-cms-wizard .wizard-skip-button {
 	opacity: 0.6;
+}
+
+.vault-cms-wizard .wizard-checkbox-label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+.vault-cms-wizard .wizard-checkbox-label input[type="checkbox"] {
+	cursor: pointer;
 }
 
 /* Editable name input styling - match native Obsidian input */

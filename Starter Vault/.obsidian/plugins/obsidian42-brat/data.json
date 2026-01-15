@@ -1,5 +1,6 @@
 {
   "pluginList": [
+    "davidvkimball/obsidian-explorer-focus",
     "davidvkimball/obsidian-ui-tweaker",
     "davidvkimball/obsidian-home-base",
     "davidvkimball/obsidian-image-manager",
@@ -13,6 +14,10 @@
     "davidvkimball/obsidian-astro-composer"
   ],
   "pluginSubListFrozenVersion": [
+    {
+      "repo": "davidvkimball/obsidian-explorer-focus",
+      "version": "latest"
+    },
     {
       "repo": "davidvkimball/obsidian-ui-tweaker",
       "version": "latest"

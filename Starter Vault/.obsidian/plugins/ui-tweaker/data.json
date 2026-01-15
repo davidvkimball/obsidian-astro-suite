@@ -86,22 +86,15 @@
       "mdOnly": false
     },
     {
-      "id": "plugin-editing-toolbar-editingToolbar-statusbar-button-statusbar-organizer-element-hidden;1",
-      "name": "plugin-editing-toolbar-editingToolbar-statusbar-button-statusbar-organizer-element-hidden",
+      "id": "plugin-editing-toolbar-editingToolbar-statusbar-button;1",
+      "name": "plugin-editing-toolbar-editingToolbar-statusbar-bu",
       "type": "existing",
       "hidden": true,
       "mdOnly": false
     },
     {
-      "id": "cmdr-clickable-icon;1",
-      "name": "Git: Commit-and-sync",
-      "type": "existing",
-      "hidden": false,
-      "mdOnly": false
-    },
-    {
-      "id": "plugin-obsidian-git;2",
-      "name": "refactor",
+      "id": "plugin-obsidian-git-branch;1",
+      "name": "master",
       "type": "existing",
       "hidden": false,
       "mdOnly": false,
@@ -109,7 +102,7 @@
     },
     {
       "id": "plugin-obsidian-git;1",
-      "name": "Last Commit: 5 days ago",
+      "name": "Git is ready",
       "type": "existing",
       "hidden": false,
       "mdOnly": false,
@@ -163,6 +156,13 @@
       "name": "Collapse all",
       "ariaLabel": "Collapse all",
       "type": "native",
+      "hidden": false
+    },
+    {
+      "id": "external-toggle-focus",
+      "name": "Toggle focus",
+      "ariaLabel": "Toggle focus",
+      "type": "external",
       "hidden": false
     }
   ],
