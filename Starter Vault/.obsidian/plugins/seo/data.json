@@ -1,9 +1,10 @@
 {
   "scanDirectories": "",
   "ignoreUnderscoreFiles": false,
+  "enableMDXSupport": false,
   "keywordProperty": "",
-  "descriptionProperty": "description",
-  "titleProperty": "title",
+  "descriptionProperty": "",
+  "titleProperty": "",
   "useFilenameAsTitle": false,
   "slugProperty": "",
   "useFilenameAsSlug": true,

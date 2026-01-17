@@ -9,6 +9,7 @@
   "helpButton": "show",
   "settingsButton": "show",
   "tabBar": false,
+  "tabBarHideWhenSingle": false,
   "enableWindowDragging": false,
   "newNoteButton": false,
   "newFolderButton": false,
@@ -30,6 +31,7 @@
   "propertiesInReadingView": false,
   "propertiesInHeading": false,
   "addPropertyButton": false,
+  "deemphasizeProperties": false,
   "instructions": false,
   "mobileChevronsIcon": false,
   "navigateBackButton": false,
@@ -40,14 +42,14 @@
   "ribbonMenuButton": false,
   "swapMobileNewTabIcon": false,
   "hideMobileTitle": false,
-  "hideMobileSyncIcon": false,
+  "hideMobileSyncIcon": true,
   "navigateButtonPosition": "1",
   "navigationButtonPosition": "2",
   "quickSwitcherPosition": "3",
   "newTabPosition": "4",
   "openTabsPosition": "5",
   "ribbonMenuPosition": "6",
-  "vaultSwitcherBackgroundTransparency": 0.98,
+  "vaultSwitcherBackgroundTransparency": 1,
   "helpButtonReplacement": {
     "enabled": false,
     "commandId": "",
@@ -61,11 +63,11 @@
   "tabBarCommands": [
     {
       "id": "editing-toolbar:hide-show-menu",
-      "icon": "lucide-chevron-down",
+      "icon": "lucide-panel-top-open",
       "name": "Toggle editing toolbar",
       "displayName": "Editing Toolbar: Hide/Show ",
       "mode": "desktop",
-      "toggleIcon": "lucide-chevron-up",
+      "toggleIcon": "lucide-panel-top-close",
       "showOnFileTypes": "md"
     }
   ],
@@ -154,7 +156,7 @@
     {
       "id": "native-collapseAll",
       "name": "Collapse all",
-      "ariaLabel": "Collapse all",
+      "ariaLabel": "Expand all",
       "type": "native",
       "hidden": false
     },

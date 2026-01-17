@@ -1087,10 +1087,10 @@ body.ui-tweaker-hide-help-button .workspace-drawer-vault-actions .clickable-icon
 /* Target: sync-status-icon class (the actual sync button class!) */
 /* Also target status bar sync indicator if it exists */
 /* Don't hide our custom replacement button */
-body.ui-tweaker-hide-sync-button .is-mobile .workspace-drawer.mod-right .workspace-drawer-header .sync-status-icon:not(.ui-tweaker-sync-replacement),
-body.ui-tweaker-hide-sync-button .is-mobile .workspace-drawer.mod-right .workspace-drawer-header .workspace-drawer-header-icon.sync-status-icon:not(.ui-tweaker-sync-replacement),
-body.ui-tweaker-hide-sync-button .is-mobile .workspace-drawer.mod-right .workspace-drawer-header .clickable-icon.sync-status-icon:not(.ui-tweaker-sync-replacement),
-body.ui-tweaker-hide-sync-button .is-mobile .status-bar > .plugin-sync:not(.ui-tweaker-sync-replacement) {
+body.ui-tweaker-hide-sync-button.is-mobile .workspace-drawer.mod-right .workspace-drawer-header .sync-status-icon:not(.ui-tweaker-sync-replacement),
+body.ui-tweaker-hide-sync-button.is-mobile .workspace-drawer.mod-right .workspace-drawer-header .workspace-drawer-header-icon.sync-status-icon:not(.ui-tweaker-sync-replacement),
+body.ui-tweaker-hide-sync-button.is-mobile .workspace-drawer.mod-right .workspace-drawer-header .clickable-icon.sync-status-icon:not(.ui-tweaker-sync-replacement),
+body.ui-tweaker-hide-sync-button.is-mobile .status-bar > .plugin-sync:not(.ui-tweaker-sync-replacement) {
 	display: none !important;
 }
 
@@ -1104,6 +1104,17 @@ body.ui-tweaker-hide-sync-button .is-mobile .status-bar > .plugin-sync:not(.ui-t
 	display: flex !important;
 	align-items: center !important;
 	justify-content: center !important;
+}
+
+/* Ensure the sync replacement is on the far right if we're not cloning */
+body.ui-tweaker-sync-replacement-enabled .workspace-drawer.mod-right .workspace-drawer-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+body.ui-tweaker-sync-replacement-enabled .workspace-drawer.mod-right .workspace-drawer-header .ui-tweaker-sync-replacement {
+	order: 99;
 }
 
 .ui-tweaker-help-replacement svg,
