@@ -1,0 +1,33 @@
+{
+  "name": "create-vault-cms",
+  "version": "1.0.0",
+  "description": "Installer for Vault CMS",
+  "main": "src/cli.js",
+  "bin": {
+    "create-vault-cms": "src/cli.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidvkimball/vault-cms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/davidvkimball/vault-cms/issues"
+  },
+  "homepage": "https://github.com/davidvkimball/vault-cms#readme",
+  "dependencies": {
+    "commander": "^14.0.2",
+    "fs-extra": "^11.3.3"
+  }
+}
