@@ -43,7 +43,7 @@ If you're using one of the supported themes (Slate, Chiri, or Starlight) and wan
 
 1. Navigate to the `Theme Examples` folder and find your theme's folder (e.g., `Slate`, `Chiri`, or `Starlight`).
 2. **Copy the CONTENTS** of that theme folder (not the folder itself) into your Astro project's `src/content` folder.
-   - ⚠️ **Important**: Copy the files and folders inside the theme folder, not the theme folder itself. For example, if using Slate, copy the contents of `Theme Examples/Slate/` (like `_bases/`, `post/`, etc.) into `src/content/`, not the `Slate` folder.
+   - ⚠️ **Important**: Copy the files and folders inside the theme folder, not the theme folder itself. For example, if using Slate, copy the contents of `Theme Examples/Slate/` (like `_bases/`, `post/`, etc.) into `src/content/`, not the `Slate` folder. (Note: `_bases` is the new standard, but `bases` is still supported for backwards compatibility).
 3. Open Obsidian and select "Open folder as vault", then select your `src/content` folder (or the folder containing the `.obsidian` directory).
 4. The vault should already be preconfigured for your theme.
 

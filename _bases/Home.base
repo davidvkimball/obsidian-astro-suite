@@ -1,0 +1,69 @@
+filters:
+  and:
+    - file.ext == "md"
+formulas:
+  Slug: |-
+    if(file.folder == "posts", "/posts/" + file.name.replace(".md", ""), 
+      if(file.folder == "pages", "/" + file.name.replace(".md", ""), 
+        if(file.folder == "special", if(file.name.replace(".md", "") == "home", "/", "/" + file.name.replace(".md", "")), 
+          if(file.folder == "projects", "/projects/" + file.name.replace(".md", ""), 
+            if(file.folder == "docs", "/docs/" + file.name.replace(".md", ""), 
+              "/" + file.folder)))))
+  Content Folder: |-
+    if(file.name == "index",
+      if(file.folder != "",
+        if(file.folder.replace("/" + file.folder.replace(/.*\//, ""), "") != "",
+          file.folder.replace("/" + file.folder.replace(/.*\//, ""), ""),
+          file.folder
+        ),
+        "root"
+      ),
+      if(file.folder != "",
+        file.folder,
+        "root"
+      )
+    )
+properties:
+  file.fullname:
+    displayName: Full File Name
+  file.name:
+    displayName: File Name
+  formula.Slug:
+    displayName: Path
+  note.date:
+    displayName: Date
+  note.draft:
+    displayName: Draft
+  note.pubDate:
+    displayName: Date
+  note.title:
+    displayName: Title
+views:
+  - type: bases-cms
+    name: Guide
+    filters:
+      and:
+        - file.folder == "/"
+    order: []
+    sort:
+      - property: file.ctime
+        direction: DESC
+    fallbackToEmbeds: never
+    propertyDisplay1: file.fullname
+    showTextPreview: true
+    imageFormat: none
+    showDate: false
+    showDraftStatus: false
+    propertyLabels: above
+    titleProperty: note.title
+    propertyLayout12SideBySide: false
+    propertyLayout34SideBySide: false
+    showTags: false
+    customizeNewButton: false
+    newNoteLocation: ""
+    cardSize: 250
+    imageAspectRatio: 0.55
+    maxTagsToShow: 2
+    dateIncludeTime: false
+    descriptionProperty: note.description
+    hideQuickEditIcon: true

@@ -1,0 +1,18 @@
+{
+  "propertyKey": "title",
+  "enableForLinking": true,
+  "enableForQuickSwitcher": true,
+  "includeFilenameInSearch": true,
+  "includeAliasesInSearch": true,
+  "enableForDragDrop": true,
+  "useSimpleSearch": false,
+  "enableForGraphView": true,
+  "enableForBacklinks": true,
+  "enableForTabs": true,
+  "enableForExplorer": false,
+  "folderNoteFilename": "index",
+  "enableForWindowFrame": true,
+  "enableForBookmarks": true,
+  "enableMdxSupport": false,
+  "enableForWindowTitle": true
+}

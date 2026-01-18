@@ -1,8 +1,0 @@
-/* Hide various mobile-only sync icons */
-.is-mobile .sync-status-indicator,
-.is-mobile .mobile-navbar .sync-button,
-.is-mobile .nav-buttons-container .sync-icon,
-.is-mobile .status-bar-item.sync-status,
-.is-mobile [data-tooltip="Sync status"] {
-  display: none !important;
-}
