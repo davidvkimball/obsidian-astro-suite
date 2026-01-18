@@ -21,7 +21,7 @@ Use [Obsidian](https://obsidian.md) as a content management system for your [Ast
 ![Vault CMS Showcase.](https://github.com/user-attachments/assets/0d1ea89e-9d6b-40b1-944d-cfe6143e222e)
 
 > [!NOTE]
-> Preconfigured vaults for [Slate](https://github.com/SlateDesign/slate-blog), [Chiri](https://github.com/the3ash/astro-chiri), and [Starlight](https://github.com/withastro/starlight) have moved to the [Presets](https://github.com/davidvkimball/vault-cms-presets) repo. To see Obsidian CMS combined with an Astro site specifically designed with it in mind, check out my theme [Astro Modular](https://github.com/davidvkimball/astro-modular).
+> Preconfigured vaults for [Slate](https://github.com/SlateDesign/slate-blog), [Chiri](https://github.com/the3ash/astro-chiri), and [Starlight](https://github.com/withastro/starlight) have moved to the [Presets](https://github.com/davidvkimball/vault-cms-presets) repo. To see Vault CMS combined with an Astro site specifically designed with it in mind, check out my theme [Astro Modular](https://github.com/davidvkimball/astro-modular).
 
 ## Installation Guide
 
