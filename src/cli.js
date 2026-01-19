@@ -5,6 +5,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const https = require('https');
 const AdmZip = require('adm-zip');
+const inquirer = require('inquirer');
 
 // Read version from package.json
 const pkg = require('../package.json');
@@ -17,10 +18,25 @@ program
   .version(pkg.version);
 
 program
-  .argument('[target]', 'target directory', '.')
+  .argument('[target]', 'target directory')
   .option('-t, --template <name>', 'template to use (from vault-cms-presets)')
   .action(async (target, options) => {
-    const targetDir = path.resolve(target);
+    let targetPath = target;
+
+    // If no target provided, prompt the user
+    if (!targetPath) {
+      const answers = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'path',
+          message: 'Where should we install Vault CMS?',
+          default: 'src/content',
+        }
+      ]);
+      targetPath = answers.path;
+    }
+
+    const targetDir = path.resolve(targetPath);
     const tempZip = path.join(targetDir, 'vault-cms-temp.zip');
     const extractDir = path.join(targetDir, '.vault-cms-temp-extract');
     
@@ -83,6 +99,7 @@ program
       await fs.remove(extractDir);
 
       console.log('\n✨ Vault CMS is ready!');
+      process.exit(0); // Ensure clean exit
     } catch (err) {
       console.error('\n❌ Installation failed:', err.message);
       if (await fs.pathExists(tempZip)) await fs.remove(tempZip);
@@ -106,7 +123,9 @@ function downloadFile(url, dest) {
         file.close();
         resolve();
       });
-    }).on('error', reject);
+    }).on('error', (err) => {
+      reject(err);
+    });
   });
 }
 

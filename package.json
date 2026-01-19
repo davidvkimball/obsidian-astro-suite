@@ -1,6 +1,6 @@
 {
   "name": "create-vault-cms",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Installer for Vault CMS",
   "main": "src/cli.js",
   "bin": {
@@ -29,6 +29,7 @@
   "dependencies": {
     "adm-zip": "^0.5.16",
     "commander": "^14.0.2",
-    "fs-extra": "^11.3.3"
+    "fs-extra": "^11.3.3",
+    "inquirer": "^9.3.8"
   }
 }
