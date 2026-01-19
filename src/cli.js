@@ -23,19 +23,16 @@ program
     try {
       console.log('🚀 Initializing Vault CMS Installer...');
 
-      // 1. Fetch available templates dynamically
       const availableTemplates = await fetchTemplates();
       
       let template = options.template;
       let targetPath = target;
 
-      // Smart detection for misplaced arguments
       if (targetPath && availableTemplates.includes(targetPath.toLowerCase()) && !template) {
         template = targetPath.toLowerCase();
         targetPath = null;
       }
 
-      // 2. If no template flag, ask if they want one
       if (!template) {
         const { useTemplate } = await inquirer.prompt([{
           type: 'confirm',
@@ -55,7 +52,6 @@ program
         }
       }
 
-      // 3. Prompt for path if not provided
       if (!targetPath) {
         const answers = await inquirer.prompt([
           {
@@ -105,18 +101,20 @@ program
         }
       }
 
-      const gitignorePath = path.join(targetDir, '.gitignore');
+      // Smart .gitignore logic: Look for project root
+      const projectRoot = await findProjectRoot(targetDir);
+      const gitignorePath = path.join(projectRoot, '.gitignore');
       const ignores = '\n# Vault CMS / Obsidian\n.obsidian/workspace.json\n.obsidian/workspace-mobile.json\n.ref/\n';
       
       if (await fs.pathExists(gitignorePath)) {
         const content = await fs.readFile(gitignorePath, 'utf8');
         if (!content.includes('.obsidian/workspace.json')) {
           await fs.appendFile(gitignorePath, ignores);
-          console.log('  ✓ Updated .gitignore');
+          console.log(`  ✓ Updated .gitignore at ${path.relative(process.cwd(), gitignorePath)}`);
         }
       } else {
         await fs.writeFile(gitignorePath, ignores.trim() + '\n');
-        console.log('  ✓ Created .gitignore');
+        console.log(`  ✓ Created .gitignore at ${path.relative(process.cwd(), gitignorePath)}`);
       }
 
       await fs.remove(tempZip);
@@ -129,6 +127,17 @@ program
       process.exit(1);
     }
   });
+
+async function findProjectRoot(startDir) {
+    let current = startDir;
+    while (current !== path.parse(current).root) {
+        const hasPkg = await fs.pathExists(path.join(current, 'package.json'));
+        const hasAstro = await fs.pathExists(path.join(current, 'astro.config.mjs')) || await fs.pathExists(path.join(current, 'astro.config.ts'));
+        if (hasPkg || hasAstro) return current;
+        current = path.dirname(current);
+    }
+    return startDir; // Fallback to target dir
+}
 
 function downloadFile(url, dest) {
   return new Promise((resolve, reject) => {
@@ -163,7 +172,7 @@ function fetchTemplates() {
             .map(item => item.name);
           resolve(dirs);
         } catch (e) {
-          resolve(['starlight', 'slate', 'chiri']); // Fallback
+          resolve(['starlight', 'slate', 'chiri']); 
         }
       });
     }).on('error', () => resolve(['starlight', 'slate', 'chiri']));
