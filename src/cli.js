@@ -7,7 +7,6 @@ const https = require('https');
 const AdmZip = require('adm-zip');
 const inquirer = require('inquirer');
 
-// Read version from package.json
 const pkg = require('../package.json');
 
 const program = new Command();
@@ -21,9 +20,19 @@ program
   .argument('[target]', 'target directory')
   .option('-t, --template <name>', 'template to use (from vault-cms-presets)')
   .action(async (target, options) => {
+    // 1. Logic fix: If npm sends "starlight" as the first argument because of missing -- 
+    // we should treat it as a mistake and ask for the path anyway.
     let targetPath = target;
+    let template = options.template;
 
-    // If no target provided, prompt the user
+    // Detect if the user accidentally passed a template name as the target path
+    const commonTemplates = ['starlight', 'slate', 'chiri'];
+    if (targetPath && commonTemplates.includes(targetPath.toLowerCase()) && !template) {
+        template = targetPath.toLowerCase();
+        targetPath = null;
+    }
+
+    // 2. Prompt for path if not clearly provided
     if (!targetPath) {
       const answers = await inquirer.prompt([
         {
@@ -40,34 +49,29 @@ program
     const tempZip = path.join(targetDir, 'vault-cms-temp.zip');
     const extractDir = path.join(targetDir, '.vault-cms-temp-extract');
     
-    const repoName = options.template ? 'vault-cms-presets' : 'vault-cms';
+    const repoName = template ? 'vault-cms-presets' : 'vault-cms';
     const zipUrl = `https://github.com/davidvkimball/${repoName}/archive/refs/heads/master.zip`;
 
-    console.log(`🚀 Installing Vault CMS${options.template ? ` (template: ${options.template})` : ''}...`);
+    console.log(`🚀 Installing Vault CMS${template ? ` (template: ${template})` : ''}...`);
 
     try {
-      // 1. Create target directory
       await fs.ensureDir(targetDir);
 
-      // 2. Download ZIP
       console.log('  📦 Downloading archive...');
       await downloadFile(zipUrl, tempZip);
 
-      // 3. Extract ZIP
       console.log('  📂 Extracting files...');
       const zip = new AdmZip(tempZip);
       zip.extractAllTo(extractDir, true);
 
-      // 4. Identify the inner folder (GitHub zips wrap content in a folder named repo-branch)
       const folders = await fs.readdir(extractDir);
       const innerFolder = path.join(extractDir, folders[0]);
-      const sourcePath = options.template ? path.join(innerFolder, options.template) : innerFolder;
+      const sourcePath = template ? path.join(innerFolder, template) : innerFolder;
 
       if (!(await fs.pathExists(sourcePath))) {
-        throw new Error(`Template "${options.template}" not found in presets repository.`);
+        throw new Error(`Template "${template}" not found in presets repository.`);
       }
 
-      // 5. Move selected files
       const toKeep = ['_bases', '.obsidian', 'README.md'];
       for (const item of toKeep) {
         const src = path.join(sourcePath, item);
@@ -79,7 +83,6 @@ program
         }
       }
 
-      // 6. Handle .gitignore
       const gitignorePath = path.join(targetDir, '.gitignore');
       const ignores = '\n# Vault CMS / Obsidian\n.obsidian/workspace.json\n.obsidian/workspace-mobile.json\n.ref/\n';
       
@@ -94,12 +97,11 @@ program
         console.log('  ✓ Created .gitignore');
       }
 
-      // 7. Cleanup
       await fs.remove(tempZip);
       await fs.remove(extractDir);
 
       console.log('\n✨ Vault CMS is ready!');
-      process.exit(0); // Ensure clean exit
+      process.exit(0);
     } catch (err) {
       console.error('\n❌ Installation failed:', err.message);
       if (await fs.pathExists(tempZip)) await fs.remove(tempZip);
