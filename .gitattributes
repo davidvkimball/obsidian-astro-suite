@@ -1,3 +1,5 @@
+.github/ export-ignore
+LICENSE export-ignore
 src/ export-ignore
 package.json export-ignore
 package-lock.json export-ignore
