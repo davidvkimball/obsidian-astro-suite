@@ -20,41 +20,63 @@ program
   .argument('[target]', 'target directory')
   .option('-t, --template <name>', 'template to use (from vault-cms-presets)')
   .action(async (target, options) => {
-    // 1. Logic fix: If npm sends "starlight" as the first argument because of missing -- 
-    // we should treat it as a mistake and ask for the path anyway.
-    let targetPath = target;
-    let template = options.template;
+    try {
+      console.log('🚀 Initializing Vault CMS Installer...');
 
-    // Detect if the user accidentally passed a template name as the target path
-    const commonTemplates = ['starlight', 'slate', 'chiri'];
-    if (targetPath && commonTemplates.includes(targetPath.toLowerCase()) && !template) {
+      // 1. Fetch available templates dynamically
+      const availableTemplates = await fetchTemplates();
+      
+      let template = options.template;
+      let targetPath = target;
+
+      // Smart detection for misplaced arguments
+      if (targetPath && availableTemplates.includes(targetPath.toLowerCase()) && !template) {
         template = targetPath.toLowerCase();
         targetPath = null;
-    }
+      }
 
-    // 2. Prompt for path if not clearly provided
-    if (!targetPath) {
-      const answers = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'path',
-          message: 'Where should we install Vault CMS?',
-          default: 'src/content',
+      // 2. If no template flag, ask if they want one
+      if (!template) {
+        const { useTemplate } = await inquirer.prompt([{
+          type: 'confirm',
+          name: 'useTemplate',
+          message: 'Would you like to use a preset template (e.g. Starlight, Slate)?',
+          default: false
+        }]);
+
+        if (useTemplate) {
+          const { selectedTemplate } = await inquirer.prompt([{
+            type: 'list',
+            name: 'selectedTemplate',
+            message: 'Select a template:',
+            choices: availableTemplates
+          }]);
+          template = selectedTemplate;
         }
-      ]);
-      targetPath = answers.path;
-    }
+      }
 
-    const targetDir = path.resolve(targetPath);
-    const tempZip = path.join(targetDir, 'vault-cms-temp.zip');
-    const extractDir = path.join(targetDir, '.vault-cms-temp-extract');
-    
-    const repoName = template ? 'vault-cms-presets' : 'vault-cms';
-    const zipUrl = `https://github.com/davidvkimball/${repoName}/archive/refs/heads/master.zip`;
+      // 3. Prompt for path if not provided
+      if (!targetPath) {
+        const answers = await inquirer.prompt([
+          {
+            type: 'input',
+            name: 'path',
+            message: 'Where should we install Vault CMS?',
+            default: 'src/content',
+          }
+        ]);
+        targetPath = answers.path;
+      }
 
-    console.log(`🚀 Installing Vault CMS${template ? ` (template: ${template})` : ''}...`);
+      const targetDir = path.resolve(targetPath);
+      const tempZip = path.join(targetDir, 'vault-cms-temp.zip');
+      const extractDir = path.join(targetDir, '.vault-cms-temp-extract');
+      
+      const repoName = template ? 'vault-cms-presets' : 'vault-cms';
+      const zipUrl = `https://github.com/davidvkimball/${repoName}/archive/refs/heads/master.zip`;
 
-    try {
+      console.log(`\n🚀 Installing Vault CMS${template ? ` (template: ${template})` : ''}...`);
+
       await fs.ensureDir(targetDir);
 
       console.log('  📦 Downloading archive...');
@@ -104,15 +126,13 @@ program
       process.exit(0);
     } catch (err) {
       console.error('\n❌ Installation failed:', err.message);
-      if (await fs.pathExists(tempZip)) await fs.remove(tempZip);
-      if (await fs.pathExists(extractDir)) await fs.remove(extractDir);
       process.exit(1);
     }
   });
 
 function downloadFile(url, dest) {
   return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
+    https.get(url, { headers: { 'User-Agent': 'vault-cms-installer' } }, (res) => {
       if (res.statusCode === 301 || res.statusCode === 302) {
         return downloadFile(res.headers.location, dest).then(resolve).catch(reject);
       }
@@ -125,9 +145,28 @@ function downloadFile(url, dest) {
         file.close();
         resolve();
       });
-    }).on('error', (err) => {
-      reject(err);
-    });
+    }).on('error', reject);
+  });
+}
+
+function fetchTemplates() {
+  return new Promise((resolve) => {
+    const url = 'https://api.github.com/repos/davidvkimball/vault-cms-presets/contents';
+    https.get(url, { headers: { 'User-Agent': 'vault-cms-installer' } }, (res) => {
+      let data = '';
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => {
+        try {
+          const contents = JSON.parse(data);
+          const dirs = contents
+            .filter(item => item.type === 'dir' && !item.name.startsWith('.'))
+            .map(item => item.name);
+          resolve(dirs);
+        } catch (e) {
+          resolve(['starlight', 'slate', 'chiri']); // Fallback
+        }
+      });
+    }).on('error', () => resolve(['starlight', 'slate', 'chiri']));
   });
 }
 
