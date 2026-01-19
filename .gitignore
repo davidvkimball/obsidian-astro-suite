@@ -1,6 +1,8 @@
 # Obsidian workspace files
 **/.obsidian/workspace.json
 **/.obsidian/workspace-mobile.json
+
+# Local repository reference folder
 .ref/
 
 # Node

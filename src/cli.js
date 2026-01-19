@@ -3,56 +3,67 @@
 const { Command } = require('commander');
 const fs = require('fs-extra');
 const path = require('path');
-const { execSync } = require('child_process');
+const https = require('https');
+const AdmZip = require('adm-zip');
+
+// Read version from package.json
+const pkg = require('../package.json');
 
 const program = new Command();
 
 program
   .name('create-vault-cms')
   .description('Official installer for Vault CMS')
-  .version('1.0.0');
+  .version(pkg.version);
 
 program
   .argument('[target]', 'target directory', '.')
   .option('-t, --template <name>', 'template to use (from vault-cms-presets)')
   .action(async (target, options) => {
     const targetDir = path.resolve(target);
-    const tempDir = path.join(targetDir, '.vault-cms-temp');
+    const tempZip = path.join(targetDir, 'vault-cms-temp.zip');
+    const extractDir = path.join(targetDir, '.vault-cms-temp-extract');
     
-    const repoUrl = options.template 
-      ? 'https://github.com/davidvkimball/vault-cms-presets.git'
-      : 'https://github.com/davidvkimball/vault-cms.git';
+    const repoName = options.template ? 'vault-cms-presets' : 'vault-cms';
+    const zipUrl = `https://github.com/davidvkimball/${repoName}/archive/refs/heads/master.zip`;
 
     console.log(`🚀 Installing Vault CMS${options.template ? ` (template: ${options.template})` : ''}...`);
 
     try {
-      // 1. Download
-      console.log('  📦 Downloading files...');
-      execSync(`git clone --depth 1 ${repoUrl} "${tempDir}"`, { stdio: 'ignore' });
+      // 1. Create target directory
+      await fs.ensureDir(targetDir);
 
-      // 2. Determine source path
-      const sourcePath = options.template ? path.join(tempDir, options.template) : tempDir;
-      
+      // 2. Download ZIP
+      console.log('  📦 Downloading archive...');
+      await downloadFile(zipUrl, tempZip);
+
+      // 3. Extract ZIP
+      console.log('  📂 Extracting files...');
+      const zip = new AdmZip(tempZip);
+      zip.extractAllTo(extractDir, true);
+
+      // 4. Identify the inner folder (GitHub zips wrap content in a folder named repo-branch)
+      const folders = await fs.readdir(extractDir);
+      const innerFolder = path.join(extractDir, folders[0]);
+      const sourcePath = options.template ? path.join(innerFolder, options.template) : innerFolder;
+
       if (!(await fs.pathExists(sourcePath))) {
         throw new Error(`Template "${options.template}" not found in presets repository.`);
       }
 
-      // 3. Define what to keep
+      // 5. Move selected files
       const toKeep = ['_bases', '.obsidian', 'README.md'];
-      
-      // 4. Move selected files
-      await fs.ensureDir(targetDir);
       for (const item of toKeep) {
         const src = path.join(sourcePath, item);
         const dest = path.join(targetDir, item);
         
         if (await fs.pathExists(src)) {
-          await fs.copy(src, dest);
+          await fs.copy(src, dest, { overwrite: true });
           console.log(`  ✓ Added ${item}`);
         }
       }
 
-      // 5. Update .gitignore
+      // 6. Handle .gitignore
       const gitignorePath = path.join(targetDir, '.gitignore');
       const ignores = '\n# Vault CMS / Obsidian\n.obsidian/workspace.json\n.obsidian/workspace-mobile.json\n.ref/\n';
       
@@ -67,15 +78,36 @@ program
         console.log('  ✓ Created .gitignore');
       }
 
-      // 6. Cleanup
-      await fs.remove(tempDir);
+      // 7. Cleanup
+      await fs.remove(tempZip);
+      await fs.remove(extractDir);
 
       console.log('\n✨ Vault CMS is ready!');
     } catch (err) {
       console.error('\n❌ Installation failed:', err.message);
-      if (await fs.pathExists(tempDir)) await fs.remove(tempDir);
+      if (await fs.pathExists(tempZip)) await fs.remove(tempZip);
+      if (await fs.pathExists(extractDir)) await fs.remove(extractDir);
       process.exit(1);
     }
   });
+
+function downloadFile(url, dest) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      if (res.statusCode === 301 || res.statusCode === 302) {
+        return downloadFile(res.headers.location, dest).then(resolve).catch(reject);
+      }
+      if (res.statusCode !== 200) {
+        return reject(new Error(`Failed to download: ${res.statusCode}`));
+      }
+      const file = fs.createWriteStream(dest);
+      res.pipe(file);
+      file.on('finish', () => {
+        file.close();
+        resolve();
+      });
+    }).on('error', reject);
+  });
+}
 
 program.parse();
