@@ -288,10 +288,26 @@ div.image-manager-banner {
 	padding: var(--size-4-3) var(--size-4-3) 0 var(--size-4-3);
 	transform: translate3d(0, 0, 0);
 	user-select: none;
+	pointer-events: none;
+}
+
+/* Banner content wrapper (for rounding and clipping) */
+div.image-manager-banner > div.banner-content {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	overflow: hidden;
+	border-radius: var(--im-banner-radius);
+	transform: translate3d(0, 0, 0);
+	/* Hardware acceleration fix for jagged rounded corners */
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	pointer-events: auto;
 }
 
 /* Banner video element */
-div.image-manager-banner > video {
+div.image-manager-banner > div.banner-content > video {
 	inset: 0;
 	position: absolute;
 	width: 100%;
@@ -307,7 +323,7 @@ div.image-manager-banner > video {
 }
 
 /* Banner image background (::before pseudo-element) */
-div.image-manager-banner::before {
+div.image-manager-banner > div.banner-content::before {
 	content: '';
 	position: absolute;
 	inset: 0;
@@ -329,7 +345,7 @@ div.image-manager-banner::before {
 }
 
 /* Banner fade overlay (::after pseudo-element) */
-div.image-manager-banner::after {
+div.image-manager-banner > div.banner-content::after {
 	position: absolute;
 	inset: 0;
 	z-index: 3;
@@ -338,28 +354,27 @@ div.image-manager-banner::after {
 	background: var(--im-banner-mask);
 	background: var(--im-banner-mask-webkit);
 	transform: translate3d(0, 0, 0);
-	overflow: hidden;
 }
 
 /* Static state (no animation) */
-div.image-manager-banner.static::after {
+div.image-manager-banner.static > div.banner-content::after {
 	animation: none;
 }
 
-div.image-manager-banner.static::before {
+div.image-manager-banner.static > div.banner-content::before {
 	animation: none !important;
 	opacity: 1 !important;
 	transition: background-position-x 0.5s ease-in-out, background-position-y 0.5s ease-in-out;
 }
 
 /* Static video */
-div.image-manager-banner.static > video {
+div.image-manager-banner.static > div.banner-content > video {
 	animation: none !important;
 	opacity: 1 !important;
 }
 
 /* During animation, disable transition to prevent conflicts */
-div.image-manager-banner:not(.static)::before {
+div.image-manager-banner:not(.static) > div.banner-content::before {
 	transition: background-position-x 0.5s ease-in-out;
 }
 
