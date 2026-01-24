@@ -511,8 +511,8 @@ body[style*="--bases-cms-min-grid-columns: '2'"] .bases-cms-grid {
 	overflow: visible;
 }
 
-.bases-cms-grid .card .card-content ~ .card-properties,
-.bases-cms-grid .card .card-title ~ .card-properties {
+.bases-cms-grid .card .card-content~.card-properties,
+.bases-cms-grid .card .card-title~.card-properties {
 	margin-top: auto;
 	padding-top: var(--bases-cms-element-spacing, 8px);
 }
@@ -540,13 +540,13 @@ body.bases-cms-card-background-custom .bases-cms .card {
 
 
 /* Global spacing between card elements */
-.bases-cms .card > * + * {
+.bases-cms .card>*+* {
 	margin-top: var(--bases-cms-element-spacing, 8px);
 }
 
 /* Exclude absolutely positioned elements from spacing */
-.bases-cms .card > .card-status-badge,
-.bases-cms .card > .bases-cms-select-checkbox {
+.bases-cms .card>.card-status-badge,
+.bases-cms .card>.bases-cms-select-checkbox {
 	margin-top: 0;
 }
 
@@ -589,7 +589,7 @@ body.bases-cms-hide-checkboxes .bases-cms .bases-cms-select-checkbox {
 
 /* Click radius - expand clickable area */
 .bases-cms-select-checkbox {
-	--checkbox-click-radius: var(--bases-cms-checkbox-click-radius, 14px);
+	--checkbox-click-radius: var(--bases-cms-checkbox-click-radius, 32px);
 	padding: calc((var(--checkbox-click-radius) - 14px) / 2);
 	margin: calc((var(--checkbox-click-radius) - 14px) / -2);
 }
@@ -614,18 +614,21 @@ body.bases-cms-hide-checkboxes .bases-cms .bases-cms-select-checkbox {
 	margin: 0;
 	display: -webkit-box;
 	-webkit-line-clamp: var(--bases-cms-title-lines, 2);
+	line-clamp: var(--bases-cms-title-lines, 2);
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	line-height: var(--line-height-tight);
 	position: relative;
-	padding-right: 42px; /* 18px (icon position) + ~20px (icon width) + 4px (spacing) */
+	padding-right: 42px;
+	/* 18px (icon position) + ~20px (icon width) + 4px (spacing) */
 }
 
 
 /* For non-cover views, add more padding to make room for checkbox + icon */
 .bases-cms .card.image-format-none .card-title,
 .bases-cms .card.image-format-thumbnail .card-title {
-	padding-right: 60px; /* 18px (icon position) + ~20px (icon width) + 8px (spacing) + 14px (checkbox area) */
+	padding-right: 60px;
+	/* 18px (icon position) + ~20px (icon width) + 8px (spacing) + 14px (checkbox area) */
 }
 
 /* Quick edit icon styling */
@@ -705,6 +708,7 @@ body.bases-cms-hide-checkboxes .bases-cms .bases-cms-select-checkbox {
 	min-width: 0;
 	display: -webkit-box;
 	-webkit-line-clamp: var(--bases-cms-text-preview-lines, 5);
+	line-clamp: var(--bases-cms-text-preview-lines, 5);
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	line-height: 1.4;
@@ -762,19 +766,20 @@ body.bases-cms-hide-checkboxes .bases-cms .bases-cms-select-checkbox {
 
 /* Ensure cover view title has enough padding for the quick edit icon */
 .bases-cms .card.image-format-cover .card-title {
-	padding-right: 42px; /* Override the 12px above to make room for icon */
+	padding-right: 42px;
+	/* Override the 12px above to make room for icon */
 }
 
-.bases-cms .card.image-format-cover > .card-title:first-child,
-.bases-cms .card.image-format-cover > .card-content:first-child,
-.bases-cms .card.image-format-cover > .card-properties:first-child,
-.bases-cms .card.image-format-cover > .card-date:first-child {
+.bases-cms .card.image-format-cover>.card-title:first-child,
+.bases-cms .card.image-format-cover>.card-content:first-child,
+.bases-cms .card.image-format-cover>.card-properties:first-child,
+.bases-cms .card.image-format-cover>.card-date:first-child {
 	padding-top: 12px;
 }
 
-.bases-cms .card.image-format-cover > .card-title:last-child,
-.bases-cms .card.image-format-cover > .card-content:last-child,
-.bases-cms .card.image-format-cover > .card-properties:last-child {
+.bases-cms .card.image-format-cover>.card-title:last-child,
+.bases-cms .card.image-format-cover>.card-content:last-child,
+.bases-cms .card.image-format-cover>.card-properties:last-child {
 	padding-bottom: 12px;
 }
 
@@ -1275,8 +1280,10 @@ body.bases-cms-property-color-custom .bases-cms .property-content {
 	margin-top: var(--size-4-1);
 	margin-bottom: var(--size-4-1);
 	box-sizing: border-box;
-	min-width: 0; /* Allow flex items to shrink */
-	overflow: hidden; /* Prevent overflow */
+	min-width: 0;
+	/* Allow flex items to shrink */
+	overflow: hidden;
+	/* Prevent overflow */
 }
 
 .bases-cms-bulk-toolbar-left {
@@ -1284,8 +1291,10 @@ body.bases-cms-property-color-custom .bases-cms .property-content {
 	align-items: center;
 	gap: 0;
 	flex: 0 0 auto;
-	min-width: 0; /* Allow shrinking */
-	flex-wrap: nowrap; /* Keep buttons in a row */
+	min-width: 0;
+	/* Allow shrinking */
+	flex-wrap: nowrap;
+	/* Keep buttons in a row */
 }
 
 .bases-cms-bulk-toolbar-right {
@@ -1294,28 +1303,31 @@ body.bases-cms-property-color-custom .bases-cms .property-content {
 	gap: 0;
 	flex: 0 0 auto;
 	margin-left: auto;
-	min-width: 0; /* Allow shrinking */
-	flex-wrap: nowrap; /* Keep buttons in a row */
+	min-width: 0;
+	/* Allow shrinking */
+	flex-wrap: nowrap;
+	/* Keep buttons in a row */
 }
 
 /* Mobile-specific toolbar improvements */
 @media (hover: none) and (pointer: coarse),
-       (max-width: 768px) {
+(max-width: 768px) {
+
 	.bases-cms-bulk-toolbar-left,
 	.bases-cms-bulk-toolbar-right {
 		gap: var(--size-4-1);
 	}
-	
+
 	.bases-cms-bulk-toolbar .text-icon-button {
 		padding: var(--size-4-2) var(--size-4-2);
 		min-height: 40px;
 	}
-	
+
 	.bases-cms-bulk-toolbar .text-icon-button .text-button-icon {
 		width: 20px;
 		height: 20px;
 	}
-	
+
 	.bases-cms-bulk-toolbar .text-icon-button .text-button-icon svg {
 		width: 20px;
 		height: 20px;
@@ -1521,4 +1533,3 @@ body.bases-cms-property-color-custom .bases-cms .property-content {
 	font-weight: 600;
 	border-bottom: none !important;
 }
-

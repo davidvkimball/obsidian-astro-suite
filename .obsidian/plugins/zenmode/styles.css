@@ -11,8 +11,10 @@
 .zenmode-active div.workspace-tab-container>div>div>div.view-header,
 /* Hide tooltips */
 .zenmode-active .tooltip,
-/* Hide status */
-.zenmode-active .status-bar,
+/* Hide status bar - conditional based on hideStatusBar setting (like UI Tweaker) */
+.zenmode-hide-status-bar .status-bar {
+	display: none !important;
+}
 /* Hide sidebar buttons */
 .zenmode-active .sidebar-toggle-button.mod-right,
 .zenmode-active .sidebar-toggle-button.mod-left,
